@@ -1,0 +1,278 @@
+
+
+
+<!DOCTYPE html>
+
+
+
+<html>
+    <head>
+    	
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- bootstrap-css -->
+<link rel="stylesheet" href="/images/libraries/common/css/bootstrap.css">
+<!-- //bootstrap-css -->
+<!-- Custom CSS -->
+<link href="/images/libraries/common/css/style.css" rel='stylesheet' type='text/css' />
+<!-- font CSS -->
+
+<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
+
+  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+<!-- font-awesome icons -->
+<link rel="stylesheet" href="/images/libraries/common/css/font.css" type="text/css"/>
+<link href="/images/libraries/common/css/font-awesome.css" rel="stylesheet"> 
+<!-- //font-awesome icons -->
+<script src="/images/libraries/common/js/jquery2.0.3.min.js"></script>
+<script src="/images/libraries/common/js/bootstrap.js"></script>
+<script src="/images/libraries/common/js/custom.min.js"></script> 
+
+<script src="/images/libraries/common/js/modernizr.js"></script>
+<!--<script src="js/jquery.cookie.js"></script>
+-->
+		
+
+<link rel="stylesheet" href="/images/libraries/common/css/morris.css">
+<!-- //charts -->
+<!--skycons-icons-->
+<!--<script src="js/skycons.js"></script>
+--><!--//skycons-icons-->
+
+
+<!--test collapse-->
+<!-- FastClick -->
+<link rel="stylesheet" href="/images/libraries/common/css/custom.min.css" type="text/css"/>
+
+
+<!-- Use non-conflicting mode to avoid conflicts with any existing JQuery Library or New One -->
+<script type="text/javascript" src="/scripts/jquery-custom-1.4.2.min.js"></script> 
+<script src="/scripts/jquery.autocomplete.js"></script>
+<script type="text/javascript">
+       //create this naming for Jquery 1.4.2 version
+       var jQuery_1_4_2 = jQuery.noConflict(true);
+</script>
+<!-- ********JQuery Non-Conflicting library for autoComplete End******** -->
+
+<link rel="stylesheet" type="text/css" href="/styles/autosuggest_style.css" />
+        <!-- HTTP 1.1 -->
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="AppFuse 2.0" />
+<!-- leave this for stats please -->
+<link rel="icon" href="/images/favicon.ico" />
+<script type="text/javascript">
+		try 
+		{			
+			document.execCommand("BackgroundImageCache", false, true);
+		}
+		catch(err) 
+		{}
+</script>
+
+         <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+        <link rel="SHORTCUT ICON" href="/images/favicon.ico" type="image/x-icon" />
+        <title>Welcome to Online Statistics Portal</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">   
+     <script type="text/javascript">
+     /* alert(#session.authz); */
+     
+$(document).ready(function(){
+	$(".pageLoadContainer").hide();
+});
+     
+     function ltrim(stringToTrim) 
+     {
+		return stringToTrim.replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g,"").replace(/\s+/g," ");
+	}
+	function rtrim(stringToTrim) {
+	return stringToTrim.replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g,"").replace(/\s+/g," ");
+}
+     function renderTitle(){
+     	element=document.getElementById("brdcrm");
+     	var titleText="";
+     	if(element!=null){
+			  var ihtml=element.innerHTML;
+		  	  var startTag=0;
+		  	  var  endTag=0;
+		  	  var spaceCheck="";
+    	       for(i=0;i<ihtml.length;i++)
+  				{
+
+		    		if(ihtml.charAt(i) == "<" || ihtml.charAt(i) == "&"){
+						startTag=1;
+						endTag=0;
+					}
+					
+					if(startTag==1){
+						spaceCheck=spaceCheck+ihtml.charAt(i);
+					}
+					
+					if(ihtml.charAt(i) == ">" || ihtml.charAt(i) == ";"){
+						endTag=1;
+						startTag=0;
+						if(spaceCheck=="&nbsp;"){
+							titleText="";
+							spaceCheck="";
+						}
+						if(ihtml.charAt(i)==">"){
+							spaceCheck="";
+						}
+					}
+			
+					if(endTag==1){
+						if(ihtml.charAt(i) != "<" && ihtml.charAt(i) != "&"){
+							if(ihtml.charAt(i) != ">" && ihtml.charAt(i) != ";"){
+								titleText=titleText+ihtml.charAt(i);
+								spaceCheck="";
+							}
+						}
+					}
+					
+					
+			
+					
+   			}
+  		}
+		
+		//titleText=titleText.substring(titleText.indexOf(" "),titleText.length);
+		titleText=ltrim(titleText);
+		titleText=rtrim(titleText);
+		
+		if(titleText== "")
+			{
+	        document.title="Online Statistics Portal "+titleText;
+			}
+		else
+		{
+			document.title="Online Statistics Portal "+"->"+titleText;
+		}
+	     
+
+     }
+     
+     </script>
+     
+
+    </head>
+
+ <body  class="dashboard-page">
+
+  <div id="loaderDivId" class="loader">
+  	<%= render :partial => '/layouts/side_bar_navigation'%>
+
+    <%= render :partial => '/layouts/header'%>
+  </div>
+ <section class="wrapper scrollable">
+ 
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+
+
+
+
+
+
+<div class="row-fluid" style="margin-bottom:50px; min-height:450px;">    
+	<div class="main-grid" >
+			   <div class="clearfix"></div>
+
+
+			<!-- tables -->
+			<link rel="stylesheet" type="text/css" href="/images/libraries/css/table-style.css" />
+			<link rel="stylesheet" type="text/css" href="/images/libraries/css/basictable.css" />
+			<script type="text/javascript" src="/images/libraries/js/jquery.basictable.min.js"></script>
+			<script type="text/javascript">
+			    $(document).ready(function() {
+			      $('#table').basictable();
+
+			      $('#table-breakpoint').basictable({
+			        breakpoint: 768
+			      });
+
+			      $('#table-swap-axis').basictable({
+			        swapAxis: true
+			      });
+
+			      $('#table-force-off').basictable({
+			        forceResponsive: false
+			      });
+
+			      $('#table-no-resize').basictable({
+			        noResize: true
+			      });
+
+			      $('#table-two-axis').basictable();
+
+			      $('#table-max-height').basictable({
+			        tableWrapper: true
+			      });
+			    });
+			</script>
+			    <!-- header end -->
+			    <ol class="breadcrumb"> <li><a href="/loginpage">Home</a></li>
+			         <li><a href="/loginpage/accessdetails">Access Details</a></li>
+			     </ol>
+
+			    <h4 >Access Details</h4>
+			    <br>
+			    <p class="pad-top10 mar-btm20">Access Details are the credentials that are used to collect the usage reports from the platform interface. This section allows the library to enter or modify the Platform Access Details for the collection platforms that MPSScholarlystats will access for the library.</p>
+			   <br>
+			    <!--breadcrumb Ends-->
+			    <style>
+				.green{color:green;font-weight: bold}
+			    </style>
+
+
+			<div class="clearfix">
+					<div class="agile-grids">
+						<div class="col-md-12" style="padding:0px;">
+					    <div class="span12">
+					      <div class="col-md-12" >
+						      <div class="well">
+					         <div class="table-responsive"> 
+											<table>
+											  <thead>
+											    <tr>
+											      <th>Platform</th>
+											      <th>Collection Platform Name</th>
+											      <th>Edit options</th>
+											      <th colspan="3"></th>
+											    </tr>
+											  </thead>
+
+											  <tbody>
+											    <% @platforms.each do |platform| %>
+											      <tr>
+											        <td><%= platform.abbrev %></td>
+											        <td><%= platform.name %></td>
+											        <td>
+											        <%= link_to image_tag("edit.jpg", :alt => "Image Description", :class => "css", :size => "50x50"), edit_platform_path(platform) %>			
+															</td>
+											      </tr>
+											    <% end %>
+											  </tbody>
+												<br>
+					            </table>
+					          </div>
+					      </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> 
+	</div>
+</div>
+
+<%= render :partial => '/layouts/footer'%>
+
+</section>
+</body>
+      
+      
+      
+</html>
+ 

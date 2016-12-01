@@ -1,0 +1,109 @@
+	<nav class="main-menu">
+		<ul>
+			<li>
+			
+					<i class="fa fa-home nav_icon"></i>
+					<span class="nav-text">
+					
+							<%= link_to "home", loginpage_index_path %>		</span>
+				</a>
+			</li>
+			
+		  <li class="has-subnav">
+				<a href="javascript:;">
+				<i class="fa fa-bar-chart nav_icon"></i>
+				<span class="nav-text">
+				Reports
+				</span>
+				<i class="icon-angle-right"></i><i class="icon-angle-down"></i>
+				</a>
+				<ul>
+					<li>
+						<a class="subnav-text" href="/loginpage/report">COUNTER and Custom Reports</a>
+					</li>
+					<li>
+						<a class="subnav-text" href="/loginpage/sourcereports">Source Reports</a>
+					</li>
+                    <li>
+					  <a class="subnav-text" href="/loginpage/dynamicreports">Dynamic Reports</a>
+					</li>
+					<li>
+					  <a class="subnav-text" href="/loginpage/report">Search By ISSN/ISBN</a>
+					</li>
+				</ul>
+			</li>
+			<li class="has-subnav">
+				<a href="javascript:;">
+					<i class="fa fa-file-text-o nav_icon"></i>
+						<span class="nav-text">Administrative Features</span>
+					<i class="icon-angle-right"></i><i class="icon-angle-down"></i>
+				</a>
+				<ul>
+					<li>
+						<a class="subnav-text" href="#">
+							Selected Platforms
+						</a>
+					</li>
+					<li>
+						<a class="subnav-text" href="/loginpage/accessdetails">
+							Access Details
+					  </a>
+					</li>
+					<li>
+						<a class="subnav-text" href="#">
+								Library Account Details						</a>
+					</li>
+					<li>
+						<a class="subnav-text" href="#">
+								Integration Partners						</a>
+					</li>
+                    	<li>
+						<a class="subnav-text" href="#">
+								Create Additional User Accounts						</a>
+					</li>	<li>
+						<a class="subnav-text" href="#">
+								Upload Data						</a>
+					</li>	<li>
+						<a class="subnav-text" href="#">
+								Export Data						</a>
+					</li>
+				</ul>
+			</li>
+            
+            
+            <li class="has-subnav">
+				<a href="javascript:;">
+				<i class="fa fa-info-circle nav_icon"></i>
+				<span class="nav-text">
+				Support
+				</span>
+				<i class="icon-angle-right"></i><i class="icon-angle-down"></i>
+				</a>
+				<ul>
+					<li>
+						<a class="subnav-text" href="#">Contact Us</a>
+					</li>
+					<li>
+						<a class="subnav-text" href="/support/faq">FAQs</a>
+					</li>
+          <li>
+						<a class="subnav-text" href="/support/aboutus">About Us</a>
+					</li>
+					
+				</ul>
+			</li>
+			
+	  </ul>
+			</li>
+		</ul>
+		<ul class="logout">
+			<li>
+			<a>
+			<i>
+			<span class="nav-text">
+			<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>  
+			</span><i>
+			</a>
+			</li>
+		</ul>
+	</nav>

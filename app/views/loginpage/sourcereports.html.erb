@@ -1,0 +1,212 @@
+
+<!DOCTYPE html>
+<head>
+<title>Scholarly-stats</title>
+<link rel="shortcut icon" href="images/favicon.ico">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+--><!-- bootstrap-css -->
+<link rel="stylesheet" href="bootstrap.css">
+<!-- //bootstrap-css -->
+<!-- Custom CSS -->
+<link href="style.css" rel='stylesheet' type='text/css' />
+<!-- font CSS -->
+  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+<!-- font-awesome icons -->
+<link rel="stylesheet" href="font.css" type="text/css"/>
+<link href="font-awesome.css" rel="stylesheet"> 
+<!-- //font-awesome icons -->
+<script src="jquery2.0.3.min.js"></script>
+<script src="modernizr.js"></script>
+<script src = "application.js"></script>
+
+	
+
+
+	
+
+</head>
+<body class="dashboard-page">
+
+
+	
+	<nav class="main-menu">
+		
+		<%= render :partial => '/layouts/side_bar_navigation'%>
+
+    <%= render :partial => '/layouts/header'%>
+
+	</nav>
+	<section class="wrapper scrollable">
+		<nav class="user-menu">
+			<a href="javascript:;" class="main-menu-access">
+			<i class="icon-proton-logo"></i>
+			<i class="icon-reorder"></i>
+			</a>
+		</nav>
+		<section class="title-bar">
+			<div class="logo">
+				<h1><a href="index.html"><% image_tag("logo.svg")%></a></h1>
+			</div>
+			
+			
+			<div class="header-right">
+				<div class="profile_details_left">
+					<div class="header-right-left">
+						<!--notifications of menu start -->
+						<ul class="nofitications-dropdown">
+							
+								<ul class="dropdown-menu anti-dropdown-menu agile-notification">
+									
+								
+									 <li>
+										
+
+					<div class="profile_details">		
+						<ul>
+							<li class="dropdown profile_details_drop">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+									<div class="profile_img">	
+										<span class="prfil-img"><i class="fa fa-user" aria-hidden="true"></i></span> 
+										<div class="clearfix"></div>	
+									</div>	
+								</a>
+								<ul class="dropdown-menu drp-mnu">
+									<li> <a href="#"><i class="fa fa-cog"></i> Settings</a> </li> 
+									<li> <a href="#"><i class="fa fa-user"></i> Profile</a> </li> 
+									<li> <a href="#"><i class="fa fa-sign-out"></i> Logout</a> </li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</section>
+		<div class="main-grid">
+        
+        
+        <ol class="breadcrumb"> <li><a href="/loginpage">Home</a></li>
+         <li><a href="/loginpage/sourcereports">Source Reports</a></li> 
+        
+        </ol>
+	
+
+
+
+
+
+<br>
+				  <h4>Source Reports
+</h4>
+<p class="pad-top10 mar-btm20">You need to choose the platform and reporting period to see source reports.
+</p>
+
+
+
+
+<div class="agile-Updating-grids"> 
+	<div class="agile-grids pad-top10">
+           <div class="col-md-5 mb10">
+				<div class="form-group">
+					<label >Select Platform</label>
+						<select class="form-control" id="selectpid1" >
+
+													<option>--Select Platform--</option>
+			<%= @source_reports.each do |f|%>
+			   					
+                            <option><%= f.platform.name %></option>
+
+                        
+              <% end %>  
+						</select>
+				</div>
+            </div>
+                <div class="col-md-3">
+					<div class="form-group">
+						<label >Reporting period:</label>
+								<select class="form-control" id="selectpid2">
+															<option>--Select Year--</option>
+										             					<%= @source_reports.each do |f|%>
+                            <option><%= f.year %></option>
+              <% end %>  
+								</select>
+
+					</div>
+                </div>
+                <div class="col-sm-12 pad-top20">
+                
+               		 Please click on Get Reports to find the desired platform reports.
+                </div>
+                <div class=" col-sm-2 mt-10">
+ 					<div class="button raised">
+  						 <a href="#" class="hoverable"> 
+	  						 <div class="anim">
+	  						 	
+	  						 </div>
+	  						 <span>Get Reports</span>
+  						 </a>
+   					</div>
+				</div>  
+				<!-- //updating-data -->
+			</div>
+				<div class="clearfix"> </div>
+	</div>
+</div>		
+			    
+    <br>
+    	
+	  </div>
+		<!-- footer -->
+		<%= render :partial => '/layouts/footer'%>
+
+		<!-- //footer -->
+	</section>
+	<script src="js/bootstrap.js"></script>
+    
+  <script type="text/javascript">
+  	$("#selectpid1").change(function(){
+
+  		alert("platform selected");
+  		var value1 = $('select#selectpid1 option:selected').val();
+  		console.log("Gotcha");
+        $.ajax({
+          type: "GET",
+          data: {selectpid1: value1},
+          url: '/loginpage/dynamicreports',
+          dataType: 'json',
+          success: function(json) {
+
+            // var $el = $("#selectpid2")
+            // $el.empty(); // remove old options
+            // $el.append($("<option></option>")
+            //         .attr("value", '').text('Please Select'));
+            // $.each(json, function(value, key) {
+            //     $el.append($("<option></option>")
+            //             .attr("value", value).text(key));
+            // });														
+
+            alert("success");
+              
+              
+          }
+ 
+      });
+
+
+
+			});
+  	$("#selectpid2").change(function(){
+
+  		alert("year changed");
+  		var value2 = $('select#selectpid2 option:selected').val();
+
+  	});
+
+  </script>
+  
+</body>
+</html>

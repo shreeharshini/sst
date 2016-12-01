@@ -1,0 +1,14 @@
+<%= simple_form_for(@plat) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :created_by %>
+    <%= f.input :updated_by %>
+    <%= f.input :platformname %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
