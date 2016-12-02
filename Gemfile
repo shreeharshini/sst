@@ -13,6 +13,7 @@ gem 'simple_form'
 gem 'bootstrap'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
+gem 'bootstrap-cdn-rails'
 
 # for d3.js graphs
 gem "d3-rails"
