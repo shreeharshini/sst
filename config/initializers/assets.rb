@@ -50,3 +50,5 @@ Rails.application.config.assets.precompile += %w( lsb.js )
 Rails.application.config.assets.precompile += %w( materialize.min.js )
 Rails.application.config.assets.precompile += %w( modernizr.js )
 Rails.application.config.assets.precompile += %w( jquery2.0.3.min.js )
+Rails.application.config.assets.precompile += %w( custom.min.js )
+

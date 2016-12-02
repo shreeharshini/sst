@@ -25,7 +25,7 @@ Rails.application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = true
 
-   config.assets.precompile += %w( application.css application.js bootstrap.js bootstrap.min.js html5shiv.min.js ie8-responsive-file-warning.js ie10-viewport-bug-workaround.js ie-emulation-modes-warning.js jquery.basictable.min.js validator.min.js logger.js lsb.js materialize.min.js modernizr.js)
+  config.assets.precompile += %w( application.css application.js bootstrap.js bootstrap.min.js html5shiv.min.js ie8-responsive-file-warning.js ie10-viewport-bug-workaround.js ie-emulation-modes-warning.js jquery.basictable.min.js validator.min.js logger.js lsb.js materialize.min.js modernizr.js custom.min.js)
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
