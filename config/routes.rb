@@ -24,7 +24,8 @@ Rails.application.routes.draw do
   
   resources :loginpage, :accounts, :reports, :platforms, 
             :source_reports_mappings, :year_trends, :year_usages,
-            :year_top_journals, :account_infos, :download_files
+            :year_top_journals, :account_infos, :download_files,
+            :contact_us
 
   devise_for :users
   root to: 'home#index'

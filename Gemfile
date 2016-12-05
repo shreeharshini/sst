@@ -5,7 +5,17 @@ gem 'momentjs-rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
-gem 'jquery-rails'
+gem 'mail_form'
+gem 'sprockets', '3.6.3'
+gem 'mailcatcher'
+gem 'highcharts-rails'
+gem 'lazy_high_charts'
+gem 'nio4r'
+gem 'bcrypt'
+gem 'therubyracer'
+gem 'less-rails'
+gem 'formtastic'
+gem "cocoon"
 gem 'mysql2'
 gem 'pry-rails'
 gem 'simple_form'
@@ -28,6 +38,8 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 # gem for graphs
 gem 'chartkick'
+
+gem "jquery-ui-rails"
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -39,6 +51,10 @@ gem 'devise'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+
+# jqgrid jquery plugin packaged for the rails asset pipeline
+gem 'jqgrid-jquery-rails', '~> 4.6.001'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

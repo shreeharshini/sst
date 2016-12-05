@@ -1,0 +1,2 @@
+module PlatformReportDetailsHelper
+end

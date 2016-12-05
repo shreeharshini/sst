@@ -1,0 +1,2 @@
+class CounterAndCustom < ApplicationRecord
+end

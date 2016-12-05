@@ -1,0 +1,42 @@
+<%= form_for(requestfordemo) do |f| %>
+  <% if requestfordemo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(requestfordemo.errors.count, "error") %> prohibited this requestfordemo from being saved:</h2>
+
+      <ul>
+      <% requestfordemo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :library %>
+    <%= f.text_field :library %>
+  </div>
+
+  <div class="field">
+    <%= f.label :number %>
+    <%= f.number_field :number %>
+  </div>
+
+  <div class="field">
+    <%= f.label :message %>
+    <%= f.text_area :message %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
