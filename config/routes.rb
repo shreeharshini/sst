@@ -1,32 +1,26 @@
 Rails.application.routes.draw do
 
- 
+  resources :counter_and_customs
   
-  resources :platforms
-  resources :plats
-  get 'download_files/csv'
-
-  get 'download_files/xlsx'
-
-  get 'download_files/zip'
-
-  get 'support/contactus'
-
-  get 'support/faq'
-
-  get 'support/aboutus'
-
-	get "loginpage/dynamicreports"
+  get "loginpage/search_by_issn"
+	get "loginpage/DynamicReports"
 	get "loginpage/sourcereports"
 	get "loginpage/report"
-  get "loginpage/accessdetails"
-	get "home/index"
+  get "library_account_details/index"
+  get "export_file/xlsx"
+  get "export_file/csv"
+  get "import_data/xlsx"
+
+
   
-  resources :loginpage, :accounts, :reports, :platforms, 
-            :source_reports_mappings, :year_trends, :year_usages,
-            :year_top_journals, :account_infos, :download_files
+  resources :loginpage, :accounts, :reports, :platforms,
+            :export_file, :account_platform_details, :import_data
 
   devise_for :users
   root to: 'home#index'
+
+  #resources :import_data only: [:index, :new, :create, :destroy]
+  #root "import_data#index"
+ 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

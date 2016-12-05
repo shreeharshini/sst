@@ -2,11 +2,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-    	<!-- ********JQuery Non-Conflicting library for autoComplete Start********
-Generating autosuggestion... 
-(In case not getting result, please try with similar search without clicking in suggestion box.)
-Thank You
-
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- bootstrap-css -->
@@ -45,7 +40,9 @@ Thank You
 
 
 <!-- Use non-conflicting mode to avoid conflicts with any existing JQuery Library or New One -->
-<script type="text/javascript" src="/scripts/jquery-custom-1.4.2.min.js"></script> 
+<script type="text/javascript" src="/scripts/jquery-custom-1.4.2.min.js">
+
+</script> 
 <script src="/scripts/jquery.autocomplete.js"></script>
 <script type="text/javascript">
        //create this naming for Jquery 1.4.2 version
@@ -155,115 +152,7 @@ $(document).ready(function(){
      }
      
      </script>
-     <style type="text/css">
-	    .login-logo img {
-		 width: auto;
-    height: auto;
-    max-width: 100%;
-    max-height: 100%;
-    display: inline-block;
-    vertical-align: middle;
-		}
-    
-	.login-head {
-	background-color: #fff;
-	
-	width: 100%;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	}
-	
-	.login-bg{
-	/*background-attachment: fixed;
-	background: url(/images/libraries/home/login/login-bg.jpg);
-	background-position: center center;
-			background-repeat:  no-repeat;
-			background-attachment: fixed;
-			background-size:  cover;
-			background-color: #fff;*/
-	
-
-    padding-top: 44px;
-    padding-bottom: 100px;
-}
-
-
-	.login-bg2{
-	background-attachment: fixed;
-	background: url(/images/libraries/home/login/login-bg.jpg);
-	background-position: center center;
-			background-repeat:  no-repeat;
-			background-attachment: fixed;
-			background-size:  cover;
-			background-color: #999;
-	
-	
-}
-
-.login-heading-about {
-    font-size: 22px;
-    font-weight: 600;
-    color: #666666;
-	    margin-top: 58px;
-}
-.login-p {
-    color: #777;
-    font-size: 16px;
-    line-height: 1.8;
-}
-
-.login-box{
-	margin: 0 3px;
-    background: rgba(255, 255, 255, 0.77);
-    text-align: center;
-    border: solid 1px #ccc;
-	padding:40px;
- 
-	}
-
-.login-box-text {
-    font-size: 23px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-.login-footer-bg {
-	background-color: #fff;
-	 position: fixed;
-    bottom: 0px;
-	width: 100%;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	    z-index: 5;
-	
-	}
-	.padding-top-20{
-		padding-top:20px;
-		}
-		
-		
-		@media (max-width:780px) { 
-		
-			.login-bg{
-	
-	
-
-    padding-top: 20px;
-    padding-bottom: 200px;
-}
-
-		
-		}
-.fancybox-inner{height:300px !important}
-    </style>
-     <style>
-body{
-padding-top:70px\0;	
-padding-bottom:70px\0;	
-}
-
-.pageLoadContainer{margin:0 auto;position:absolute;top:0;background:#000; opacity:0.5;width:99%; height:100%;z-index:2;}
+     
 
 </style>
 <script type="text/javascript">
@@ -300,6 +189,15 @@ function getImgDirectory(source) {
   <div id="loaderDivId" class="loader" style="display:none"></div>
  <section class="wrapper scrollable">
  
+
+
+
+
+
+
+
+
+
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -381,8 +279,9 @@ function useraction(url)
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 
-
-<%= render :partial => '/layouts/side_bar_navigation'%>
+    <%= render :partial => '/layouts/side_bar_navigation'%>
+		<%= render :partial => '/layouts/header'%>
+		
 	
     <!-- Modal -->
  <div id="myModal" class="modal fade" role="dialog">
@@ -458,9 +357,57 @@ function useraction(url)
 			</div>
 			<div class="main-grid" >
 			   <div class="clearfix"></div>
+ 			  	
+     <ol class="breadcrumb"> <li><a href="/libraries/dashboard">Home</a></li>
+         <li>Upload Data</li>
+     </ol>
+
+<div role="tabpanel">
+
+  <!-- Nav tabs -->
+  <h3 class="color_txt pull-left">Upload Your Data Here!</h3>
+  <br>
+  <p class="pad-top10 mar-btm20">Upload Your Cost data and Manual data here</p>
+<br>
+     <ul class="nav nav-tabs" role="tablist">
+		
+		
+    		<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Upload Cost Data</a></li>
+    		<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Upload Manual Data</a></li>
+
+		
+ </ul>
+
+  <!-- Tab panes -->
 
 
-<!-- tables -->
+  <div class="tab-content commonTabsContent">
+    <div role="tabpanel" class="tab-pane active" id="home">
+    	
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+
+
+
+<script type="text/javascript" src="/scripts/Encoder.js"></script> 
+<link rel="stylesheet" href="/images/css/ui/1.9.2/themes/base/jquery-ui.css" />
+<script type="text/javascript" src="/scripts/sortScript/jquery.tablesorter.js"></script>
+<script type="text/javascript" src="/scripts/sortScript/jquery.tablesorter.pager.js"></script>
+
+
+<script>
+function downloadTemplate(pubcode){ 
+	var url="/"+pubcode+"/downloadTemplate/Price_per_Use_Template/xlsx";
+	window.location.href="/import_data/index"  // 
+}
+function submitFormFeed(val){
+	var url = "/libraries/"+val;
+	document.forms['formfeed'].action=url;
+	document.forms['formfeed'].method="post";
+	document.forms['formfeed'].submit();
+}
+</script>
+  <!-- tables -->
 <link rel="stylesheet" type="text/css" href="/images/libraries/css/table-style.css" />
 <link rel="stylesheet" type="text/css" href="/images/libraries/css/basictable.css" />
 <script type="text/javascript" src="/images/libraries/js/jquery.basictable.min.js"></script>
@@ -491,274 +438,195 @@ function useraction(url)
       });
     });
 </script>
-    <!-- header end -->
-    <ol class="breadcrumb"> <li><a href="/libraries/dashboard">Home</a></li>
-         <li><a href="/libraries/platformDetails/Lcollapsefour-03">Library Account Details</a></li>
-     </ol>
-
-    <h4 >Library Account Details</h4>
+      <div class="clearfix"></div>
+      <!--breadcrumb Ends-->
+      <!-- dashboard heading start-->
+      <h3 class="color_txt pull-left">Upload Cost file For Usage Reports</h3>
     <br>
-    <p class="pad-top10 mar-btm20">This section shows details for the library including library name, address, and administrator details. Please review the details and contact us if any of the details need to be updated.</p>
-   <br>
-    <!--breadcrumb Ends-->
-    <style>
-	.green{color:green;font-weight: bold}
-    </style>
+      <div class="clearfix"></div>
+    
+	<p class="pad-top10 mar-btm20">This section allows you to upload your title and price information for generation of Price per Usage Report.</p>
+	<br>
+	<p class="black_12">Please download the template and upload the file.
+		<!-- <script type="text/javascript">
+			var url=downloadTemplate('libraries');
+			document.write("<a	href="+"'"+url+"'"+">");
+		</script>
+		&nbsp;&nbsp;<img src="/images/download.gif"> <b>Template</b>
+			</a> -->
+	
+	
+	<%= link_to 'xlsx', import_data_xlsx_path %><img src="/images/xls.gif"%> Template	
+		
+	</p>
+    <br>
+			
+	<div id="body_container_login1" class="row-fluid">
 
 
-<div class="clearfix"></div>
-<div class="agile-Updating-grids">  <div class="agile-grids">
-	<div class="col-md-12" style="padding:0px;">
-    <div class="span12">
-      <div class="col-md-12" >
-      <div class="well">
-         <div class="table-responsive"> 
-			<table class="table table-striped">
-			  <thead>
-			  <tr><th>Library Details</th></tr>
-			  </thead>
-              <tbody>
-                <tr>
-                  <td valign="top">Library Name:</td>
-                  	<td valign="top"><strong><%= @acct_details.name %></strong></td>
-                </tr>
-                <tr>
-                
-                  <td valign="top">Current Contract Signed on:</td>
-                
-                  	<td valign="top"><%= @acct_details.contract_sign_on %></td>
-                </tr>
-                <tr>
-                  <td valign="top">Max. no. of Platforms:</td>
-                  <td valign="top"><%= @acct_details.number_of_platforms %></td>
-                </tr>
-                <tr>
-                  <td valign="top">Library Code:</td>
-                  <td valign="top"><%= @acct_details.account_code %></td>
-                </tr>
-                <tr>
-                  <td valign="top">Activation Type:</td>
-                  <td valign="top"><p class="green"><%= @acct_details.activation_status %></p></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          </div>
-        </div>
+</div>	
+<div class = "upload">
+	<div class="table-responsive"> 
+	 <caption><h3 class="color_txt pull-left">Upload File1213</h3></caption>
+		<table class="table table-striped" id="grid-heading">
+			<tbody>
+				<tr>
+
+					<%= form_for :import_data, url: import_data_path do |f| %>
+						<div class="field">
+							<%= f.file_field :attachment%>
+						</div>
+						<div class="actions">
+							<%= f.submit %>
+						</div>
+					<% end %>
+								<!-- 
+<form id="formfeed" name="checkData" onsubmit="return true;" action='uploadFile' method="POST" enctype="multipart/form-data">
+						<input type="hidden" name="collection" id="collection" placeholder="id" value="tempCollection">
+					<td >Choose file to upload cost data for generation of Cost per Usage Reports.</td> 
+	        	    <td class="align_center"> <input type="file" accept='text/xlsx' name="upload" value="" id="formfeed_upload"/> </td>
+	                <td class="align_center">
+	                	<div class="button raised">
+   							<a href="/import_data/index" id="buttonId" class="hoverable" onclick='submitFormFeed( "return submitForm(url);");'> <div class="anim"></div><span>Upload</span></a>
+    					</div>
+	                </td>
+	             </form> -->
+
+
+
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+    </div>
 </div>
-<div class="span12">
-      <div class="col-md-6" >
-	  	<div class="well">
-         <div class="table-responsive"> 
-			<table class="table table-striped">
-			  <thead>
-			  <tr><th>Administrator Details</th></tr>
-			  </thead>
-	           <tbody>
-                <tr>
-                  <td valign="top"><p>First Name:</p></td>
-                   
-                  	<td valign="top"><%= @acct_info.admin_first_name %></td>
-                  
-                                    
-                </tr>
-                <tr>
-                  <td valign="top"><p>Last Name:</p></td>
-                   
-                  	<td valign="top"><%= @acct_info.admin_last_name %></td>
-                  
-                   
-                </tr>
-                <tr>
-                  <td valign="top"><p>Email:</p></td>
-                   
-                  	<td valign="top"><%= @acct_info.admin_email %></td>
-                  
-                  
-                </tr>
-                <tr>
-                  <td valign="top"><p>Phone:</p></td>
-                  
-                  
-					<td valign="top"><strong> <%= @acct_info.admin_phone %> </strong></td>
-                  
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          </div>
-        </div>
-
-      <div class="col-md-6"  >
-      <div class="well">
-         <div class="table-responsive"> 
-			<table class="table table-striped">
-			  <thead>
-			  <tr><th>Secondary Contact Details</th></tr>
-			  </thead>
-	           <tbody>
-                <tr>
-                  <td valign="top"><p>First Name:</p></td>
-                   
-                  	<td valign="top"><%= @acct_info.admin_first_name2 %></td>
-                  
-                                    
-                </tr>
-                <tr>
-                  <td valign="top"><p>Last Name:</p></td>
-                   
-                  	<td valign="top"><%= @acct_info.admin_last_name2 %></td>
-                  
-                   
-                </tr>
-                <tr>
-                  <td valign="top"><p>Email:</p></td>
-                   
-                  	<td valign="top"><%= @acct_info.admin_email2 %></td>
-                  
-                  
-                </tr>
-                <tr>
-                  <td valign="top"><p>Phone:</p></td>
-                  
-                  
-					<td valign="top"><strong> :<%= @acct_info.admin_phone2 %> </strong></td>
-                  
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          </div>
-        </div>
- </div>
- <div class="span12">  
-      <div class="col-md-6"  >
-      <div class="well">
-         <div class="table-responsive"> 
-			<table class="table table-striped">
-			 <thead>
-			  <tr><th>Contact Address Details</th></tr>
-			  </thead>
-             <tbody>
-                <tr>
-                  <td valign="top"><p>Address Line1:</p></td>
-                   
-                  	<td valign="top"><%= @acct_info.address_line_1 %></td>
-                  
-                  
-                </tr>
-                <tr>
-                  <td valign="top"><p>Address Line2:</p></td>
-                   
-                  	<td valign="top"><%= @acct_info.address_line2 %></td>
-                  
-                  
-                </tr>
-                <tr>
-                  <td valign="top"><p>City:</p></td>
-                   
-                  	<td valign="top"> <%= @acct_info.city %></td>
-                  
-                  
-                </tr>
-                <tr>
-                  <td valign="top"><p>State:</p></td>
-                   
-                  	<td valign="top"><%= @acct_info.state %></td>
-                  
-                  
-                </tr>
-                <tr>
-                  <td valign="top"><p>Country:</p></td>
-                   
-                  	<td valign="top"><%= @acct_info.country %></td>
-                  
-                  
-                </tr>
-                <tr>
-                  <td valign="top"><p>Postal/Zip Code:</p></td>
-                   
-                  	<td valign="top"><%= @acct_info.pincode %></td>
-                  
-                  
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          </div>
-        </div>
+    <div role="tabpanel" class="tab-pane" id="profile">
+    	
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 
 
-      <div class="col-md-6" >
-      <div class="well">
-         <div class="table-responsive"> 
-			<table class="table table-striped">
-				<thead>
-			  <tr><th>Billing Address Details</th></tr>
-			  </thead>
-              <tbody>
-                  
-            	
-					<tr>
-                  		<td valign="top"><p>Address Line1:</p></td>
-						 
-                  			<td valign="top"><%= @acct_info.bill_address_1 %></td>
-                  		
-                  		
-                	</tr>
-                	<tr>
-                  		<td valign="top"><p>Address Line2:</p></td>
-                  		 
-                  			<td valign="top"><%= @acct_info.bill_address_2 %></td>
-                  		
-                  		
-                	</tr>
-                	<tr>
-                  		<td valign="top"><p>City:</p></td>
-                  		 
-                  			<td valign="top"><%= @acct_info.bill_city %></td>
-                  		
-                  		
-                	</tr>
-                	<tr>
-                  		<td valign="top"><p>State:</p></td>
-                  		 
-                  			<td valign="top"><%= @acct_info.bill_state %></td>
-                  		
-                  		
-                	</tr>
-                	<tr>
-                  		<td valign="top"><p>Country:</p></td>
-                  		 
-                  			<td valign="top"><%= @acct_info.bill_country %></td>
-                  		
-                  		
-                	</tr>
-                	<tr>
-                  		<td valign="top"><p>Postal/Zip Code:</p></td>
-                  		
-                  		
-							<td valign="top"><strong> <%= @acct_info.bill_pin_code %> </strong></td>
-                  		
-                	</tr>
-                
-              </tbody>
-            </table>
-          </div>
-          </div>
-        </div>
-</div>
-</div></div>
-<div class="clearfix"></div>
-</div> 
- 			</div>
- 		  </div>
+
+
+
+<script type="text/javascript" src="/scripts/Encoder.js"></script> 
+<!-- <link rel="stylesheet" href="/images/css/ui/1.9.2/themes/base/jquery-ui.css" /> -->
+
+<script>
+function validate_form(){
+
+}
+$('#fileupload').fileupload({
+	alert("hi");
+    dataType: 'json',
+    add: function (e, data) {            
+        $("#buttonId").off('click').on('click', function () {
+            data.submit();
+        });
+    },
+});
+function downloadTemplate(pubcode){ 
+	var url="/"+pubcode+"/downloadTemplate/Price_per_Use_Template/xlsx";
+	return url; 
+}
+function submitForm(url){
+	var url = "/libraries/"+url;
+	document.forms['formID'].action=url;
+	document.forms['formID'].method="post";
+	document.forms['formID'].submit();
+}
+
+</script>
+  <!-- tables -->
+<link rel="stylesheet" type="text/css" href="/images/libraries/css/table-style.css" />
+<link rel="stylesheet" type="text/css" href="/images/libraries/css/basictable.css" />
+<script type="text/javascript" src="/images/libraries/js/jquery.basictable.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+      $('#table').basictable();
+
+      $('#table-breakpoint').basictable({
+        breakpoint: 768
+      });
+
+      $('#table-swap-axis').basictable({
+        swapAxis: true
+      });
+
+      $('#table-force-off').basictable({
+        forceResponsive: false
+      });
+
+      $('#table-no-resize').basictable({
+        noResize: true
+      });
+
+      $('#table-two-axis').basictable();
+
+      $('#table-max-height').basictable({
+        tableWrapper: true
+      });
+    });
+</script>
+      
+
+      <h3 class="color_txt pull-left">Upload Manually Collected File </h3>
+    
+      <br>
+      <!-- dashboard heading end-->
+      
+<!-- page header text starts-->
+
+	<p class="pad-top10 mar-btm20">This section allows you to upload your manually collected data, we will add the same data in respective Consolidated Report.</p>
+
+	<br>		
+	<div id="body_container_login1" class="row-fluid">
+
+
+	</div>
+<div class="table-responsive"> 
+				 <caption><h3 class="color_txt pull-left">Upload Manual Data File14234</h3></caption>
+
+		<table class="table table-striped" id="grid-heading">
+            <tbody>
+            	<tr>
+								<%= form_for :import_data, url: import_data_path do |f| %>
+
+												<div class="field">
+															<%= f.file_field :attachment%>
+												</div>
+
+												<div class="actions">
+															<%= f.submit %>
+												</div>
+								<% end %>     
+							</tr>
+						</tbody>
+		</table>
+</div>      		
+							
+
         	
 
+
+
+
+
+<!--  <div class="navbar navbar-inverse navbar-fixed-bottom version"> -->
+  <%= render :partial => '/layouts/footer'%>
+<!-- </div> -->
+
+<!-- 	<script src="/images/libraries/common/js/bootstrap.js"></script>
+    <script src="/images/libraries/common/js/custom.min.js"></script> -->
+    
+    <!--new highchart start-->
+<!-- <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/drilldown.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>	 -->
     </section>
         	</body>
       
       
       
 </html>
- 

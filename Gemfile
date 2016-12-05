@@ -1,46 +1,43 @@
 source 'https://rubygems.org'
 
-gem 'momentjs-rails'
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
-# Use sqlite3 as the database for Active Record
-# gem 'sqlite3'
-gem 'jquery-rails'
-gem 'mysql2'
-gem 'pry-rails'
-gem 'simple_form'
-# for bootstrap
 gem 'bootstrap'
-gem 'bootstrap-sass'
-gem 'autoprefixer-rails'
-gem 'bootstrap-cdn-rails'
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails'
+# Use sqlite3 as the database for Active Record
+gem 'mysql2'
+gem 'nio4r'
 
-# for d3.js graphs
+gem 'axlsx_rails'
+gem "byebug"
+
 gem "d3-rails"
+
+gem 'carrierwave', '~> 0.9'
+#Use carrierwave for xlsx uploading
+gem 'pry-rails'
 # Use Puma as the app server
-gem 'puma', '~> 3.0'
+gem 'puma'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
+gem 'coffee-rails'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-# gem for graphs
 gem 'chartkick'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.5'
+gem 'jbuilder'
 gem 'devise'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'simple_form'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -52,10 +49,10 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
-  gem 'listen', '~> 3.0.5'
+  gem 'listen'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'spring-watcher-listen'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
