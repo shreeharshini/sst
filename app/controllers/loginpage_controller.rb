@@ -23,5 +23,13 @@ class LoginpageController < ApplicationController
   def report
   end
 
-  
+  def selectedplatforms
+    user_id = current_user.id
+    @accounts = Account.where(:id => user_id ).first
+    @platforms = Platform.all
+    @reports = Report.all
+    @box = PlatformReport.all
+    @repo = ["JR1","JR1a","JR2","JR3","JR5", "DB1","DB2","PR1","BR1","BR2"   
+    ]
+  end
 end

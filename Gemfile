@@ -14,7 +14,8 @@ gem 'bootstrap'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'bootstrap-cdn-rails'
-
+# for font-awesome
+gem "font-awesome-rails"
 # for d3.js graphs
 gem "d3-rails"
 # Use Puma as the app server

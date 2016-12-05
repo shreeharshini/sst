@@ -1,15 +1,14 @@
  table td {
-    padding: 13px 12px;
+   padding: 13px 12px;
     text-align: left;
-	
-    font-size: .95em;
+    
+font-size: .95em;
 }
 
 table th {
     background: #0c0ea4;
     color: #eef1f6;
     font-size: 14px;
-	padding: 10px 12px;
     text-align: left;
 }
 

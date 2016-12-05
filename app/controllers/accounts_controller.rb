@@ -29,7 +29,9 @@ class AccountsController < ApplicationController
   end
   private
   def accounts_params
-    params.require(:accounts).permit(:name, :month, :year, :created_by, :updated_by)
+    params.require(:accounts).permit(:name, :month, :created_by, :updated_by, 
+      :contract_sign_on, :number_of_platforms, :activation_status, :account_code,
+       :user_id)
     
   end
 end

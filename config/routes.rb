@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
  
   
+  resources :platform_reports
   resources :platforms
   resources :plats
   get 'download_files/csv'
@@ -20,6 +21,7 @@ Rails.application.routes.draw do
 	get "loginpage/sourcereports"
 	get "loginpage/report"
   get "loginpage/accessdetails"
+  get "loginpage/selectedplatforms"
 	get "home/index"
   
   resources :loginpage, :accounts, :reports, :platforms, 
