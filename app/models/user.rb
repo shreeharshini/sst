@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-	has_one :account
+	belongs_to :account
 	has_one :account_info ,:through =>:account
 
   # Include default devise modules. Others available are:
