@@ -1,7 +1,6 @@
 class LibraryAccountDetailsController < ApplicationController
 	before_action :authenticate_user!
 	def index
-		byebug
 		user_id = current_user.id
 		u = User.where(:id =>user_id).first
 		@acct_details = u.account
