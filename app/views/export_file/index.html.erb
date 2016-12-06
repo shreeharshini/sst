@@ -400,7 +400,7 @@ function generateUrl(pubcode,displayName,accountCode,format){
 					var url=generateUrl('libraries','recent_report_collection_status','16','xlsx');
 				 	document.write("<a	href="+"'"+url+"'"+">");
 				</script>
-				Click here</a> to download Recent Platform Report Collection Status for your Account.
+				<%= link_to 'Click here', export_file_csv_path %> to download Recent Platform Report Collection Status for your Account.
 			</div>
 </div></div>
 <div class="clearfix"></div>
