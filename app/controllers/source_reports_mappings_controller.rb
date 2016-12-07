@@ -22,12 +22,7 @@ class SourceReportsMappingsController < ApplicationController
   def show
   end
 
-  def freports
-    @cities = City.where("country_id = ?", params[:country_id])
-    respond_to do |format|
-      binding.pry
-      format.js
-  end
+  
   def destroy 
     @source_report.destroy
     redirect_to loginpage_index_path    

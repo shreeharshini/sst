@@ -10,38 +10,34 @@
     	
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- bootstrap-css -->
-			  <%= stylesheet_link_tag "bootstrap.css" %> 
+  <%= stylesheet_link_tag "bootstrap.css" %> 
 
 <!-- //bootstrap-css -->
 <!-- Custom CSS -->
-			  <%= stylesheet_link_tag "style.css" %> 
+  <%= stylesheet_link_tag "style.css" %> 
 
 <!-- font CSS -->
 
-			  <%= stylesheet_link_tag "//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin" %> 
+<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
 
-  			  <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Raleway" %> 
+  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 
 <!-- font-awesome icons -->
-			  <%= stylesheet_link_tag "font.css" %> 
-
-			  <%= stylesheet_link_tag "font-awesome.css" %> 
+  <%= stylesheet_link_tag "font.css" %> 
+  <%= stylesheet_link_tag "font-awesome.css" %> 
 
 <!-- //font-awesome icons -->
+
 <%= javascript_include_tag "jquery2.0.3.min.js" %>
-
 <%= javascript_include_tag "bootstrap.js" %>
-
 <%= javascript_include_tag "custom.min.js" %>
-
-
 <%= javascript_include_tag "modernizr.js" %>
 
 <!--<script src="js/jquery.cookie.js"></script>
 -->
 		
 
-			  <%= stylesheet_link_tag "morris.css" %> 
+  <%= stylesheet_link_tag "morris.css" %> 
 
 <!-- //charts -->
 <!--skycons-icons-->
@@ -51,12 +47,14 @@
 
 <!--test collapse-->
 <!-- FastClick -->
-			  <%= stylesheet_link_tag "custom.min.css" %> 
+  <%= stylesheet_link_tag "custom.min.css" %> 
+
 
 <!-- Use non-conflicting mode to avoid conflicts with any existing JQuery Library or New One -->
-<%= javascript_include_tag "jquery-custom-1.4.2.min.js" %>
 
 <%= javascript_include_tag "jquery.autocomplete.js" %>
+<%= javascript_include_tag "jquery-custom-1.4.2.min.js" %>
+
 
 <script type="text/javascript">
        //create this naming for Jquery 1.4.2 version
@@ -64,16 +62,26 @@
 </script>
 <!-- ********JQuery Non-Conflicting library for autoComplete End******** -->
 
-			  <%= stylesheet_link_tag "autosuggest_style.css" %> 
+  <%= stylesheet_link_tag "autosuggest_style.css" %> 
 
         <!-- HTTP 1.1 -->
-
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="AppFuse 2.0" />
 <!-- leave this for stats please -->
-<link rel="icon" href="/images/favicon.ico" />
+<script type="text/javascript">
+		try 
+		{			
+			document.execCommand("BackgroundImageCache", false, true);
+		}
+		catch(err) 
+		{}
+</script>
 
-     
+         <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+        <link rel="SHORTCUT ICON" href="/images/favicon.ico" type="image/x-icon" />
+        <title>Welcome to Online Statistics Portal</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">   
+  
 
     </head>
 
@@ -104,10 +112,10 @@
 
 
 			<!-- tables -->
-						  <%= stylesheet_link_tag "table-style.css" %> 
+			  <%= stylesheet_link_tag "table-style.css" %> 
+  <%= stylesheet_link_tag "basictable.css" %> 
 
-						  <%= stylesheet_link_tag "basictable.css" %> 
-
+			<link rel="stylesheet" type="text/css" href="/images/libraries/css/" />
 			<script type="text/javascript" src="/images/libraries/js/jquery.basictable.min.js"></script>
 			<script type="text/javascript">
 			    $(document).ready(function() {
@@ -141,9 +149,9 @@
 			         <li><a href="/loginpage/accessdetails">Access Details</a></li>
 			     </ol>
 
-			    <h4 >Access Details</h4>
+			    <h4 >Selected Platforms</h4>
 			    <br>
-			    <p class="pad-top10 mar-btm20">Access Details are the credentials that are used to collect the usage reports from the platform interface. This section allows the library to enter or modify the Platform Access Details for the collection platforms that MPSScholarlystats will access for the library.</p>
+			    <p class="pad-top10 mar-btm20">This section allows the library to review the list of platforms it has selected for inclusion in MPSScholarlystats reports, and the reports that should be collected for each collection platform. On request, we can provide an option to select additional reports or collection platforms.</p>
 			   <br>
 			    <!--breadcrumb Ends-->
 			    <style>
@@ -158,24 +166,59 @@
 					      <div class="col-md-12" >
 						      <div class="well">
 					         <div class="table-responsive"> 
+					         <h4>
+					         	Library Details
+					         </h4>
+					         Library name:<%= @accounts.name %><br>
+					         Max no.of platforms: 520 <br>
+					         Selected no.of platforms:<%= @accounts.number_of_platforms %><br>
+					         
+					        
 											<table>
 											  <thead>
 											    <tr>
-											      <th>Platform</th>
+											      <th>Selected Platforms</th>
 											      <th>Collection Platform Name</th>
-											      <th>Edit options</th>
+											      <th>Collection Platform Code</th>
+											      <th>SUSHI Compliant</th>
+											      <th>Platform Last Processed Date</th>
+											      <th>JR1 </th>
+														<th>JR1a</th>
+														<th>JR2</th>
+														<th>JR3</th>
+														<th>JR5</th>
+														<th>DB1</th>
+														<th>DB2 </th>
+														<th>PR1</th>
+														<th>BR1</th>
+														<th>BR2</th>
 											      <th colspan="3"></th>
 											    </tr>
 											  </thead>
-
+											  
 											  <tbody>
-											    <% @platforms.each do |platform| %>
+											  <% @platforms.each do |platform| %>
+											  	
+											    
 											      <tr>
-											        <td><%= platform.abbrev %></td>
+											      <td></td>
+											        
 											        <td><%= platform.name %></td>
+											        <td><%= platform.abbrev %></td>
 											        <td>
-											        <%= link_to image_tag("edit.jpg", :alt => "Image Description", :class => "css", :size => "50x50"), edit_platform_path(platform) %>			
-															</td>
+											        </td>
+											        <td><%= platform.created_at.strftime("%d-%m-%y") %></td>
+											       
+										  	
+														<% @repo.each do |d| %>
+															<td width="50">
+ 																<% if  @reports.report.name <=> d %>
+														         <div class="square-block-selected"><br><br></div>
+														         <% else%>
+														         <div class="square-block-not-available"><br><br></div>
+												        <%end%>
+												      </td>
+														<%end%>
 											      </tr>
 											    <% end %>
 											  </tbody>

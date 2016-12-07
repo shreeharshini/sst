@@ -9,17 +9,31 @@
 <!--<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 --><!-- bootstrap-css -->
 <link rel="stylesheet" href="css/bootstrap.css">
+  <%= stylesheet_link_tag "bootstrap.css" %> 
+
 <!-- //bootstrap-css -->
 <!-- Custom CSS -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
+  <%= stylesheet_link_tag "bootstrap.css" %> 
+
 <!-- font CSS -->
   <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag "bootstrap.css" %> 
+
 <!-- font-awesome icons -->
 <link rel="stylesheet" href="css/font.css" type="text/css"/>
+  <%= stylesheet_link_tag "bootstrap.css" %> 
+
 <link href="css/font-awesome.css" rel="stylesheet"> 
+  <%= stylesheet_link_tag "bootstrap.css" %> 
+
 <!-- //font-awesome icons -->
 <script src="js/jquery2.0.3.min.js"></script>
+<%= javascript_include_tag "bootstrap.js" %>
+
 <script src="js/modernizr.js"></script>
+<%= javascript_include_tag "bootstrap.js" %>
+
 
 	
 
@@ -131,12 +145,18 @@
     
        
 	       <link href='css/date.css' rel='stylesheet prefetch' type="text/css">
+           <%= stylesheet_link_tag "bootstrap.css" %> 
+
 
 	   
 <script src="js/date-jquery-ui.min.js"></script>
+<%= javascript_include_tag "bootstrap.js" %>
 
-	<script src="js/date-angular.min.js"></script>
-<script src="js/date.js"></script>
+
+<%= javascript_include_tag "date-angular.min.js" %>
+
+<%= javascript_include_tag "date.js" %>
+
 
   
 </body>

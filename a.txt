@@ -1,0 +1,133 @@
+                     Prefix Verb   URI Pattern                                 Controller#Action
+           platform_reports GET    /platform_reports(.:format)                 platform_reports#index
+                            POST   /platform_reports(.:format)                 platform_reports#create
+        new_platform_report GET    /platform_reports/new(.:format)             platform_reports#new
+       edit_platform_report GET    /platform_reports/:id/edit(.:format)        platform_reports#edit
+            platform_report GET    /platform_reports/:id(.:format)             platform_reports#show
+                            PATCH  /platform_reports/:id(.:format)             platform_reports#update
+                            PUT    /platform_reports/:id(.:format)             platform_reports#update
+                            DELETE /platform_reports/:id(.:format)             platform_reports#destroy
+                  platforms GET    /platforms(.:format)                        platforms#index
+                            POST   /platforms(.:format)                        platforms#create
+               new_platform GET    /platforms/new(.:format)                    platforms#new
+              edit_platform GET    /platforms/:id/edit(.:format)               platforms#edit
+                   platform GET    /platforms/:id(.:format)                    platforms#show
+                            PATCH  /platforms/:id(.:format)                    platforms#update
+                            PUT    /platforms/:id(.:format)                    platforms#update
+                            DELETE /platforms/:id(.:format)                    platforms#destroy
+                      plats GET    /plats(.:format)                            plats#index
+                            POST   /plats(.:format)                            plats#create
+                   new_plat GET    /plats/new(.:format)                        plats#new
+                  edit_plat GET    /plats/:id/edit(.:format)                   plats#edit
+                       plat GET    /plats/:id(.:format)                        plats#show
+                            PATCH  /plats/:id(.:format)                        plats#update
+                            PUT    /plats/:id(.:format)                        plats#update
+                            DELETE /plats/:id(.:format)                        plats#destroy
+         download_files_csv GET    /download_files/csv(.:format)               download_files#csv
+        download_files_xlsx GET    /download_files/xlsx(.:format)              download_files#xlsx
+         download_files_zip GET    /download_files/zip(.:format)               download_files#zip
+          support_contactus GET    /support/contactus(.:format)                support#contactus
+                support_faq GET    /support/faq(.:format)                      support#faq
+            support_aboutus GET    /support/aboutus(.:format)                  support#aboutus
+   loginpage_dynamicreports GET    /loginpage/dynamicreports(.:format)         loginpage#dynamicreports
+    loginpage_sourcereports GET    /loginpage/sourcereports(.:format)          loginpage#sourcereports
+           loginpage_report GET    /loginpage/report(.:format)                 loginpage#report
+    loginpage_accessdetails GET    /loginpage/accessdetails(.:format)          loginpage#accessdetails
+loginpage_selectedplatforms GET    /loginpage/selectedplatforms(.:format)      loginpage#selectedplatforms
+                 home_index GET    /home/index(.:format)                       home#index
+            loginpage_index GET    /loginpage(.:format)                        loginpage#index
+                            POST   /loginpage(.:format)                        loginpage#create
+              new_loginpage GET    /loginpage/new(.:format)                    loginpage#new
+             edit_loginpage GET    /loginpage/:id/edit(.:format)               loginpage#edit
+                  loginpage GET    /loginpage/:id(.:format)                    loginpage#show
+                            PATCH  /loginpage/:id(.:format)                    loginpage#update
+                            PUT    /loginpage/:id(.:format)                    loginpage#update
+                            DELETE /loginpage/:id(.:format)                    loginpage#destroy
+                   accounts GET    /accounts(.:format)                         accounts#index
+                            POST   /accounts(.:format)                         accounts#create
+                new_account GET    /accounts/new(.:format)                     accounts#new
+               edit_account GET    /accounts/:id/edit(.:format)                accounts#edit
+                    account GET    /accounts/:id(.:format)                     accounts#show
+                            PATCH  /accounts/:id(.:format)                     accounts#update
+                            PUT    /accounts/:id(.:format)                     accounts#update
+                            DELETE /accounts/:id(.:format)                     accounts#destroy
+                    reports GET    /reports(.:format)                          reports#index
+                            POST   /reports(.:format)                          reports#create
+                 new_report GET    /reports/new(.:format)                      reports#new
+                edit_report GET    /reports/:id/edit(.:format)                 reports#edit
+                     report GET    /reports/:id(.:format)                      reports#show
+                            PATCH  /reports/:id(.:format)                      reports#update
+                            PUT    /reports/:id(.:format)                      reports#update
+                            DELETE /reports/:id(.:format)                      reports#destroy
+                            GET    /platforms(.:format)                        platforms#index
+                            POST   /platforms(.:format)                        platforms#create
+                            GET    /platforms/new(.:format)                    platforms#new
+                            GET    /platforms/:id/edit(.:format)               platforms#edit
+                            GET    /platforms/:id(.:format)                    platforms#show
+                            PATCH  /platforms/:id(.:format)                    platforms#update
+                            PUT    /platforms/:id(.:format)                    platforms#update
+                            DELETE /platforms/:id(.:format)                    platforms#destroy
+    source_reports_mappings GET    /source_reports_mappings(.:format)          source_reports_mappings#index
+                            POST   /source_reports_mappings(.:format)          source_reports_mappings#create
+ new_source_reports_mapping GET    /source_reports_mappings/new(.:format)      source_reports_mappings#new
+edit_source_reports_mapping GET    /source_reports_mappings/:id/edit(.:format) source_reports_mappings#edit
+     source_reports_mapping GET    /source_reports_mappings/:id(.:format)      source_reports_mappings#show
+                            PATCH  /source_reports_mappings/:id(.:format)      source_reports_mappings#update
+                            PUT    /source_reports_mappings/:id(.:format)      source_reports_mappings#update
+                            DELETE /source_reports_mappings/:id(.:format)      source_reports_mappings#destroy
+                year_trends GET    /year_trends(.:format)                      year_trends#index
+                            POST   /year_trends(.:format)                      year_trends#create
+             new_year_trend GET    /year_trends/new(.:format)                  year_trends#new
+            edit_year_trend GET    /year_trends/:id/edit(.:format)             year_trends#edit
+                 year_trend GET    /year_trends/:id(.:format)                  year_trends#show
+                            PATCH  /year_trends/:id(.:format)                  year_trends#update
+                            PUT    /year_trends/:id(.:format)                  year_trends#update
+                            DELETE /year_trends/:id(.:format)                  year_trends#destroy
+                year_usages GET    /year_usages(.:format)                      year_usages#index
+                            POST   /year_usages(.:format)                      year_usages#create
+             new_year_usage GET    /year_usages/new(.:format)                  year_usages#new
+            edit_year_usage GET    /year_usages/:id/edit(.:format)             year_usages#edit
+                 year_usage GET    /year_usages/:id(.:format)                  year_usages#show
+                            PATCH  /year_usages/:id(.:format)                  year_usages#update
+                            PUT    /year_usages/:id(.:format)                  year_usages#update
+                            DELETE /year_usages/:id(.:format)                  year_usages#destroy
+          year_top_journals GET    /year_top_journals(.:format)                year_top_journals#index
+                            POST   /year_top_journals(.:format)                year_top_journals#create
+       new_year_top_journal GET    /year_top_journals/new(.:format)            year_top_journals#new
+      edit_year_top_journal GET    /year_top_journals/:id/edit(.:format)       year_top_journals#edit
+           year_top_journal GET    /year_top_journals/:id(.:format)            year_top_journals#show
+                            PATCH  /year_top_journals/:id(.:format)            year_top_journals#update
+                            PUT    /year_top_journals/:id(.:format)            year_top_journals#update
+                            DELETE /year_top_journals/:id(.:format)            year_top_journals#destroy
+              account_infos GET    /account_infos(.:format)                    account_infos#index
+                            POST   /account_infos(.:format)                    account_infos#create
+           new_account_info GET    /account_infos/new(.:format)                account_infos#new
+          edit_account_info GET    /account_infos/:id/edit(.:format)           account_infos#edit
+               account_info GET    /account_infos/:id(.:format)                account_infos#show
+                            PATCH  /account_infos/:id(.:format)                account_infos#update
+                            PUT    /account_infos/:id(.:format)                account_infos#update
+                            DELETE /account_infos/:id(.:format)                account_infos#destroy
+             download_files GET    /download_files(.:format)                   download_files#index
+                            POST   /download_files(.:format)                   download_files#create
+          new_download_file GET    /download_files/new(.:format)               download_files#new
+         edit_download_file GET    /download_files/:id/edit(.:format)          download_files#edit
+              download_file GET    /download_files/:id(.:format)               download_files#show
+                            PATCH  /download_files/:id(.:format)               download_files#update
+                            PUT    /download_files/:id(.:format)               download_files#update
+                            DELETE /download_files/:id(.:format)               download_files#destroy
+           new_user_session GET    /users/sign_in(.:format)                    devise/sessions#new
+               user_session POST   /users/sign_in(.:format)                    devise/sessions#create
+       destroy_user_session DELETE /users/sign_out(.:format)                   devise/sessions#destroy
+              user_password POST   /users/password(.:format)                   devise/passwords#create
+          new_user_password GET    /users/password/new(.:format)               devise/passwords#new
+         edit_user_password GET    /users/password/edit(.:format)              devise/passwords#edit
+                            PATCH  /users/password(.:format)                   devise/passwords#update
+                            PUT    /users/password(.:format)                   devise/passwords#update
+   cancel_user_registration GET    /users/cancel(.:format)                     devise/registrations#cancel
+          user_registration POST   /users(.:format)                            devise/registrations#create
+      new_user_registration GET    /users/sign_up(.:format)                    devise/registrations#new
+     edit_user_registration GET    /users/edit(.:format)                       devise/registrations#edit
+                            PATCH  /users(.:format)                            devise/registrations#update
+                            PUT    /users(.:format)                            devise/registrations#update
+                            DELETE /users(.:format)                            devise/registrations#destroy
+                       root GET    /                                           home#index
