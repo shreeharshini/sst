@@ -1,2 +1,17 @@
-<h1>Loginpage#show</h1>
-<p>Find me in app/views/loginpage/show.html.erb</p>
+<%= session[:user] = @user
+flash[:message] = "Data was saved successfully" %>
+ <%= form_tag(dynamic_report_list_loginpage_index_path, method: :get) do %>
+ <%= link_to "loginpage", :action => 'show' unless session[:user] %>
+<% if flash[:message] %>
+
+   <select id="company" name="company"> 
+      <option value="JR1">JR1</option> 
+      <option value="Samsung">Samsung</option> 
+      <option value="HTC">HTC</option> 
+   </select> 
+   <%= submit_tag "Search", :id => 'search' %>
+   <div><% else %>
+   	 <%= flash[:message] %>
+   </div>
+<% end %>
+<% end %>

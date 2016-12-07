@@ -6,14 +6,14 @@
 }
 
 table th {
-    background: #0c0ea4;
-    color: #eef1f6;
+    background: #01579B;
+    color: #ffffff;
     font-size: 14px;
 	padding: 10px 12px;
     text-align: left;
 }
 
-.table > thead > tbody > tr > th {
+.table > thead > tr > th {
    
 	padding: 16px 12px;
 }

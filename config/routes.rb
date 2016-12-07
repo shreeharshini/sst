@@ -21,11 +21,19 @@ Rails.application.routes.draw do
 	get "loginpage/report"
   get "loginpage/accessdetails"
 	get "home/index"
+
+  resources :loginpage do
+    collection do
+      get :dynamic_report_list
+    end
+  end
   
   resources :loginpage, :accounts, :reports, :platforms, 
             :source_reports_mappings, :year_trends, :year_usages,
             :year_top_journals, :account_infos, :download_files,
-            :contact_us
+            :contact_us ,:platform_report_details,
+            :source_reports_mappings, :requestfordemos, :create_additional_users,
+            :dynamicreports, :account_platform_details
 
   devise_for :users
   root to: 'home#index'

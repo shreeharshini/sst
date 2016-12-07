@@ -181,7 +181,7 @@
     
     
     
-    <!-- /stats_section -->
+     <!-- /stats_section -->
         <div class="stats_section" >
           <div class="container">
                 <ul>
@@ -190,7 +190,7 @@
                           <div class="col-xs-4 col-md-4"><%= image_tag ("icon/publishers_icon.png") %></div>
                           <div class="col-xs-8 col-md-8 total_counts">
                             <div class="row">
-                                <h1>2008</h1>
+                                <h1>160+</h1>
                                 <p>Publishers</p>
                             </div>
                           </div>
@@ -201,7 +201,7 @@
                           <div class="col-xs-4 col-md-4"><%= image_tag ("icon/books_icon.png") %></div>
                           <div class="col-xs-8 col-md-8 total_counts">
                             <div class="row">
-                                <h1>10000</h1>
+                                <h1>50000+</h1>
                                 <p>Books</p>
                             </div>
                           </div>
@@ -212,7 +212,7 @@
                           <div class="col-xs-4 col-md-4"><%= image_tag ("icon/journals_icon.png") %></div>
                           <div class="col-xs-8 col-md-8 total_counts">
                             <div class="row">
-                                <h1>1.23 Laks</h1>
+                                <h1>80000+</h1>
                                 <p>Journals</p>
                             </div>
                           </div>
@@ -230,10 +230,10 @@
 <div class="reports_section" id="reports">
   <div class="container">
       <div class="report_tittle">
-          Counter Usage <span>Reports</span>
+         Clear Stats, Actionable Insight
         </div>
         <div class="report_tittle_info">
-              <span>With our award winning reports and analytical platform,</span> you get what you want, we provide <span>all reports in all possible formats,</span> you can request for <b>customization, pull data from any given dates,</b> create your own title and package based cost per use reports, see through our advance charts and visuals what is being used and what's not in <b>your electronic resource collection, and that without wasting any minute,</b> ScholarlyStats based on decade <span>old experience in electronic resource analytics came up with value added reports</span> which simply understands what librarians want from library data.
+              <span>With our new upgraded analytical platform, you get what you want. We provide all Consolidated COUNTER reports in all possible formats. You can request a customized dashboard, pull stats for any given dates, create your own title and package-based cost per use reports, see through our advance charts and visuals what is being used and what's not in your electronic resource collection, and without wasting any time. MPSScholarlyStats based on decade old experience in electronic resource analytics came up with value-added reports which simply understands what librarians want from library data.</span>
         </div>
         
         <div class="row">
@@ -244,7 +244,7 @@
                       <%= image_tag ("icon/custom_reports_icon.png") %>
                     </div>
                    <div class="reports_info">
-                    ScholarlyStats being one of the oldest service on COUNTER analytics know what librarian wants from its data management vendor, we provide all the Consolidated COUNTER reports in formats like xls, csv and xml, where you can find each and every publisher you are subscribed with within a COUNTER report type, itâs a click and download report feature where all reports and value added data is available for you to access anytime anywhere.
+                    ScholarlyStats being one of the oldest service on COUNTER analytics know what librarian wants from its data management vendor, we provide all the Consolidated COUNTER reports in formats like xls, csv and xml, where you can find each and every publisher you are subscribed with within a COUNTER report type, its a click and download report feature where all reports and value added data is available for you to access anytime anywhere.
                    </div>
                 </div>
             </div>
@@ -339,7 +339,7 @@ and choose and acquire new content.</li>
 <div class="clients_speak_section">
   <div class="container">
       <div class="common_tittle text-center">
-          What Our Clients <span>Say</span>
+          What Our Clients Say
         </div>
         <div class="row">
           <!-- Carousel -->
@@ -462,34 +462,42 @@ and choose and acquire new content.</li>
 <div id="contact_section">
   <div class="container">
       <div class="common_tittle text-center">
-          Contact Us <span>Here</span>
+          Contact Us Here
         </div>
         <div class="common_tittle_info text-center">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's <br>
-tandard dummy text ever since the 1500s,
+          Please enter your query below and it will be sent to the helpdesk.
         </div>
         
         <div class="row">
           <div class="col-xs-12 col-sm-7 col-md-8 col-lg-8">
               <div class="common_form">
-                    <form>
-                        <ul>
-                           <li>
-                                <input type="text" class="form-control" id="name" placeholder="Name">
-                           </li>
-                          <li>
-                            <input type="text" class="form-control" id="email_id" placeholder="Email ID">
-                          </li>
-                          <li>
-                            <input type="text" class="form-control" id="subject" placeholder="Subject">
-                          </li>
-                          <li>
-                            <textarea class="form-control" rows="6" placeholder="Your Message"></textarea>
-                          </li>
-                      </ul>
-                      
-                      <button type="submit" class="submit_btn">Send Message <i class="fa fa-play-circle-o mrg_l_5"></i></button>
-                    </form>
+
+                <%= form_for :contact_u, url: contact_us_path do |f| %>
+                 
+                    <div class="field">
+                      <%= f.label :name %>
+                      <%= f.text_field :name, class: "form-control" %>
+                    </div>
+
+                    <div class="field">
+                      <%= f.label :email %>
+                      <%= f.text_field :email, class: "form-control"%>
+                    </div>
+
+                    <div class="field">
+                      <%= f.label :subject %>
+                      <%= f.text_field :subject, class: "form-control"%>
+                    </div>
+
+                    <div class="field">
+                      <%= f.label :message %>
+                      <%= f.text_area :message, class: "form-control"%>
+                    </div>
+
+                    <div class = "field">
+                    <%= f.submit "send message", class: "btn btn-primary" %>
+                    </div>
+                  <% end %>
                 </div>
             </div>
             
@@ -543,8 +551,8 @@ tandard dummy text ever since the 1500s,
 <footer class="footer text-center">
   <div class="container">
       <div class="row">
-        <div class="col-xs-12 col-md-12"><a href="#">Terms of Use</a>  <span>|</span>  <a href="#">Privacy and Policy</a>  <span>|</span>  <a href="#">License</a>  <span>|</span>  <a href="#">Support</a></div>
-        <div class="col-xs-12 col-md-12 footer_text">© 2016 Afairs Exhibitions &amp; Media Pvt. Ltd. All rights reserved.</div>
+        <div class="col-xs-12 col-md-12"><a href="#">Terms of Use</a>  <span>|</span>  <a href="#">Privacy and Policy</a> </div>
+        <div class="col-xs-12 col-md-12 footer_text">Powered by MPS Ltd. - All Rights Reserved.</div>
           <div class="col-xs-12 social_icon">
               <a href="#" target="_blank" class="icon-button facebook"><i class="fa fa-facebook"></i><span></span></a>
               <a href="#" target="_blank" class="icon-button twitter"><i class="fa fa-twitter"></i><span></span></a>
