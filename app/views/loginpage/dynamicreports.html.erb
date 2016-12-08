@@ -45,8 +45,8 @@ function test(){
           <%= form_tag(dynamic_report_list_loginpage_index_path, method: :get) do %>
           <div class="form-group">
             <label>Select Report Type:</label>
-            <select  id="selectReportType" class="form-control" onchange="test()" name="dyanamicreports">
-              params = strUser
+            <select  id="selectReportType" class="form-control" name="Report">
+             <!--  params = strUser -->
               <option value="-1">--Select Report Type--</option>
               <option value="JR1">JR1 (Consolidated Journal Report 1, Consolidated COUNTER JR1 Report of all subscribed Platforms)</option>
               <option value="JR2">JR2 (Consolidated Journal Report 2, Consolidated COUNTER JR2 Report of all subscribed Platforms)</option>
@@ -139,5 +139,15 @@ function test(){
     <script src="js/date-jquery-ui.min.js"></script>
     <script src="js/date-angular.min.js"></script>
     <script src="js/date.js"></script>
+     <script type="text/javascript">
+   
+    $("#selectReportType").change(function(){
+
+      
+      var value2 = $('select#selectReportType option:selected').val();
+      alert(value2);
+    });
+
+  </script>
   </body>
 </html>

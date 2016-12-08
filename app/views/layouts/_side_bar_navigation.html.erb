@@ -1,11 +1,18 @@
+<body class="dashboard-page">
+	<!--<script>
+	        var theme = $.cookie('protonTheme') || 'default';
+	        $('body').removeClass (function (index, css) {
+	            return (css.match (/\btheme-\S+/g) || []).join(' ');
+	        });
+	        if (theme !== 'default') $('body').addClass(theme);
+        </script>-->
 	<nav class="main-menu">
 		<ul>
 			<li>
-			
+				<a href="index.html.erb">
 					<i class="fa fa-home nav_icon"></i>
 					<span class="nav-text">
-					
-							<%= link_to "Home", loginpage_index_path %>		</span>
+Home					</span>
 				</a>
 			</li>
 			
@@ -19,13 +26,13 @@
 				</a>
 				<ul>
 					<li>
-						<a class="subnav-text" href="/loginpage/report">COUNTER and Custom Reports</a>
+						<a class="subnav-text" href="/loginpage/report">COUNTER & Custom Reports</a>
 					</li>
 					<li>
 						<a class="subnav-text" href="/loginpage/sourcereports">Source Reports</a>
 					</li>
                     <li>
-					  <a class="subnav-text" href="/loginpage/dynamicreports">Dynamic Reports</a>
+					  <a class="subnav-text" href="/dynamicreports/show">Dynamic Reports</a>
 					</li>
 					<li>
 					  <a class="subnav-text" href="/loginpage/report">Search By ISSN/ISBN</a>
@@ -45,27 +52,27 @@
 						</a>
 					</li>
 					<li>
-						<a class="subnav-text" href="/loginpage/accessdetails">
+						<a class="subnav-text" href="#">
 							Access Details
 					  </a>
 					</li>
 					<li>
 						<a class="subnav-text" href="#">
-								Library Account Details						</a>
+Library Account Details						</a>
 					</li>
 					<li>
 						<a class="subnav-text" href="#">
-								Integration Partners						</a>
+Integration Partners						</a>
 					</li>
                     	<li>
 						<a class="subnav-text" href="/users/sign_up">
-								Create Additional User Accounts						</a>
+Create Additional User Accounts						</a>
 					</li>	<li>
 						<a class="subnav-text" href="#">
-								Upload Data						</a>
+Upload Data						</a>
 					</li>	<li>
 						<a class="subnav-text" href="#">
-								Export Data						</a>
+Export Data						</a>
 					</li>
 				</ul>
 			</li>
@@ -81,12 +88,14 @@
 				</a>
 				<ul>
 					<li>
-						<a class="subnav-text" href="/contact_us/new">Contact Us</a>
+						<a class="subnav-text" href="/contact_us/new">Contact Us
+</a>
 					</li>
 					<li>
-						<a class="subnav-text" href="/support/faq">FAQs</a>
+						<a class="subnav-text" href="/support/faq">FAQs
+</a>
 					</li>
-          <li>
+                    <li>
 						<a class="subnav-text" href="/support/aboutus">About Us</a>
 					</li>
 					
@@ -97,13 +106,21 @@
 			</li>
 		</ul>
 		<ul class="logout">
+			<!-- <li> <a><%= link_to('Logout', destroy_user_session_path, :method => :delete) %> </a> </li> -->
 			<li>
-			<a>
-			<i>
+			<a href="/users/sign_out" data-method="delete" rel="nofollow">
+			<i class="icon-off nav-icon"></i>
 			<span class="nav-text">
-			<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>  
-			</span><i>
+			Logout
+			</span>
 			</a>
 			</li>
 		</ul>
 	</nav>
+	<section class="wrapper scrollable">
+		<nav class="user-menu">
+			<a href="javascript:;" class="main-menu-access">
+			<i class="icon-proton-logo"></i>
+			<i class="icon-reorder"></i>
+			</a>
+		</nav>
