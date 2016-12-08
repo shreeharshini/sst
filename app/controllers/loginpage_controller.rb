@@ -1,6 +1,7 @@
 class LoginpageController < ApplicationController
   before_action :authenticate_user!
   def index
+   @yeartoptrends = YearTopJournal.all
   end
 
   def show

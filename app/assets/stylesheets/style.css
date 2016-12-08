@@ -4982,20 +4982,5 @@ span {
    
 }
 
-/*for color code*/
 
-.square-block-not-available {
-    background: #F00;
-    width: 8px;
-    height: 8px;
-}
-
-
-
-
-.square-block-selected {
-    background: #090;
-    width: 8px;
-    height: 8px;
-}
 

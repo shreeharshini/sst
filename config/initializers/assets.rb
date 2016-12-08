@@ -45,6 +45,8 @@ Rails.application.config.assets.precompile += %w( ie-emulation-modes-warning.js 
 Rails.application.config.assets.precompile += %w( jquery.basictable.min.js )
 Rails.application.config.assets.precompile += %w( validator.min.js )
 Rails.application.config.assets.precompile += %w( logger.js )
+Rails.application.config.assets.precompile += %w( date-angular.min.js )
+Rails.application.config.assets.precompile += %w( date.js )
 
 Rails.application.config.assets.precompile += %w( lsb.js )
 Rails.application.config.assets.precompile += %w( materialize.min.js )
@@ -58,4 +60,5 @@ Rails.application.config.assets.precompile += %w( monthly.js )
 Rails.application.config.assets.precompile += %w( morris.js )
 Rails.application.config.assets.precompile += %w( jquery2.0.3.min.js )
 Rails.application.config.assets.precompile += %w( jquery1.9.1.min.js )
+
 

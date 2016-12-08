@@ -391,3 +391,16 @@ background-size:cover; background-position:center center; background-image:url(.
 .my_login_box .modal-title span{ color:#ee2e2a;}
 .my_login_box .submit_btn{ width:100% !important;}
 .my_login_box .checkbox label{ font-size:15px; font-weight:300 !important;}
+
+
+.square-block-not-available {
+    background: #F00;
+    width: 10px;
+    height: 8px;
+}
+
+.square-block-selected {
+    background: #090;
+    width: 8px;
+    height: 8px;
+}
