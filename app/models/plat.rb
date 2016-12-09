@@ -1,2 +1,0 @@
-class Plat < ApplicationRecord
-end

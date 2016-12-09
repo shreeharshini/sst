@@ -85,6 +85,28 @@ YearUsage.create(Institution_Code: 'SS24031-sjsu', Report_Type: 'JR1', YTD: 8627
 YearUsage.create(Institution_Code: 'SS48725-uva', Report_Type: 'BR1', YTD: 357558)
 YearUsage.create(Institution_Code: 'SS48725-uva', Report_Type: 'DB1', YTD: 6575316)
 
+#table data for top journals
+																																																							
+YearTrend.create(institution_code: 'SS00038-otago',processing_month: 9,processing_year: 2016,Jan_Stats:153032 , Feb_Stats: 210198 , Mar_Stats: 363631,Apr_Stats:410775 ,May_Stats:396942,Jun_Stats:254646 ,Jul_Stats:248691 , Aug_Stats:396143 , Sept_Stats:421145)
+YearTrend.create(institution_code: 'SS00039-unsw',processing_month: 9,processing_year: 2016,Jan_Stats:104034 , Feb_Stats: 117004 , Mar_Stats: 214274,Apr_Stats:341919 ,May_Stats:355243,Jun_Stats:137451 ,Jul_Stats:129397 , Aug_Stats:234369 , Sept_Stats:227205)
+YearTrend.create(institution_code: 'SS00063-ual',processing_month: 9,processing_year: 2016,Jan_Stats:146033 , Feb_Stats: 174414 , Mar_Stats: 331811,Apr_Stats:396362 ,May_Stats:457111,Jun_Stats:233182 ,Jul_Stats:221163 , Aug_Stats:388571 , Sept_Stats:348903)
+YearTrend.create(institution_code: 'SS00064-sdl',processing_month: 9,processing_year: 2016,Jan_Stats:318532 , Feb_Stats: 393393 , Mar_Stats: 377618,Apr_Stats:382498 ,May_Stats:310216,Jun_Stats:308695 ,Jul_Stats:311730 , Aug_Stats:327752 , Sept_Stats:349924 )
+YearTrend.create(institution_code: 'SS00079-aur',processing_month: 9,processing_year: 2016,Jan_Stats:43023 , Feb_Stats: 102207 , Mar_Stats: 111610,Apr_Stats:133371 ,May_Stats:68773,Jun_Stats:47020 ,Jul_Stats:62514 , Aug_Stats:39751 , Sept_Stats:104166)
+YearTrend.create(institution_code: 'SS00087-ariz',processing_month: 9,processing_year: 2016,Jan_Stats:175760 , Feb_Stats: 264886 , Mar_Stats: 288296,Apr_Stats:286354 ,May_Stats:155958,Jun_Stats:185537 ,Jul_Stats:140012 , Aug_Stats:133943 , Sept_Stats:275030 )
+YearTrend.create(institution_code: 'SS00106-trom',processing_month: 9,processing_year: 2016,Jan_Stats:24652 , Feb_Stats: 29386 , Mar_Stats: 28732,Apr_Stats:36364 ,May_Stats:31456,Jun_Stats:21104 ,Jul_Stats:12123 , Aug_Stats:22681 , Sept_Stats:30194)
+YearTrend.create(institution_code: 'SS00141-flop',processing_month: 9,processing_year: 2016,Jan_Stats:11734 , Feb_Stats: 10551 , Mar_Stats: 5940,Apr_Stats:8258 ,May_Stats:9957,Jun_Stats:10349 ,Jul_Stats:9838 , Aug_Stats:11249 , Sept_Stats:8424)
+YearTrend.create(institution_code: 'SS00148-cdl',processing_month: 9,processing_year: 2016,Jan_Stats:1034512 , Feb_Stats: 1339257 , Mar_Stats: 1289248,Apr_Stats:8258 ,May_Stats:1709622,Jun_Stats:1223653 ,Jul_Stats:1223029 , Aug_Stats:1243667 , Sept_Stats:1267720)
+YearTrend.create(institution_code: 'SS00149-ucd',processing_month: 9,processing_year: 2016,Jan_Stats:170064 , Feb_Stats: 198675 , Mar_Stats: 177796,Apr_Stats:8258 ,May_Stats:179684,Jun_Stats:140553 ,Jul_Stats:133355 , Aug_Stats:148583 , Sept_Stats:143355)
+YearTrend.create(institution_code: 'SS00150-ucb',processing_month: 9,processing_year: 2016,Jan_Stats:280126 , Feb_Stats: 461453 , Mar_Stats: 455658,Apr_Stats:8258 ,May_Stats:478587,Jun_Stats:240451 ,Jul_Stats:256284 , Aug_Stats:304891 , Sept_Stats:513011)
+YearTrend.create(institution_code: 'SS00151-ucr',processing_month: 9,processing_year: 2016,Jan_Stats:80729 , Feb_Stats: 112641 , Mar_Stats: 105154,Apr_Stats:8258 ,May_Stats:87825,Jun_Stats:73361 ,Jul_Stats:63554 , Aug_Stats:64168 , Sept_Stats:55614)
+YearTrend.create(institution_code: 'SS00152-ucsc',processing_month: 9,processing_year: 2016,Jan_Stats:68934 , Feb_Stats: 91432 , Mar_Stats: 73528,Apr_Stats:8258 ,May_Stats:79548,Jun_Stats:57529 ,Jul_Stats:41003 , Aug_Stats:45524 , Sept_Stats:41062)
+YearTrend.create(institution_code: 'SS00153-uci',processing_month: 9,processing_year: 2016,Jan_Stats:173545 , Feb_Stats: 166997 , Mar_Stats: 199960,Apr_Stats:8258 ,May_Stats:211266,Jun_Stats:122231 ,Jul_Stats:123610 , Aug_Stats:11249 , Sept_Stats:109012)
+YearTrend.create(institution_code: 'SS00154-ucsd',processing_month: 9,processing_year: 2016,Jan_Stats:248603 , Feb_Stats: 290780 , Mar_Stats: 340487,Apr_Stats:8258 ,May_Stats:261641,Jun_Stats:434714 ,Jul_Stats:332465 , Aug_Stats:11249 , Sept_Stats:419214)
+YearTrend.create(institution_code: 'SS00155-ucsf',processing_month: 9,processing_year: 2016,Jan_Stats:122436 , Feb_Stats: 116199 , Mar_Stats: 126740,Apr_Stats:8258 ,May_Stats:129428,Jun_Stats:135257 ,Jul_Stats:136415 , Aug_Stats:150042 , Sept_Stats:149684)
+YearTrend.create(institution_code: 'SS00156-ucm',processing_month: 9,processing_year: 2016,Jan_Stats:14427 , Feb_Stats: 27263 , Mar_Stats: 31504,Apr_Stats:8258 ,May_Stats:163534,Jun_Stats:33000 ,Jul_Stats:51762 , Aug_Stats:13449 , Sept_Stats:32469)
+YearTrend.create(institution_code: 'SS00157-ucsb',processing_month: 9,processing_year: 2016,Jan_Stats:106221 , Feb_Stats: 154033 , Mar_Stats: 160008,Apr_Stats:8258 ,May_Stats:133485,Jun_Stats:212239 ,Jul_Stats:220193 , Aug_Stats:98134 , Sept_Stats:88512)
+YearTrend.create(institution_code: 'SS00158-ucla',processing_month: 9,processing_year: 2016,Jan_Stats:312001 , Feb_Stats: 473282 , Mar_Stats: 375157,Apr_Stats:8258 ,May_Stats:626805,Jun_Stats:282065 ,Jul_Stats:250118 , Aug_Stats:282346 , Sept_Stats:263300)
+YearTrend.create(institution_code: 'SS09122-due',processing_month: 9,processing_year: 2016,Jan_Stats:81036 , Feb_Stats: 79956 , Mar_Stats: 88521,Apr_Stats:8258 ,May_Stats:76911,Jun_Stats:83236 ,Jul_Stats:69716 , Aug_Stats:77074 , Sept_Stats:68171)
 
 
 

@@ -1,9 +1,15 @@
 class LoginpageController < ApplicationController
   before_action :authenticate_user!
   def index
-   @yeartoptrends = YearTopJournal.all
+   @yeartoptrends = YearUsage.all
+   @data = []
+   @yeartoptrends.each do |y|
+    @data << (y.YTD)
+   end
+   @data = @data.join(",")
   end
 
+ 
   def show
   end
 

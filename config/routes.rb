@@ -2,9 +2,6 @@ Rails.application.routes.draw do
 
  
   
-  resources :platform_reports
-  resources :platforms
-  resources :plats
   get 'download_files/csv'
 
   get 'download_files/xlsx'
@@ -26,7 +23,8 @@ Rails.application.routes.draw do
   
   resources :loginpage, :accounts, :reports, :platforms, 
             :source_reports_mappings, :year_trends, :year_usages,
-            :year_top_journals, :account_infos, :download_files
+            :year_top_journals, :account_infos, :download_files, :platform_reports
+
 
   devise_for :users
   root to: 'home#index'
