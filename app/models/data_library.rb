@@ -1,0 +1,2 @@
+class DataLibrary < ApplicationRecord
+end

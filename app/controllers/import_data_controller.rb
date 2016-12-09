@@ -16,6 +16,7 @@ class ImportDataController < ApplicationController
   end
   def create
     @import_data = ImportData.new(import_data_params)
+    @import_data.user_id = current_user.id
     if @import_data.save
       redirect_to import_data_path, notice: "The file has been uploaded."
     else
@@ -29,7 +30,7 @@ class ImportDataController < ApplicationController
 
   private
   def import_data_params
-    params.require(:import_data).permit(:attachment)
+    params.require(:import_data).permit(:attachment, :user_id)
   end
   #end
 end

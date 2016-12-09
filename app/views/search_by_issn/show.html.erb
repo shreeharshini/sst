@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+      <%= render :partial => '/layouts/side_bar_navigation'%>
+      <%= render :partial => '/layouts/header'%>
+      <!-- ********JQuery Non-Conflicting library for autoComplete Start********
+Generating autosuggestion... 
+(In case not getting result, please try with similar search without clicking in suggestion box.)
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- bootstrap-css -->
+<link rel="stylesheet" href="/images/libraries/common/css/bootstrap.css">
+<!-- //bootstrap-css -->
+<!-- Custom CSS -->
+<link href="/images/libraries/common/css/style.css" rel='stylesheet' type='text/css' />
+<!-- font CSS -->
+
+<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
+
+  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+<!-- font-awesome icons -->
+<link rel="stylesheet" href="/images/libraries/common/css/font.css" type="text/css"/>
+<link href="/images/libraries/common/css/font-awesome.css" rel="stylesheet"> 
+<!-- //font-awesome icons -->
+<script src="/images/libraries/common/js/jquery2.0.3.min.js"></script>
+<script src="/images/libraries/common/js/bootstrap.js"></script>
+<script src="/images/libraries/common/js/custom.min.js"></script> 
+
+<script src="/images/libraries/common/js/modernizr.js"></script>
+<!--<script src="js/jquery.cookie.js"></script>
+-->
+    
+
+<link rel="stylesheet" href="/images/libraries/common/css/morris.css">
+<!-- //charts -->
+<!--skycons-icons-->
+<!--<script src="js/skycons.js"></script>
+--><!--//skycons-icons-->
+
+
+<!--test collapse-->
+<!-- FastClick -->
+<link rel="stylesheet" href="/images/libraries/common/css/custom.min.css" type="text/css"/>
+
+
+<!-- Use non-conflicting mode to avoid conflicts with any existing JQuery Library or New One -->
+<script type="text/javascript" src="/scripts/jquery-custom-1.4.2.min.js"></script> 
+<script src="/scripts/jquery.autocomplete.js"></script>
+<script type="text/javascript">
+       //create this naming for Jquery 1.4.2 version
+       var jQuery_1_4_2 = jQuery.noConflict(true);
+</script>
+<!-- ********JQuery Non-Conflicting library for autoComplete End******** -->
+
+<link rel="stylesheet" type="text/css" href="/styles/autosuggest_style.css" />
+        <!-- HTTP 1.1 -->
+<!--<meta http-equiv="Cache-Control" content="no-store"/>-->
+<!-- HTTP 1.0 -->
+<!-- <meta http-equiv="Pragma" content="no-cache"/>-->
+<!-- Prevents caching at the Proxy Server -->
+<!-- <meta http-equiv="Expires" content="0"/>-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="AppFuse 2.0" />
+<!-- leave this for stats please -->
+<link rel="icon" href="/images/favicon.ico" />
+
+
+        <ol class="breadcrumb"> <li><a href="/librarian/dashboard">Home</a></li>
+         <li><a href="/libraries/searchByISSN/LcollapseSix-03">Search By ISSN & ISBN</a></li> 
+        
+        </ol>
+
+<br>
+
+  <h4 > Search By ISSN/ISBN </h4>
+  <p class="pad-top10 mar-btm20">Please choose Search Type and then enter ISSN/ISBN to view Cost per Usage details. You can calculate Cost per Usage dynamically.
+</p>
+<div class="agile-Updating-grids">  <div class="agile-grids pad-top10">
+<div id="messagearea" class="space"> </div>
+<%= form_for :data_library,:url => url_for(:controller => "search_by_issn", :action =>"search")   do |f| %>
+  <div class="col-md-5 mb10">
+    <div id="search_type">
+      <%= f.select :select_type,"<option>Select Search Type</option><option>Journal Print ISSN</option><option>journalOnlineISSN</option><option>bookISBN</option><option>bookISSN</option>".html_safe %>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <%= f.label :enter_issn %>
+    <%= f.text_field :Enter_issn, id: "auto_complete" %>
+    <!-- <input class="typeahead" type="text" placeholder="Oscar winners for Best Picture"> -->
+  <div class="actions">
+  </div>
+  <%= button_to "search", :class => "button" %>
+  <!-- <div class="button raised">
+    <a href="#" class="hoverable"> <div class="anim"></div><span>Search</span></a>
+  </div> -->
+<% end %>
+<script type="text/javascript">
+  $("#search_type").change(function(){
+    alert("jhghjgj");
+  });
+  $('.auto_complete').typeahead({
+    alert("dsfdsf");
+    
+  });
+</script>
+
+
+
+
+    </div>
+       <div class="clearfix"></div>
+  </div>
+  <br>
+
+    <div class="alert alert-info" id="noDataFoundId"> No Data Found. Please enter accurate ISSN/ISBN.</div>
+
+
+<div class="clearfix"></div>
+  <br><br>
+
+  
+    <div id="data"></div>
+  
+ 
+      </div>
+      </div>
+          
+
+
+    <%= render :partial => '/layouts/footer'%>
+
+    </section>
+          </body>     
+</html>
+ 

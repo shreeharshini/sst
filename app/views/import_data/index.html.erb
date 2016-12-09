@@ -190,16 +190,6 @@ function getImgDirectory(source) {
  <section class="wrapper scrollable">
  
 
-
-
-
-
-
-
-
-
-
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script type="text/javascript">
@@ -296,20 +286,6 @@ function useraction(url)
       <div class="modal-body">
         <p>Are you sure you want to logout ?</p>
       </div>
-      <div class="modal-footer">
-           <div class="row">
-               <div class=" col-sm-3 mt-10">
- 					<div class="button raised">
-   						<a href="javascript:;" id="buttonId" name="button2" data-dismiss="modal" class="hoverable" onclick="window.open('/libraries/signout','_self')"> <div class="anim"></div><span>Yes</span></a>
-    				</div>
-				</div>
-                <div class=" col-sm-3 mt-10">
- 					<div class="button raised">
-   						<a href="#" data-dismiss="modal" aria-hidden="true" id="button" name="button"  class="hoverable" > <div class="anim"></div><span>No</span></a>
-    				</div>
-				</div>
-
-			</div>
 
 </div>
     </div>
@@ -333,21 +309,6 @@ function useraction(url)
   </div>
 </div> 
 
-
-<!--
-        	<script src="/images/libraries/common/js/bootstrap.js"></script>
-
-       <script src="/images/libraries/common/js/custom.min.js"></script> 
-       
-    <script type="text/javascript" src="/images/js/jquery.min.js"></script>  -->
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/modules/data.js"></script>
-<script src="https://code.highcharts.com/modules/drilldown.js"></script>
-<script src="https://code.highcharts.com/modules/no-data-to-display.js"></script>
-
-
-
 <div class="pageLoadContainer" ></div>
          <div class="row-fluid" style="margin-bottom:50px; min-height:450px;">
 		    <div class="span3">
@@ -370,8 +331,6 @@ function useraction(url)
   <p class="pad-top10 mar-btm20">Upload Your Cost data and Manual data here</p>
 <br>
      <ul class="nav nav-tabs" role="tablist">
-		
-		
     		<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Upload Cost Data</a></li>
     		<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Upload Manual Data</a></li>
 
@@ -395,49 +354,12 @@ function useraction(url)
 <script type="text/javascript" src="/scripts/sortScript/jquery.tablesorter.pager.js"></script>
 
 
-<script>
-function downloadTemplate(pubcode){ 
-	var url="/"+pubcode+"/downloadTemplate/Price_per_Use_Template/xlsx";
-	window.location.href="/import_data/index"  // 
-}
-function submitFormFeed(val){
-	var url = "/libraries/"+val;
-	document.forms['formfeed'].action=url;
-	document.forms['formfeed'].method="post";
-	document.forms['formfeed'].submit();
-}
-</script>
+
   <!-- tables -->
 <link rel="stylesheet" type="text/css" href="/images/libraries/css/table-style.css" />
 <link rel="stylesheet" type="text/css" href="/images/libraries/css/basictable.css" />
 <script type="text/javascript" src="/images/libraries/js/jquery.basictable.min.js"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
-      $('#table').basictable();
 
-      $('#table-breakpoint').basictable({
-        breakpoint: 768
-      });
-
-      $('#table-swap-axis').basictable({
-        swapAxis: true
-      });
-
-      $('#table-force-off').basictable({
-        forceResponsive: false
-      });
-
-      $('#table-no-resize').basictable({
-        noResize: true
-      });
-
-      $('#table-two-axis').basictable();
-
-      $('#table-max-height').basictable({
-        tableWrapper: true
-      });
-    });
-</script>
       <div class="clearfix"></div>
       <!--breadcrumb Ends-->
       <!-- dashboard heading start-->
@@ -448,12 +370,7 @@ function submitFormFeed(val){
 	<p class="pad-top10 mar-btm20">This section allows you to upload your title and price information for generation of Price per Usage Report.</p>
 	<br>
 	<p class="black_12">Please download the template and upload the file.
-		<!-- <script type="text/javascript">
-			var url=downloadTemplate('libraries');
-			document.write("<a	href="+"'"+url+"'"+">");
-		</script>
-		&nbsp;&nbsp;<img src="/images/download.gif"> <b>Template</b>
-			</a> -->
+		
 	
 	
 	<%= link_to 'xlsx', import_data_xlsx_path %><img src="/images/xls.gif"%> Template	
@@ -467,7 +384,7 @@ function submitFormFeed(val){
 </div>	
 <div class = "upload">
 	<div class="table-responsive"> 
-	 <caption><h3 class="color_txt pull-left">Upload File1213</h3></caption>
+	 <caption><h3 class="color_txt pull-left">Upload File</h3></caption>
 		<table class="table table-striped" id="grid-heading">
 			<tbody>
 				<tr>
@@ -480,20 +397,6 @@ function submitFormFeed(val){
 							<%= f.submit %>
 						</div>
 					<% end %>
-								<!-- 
-<form id="formfeed" name="checkData" onsubmit="return true;" action='uploadFile' method="POST" enctype="multipart/form-data">
-						<input type="hidden" name="collection" id="collection" placeholder="id" value="tempCollection">
-					<td >Choose file to upload cost data for generation of Cost per Usage Reports.</td> 
-	        	    <td class="align_center"> <input type="file" accept='text/xlsx' name="upload" value="" id="formfeed_upload"/> </td>
-	                <td class="align_center">
-	                	<div class="button raised">
-   							<a href="/import_data/index" id="buttonId" class="hoverable" onclick='submitFormFeed( "return submitForm(url);");'> <div class="anim"></div><span>Upload</span></a>
-    					</div>
-	                </td>
-	             </form> -->
-
-
-
 
 				</tr>
 			</tbody>
@@ -512,31 +415,7 @@ function submitFormFeed(val){
 <script type="text/javascript" src="/scripts/Encoder.js"></script> 
 <!-- <link rel="stylesheet" href="/images/css/ui/1.9.2/themes/base/jquery-ui.css" /> -->
 
-<script>
-function validate_form(){
 
-}
-$('#fileupload').fileupload({
-	alert("hi");
-    dataType: 'json',
-    add: function (e, data) {            
-        $("#buttonId").off('click').on('click', function () {
-            data.submit();
-        });
-    },
-});
-function downloadTemplate(pubcode){ 
-	var url="/"+pubcode+"/downloadTemplate/Price_per_Use_Template/xlsx";
-	return url; 
-}
-function submitForm(url){
-	var url = "/libraries/"+url;
-	document.forms['formID'].action=url;
-	document.forms['formID'].method="post";
-	document.forms['formID'].submit();
-}
-
-</script>
   <!-- tables -->
 <link rel="stylesheet" type="text/css" href="/images/libraries/css/table-style.css" />
 <link rel="stylesheet" type="text/css" href="/images/libraries/css/basictable.css" />
@@ -585,45 +464,30 @@ function submitForm(url){
 
 	</div>
 <div class="table-responsive"> 
-				 <caption><h3 class="color_txt pull-left">Upload Manual Data File14234</h3></caption>
+				 <caption><h3 class="color_txt pull-left">Upload Manual Data File</h3></caption>
 
 		<table class="table table-striped" id="grid-heading">
             <tbody>
             	<tr>
-								<%= form_for :import_data, url: import_data_path do |f| %>
+					<%= form_for :import_data, url: import_data_path do |f| %>
 
-												<div class="field">
-															<%= f.file_field :attachment%>
-												</div>
+									<div class="field">
+												<%= f.file_field :attachment%>
+									</div>
 
-												<div class="actions">
-															<%= f.submit %>
-												</div>
-								<% end %>     
+									<div class="actions">
+												<%= f.submit %>
+									</div>
+					<% end %>     
 							</tr>
 						</tbody>
 		</table>
-</div>      		
-							
-
-        	
-
-
-
-
+</div> 
 
 <!--  <div class="navbar navbar-inverse navbar-fixed-bottom version"> -->
-  <%= render :partial => '/layouts/footer'%>
+<%= render :partial => '/layouts/footer'%>
 <!-- </div> -->
 
-<!-- 	<script src="/images/libraries/common/js/bootstrap.js"></script>
-    <script src="/images/libraries/common/js/custom.min.js"></script> -->
-    
-    <!--new highchart start-->
-<!-- <script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/modules/drilldown.js"></script>
-<script src="https://code.highcharts.com/modules/data.js"></script>	 -->
     </section>
         	</body>
       

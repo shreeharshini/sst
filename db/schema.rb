@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161205061754) do
+ActiveRecord::Schema.define(version: 20161207092518) do
 
   create_table "account_infos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "account_code"
@@ -51,6 +51,13 @@ ActiveRecord::Schema.define(version: 20161205061754) do
     t.integer  "account_id"
   end
 
+  create_table "account_platform_details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "account_id"
+    t.integer  "platform_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "account_platforms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "account_id"
     t.integer  "platform_id"
@@ -69,7 +76,32 @@ ActiveRecord::Schema.define(version: 20161205061754) do
     t.integer  "number_of_platforms"
     t.string   "activation_status"
     t.string   "account_code"
-    t.integer  "user_id"
+  end
+
+  create_table "counter_and_customs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.integer  "year"
+    t.string   "description"
+    t.string   "report_type"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "data_libraries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "institution_code"
+    t.string   "pub_code"
+    t.string   "journal_title"
+    t.string   "print_issn"
+    t.string   "online_issn"
+    t.string   "report_type"
+    t.integer  "processing_month"
+    t.integer  "ytd"
+    t.date     "processing_year"
+    t.string   "isbn"
+    t.string   "issn"
+    t.string   "platform_name"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "fyears", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -82,6 +114,13 @@ ActiveRecord::Schema.define(version: 20161205061754) do
     t.string   "attachment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "platform_report_details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "platform_id"
+    t.integer  "report_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "platform_reports", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -119,6 +158,17 @@ ActiveRecord::Schema.define(version: 20161205061754) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "source_report_mappings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "report_id"
+    t.integer  "platform_id"
+    t.integer  "month"
+    t.integer  "year"
+    t.integer  "account_id"
+    t.string   "select_pid"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "source_reports_mappings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "report_id"
     t.integer  "platform_id"
@@ -128,6 +178,15 @@ ActiveRecord::Schema.define(version: 20161205061754) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "selectpid"
+  end
+
+  create_table "user_accounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.integer  "account_id"
+    t.integer  "role_id"
+    t.string   "updated_by"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

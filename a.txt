@@ -1,0 +1,97 @@
+                                 Prefix Verb   URI Pattern                                        Controller#Action
+                    counter_and_customs GET    /counter_and_customs(.:format)                     counter_and_customs#index
+                                        POST   /counter_and_customs(.:format)                     counter_and_customs#create
+                 new_counter_and_custom GET    /counter_and_customs/new(.:format)                 counter_and_customs#new
+                edit_counter_and_custom GET    /counter_and_customs/:id/edit(.:format)            counter_and_customs#edit
+                     counter_and_custom GET    /counter_and_customs/:id(.:format)                 counter_and_customs#show
+                                        PATCH  /counter_and_customs/:id(.:format)                 counter_and_customs#update
+                                        PUT    /counter_and_customs/:id(.:format)                 counter_and_customs#update
+                                        DELETE /counter_and_customs/:id(.:format)                 counter_and_customs#destroy
+               loginpage_search_by_issn GET    /loginpage/search_by_issn(.:format)                loginpage#search_by_issn
+               loginpage_DynamicReports GET    /loginpage/DynamicReports(.:format)                loginpage#DynamicReports
+                loginpage_sourcereports GET    /loginpage/sourcereports(.:format)                 loginpage#sourcereports
+                       loginpage_report GET    /loginpage/report(.:format)                        loginpage#report
+loginpage_library_account_details_index GET    /loginpage/library_account_details/index(.:format) loginpage/library_account_details#index
+                       export_file_xlsx GET    /export_file/xlsx(.:format)                        export_file#xlsx
+                        export_file_csv GET    /export_file/csv(.:format)                         export_file#csv
+                       import_data_xlsx GET    /import_data/xlsx(.:format)                        import_data#xlsx
+                        loginpage_index GET    /loginpage(.:format)                               loginpage#index
+                                        POST   /loginpage(.:format)                               loginpage#create
+                          new_loginpage GET    /loginpage/new(.:format)                           loginpage#new
+                         edit_loginpage GET    /loginpage/:id/edit(.:format)                      loginpage#edit
+                              loginpage GET    /loginpage/:id(.:format)                           loginpage#show
+                                        PATCH  /loginpage/:id(.:format)                           loginpage#update
+                                        PUT    /loginpage/:id(.:format)                           loginpage#update
+                                        DELETE /loginpage/:id(.:format)                           loginpage#destroy
+                               accounts GET    /accounts(.:format)                                accounts#index
+                                        POST   /accounts(.:format)                                accounts#create
+                            new_account GET    /accounts/new(.:format)                            accounts#new
+                           edit_account GET    /accounts/:id/edit(.:format)                       accounts#edit
+                                account GET    /accounts/:id(.:format)                            accounts#show
+                                        PATCH  /accounts/:id(.:format)                            accounts#update
+                                        PUT    /accounts/:id(.:format)                            accounts#update
+                                        DELETE /accounts/:id(.:format)                            accounts#destroy
+                                reports GET    /reports(.:format)                                 reports#index
+                                        POST   /reports(.:format)                                 reports#create
+                             new_report GET    /reports/new(.:format)                             reports#new
+                            edit_report GET    /reports/:id/edit(.:format)                        reports#edit
+                                 report GET    /reports/:id(.:format)                             reports#show
+                                        PATCH  /reports/:id(.:format)                             reports#update
+                                        PUT    /reports/:id(.:format)                             reports#update
+                                        DELETE /reports/:id(.:format)                             reports#destroy
+                              platforms GET    /platforms(.:format)                               platforms#index
+                                        POST   /platforms(.:format)                               platforms#create
+                           new_platform GET    /platforms/new(.:format)                           platforms#new
+                          edit_platform GET    /platforms/:id/edit(.:format)                      platforms#edit
+                               platform GET    /platforms/:id(.:format)                           platforms#show
+                                        PATCH  /platforms/:id(.:format)                           platforms#update
+                                        PUT    /platforms/:id(.:format)                           platforms#update
+                                        DELETE /platforms/:id(.:format)                           platforms#destroy
+                      export_file_index GET    /export_file(.:format)                             export_file#index
+                                        POST   /export_file(.:format)                             export_file#create
+                        new_export_file GET    /export_file/new(.:format)                         export_file#new
+                       edit_export_file GET    /export_file/:id/edit(.:format)                    export_file#edit
+                            export_file GET    /export_file/:id(.:format)                         export_file#show
+                                        PATCH  /export_file/:id(.:format)                         export_file#update
+                                        PUT    /export_file/:id(.:format)                         export_file#update
+                                        DELETE /export_file/:id(.:format)                         export_file#destroy
+               account_platform_details GET    /account_platform_details(.:format)                account_platform_details#index
+                                        POST   /account_platform_details(.:format)                account_platform_details#create
+            new_account_platform_detail GET    /account_platform_details/new(.:format)            account_platform_details#new
+           edit_account_platform_detail GET    /account_platform_details/:id/edit(.:format)       account_platform_details#edit
+                account_platform_detail GET    /account_platform_details/:id(.:format)            account_platform_details#show
+                                        PATCH  /account_platform_details/:id(.:format)            account_platform_details#update
+                                        PUT    /account_platform_details/:id(.:format)            account_platform_details#update
+                                        DELETE /account_platform_details/:id(.:format)            account_platform_details#destroy
+                            import_data GET    /import_data(.:format)                             import_data#index
+                                        POST   /import_data(.:format)                             import_data#create
+                       new_import_datum GET    /import_data/new(.:format)                         import_data#new
+                      edit_import_datum GET    /import_data/:id/edit(.:format)                    import_data#edit
+                           import_datum GET    /import_data/:id(.:format)                         import_data#show
+                                        PATCH  /import_data/:id(.:format)                         import_data#update
+                                        PUT    /import_data/:id(.:format)                         import_data#update
+                                        DELETE /import_data/:id(.:format)                         import_data#destroy
+                   search_by_issn_index GET    /search_by_issn(.:format)                          search_by_issn#index
+                                        POST   /search_by_issn(.:format)                          search_by_issn#create
+                     new_search_by_issn GET    /search_by_issn/new(.:format)                      search_by_issn#new
+                    edit_search_by_issn GET    /search_by_issn/:id/edit(.:format)                 search_by_issn#edit
+                         search_by_issn GET    /search_by_issn/:id(.:format)                      search_by_issn#show
+                                        PATCH  /search_by_issn/:id(.:format)                      search_by_issn#update
+                                        PUT    /search_by_issn/:id(.:format)                      search_by_issn#update
+                                        DELETE /search_by_issn/:id(.:format)                      search_by_issn#destroy
+                       new_user_session GET    /users/sign_in(.:format)                           devise/sessions#new
+                           user_session POST   /users/sign_in(.:format)                           devise/sessions#create
+                   destroy_user_session DELETE /users/sign_out(.:format)                          devise/sessions#destroy
+                          user_password POST   /users/password(.:format)                          devise/passwords#create
+                      new_user_password GET    /users/password/new(.:format)                      devise/passwords#new
+                     edit_user_password GET    /users/password/edit(.:format)                     devise/passwords#edit
+                                        PATCH  /users/password(.:format)                          devise/passwords#update
+                                        PUT    /users/password(.:format)                          devise/passwords#update
+               cancel_user_registration GET    /users/cancel(.:format)                            devise/registrations#cancel
+                      user_registration POST   /users(.:format)                                   devise/registrations#create
+                  new_user_registration GET    /users/sign_up(.:format)                           devise/registrations#new
+                 edit_user_registration GET    /users/edit(.:format)                              devise/registrations#edit
+                                        PATCH  /users(.:format)                                   devise/registrations#update
+                                        PUT    /users(.:format)                                   devise/registrations#update
+                                        DELETE /users(.:format)                                   devise/registrations#destroy
+                                   root GET    /                                                  home#index
