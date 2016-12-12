@@ -97,12 +97,13 @@
 			</li>
 		</ul>
 		<ul class="logout">
+			<!-- <li> <a><%= link_to('Logout', destroy_user_session_path, :method => :delete) %> </a> </li> -->
 			<li>
-			<a>
-			<i>
+			<a href="/users/sign_out" data-method="delete" rel="nofollow">
+			<i class="icon-off nav-icon"></i>
 			<span class="nav-text">
-			<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>  
-			</span><i>
+			Logout
+			</span>
 			</a>
 			</li>
 		</ul>

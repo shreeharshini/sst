@@ -10,14 +10,12 @@
 
     <title>ScholarlyStats</title>
 
-   <%= javascript_include_tag "jquery.min.js" %>
-      <%= javascript_include_tag "jquery1.9.1.min.js" %>
-         <%= javascript_include_tag "jquery2.0.3.min.js" %>
+  <%= javascript_include_tag "jquery2.0.3.min.js" %>
+  <%= javascript_include_tag "bootstrap.js" %>
+    <%= stylesheet_link_tag "bootstrap.min.css" %>
 
-
-<%= javascript_include_tag "bootstrap.min.js" %>
-
-<%= stylesheet_link_tag "style.css" %>
+  <%= stylesheet_link_tag "style.css" %>
+  <%= stylesheet_link_tag "bootstrap-theme.min.css" %>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -26,17 +24,12 @@
     <![endif]-->
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript">
-$(window).load(function() {
-  $(".loader").fadeOut("slow");
-})
-</script>
+
 
   </head>
 
   <body data-spy="scroll" id="home">
   
-  <div class="loader"></div>
   <!-- Modal -->
 <div class="modal fade my_login_box" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -551,8 +544,7 @@ tandard dummy text ever since the 1500s,
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+
     
     <script>
     $(function() {

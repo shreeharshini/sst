@@ -9,6 +9,7 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 #for stylesheets
+
 Rails.application.config.assets.precompile += %w( font.css )
 Rails.application.config.assets.precompile += %w( font-awesome.css )
 Rails.application.config.assets.precompile += %w( custom.min.css )
@@ -33,7 +34,7 @@ Rails.application.config.assets.precompile += %w( table-style.css )
 Rails.application.config.assets.precompile += %w( typo.css )
 #these are added in association with stylesheet_link_tag to enable assets pipeline  
 #for javascripts
-
+Rails.application.config.assets.precompile += %w( highcharts.js )
 Rails.application.config.assets.precompile += %w( bootstrap.js )
 Rails.application.config.assets.precompile += %w( bootstrap.min.js )
 Rails.application.config.assets.precompile += %w( html5shiv.min.js )

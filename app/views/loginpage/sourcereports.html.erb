@@ -8,19 +8,27 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!--<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 --><!-- bootstrap-css -->
-<link rel="stylesheet" href="bootstrap.css">
+  <%= stylesheet_link_tag "bootstrap.css" %> 
+
 <!-- //bootstrap-css -->
 <!-- Custom CSS -->
-<link href="style.css" rel='stylesheet' type='text/css' />
+  <%= stylesheet_link_tag "style.css" %> 
+
 <!-- font CSS -->
-  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Raleway" %> 
+
 <!-- font-awesome icons -->
-<link rel="stylesheet" href="font.css" type="text/css"/>
-<link href="font-awesome.css" rel="stylesheet"> 
+  <%= stylesheet_link_tag "font.css" %> 
+
+  <%= stylesheet_link_tag "font-awesome.css" %> 
+
 <!-- //font-awesome icons -->
-<script src="jquery2.0.3.min.js"></script>
-<script src="modernizr.js"></script>
-<script src = "application.js"></script>
+<%= javascript_include_tag "jquery2.0.3.min.js" %>
+
+<%= javascript_include_tag "modernizr.js" %>
+
+<%= javascript_include_tag "application.js" %>
+
 
 	
 
@@ -36,56 +44,10 @@
 		
 		<%= render :partial => '/layouts/side_bar_navigation'%>
 
-    <%= render :partial => '/layouts/header'%>
+	  <%= render :partial => '/layouts/header'%>
 
 	</nav>
-	<section class="wrapper scrollable">
-		<nav class="user-menu">
-			<a href="javascript:;" class="main-menu-access">
-			<i class="icon-proton-logo"></i>
-			<i class="icon-reorder"></i>
-			</a>
-		</nav>
-		<section class="title-bar">
-			<div class="logo">
-				<h1><a href="index.html"><% image_tag("logo.svg")%></a></h1>
-			</div>
-			
-			
-			<div class="header-right">
-				<div class="profile_details_left">
-					<div class="header-right-left">
-						<!--notifications of menu start -->
-						<ul class="nofitications-dropdown">
-							
-								<ul class="dropdown-menu anti-dropdown-menu agile-notification">
-									
-								
-									 <li>
-										
-
-					<div class="profile_details">		
-						<ul>
-							<li class="dropdown profile_details_drop">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-									<div class="profile_img">	
-										<span class="prfil-img"><i class="fa fa-user" aria-hidden="true"></i></span> 
-										<div class="clearfix"></div>	
-									</div>	
-								</a>
-								<ul class="dropdown-menu drp-mnu">
-									<li> <a href="#"><i class="fa fa-cog"></i> Settings</a> </li> 
-									<li> <a href="#"><i class="fa fa-user"></i> Profile</a> </li> 
-									<li> <a href="#"><i class="fa fa-sign-out"></i> Logout</a> </li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-			<div class="clearfix"> </div>
-		</section>
+	
 		<div class="main-grid">
         
         
@@ -93,11 +55,6 @@
          <li><a href="/loginpage/sourcereports">Source Reports</a></li> 
         
         </ol>
-	
-
-
-
-
 
 <br>
 				  <h4>Source Reports
@@ -165,7 +122,8 @@
 
 		<!-- //footer -->
 	</section>
-	<script src="js/bootstrap.js"></script>
+	<%= javascript_include_tag "bootstrap.js" %>
+
     
   <script type="text/javascript">
   	$("#selectpid1").change(function(){
