@@ -12,9 +12,17 @@
 
   <%= javascript_include_tag "jquery2.0.3.min.js" %>
   <%= javascript_include_tag "bootstrap.js" %>
-    <%= stylesheet_link_tag "bootstrap.min.css" %>
+  <%= javascript_include_tag "bootstrap.min.js" %>
+  <%= javascript_include_tag "application.js" %>
+
+
+  <%= stylesheet_link_tag "bootstrap.min.css" %>
+  <%= stylesheet_link_tag "bootstrap.css" %>
 
   <%= stylesheet_link_tag "style.css" %>
+  <%= stylesheet_link_tag "my_style.css" %>
+  <%= stylesheet_link_tag "application.css" %>
+
   <%= stylesheet_link_tag "bootstrap-theme.min.css" %>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -23,7 +31,7 @@
       <script src="js/respond.min.js"></script>
     <![endif]-->
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" %>
 
 
   </head>

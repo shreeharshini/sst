@@ -199,30 +199,27 @@
 											  </thead>
 											  
 											  <tbody>
-											  <% @platforms.each do |platform| %>
-											  	
-											    
-											      <tr>
+
+											  <% @platforms.each do |plat| %>
+										      <tr>
 											      <td></td>
-											        
-											        <td><%= platform.name %></td>
-											        <td><%= platform.abbrev %></td>
+											        <td><%= plat.platform.name %></td>
+											        <td><%= plat.platform.abbrev %></td>
 											        <td>
 											        </td>
-											        <td><%= platform.created_at.strftime("%d-%m-%y") %></td>
-											       
-										  	
-														<% @repo.each do |d| %>
+											        <td><%= plat.platform.created_at.strftime("%d-%m-%y") %></td>
+											       <% @repo.each do |asd| %>
 															<td width="50">
- 																<% if  @reports.report.name <=> d %>
+ 																<% if  plat.report.name == asd %>
 														         <div class="square-block-selected"><br><br></div>
 														         <% else%>
 														         <div class="square-block-not-available"><br><br></div>
 												        <%end%>
 												      </td>
-														<%end%>
+												     <%  end %>
 											      </tr>
 											    <% end %>
+
 											  </tbody>
 												<br>
 					            </table>

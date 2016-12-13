@@ -99,6 +99,22 @@ edit_source_reports_mapping GET    /source_reports_mappings/:id/edit(.:format) s
                             PATCH  /platform_reports/:id(.:format)             platform_reports#update
                             PUT    /platform_reports/:id(.:format)             platform_reports#update
                             DELETE /platform_reports/:id(.:format)             platform_reports#destroy
+            requestfordemos GET    /requestfordemos(.:format)                  requestfordemos#index
+                            POST   /requestfordemos(.:format)                  requestfordemos#create
+         new_requestfordemo GET    /requestfordemos/new(.:format)              requestfordemos#new
+        edit_requestfordemo GET    /requestfordemos/:id/edit(.:format)         requestfordemos#edit
+             requestfordemo GET    /requestfordemos/:id(.:format)              requestfordemos#show
+                            PATCH  /requestfordemos/:id(.:format)              requestfordemos#update
+                            PUT    /requestfordemos/:id(.:format)              requestfordemos#update
+                            DELETE /requestfordemos/:id(.:format)              requestfordemos#destroy
+                 contact_us GET    /contact_us(.:format)                       contact_us#index
+                            POST   /contact_us(.:format)                       contact_us#create
+              new_contact_u GET    /contact_us/new(.:format)                   contact_us#new
+             edit_contact_u GET    /contact_us/:id/edit(.:format)              contact_us#edit
+                  contact_u GET    /contact_us/:id(.:format)                   contact_us#show
+                            PATCH  /contact_us/:id(.:format)                   contact_us#update
+                            PUT    /contact_us/:id(.:format)                   contact_us#update
+                            DELETE /contact_us/:id(.:format)                   contact_us#destroy
            new_user_session GET    /users/sign_in(.:format)                    devise/sessions#new
                user_session POST   /users/sign_in(.:format)                    devise/sessions#create
        destroy_user_session DELETE /users/sign_out(.:format)                   devise/sessions#destroy

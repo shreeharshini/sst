@@ -29,15 +29,13 @@ class LoginpageController < ApplicationController
   def selectedplatforms
     user_id = current_user.id
     @accounts = Account.where(:id => user_id ).first
-    @platforms = Platform.all
-
-    report_id = Report.last
-    @reports = PlatformReport.where(["report_id = ?", report_id]).last
-  
-    # platform_id = SourceReportsMapping.platform_id.all
-    # @reports = SourceReportsMapping.where(:id => platform_id).first
-    # @reports = Report.all
+    
+    @platid = PlatformReport.select("MIN(id) as id").group(:platform_id).collect(&:id)
+    @platforms = PlatformReport.where("id  IN (?)",@platid)
+   
     @repo = ["jr1","jr1a","jr2","jr3","jr5", "db1","db2","pr1","br1","br2"   
     ]
+
+    # @previous = PlatformReport.all
   end
 end
