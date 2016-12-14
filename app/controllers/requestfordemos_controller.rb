@@ -28,6 +28,9 @@ class RequestfordemosController < ApplicationController
 
     respond_to do |format|
       if @requestfordemo.save
+
+       RequestfordemoMailer.welcome_email(@requestfordemo).deliver
+
         format.html { redirect_to @requestfordemo, notice: 'Requestfordemo was successfully created.' }
         format.json { render :show, status: :created, location: @requestfordemo }
       else

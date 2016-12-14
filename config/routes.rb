@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
 
  
-  get 'download_files/csv'
+  get 'export_files/csv'
 
-  get 'download_files/xlsx'
+  get 'export_files/xlsx'
 
-  get 'download_files/zip'
+  get 'export_files/zip'
 
   get 'support/contactus'
 
@@ -19,11 +19,14 @@ Rails.application.routes.draw do
   get "loginpage/accessdetails"
   get "loginpage/selectedplatforms"
 	get "home/index"
+
+  get "import_data/xlsx"
   
   resources :loginpage, :accounts, :reports, :platforms, 
             :source_reports_mappings, :year_trends, :year_usages,
-            :year_top_journals, :account_infos, :download_files, 
-            :platform_reports, :requestfordemos, :contact_us
+            :year_top_journals, :account_infos, :export_files, 
+            :platform_reports, :requestfordemos, :contact_us, 
+            :library_account_details, :import_data
 
 
   devise_for :users

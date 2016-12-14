@@ -1,7 +1,7 @@
                      Prefix Verb   URI Pattern                                 Controller#Action
-         download_files_csv GET    /download_files/csv(.:format)               download_files#csv
-        download_files_xlsx GET    /download_files/xlsx(.:format)              download_files#xlsx
-         download_files_zip GET    /download_files/zip(.:format)               download_files#zip
+           export_files_csv GET    /export_files/csv(.:format)                 export_files#csv
+          export_files_xlsx GET    /export_files/xlsx(.:format)                export_files#xlsx
+           export_files_zip GET    /export_files/zip(.:format)                 export_files#zip
           support_contactus GET    /support/contactus(.:format)                support#contactus
                 support_faq GET    /support/faq(.:format)                      support#faq
             support_aboutus GET    /support/aboutus(.:format)                  support#aboutus
@@ -11,6 +11,7 @@
     loginpage_accessdetails GET    /loginpage/accessdetails(.:format)          loginpage#accessdetails
 loginpage_selectedplatforms GET    /loginpage/selectedplatforms(.:format)      loginpage#selectedplatforms
                  home_index GET    /home/index(.:format)                       home#index
+           import_data_xlsx GET    /import_data/xlsx(.:format)                 import_data#xlsx
             loginpage_index GET    /loginpage(.:format)                        loginpage#index
                             POST   /loginpage(.:format)                        loginpage#create
               new_loginpage GET    /loginpage/new(.:format)                    loginpage#new
@@ -83,14 +84,14 @@ edit_source_reports_mapping GET    /source_reports_mappings/:id/edit(.:format) s
                             PATCH  /account_infos/:id(.:format)                account_infos#update
                             PUT    /account_infos/:id(.:format)                account_infos#update
                             DELETE /account_infos/:id(.:format)                account_infos#destroy
-             download_files GET    /download_files(.:format)                   download_files#index
-                            POST   /download_files(.:format)                   download_files#create
-          new_download_file GET    /download_files/new(.:format)               download_files#new
-         edit_download_file GET    /download_files/:id/edit(.:format)          download_files#edit
-              download_file GET    /download_files/:id(.:format)               download_files#show
-                            PATCH  /download_files/:id(.:format)               download_files#update
-                            PUT    /download_files/:id(.:format)               download_files#update
-                            DELETE /download_files/:id(.:format)               download_files#destroy
+               export_files GET    /export_files(.:format)                     export_files#index
+                            POST   /export_files(.:format)                     export_files#create
+            new_export_file GET    /export_files/new(.:format)                 export_files#new
+           edit_export_file GET    /export_files/:id/edit(.:format)            export_files#edit
+                export_file GET    /export_files/:id(.:format)                 export_files#show
+                            PATCH  /export_files/:id(.:format)                 export_files#update
+                            PUT    /export_files/:id(.:format)                 export_files#update
+                            DELETE /export_files/:id(.:format)                 export_files#destroy
            platform_reports GET    /platform_reports(.:format)                 platform_reports#index
                             POST   /platform_reports(.:format)                 platform_reports#create
         new_platform_report GET    /platform_reports/new(.:format)             platform_reports#new
@@ -115,6 +116,22 @@ edit_source_reports_mapping GET    /source_reports_mappings/:id/edit(.:format) s
                             PATCH  /contact_us/:id(.:format)                   contact_us#update
                             PUT    /contact_us/:id(.:format)                   contact_us#update
                             DELETE /contact_us/:id(.:format)                   contact_us#destroy
+    library_account_details GET    /library_account_details(.:format)          library_account_details#index
+                            POST   /library_account_details(.:format)          library_account_details#create
+ new_library_account_detail GET    /library_account_details/new(.:format)      library_account_details#new
+edit_library_account_detail GET    /library_account_details/:id/edit(.:format) library_account_details#edit
+     library_account_detail GET    /library_account_details/:id(.:format)      library_account_details#show
+                            PATCH  /library_account_details/:id(.:format)      library_account_details#update
+                            PUT    /library_account_details/:id(.:format)      library_account_details#update
+                            DELETE /library_account_details/:id(.:format)      library_account_details#destroy
+                import_data GET    /import_data(.:format)                      import_data#index
+                            POST   /import_data(.:format)                      import_data#create
+           new_import_datum GET    /import_data/new(.:format)                  import_data#new
+          edit_import_datum GET    /import_data/:id/edit(.:format)             import_data#edit
+               import_datum GET    /import_data/:id(.:format)                  import_data#show
+                            PATCH  /import_data/:id(.:format)                  import_data#update
+                            PUT    /import_data/:id(.:format)                  import_data#update
+                            DELETE /import_data/:id(.:format)                  import_data#destroy
            new_user_session GET    /users/sign_in(.:format)                    devise/sessions#new
                user_session POST   /users/sign_in(.:format)                    devise/sessions#create
        destroy_user_session DELETE /users/sign_out(.:format)                   devise/sessions#destroy

@@ -12,8 +12,7 @@
 
   <%= javascript_include_tag "jquery2.0.3.min.js" %>
   <%= javascript_include_tag "bootstrap.js" %>
-<!--   <%= javascript_include_tag "bootstrap.min.js" %>
- -->  <%= javascript_include_tag "application.js" %>
+ <%= javascript_include_tag "application.js" %>
 
 
   <%= stylesheet_link_tag "bootstrap.min.css" %>
@@ -85,27 +84,38 @@
       </div>
       <div class="modal-body">
         <div class="common_form">
-            <form>
-                <ul>
-                   <li>
-                        <input type="text" class="form-control" id="username" placeholder="Username">
-                   </li>
-                   <li>
-                        <input type="email" class="form-control" id="requesterEmail" placeholder="Example@domain.com">
-                   </li>
-                   <li>
-                        <input type="text" class="form-control" id="username" placeholder="library">
-                   </li>
-                   <li>
-                        <input type="tel" class="form-control" id="requesterPhone" placeholder="Number">
-                   </li>
-                  <li>
-                    <textarea class="form-control" rows="6" placeholder="Your Message"></textarea>
-                  </li>
-              </ul>
-              
-              <button type="submit" class="submit_btn">Send</button>
-            </form>
+          <%= form_for(:requestfordemo , url: requestfordemos_path) do |f| %>
+
+                <div class="field">
+                  <%= f.label :username %>
+                  <%= f.text_field :username %>
+                </div>
+
+                <div class="field">
+                  <%= f.label :email %>
+                  <%= f.text_field :email %>
+                </div>
+
+                <div class="field">
+                  <%= f.label :library %>
+                  <%= f.text_field :library %>
+                </div>
+
+                <div class="field">
+                  <%= f.label :number %>
+                  <%= f.number_field :number %>
+                </div>
+
+                <div class="field">
+                  <%= f.label :message %>
+                  <%= f.text_area :message %>
+                </div>
+
+                <div class="actions">
+                  <%= f.submit %>
+                </div>
+          <% end %>
+
         </div>
       </div>
       
@@ -468,24 +478,32 @@ tandard dummy text ever since the 1500s,
         <div class="row">
           <div class="col-xs-12 col-sm-7 col-md-8 col-lg-8">
               <div class="common_form">
-                    <form>
-                        <ul>
-                           <li>
-                                <input type="text" class="form-control" id="name" placeholder="Name">
-                           </li>
-                          <li>
-                            <input type="text" class="form-control" id="email_id" placeholder="Email ID">
-                          </li>
-                          <li>
-                            <input type="text" class="form-control" id="subject" placeholder="Subject">
-                          </li>
-                          <li>
-                            <textarea class="form-control" rows="6" placeholder="Your Message"></textarea>
-                          </li>
-                      </ul>
-                      
-                      <button type="submit" class="submit_btn">Send Message <i class="fa fa-play-circle-o mrg_l_5"></i></button>
-                    </form>
+                    <%= form_for :contact_u, url: contact_us_path do |f| %>
+                 
+                    <div class="field">
+                      <%= f.label :name %>
+                      <%= f.text_field :name, class: "form-control" %>
+                    </div>
+
+                    <div class="field">
+                      <%= f.label :email %>
+                      <%= f.text_field :email, class: "form-control"%>
+                    </div>
+
+                    <div class="field">
+                      <%= f.label :subject %>
+                      <%= f.text_field :subject, class: "form-control"%>
+                    </div>
+
+                    <div class="field">
+                      <%= f.label :message %>
+                      <%= f.text_area :message, class: "form-control"%>
+                    </div>
+
+                    <div class = "field">
+                    <%= f.submit "send message", class: "btn btn-primary" %>
+                    </div>
+                  <% end %>
                 </div>
             </div>
             
