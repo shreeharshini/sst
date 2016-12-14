@@ -11,7 +11,7 @@
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
-
+<script src="https://code.highcharts.com"></script>
 
 
 <!-- //font-awesome icons -->
@@ -26,7 +26,7 @@
 
 <!--<script src="js/jquery.cookie.js"></script>
 -->
-		
+<%= javascript_include_tag "jquery-1.4.2.min", "rails", "highcharts" %>		
 
 <!-- //charts -->
 <!--skycons-icons-->
@@ -62,7 +62,7 @@ $(window).load(function() {
 <div class="row">
 
 
-<!--     <div class="col-md-4">
+    <div class="col-md-4">
         <div class="x_panel " >
             <div id="pie2" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto">
             	
@@ -90,15 +90,9 @@ $(window).load(function() {
             
     </div>
 </div>     
- -->
-<div class="col-md-8">
-   <div class="x_panel">
-      <div id="student" style="min-width: 310px; height: 400px; margin: 0 auto">
-        
 
-      </div>
-  </div>
-</div>   
+
+
 
           </div>
           
@@ -189,20 +183,52 @@ $(window).load(function() {
     
     <!--new highchart start-->
 <%= javascript_include_tag "https://code.highcharts.com/highcharts.js" %>
+<%= javascript_include_tag "http://code.highcharts.com/modules/drilldown.js" %>
 
-<%= javascript_include_tag "https://code.highcharts.com/modules/exporting.js" %>
 
-<%= javascript_include_tag "https://code.highcharts.com/modules/drilldown.js" %>
+<script>
+  $(function () {
+// Create the chart
 
-<%= javascript_include_tag "https://code.highcharts.com/modules/data.js" %>
+new Highcharts.Chart({
 
-<!-- <script> 
+legend: {
+    enabled: false
+},
+plot-options: {
+    series: {
+        border-width: 0,
+        data-labels: {
+            enabled: true,
+            format: '{point.y:.1f}%'
+        }
+    }
+},
+
+tool-tip: {
+    header-format: '<span style="font-size:11px">{series.name}</span> <br>',
+        point-format: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<BR/>'
+    },
+series: [ {
+            name: 'Stu',
+            id: 'Stu',
+            data: [
+                [<%= @yearusages.each do |s|%>
+                   '<%= s.Institution_Code %>',
+                    <%= s.YTD%>
+                 <%end%>
+
+                ]
+
+            ]
+        }
+</script>
+
+
+ <script> 
 $(function () {
      new Highcharts.Chart({
-      chart: { renderTo: 'trend' }
-        chart: {
-            type: 'spline'
-        },
+      chart: { renderTo: 'trend' },
         title: {
             text: 'Year Trend'
         },
@@ -327,7 +353,7 @@ $(function () {
 
 
 
-<!journal start-->
+<!journal start
 
 
 <!-- $(function () {
@@ -399,18 +425,23 @@ $(function () {
             }]
         }],
         drilldown: {
-            series: [ {               
+            series: [ {   
+                      name: 'usage',
+                      id: 'usage',
+                      data:[
+
                     <%= @yearusages.each do |year|%>
                         name: '<%= year.Institution_Code %>',
                         <%= year.YTD %>
                     <%end%>
+                    ]
             }]
         }
     });
 });
 </script>
- --> -->
-<script>
+ 
+<!-- <script>
   $(function () {
 // Create the chart
 
@@ -458,6 +489,6 @@ series: [ {
 
             ]
         }
-</script>
+</script> -->
 </body>
 </html>

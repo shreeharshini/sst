@@ -15,7 +15,6 @@ Rails.application.config.assets.precompile += %w( font-awesome.css )
 Rails.application.config.assets.precompile += %w( custom.min.css )
 Rails.application.config.assets.precompile += %w( morris.css )
 Rails.application.config.assets.precompile += %w( bootstrap.css )
-Rails.application.config.assets.precompile += %w( bootstrap.min.css )
 Rails.application.config.assets.precompile += %w( basictable.css )
 
 Rails.application.config.assets.precompile += %w( bootstrap-theme.css )
@@ -36,7 +35,6 @@ Rails.application.config.assets.precompile += %w( typo.css )
 #for javascripts
 Rails.application.config.assets.precompile += %w( highcharts.js )
 Rails.application.config.assets.precompile += %w( bootstrap.js )
-Rails.application.config.assets.precompile += %w( bootstrap.min.js )
 Rails.application.config.assets.precompile += %w( html5shiv.min.js )
 Rails.application.config.assets.precompile += %w( ie8-responsive-file-warning.js )
 

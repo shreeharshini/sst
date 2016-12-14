@@ -65,40 +65,45 @@
 
 
 
+
+
+
 <div class="agile-Updating-grids"> 
 	<div class="agile-grids pad-top10">
-           <div class="col-md-5 mb10">
+      <div class="col-md-5 mb10">
 				<div class="form-group">
-					<label >Select Platform</label>
-						<select class="form-control" id="selectpid1" >
-
-													<option>--Select Platform--</option>
-			<%= @source_reports.each do |f|%>
-			   					
-                            <option><%= f.platform.name %></option>
-
-                        
-              <% end %>  
-						</select>
-				</div>
-            </div>
-                <div class="col-md-3">
+    						<select name="category" id="category" class="form-control">
+                    <option selected value="Please Select">Please Select</option>     
+                          
+                    <option value="pid1">American Association for the Advancement of Science</option>
+                    <option value="pid2">American Chemical Society</option>
+               </select>
+        </div>
+			</div>
+           
+      <div class="col-md-3">
 					<div class="form-group">
-						<label >Reporting period:</label>
-								<select class="form-control" id="selectpid2">
-															<option>--Select Year--</option>
-										             					<%= @source_reports.each do |f|%>
-                            <option><%= f.year %></option>
-              <% end %>  
-								</select>
+          			<div id="category2">
+                  <select name="category2" class="pid2 second">
+                          <option value="white">2015</option>
+                          <option value="black">2016</option>            
+                  </select>
 
-					</div>
+                  <select name="category2" class="pid1 second">
+                          <option>2013</option>
+                          <option value="red">2014</option>
+                          <option value="green">2015</option>
+                          <option value="blue">2016</option>           
+                  </select>
                 </div>
-                <div class="col-sm-12 pad-top20">
+          </div>
+			</div>
+              
+      <div class="col-sm-12 pad-top20">
                 
                		 Please click on Get Reports to find the desired platform reports.
-                </div>
-                <div class=" col-sm-2 mt-10">
+      </div>
+      <div class=" col-sm-2 mt-10">
  					<div class="button raised">
   						 <a href="#" class="hoverable"> 
 	  						 <div class="anim">
@@ -106,19 +111,18 @@
 	  						 </div>
 	  						 <span>Get Reports</span>
   						 </a>
-   					</div>
-				</div>  
-				<!-- //updating-data -->
+   				</div>
+			</div>  
+				<!-- //updating-data
 			</div>
 				<div class="clearfix"> </div>
 	</div>
-</div>		
+</div>		 -->
 			    
     <br>
     	
-	  </div>
+</div>
 		<!-- footer -->
-		<%= render :partial => '/layouts/footer'%>
 
 		<!-- //footer -->
 	</section>
@@ -126,44 +130,21 @@
 
     
   <script type="text/javascript">
-  	$("#selectpid1").change(function(){
+  	 $("#category").change(function () {
+  var str = "";
+str =  $("select#category option:selected").text();
+    if(str == "American Chemical Society"){
+        $("#category2").not(".pid2").hide();
+        $("#category2 .pid2").show();
+        $("#category2").fadeIn(1000);
+    }
+    else if(str == "American Association for the Advancement of Science"){
+        $("#category2").not(".pid1").hide();
+        $("#category2 .pid1").show();
+        $("#category2").fadeIn(1000);
+    }
 
-  		alert("platform selected");
-  		var value1 = $('select#selectpid1 option:selected').val();
-  		console.log("Gotcha");
-        $.ajax({
-          type: "GET",
-          data: {selectpid1: value1},
-          url: '/loginpage/dynamicreports',
-          dataType: 'json',
-          success: function(json) {
-
-            // var $el = $("#selectpid2")
-            // $el.empty(); // remove old options
-            // $el.append($("<option></option>")
-            //         .attr("value", '').text('Please Select'));
-            // $.each(json, function(value, key) {
-            //     $el.append($("<option></option>")
-            //             .attr("value", value).text(key));
-            // });														
-
-            alert("success");
-              
-              
-          }
- 
-      });
-
-
-
-			});
-  	$("#selectpid2").change(function(){
-
-  		alert("year changed");
-  		var value2 = $('select#selectpid2 option:selected').val();
-
-  	});
-
+})
   </script>
   
 </body>

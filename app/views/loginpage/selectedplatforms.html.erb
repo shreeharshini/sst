@@ -173,8 +173,8 @@
 					         </h4>
 					         Library name:<%= @accounts.name %><br>
 					         Max no.of platforms: 520 <br>
-					         Selected no.of platforms:<%= @accounts.number_of_platforms %><br>
-					         
+					         Selected no.of platforms:<%= @accounts.number_of_platforms %>
+					         <div class="square-block-selected"></div>Selected reports<div class="square-block-not-available"></div>Report not available<br>
 					        
 											<table>
 											  <thead>
@@ -202,7 +202,7 @@
 
 											  <% @platforms.each do |plat| %>
 										      <tr>
-											      <td></td>
+											      <td><div class="square-block-selected"><br><br></div></td>
 											        <td><%= plat.platform.name %></td>
 											        <td><%= plat.platform.abbrev %></td>
 											        <td>
