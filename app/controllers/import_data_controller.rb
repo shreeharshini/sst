@@ -6,11 +6,7 @@ class ImportDataController < ApplicationController
 	end
 	def show
     render 'index'
-    # @import_data = ImportData.find(params[:id])
 	end
-  # def redirect_to_back
-  #   redirect_to :controller => 'import_data', :action => 'index'
-  # end
 	def new
     @import_data = ImportData.new
   end
@@ -32,5 +28,5 @@ class ImportDataController < ApplicationController
   def import_data_params
     params.require(:import_data).permit(:attachment, :user_id)
   end
-  #end
+
 end

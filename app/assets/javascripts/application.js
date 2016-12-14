@@ -15,9 +15,12 @@
 //= require turbolinks
 //= require Chart.bundle
 //= require chartkick
-//= require bootstrap
+
 //= require d3.v3
 //= require_tree .
+//= require twitter/typeahead
+
+//= require twitter/typeahead.min
 
 
   	

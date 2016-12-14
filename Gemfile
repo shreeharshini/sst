@@ -11,6 +11,10 @@ gem 'axlsx_rails'
 gem "byebug"
 
 gem "d3-rails"
+gem 'city-state'
+gem 'zip-zip'
+
+gem 'twitter-typeahead-rails'
 
 gem 'carrierwave', '~> 0.9'
 #Use carrierwave for xlsx uploading

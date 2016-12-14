@@ -2,8 +2,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <%= render :partial => '/layouts/side_bar_navigation'%>
-      <%= render :partial => '/layouts/header'%>
       <!-- ********JQuery Non-Conflicting library for autoComplete Start********
 Generating autosuggestion... 
 (In case not getting result, please try with similar search without clicking in suggestion box.)
@@ -63,7 +61,843 @@ Generating autosuggestion...
 <meta name="generator" content="AppFuse 2.0" />
 <!-- leave this for stats please -->
 <link rel="icon" href="/images/favicon.ico" />
+<script type="text/javascript">
+    try 
+    {     
+      document.execCommand("BackgroundImageCache", false, true);
+    }
+    catch(err) 
+    {}
+</script>
 
+         <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+        <link rel="SHORTCUT ICON" href="/images/favicon.ico" type="image/x-icon" />
+        <title>Welcome to Online Statistics Portal</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">   
+     <script type="text/javascript">
+     /* alert(#session.authz); */
+     
+$(document).ready(function(){
+  $(".pageLoadContainer").hide();
+});
+     
+     function ltrim(stringToTrim) 
+     {
+    return stringToTrim.replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g,"").replace(/\s+/g," ");
+  }
+  function rtrim(stringToTrim) {
+  return stringToTrim.replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g,"").replace(/\s+/g," ");
+}
+     function renderTitle(){
+      element=document.getElementById("brdcrm");
+      var titleText="";
+      if(element!=null){
+        var ihtml=element.innerHTML;
+          var startTag=0;
+          var  endTag=0;
+          var spaceCheck="";
+             for(i=0;i<ihtml.length;i++)
+          {
+
+            if(ihtml.charAt(i) == "<" || ihtml.charAt(i) == "&"){
+            startTag=1;
+            endTag=0;
+          }
+          
+          if(startTag==1){
+            spaceCheck=spaceCheck+ihtml.charAt(i);
+          }
+          
+          if(ihtml.charAt(i) == ">" || ihtml.charAt(i) == ";"){
+            endTag=1;
+            startTag=0;
+            if(spaceCheck=="&nbsp;"){
+              titleText="";
+              spaceCheck="";
+            }
+            if(ihtml.charAt(i)==">"){
+              spaceCheck="";
+            }
+          }
+      
+          if(endTag==1){
+            if(ihtml.charAt(i) != "<" && ihtml.charAt(i) != "&"){
+              if(ihtml.charAt(i) != ">" && ihtml.charAt(i) != ";"){
+                titleText=titleText+ihtml.charAt(i);
+                spaceCheck="";
+              }
+            }
+          }
+          
+          
+      
+          
+        }
+      }
+    
+    //titleText=titleText.substring(titleText.indexOf(" "),titleText.length);
+    titleText=ltrim(titleText);
+    titleText=rtrim(titleText);
+    
+    if(titleText== "")
+      {
+          document.title="Online Statistics Portal "+titleText;
+      }
+    else
+    {
+      document.title="Online Statistics Portal "+"->"+titleText;
+    }
+       
+
+     }
+     
+     </script>
+     <style type="text/css">
+      .login-logo img {
+     width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    }
+    
+  .login-head {
+  background-color: #fff;
+  
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  }
+  
+  .login-bg{
+  /*background-attachment: fixed;
+  background: url(/images/libraries/home/login/login-bg.jpg);
+  background-position: center center;
+      background-repeat:  no-repeat;
+      background-attachment: fixed;
+      background-size:  cover;
+      background-color: #fff;*/
+  
+
+    padding-top: 44px;
+    padding-bottom: 100px;
+}
+
+
+  .login-bg2{
+  background-attachment: fixed;
+  background: url(/images/libraries/home/login/login-bg.jpg);
+  background-position: center center;
+      background-repeat:  no-repeat;
+      background-attachment: fixed;
+      background-size:  cover;
+      background-color: #999;
+  
+  
+}
+
+.login-heading-about {
+    font-size: 22px;
+    font-weight: 600;
+    color: #666666;
+      margin-top: 58px;
+}
+.login-p {
+    color: #777;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.login-box{
+  margin: 0 3px;
+    background: rgba(255, 255, 255, 0.77);
+    text-align: center;
+    border: solid 1px #ccc;
+  padding:40px;
+ 
+  }
+
+.login-box-text {
+    font-size: 23px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.login-footer-bg {
+  background-color: #fff;
+   position: fixed;
+    bottom: 0px;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+      z-index: 5;
+  
+  }
+  .padding-top-20{
+    padding-top:20px;
+    }
+    
+    
+    @media (max-width:780px) { 
+    
+      .login-bg{
+  
+  
+
+    padding-top: 20px;
+    padding-bottom: 200px;
+}
+
+    
+    }
+.fancybox-inner{height:300px !important}
+    </style>
+     <style>
+body{
+padding-top:70px\0; 
+padding-bottom:70px\0;  
+}
+
+.pageLoadContainer{margin:0 auto;position:absolute;top:0;background:#000; opacity:0.5;width:99%; height:100%;z-index:2;}
+
+</style>
+<script type="text/javascript">
+function toggle(node) {
+  var nextDIV = node.nextSibling;
+  while(nextDIV.nodeName != "DIV") {
+    nextDIV = nextDIV.nextSibling;
+  }
+  if (nextDIV.style.display == 'none') {
+    if (node.childNodes.length > 0) {
+      if (node.childNodes.item(0).nodeName == "IMG") {
+        node.childNodes.item(0).src = getImgDirectory(node.childNodes.item(0).src) + "open.gif";
+      }
+    }
+    nextDIV.style.display = 'block';
+  }
+  else {
+    if (node.childNodes.length > 0) {
+      if (node.childNodes.item(0).nodeName == "IMG") {
+          node.childNodes.item(0).src = getImgDirectory(node.childNodes.item(0).src) + "close.gif";
+      }
+    }
+    nextDIV.style.display = 'none';
+  }
+}
+
+function getImgDirectory(source) {
+    return source.substring(0, source.lastIndexOf('/') + 1);
+}
+</script>
+    </head>
+
+ <body  class="dashboard-page">
+  <div id="loaderDivId" class="loader" style="display:none"></div>
+ <section class="wrapper scrollable">
+ 
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+function submitForm(){
+  var formEL= document.getElementById("webmartForm"); 
+  formEL.submit();
+ 
+}
+function generateProfileUrl(pubcode){
+  loaderDiv = document.getElementById("loaderDivId");
+  loaderDiv.style.display = "block";
+  var url="/"+pubcode+"/updateYourAccount";
+  /* document.forms['form1'].action=url;
+  document.forms['form1'].method="post";
+  document.forms['form1'].submit(); */
+  //return url;
+
+var formData = new FormData(document.getElementsByName('form1')[0]);// yourForm: form selector   
+$.ajax({
+    type: "POST",
+    url: url,
+    data: formData,
+    processData: false,
+    contentType: false,
+    error: function(jqXHR, textStatus, errorMessage) {
+       console.log(errorMessage); // Optional
+    },
+    success: function(data) {
+      document.getElementById('profileModel').innerHTML = data;
+      loaderDiv.style.display = "none";
+       $('#myModalProfile').modal('show');
+  } 
+});
+}
+function useraction(url)
+{ loaderDiv = document.getElementById("loaderDivId");
+  loaderDiv.style.display = "block";
+  
+  //alert(url);
+      var ajaxRequest; 
+     try{
+       // Opera 8.0+, Firefox, Safari
+       ajaxRequest = new XMLHttpRequest();
+     }catch (e){
+       // Internet Explorer Browsers
+       try{
+          ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+       }catch (e) {
+          try{
+             ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+          }catch (e){
+             // Something went wrong
+             alert("Your browser broke!");
+             return false;
+          }}
+       }
+     if(ajaxRequest)
+     {
+      ajaxRequest.open("GET",url,true);
+      ajaxRequest.send(null);
+      ajaxRequest.onreadystatechange = function()
+      {
+      if(ajaxRequest.readyState==4 && ajaxRequest.status==200){
+        //alert(ajaxRequest.responseText);
+        document.getElementById('profileModel').innerHTML = ajaxRequest.responseText;
+        loaderDiv.style.display = "none";
+         $('#myModalProfile').modal('show');
+      }
+      }
+     }
+     else{
+      alert("Your browser don't support AJax !");
+     }
+}
+
+</script>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+
+
+<!-- new header -->
+  <%= render :partial => '/layouts/side_bar_navigation'%>
+  <%= render :partial => '/layouts/header'%>
+
+
+
+<!-- tables -->
+<link rel="stylesheet" type="text/css" href="/images/libraries/css/table-style.css" />
+<link rel="stylesheet" type="text/css" href="/images/libraries/css/basictable.css" />
+<script type="text/javascript" src="/images/libraries/js/jquery.basictable.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+      $('#table').basictable();
+
+      $('#table-breakpoint').basictable({
+        breakpoint: 768
+      });
+
+      $('#table-swap-axis').basictable({
+        swapAxis: true
+      });
+
+      $('#table-force-off').basictable({
+        forceResponsive: false
+      });
+
+      $('#table-no-resize').basictable({
+        noResize: true
+      });
+
+      $('#table-two-axis').basictable();
+
+      $('#table-max-height').basictable({
+        tableWrapper: true
+      });
+    });
+</script>
+<script language="javascript" src="/scripts/Encoder.js"></script>
+
+<script>
+//Use the name of the variable that you have created by calling the noConflict(true) method 
+//of JQuery instead of standard jQuery or $
+jQuery_1_4_2(function(){
+  jQuery_1_4_2("#issnId").autocomplete("/autoSuggestISSNandISBNList");
+  });
+</script>
+
+
+
+<script>
+$(document).ready(function(){
+  $(".loadSelectType").hide();
+  $(".pageLoadContainer").hide();
+});
+    
+var searchFlag = false;
+var costIdVar;
+var ytdIdVar;
+var cpuIdVar;
+var cost=[];
+var csvRows = [];
+var searchFlag1 = false;
+var costIdVar1;
+var ytdIdVar1;
+var cpuIdVar1;
+var cost1=[];
+var csvRows1 = [];
+
+$(document).ready(function () {
+  var searchISSNval = document.getElementById("issnId").value;
+  if(searchISSNval==""){
+    document.getElementById("issnId").focus();
+  }else{
+    //document.getElementById("costIdStr").focus();
+  }
+  if(searchISSNval==""){
+    searchFlag = false;
+  }
+  
+//  alert("searchISSNval:"+searchISSNval);
+//  alert("searchFlag:"+searchFlag);
+  if((searchISSNval=="" || searchISSNval==null) && !searchFlag){
+//    alert("in if");
+    document.getElementById("noDataFoundId").style.display = "none"; 
+  }
+  
+});
+
+function validate(pubcode){
+  if(document.getElementById("noDataFoundId") != null){
+    var range1=document.getElementById("noDataFoundId");
+    if(range1.style.display != 'none')
+      {
+        range1.style.display="none";
+      }
+    }
+  
+//  document.getElementById("noDataFoundId").style.display = "none";
+  searchFlag=true;
+//  alert("searchFlag setting in validate()"+searchFlag);
+  var issnSearched = document.getElementById("issnId").value;
+  var searchTypeSearched = document.getElementById("searchTypeId").value;
+//  alert(issnSearched);
+//  if(issnSearched==""){
+  /* if(searchTypeSearched==0){
+    document.getElementById("messagearea").style.display = ""; 
+      document.getElementById("messagearea").className="alert alert-error";
+    document.getElementById("messagearea").style.color="red";
+    document.getElementById("searchTypeId").style.borderColor="red";
+    document.getElementById("searchTypeId").focus();
+    document.getElementById("messagearea").innerHTML=" Please select Search Type to search for ISBN/ISSN "; */
+  /* }else{ */
+    var url="/"+pubcode+"/getISSNdetails";
+    document.forms['selectForm'].action=url;
+    document.forms['selectForm'].method="post";
+    document.forms['selectForm'].submit();
+  /* } */
+//  alert(document.getElementById("messagearea").style.display);
+  if(document.getElementById("messagearea").style.display==""){
+  document.getElementById("noDataFoundId").style.display = "none";
+  }
+}
+
+function removeFromPreview(itrCount){
+  var pubcode ='libraries';
+    $(".loadSelectType").show();
+    $(".pageLoadContainer").show();
+      var ajaxRequest; 
+     try{
+       // Opera 8.0+, Firefox, Safari
+       ajaxRequest = new XMLHttpRequest();
+     }catch (e){
+       // Internet Explorer Browsers
+       try{
+          ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+       }catch (e) {
+          try{
+             ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+          }catch (e){
+             // Something went wrong
+             alert("Your browser broke!");
+             return false;
+          }}
+       }
+      //alert("ajaxRequest : "+ajaxRequest);
+     if(ajaxRequest)
+     {
+    //   var accName=encode(institutionNameVal);  
+      var url="/"+pubcode+"/removeISSNAndISBN/"+itrCount;
+       //alert(url);
+      ajaxRequest.open("GET",url,true);
+      ajaxRequest.send(null);
+      ajaxRequest.onreadystatechange = function()
+      {
+       //alert(ajaxRequest.responseText);
+      if(ajaxRequest.readyState==4 && ajaxRequest.status==200){
+        document.getElementById('data').innerHTML = ajaxRequest.responseText;
+       $(".loadSelectType").hide();
+       $(".pageLoadContainer").hide();
+      }
+      }
+     }
+     else{
+      alert("Your browser don't support AJax !");
+     }
+}
+function calculateCPU1(itrCount){
+  //alert("calculateCPU1");
+  //alert("itrCount="+itrCount);
+  costIdVar1 = "costId1_"+itrCount+"";
+  ytdIdVar1 = "ytdId1_"+itrCount+"";
+  cpuIdVar1 = "cpuId1_"+itrCount+"";
+//alert("costIdVar ="+costIdVar1 );
+//alert("ytdIdVar ="+ytdIdVar1 );
+//alert("cpuIdVar ="+cpuIdVar1 );
+  var costVal = document.getElementById(costIdVar1).value;
+  var ytdVal = document.getElementById(ytdIdVar1).value;
+  //alert(costVal);
+  //alert(ytdVal);
+/*    var regex = new RegExp("^[a-zA-Z0-9]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+       event.preventDefault();
+       alert("Only Numbers are allowed. Letters & Special characters are restricted.");
+        if  ($('#costIdVar').attr('value') != ""){
+          document.getElementById("costId_"+itrCount).value="";
+    }
+       return false;
+    } */
+  var cpuVal = (costVal/ytdVal).toFixed(2);
+    if(ytdVal==0){
+      cpuVal = (costVal/1).toFixed(2);
+    }
+  //alert(cpuVal);
+  document.getElementById(cpuIdVar1).value=cpuVal;
+  cost1[itrCount-1]=costVal;  
+}
+
+function calculateCPU(itrCount){
+//  alert("calculateCPU");
+//  alert("itrCount="+itrCount);
+  costIdVar = "costId_"+itrCount+"";
+  ytdIdVar = "ytdId_"+itrCount+"";
+  cpuIdVar = "cpuId_"+itrCount+"";
+//alert("costIdVar ="+costIdVar );
+//alert("ytdIdVar ="+ytdIdVar );
+//alert("cpuIdVar ="+cpuIdVar );
+  var costVal = document.getElementById(costIdVar).value;
+  var ytdVal = document.getElementById(ytdIdVar).value;
+ // alert(costVal);
+ // alert(ytdVal);
+/*    var regex = new RegExp("^[a-zA-Z0-9]+$");
+    var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+    if (!regex.test(key)) {
+       event.preventDefault();
+       alert("Only Numbers are allowed. Letters & Special characters are restricted.");
+        if  ($('#costIdVar').attr('value') != ""){
+          document.getElementById("costId_"+itrCount).value="";
+    }
+       return false;
+    } */
+  var cpuVal = (costVal/ytdVal).toFixed(2);
+    if(ytdVal==0){
+      cpuVal = (costVal/1).toFixed(2);
+    }
+//  alert(cpuVal);
+  document.getElementById(cpuIdVar).value=cpuVal;
+  cost[itrCount-1]=costVal;
+}
+
+function addToPreview(){
+if(cost==""){
+    document.getElementById("messagearea").style.display = ""; 
+      document.getElementById("messagearea").className="alert alert-error";
+    document.getElementById("messagearea").style.color="red";
+    //document.getElementById("searchTypeId").style.borderColor="red";
+    //document.getElementById("searchTypeId").focus();
+    document.getElementById("messagearea").innerHTML=" Please calculate Cost per Use to add ISSN/ISBN in your list. ";
+  return false;
+}
+  document.getElementById("messagearea").style.display = "none"; 
+  var pubcode ='libraries';
+  $(".loadSelectType").show();
+    $(".pageLoadContainer").show();
+      var ajaxRequest; 
+     try{
+       // Opera 8.0+, Firefox, Safari
+       ajaxRequest = new XMLHttpRequest();
+     }catch (e){
+       // Internet Explorer Browsers
+       try{
+          ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+       }catch (e) {
+          try{
+             ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+          }catch (e){
+             // Something went wrong
+             alert("Your browser broke!");
+             return false;
+          }}
+       }
+      //alert("ajaxRequest : "+ajaxRequest);
+     if(ajaxRequest)
+     {
+    //   var accName=encode(institutionNameVal);  
+      var url="/"+pubcode+"/addISSNAndISBN/"+cost;
+       //alert(url);
+      ajaxRequest.open("GET",url,true);
+      ajaxRequest.send(null);
+      ajaxRequest.onreadystatechange = function()
+      {
+       //alert(ajaxRequest.responseText);
+      if(ajaxRequest.readyState==4 && ajaxRequest.status==200){
+        document.getElementById('data').innerHTML = ajaxRequest.responseText;
+       $(".loadSelectType").hide();
+       $(".pageLoadContainer").hide();
+      }
+      }
+     }
+     else{
+      alert("Your browser don't support AJax !");
+     }
+}
+
+function downloadCPU1(size){
+  var pubcode ='libraries';
+  if(pubcode == 'wtcox' || pubcode == 'libraries'){
+  var costAction1 = [];
+  costAction1[0] = 'addedList';
+  for(var j=0; j<size; j++)
+  { var k = j+1;
+    var costId1 = "costId1_"+k+"";
+    var costCountVal1 = document.getElementById(costId1).value;
+    costAction1[k] = costCountVal1;
+  }
+   var pubcode ='libraries';
+   var url="/"+pubcode+"/downloadTemplateExl/"+costAction1;
+    /* document.forms['formId'].action=url;
+    document.forms['formId'].method="post";
+    document.forms['formId'].submit(); */
+   window.parent.location=url;
+  
+  }else{
+    var A1 = [['ISSN/ISBN','Title Name','Collection Platform','Usage','Cost','Cost per Use']];  // initialize array of rows with header row as 1st item
+    for(var j=0; j<size; j++)
+    { var k = j+1;
+      var issnNumId1 = "issnId1_"+k+"";
+      var jrTitleId1 = "journalId1_"+k+"";
+      var pubNameId1 = "pubId1_"+k+"";
+      var ytdCountId1 = "ytdId1_"+k+"";
+      var costId1 = "costId1_"+k+"";
+      var costUsedId1 = "cpuId1_"+k+"";
+      
+      if(document.getElementById(costUsedId1).value != null && document.getElementById(costUsedId1).value != ""){
+        var issnNumVal1 = document.getElementById(issnNumId1).value;
+        var JrTitleVal1 = document.getElementById(jrTitleId1).value;
+          JrTitleVal1 = "\"" + JrTitleVal1 + "\"";
+        var pubNameVal1 = document.getElementById(pubNameId1).value;
+        var ytdVal1 = document.getElementById(ytdCountId1).value;
+        var costCountVal1 = document.getElementById(costId1).value;
+        var costUsedVal1 = document.getElementById(costUsedId1).value;
+        
+        A1.push([issnNumVal1, JrTitleVal1, pubNameVal1, ytdVal1, costCountVal1, costUsedVal1]) ;
+      }
+      
+    }
+
+    csvRows1.length = 0;
+    for(var i=0,l=A1.length; i<l; ++i){
+        csvRows1.push(A1[i].join(','));   // unquoted CSV row
+    }
+    var csvString1 = csvRows1.join("\r\n");
+
+    
+    var a = document.getElementById("downloadAnchor1");
+    //var a = document.createElement('a');
+    //a.innerHTML = "Download";
+    a.href     = 'data:application/csv;charset=utf-8,' + encodeURIComponent(csvString1);
+    a.target   = '_blank';
+    a.download = 'CostperUse.csv'; 
+    //document.body.appendChild(a);
+    
+    /* var url="/libraries/getISSNdetailsDownload?costArray="+cost;
+    document.forms['selectForm'].action=url;
+    document.forms['selectForm'].method="post";
+    document.forms['selectForm'].submit(); */
+    
+  }
+
+}
+
+function downloadCPU(size){
+  var pubcode ='libraries';
+
+  if(pubcode == 'wtcox' || pubcode == 'libraries'){
+  var costAction = [];
+  costAction[0] = 'searchList';
+  for(var j=0; j<size; j++)
+  { var k = j+1;
+
+    var costId = "costId_"+k+"";
+    var costCountVal = document.getElementById(costId).value;
+    costAction[k] = costCountVal;
+
+  }
+   var pubcode ='libraries';
+   var url="/"+pubcode+"/downloadTemplateExl/"+costAction;
+    /* document.forms['formId'].action=url;
+    document.forms['formId'].method="post";
+    document.forms['formId'].submit(); */
+   window.parent.location=url;
+
+  } else {
+  var A = [['ISSN/ISBN','Title Name','Collection Platform','Usage','Cost','Cost per Use']];  // initialize array of rows with header row as 1st item
+  for(var j=0; j<size; j++)
+  { var k = j+1;
+    var issnNumId = "issnId_"+k+"";
+    var jrTitleId = "journalId_"+k+"";
+    var pubNameId = "pubId_"+k+"";
+    var ytdCountId = "ytdId_"+k+"";
+    var costId = "costId_"+k+"";
+    var costUsedId = "cpuId_"+k+"";
+    if(document.getElementById(costUsedId).value != null && document.getElementById(costUsedId).value != ""){
+      var issnNumVal = document.getElementById(issnNumId).value;
+      var JrTitleVal = document.getElementById(jrTitleId).value;
+        JrTitleVal = "\"" + JrTitleVal + "\"";
+      var pubNameVal = document.getElementById(pubNameId).value;
+      var ytdVal = document.getElementById(ytdCountId).value;
+      var costCountVal = document.getElementById(costId).value;
+      var costUsedVal = document.getElementById(costUsedId).value;
+      A.push([issnNumVal, JrTitleVal, pubNameVal, ytdVal, costCountVal, costUsedVal]) ;
+    }
+    
+  }
+  csvRows.length = 0;
+  for(var i=0,l=A.length; i<l; ++i){
+      csvRows.push(A[i].join(','));   // unquoted CSV row
+  }
+  var csvString = csvRows.join("\r\n");
+  var a = document.getElementById("downloadAnchor");
+  //var a = document.createElement('a');
+  //a.innerHTML = "Download";
+  a.href     = 'data:application/csv;charset=utf-8,' + encodeURIComponent(csvString);
+  a.target   = '_blank';
+  a.download = 'CostperUse.csv'; 
+  //document.body.appendChild(a);
+
+  /* var url="/libraries/getISSNdetailsDownload?costArray="+cost;
+  document.forms['selectForm'].action=url;
+  document.forms['selectForm'].method="post";
+  document.forms['selectForm'].submit(); */
+}
+}
+
+$(document).ready(function () {
+//  alert(1);
+//  alert(costIdVar);
+var costIdVarHash = "#"+costIdVar;
+// alert(costIdVarHash);
+    $(costIdVarHash).keydown(function (e) {
+//      alert("typed");
+        // Allow: backspace, delete, tab, escape and enter
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110]) !== -1 ||
+             // Allow: Ctrl+A
+            (e.keyCode == 65 && e.ctrlKey === true) || 
+             // Allow: home, end, left, right
+            (e.keyCode >= 35 && e.keyCode <= 39)) {
+                 // let it happen, don't do anything
+                 return;
+        }
+        // Ensure that it is a number and stop the keypress
+        if(e.shiftKey || ((e.keyCode < 48 || e.keyCode > 57) && (e.keyCode < 96 || e.keyCode > 105))){
+            e.preventDefault();
+            alert("Only Numbers are allowed.");
+//             alert("costId value : "+$('#costIdStr').attr('value'));
+            if  ($(costIdVarHash).attr('value') != ""){
+//              alert("value of costId");
+//                 $('#costIdStr').attr('value') = '';
+              document.getElementById(cpuIdVar).value="";
+      }
+        }
+    });
+});
+
+function isNumberKey(evt) {
+    var charCode = (evt.which) ? evt.which : event.keyCode;
+    if (charCode != 46 && charCode > 31
+    && (charCode < 48 || charCode > 57))
+        return false;
+    return true;
+}
+function generateUrlCallForGetCacheValues(searchTypeVal){
+  //alert("ajax call where searchTypeVal="+searchTypeVal);
+ var pubcode ='libraries';  
+ loaderDiv = document.getElementById("loaderDivId");
+  
+ if(searchTypeVal!=0){
+  //$('#institutions').addClass("load_img");
+  //$(".loadSelectType").show();
+  //$(".pageLoadContainer").show();
+  loaderDiv.style.display = "block";
+  if(document.getElementById("noDataFoundId") != null){
+  var noData=document.getElementById("noDataFoundId");
+  if(noData.style.display != 'none')
+   {
+    noData.style.display="none";
+   }
+  }
+  if(document.getElementById("tableData") != null){
+   var tableData=document.getElementById("tableData");
+   if(tableData.style.display != 'none')
+    {
+     tableData.style.display="none";
+    }
+   }
+//  document.getElementById("noDataFoundId").style.display = "none";
+  document.getElementById("messagearea").style.display = "none";
+  document.getElementById("issnId").value="";
+  var ajaxRequest; 
+   try{
+     // Opera 8.0+, Firefox, Safari
+     ajaxRequest = new XMLHttpRequest();
+   }catch (e){
+     // Internet Explorer Browsers
+     try{
+        ajaxRequest = new ActiveXObject("Msxml2.XMLHTTP");
+     }catch (e) {
+        try{
+           ajaxRequest = new ActiveXObject("Microsoft.XMLHTTP");
+        }catch (e){
+           // Something went wrong
+           alert("Your browser broke!");
+           return false;
+        }}
+     }
+   // alert("ajaxRequest : "+ajaxRequest);
+   if(ajaxRequest)
+   {
+  //   var accName=encode(institutionNameVal);  
+    var url="/"+pubcode+"/getISSNAndISBNCacheValues"+"/"+searchTypeVal;
+     //alert(url);
+    ajaxRequest.open("GET",url,true);
+    ajaxRequest.send(null);
+    ajaxRequest.onreadystatechange = function()
+    {
+     //alert(ajaxRequest.responseText);
+    if(ajaxRequest.readyState==4 && ajaxRequest.status==200){
+     //$(".loadSelectType").hide();
+     //$(".pageLoadContainer").hide();
+      loaderDiv.style.display = "none";
+    }
+    }
+   }
+   else{
+    alert("Your browser don't support AJax !");
+   }
+ }
+}
+
+</script>
 
         <ol class="breadcrumb"> <li><a href="/librarian/dashboard">Home</a></li>
          <li><a href="/libraries/searchByISSN/LcollapseSix-03">Search By ISSN & ISBN</a></li> 
@@ -78,37 +912,37 @@ Generating autosuggestion...
 <div class="agile-Updating-grids">  <div class="agile-grids pad-top10">
 <div id="messagearea" class="space"> </div>
 <%= form_for :data_library,:url => url_for(:controller => "search_by_issn", :action =>"search")   do |f| %>
-  <div class="col-md-5 mb10">
-    <div id="search_type">
-      <%= f.select :select_type,"<option>Select Search Type</option><option>Journal Print ISSN</option><option>journalOnlineISSN</option><option>bookISBN</option><option>bookISSN</option>".html_safe %>
-    </div>
-  </div>
-  <div class="col-md-3">
-    <%= f.label :enter_issn %>
-    <%= f.text_field :Enter_issn, id: "auto_complete" %>
-    <!-- <input class="typeahead" type="text" placeholder="Oscar winners for Best Picture"> -->
-  <div class="actions">
-  </div>
-  <%= button_to "search", :class => "button" %>
-  <!-- <div class="button raised">
-    <a href="#" class="hoverable"> <div class="anim"></div><span>Search</span></a>
-  </div> -->
+            <div class="col-md-5 mb10">
+              <div id="search_type">
+                <%= f.select :select_type,"<option>Select Search Type</option><option>Journal Print ISSN</option><option>journalOnlineISSN</option><option>bookISBN</option><option>bookISSN</option>".html_safe %>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <%= f.label :enter_issn %>
+              <%= f.text_field :Enter_issn, id: "auto_complete" %>
+              <!-- <input class="typeahead" type="text" placeholder="Oscar winners for Best Picture"> -->
+              <div id="the-basics">
+                <input type="text" class="tw-typeahead" />
+              </div>
+            <div class="actions">
+            </div>
+            <%= button_to "search", :class => "button" %>
+            <!-- <div class="button raised">
+              <a href="#" class="hoverable"> <div class="anim"></div><span>Search</span></a>
+            </div> -->
 <% end %>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="//netsh.pp.ua/upwork-demo/1/js/typeahead.js"></script>
 <script type="text/javascript">
-  $("#search_type").change(function(){
-    alert("jhghjgj");
-  });
-  $('.auto_complete').typeahead({
-    alert("dsfdsf");
-    
+  $('the-basics.typeahead').typeahead({
+    local: ['apple', 'fdgfgdfg', 'fdgfghfgh','suggestionN']
   });
 </script>
 
 
 
-
-    </div>
-       <div class="clearfix"></div>
+  </div>
+      <div class="clearfix"></div>
   </div>
   <br>
 
@@ -125,7 +959,6 @@ Generating autosuggestion...
       </div>
       </div>
           
-
 
     <%= render :partial => '/layouts/footer'%>
 

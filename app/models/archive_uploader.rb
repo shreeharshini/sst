@@ -1,0 +1,2 @@
+class ArchiveUploader < ApplicationRecord
+end

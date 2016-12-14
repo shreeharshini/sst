@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get "export_file/xlsx"
   get "export_file/csv"
   get "import_data/xlsx"
+  post "search_by_issn/search"
   
 
 
@@ -23,12 +24,12 @@ Rails.application.routes.draw do
   #   end
   # end
 
-  resources :search_by_issn do
-    collection do
-      get 'load_suggestions'
-      get 'search'
-    end
-  end
+  # resources :search_by_issn do
+  #   collection do
+  #     get 'load_suggestions'
+  #     get 'search'
+  #   end
+  # end
 
   devise_for :users
   root to: 'home#index'
