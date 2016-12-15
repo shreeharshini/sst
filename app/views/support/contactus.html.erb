@@ -1,2 +1,51 @@
-<h1>Support#contactus</h1>
-<p>Find me in app/views/support/contactus.html.erb</p>
+<!DOCTYPE html>
+<html>
+<head>
+
+<%= render :partial => '/layouts/side_bar_navigation'%>
+
+<%= render :partial => '/layouts/header'%>
+</head>
+<body>
+
+<br>
+<br>
+
+<div class="container">
+
+<p>
+<br>
+<h1>Contact Us</h1>
+<br>
+<%= form_for :contact_u, url: contact_us_path do |f| %>
+                 
+<div class="field">
+<%= f.label :name %>
+<%= f.text_field :name, class: "form-control" %>
+</div>
+
+<div class="field">
+<%= f.label :email %>
+<%= f.text_field :email, class: "form-control"%>
+</div>
+
+<div class="field">
+<%= f.label :subject %>
+<%= f.text_field :subject, class: "form-control"%>
+</div>
+
+<div class="field">
+<%= f.label :message %>
+<%= f.text_area :message, class: "form-control"%>
+</div>
+
+<div class = "field">
+<%= f.submit "send message", class: "btn btn-primary" %>
+</div>
+<% end %>
+</p>
+</div>
+<%= render :partial => '/layouts/footer'%>
+
+</body>
+</html>

@@ -29,6 +29,7 @@
 
 	
 
+<<<<<<< HEAD
 </head>
 <body class="dashboard-page" ng-app="myApp">
 	<section class="wrapper scrollable">
@@ -36,41 +37,49 @@
 
   <%= render :partial => '/layouts/header'%>
 
+=======
+  </head>
+>>>>>>> d569a9a961d97a46c0ffadd5cc842d8a35e2f53d
 
+  <script type="text/javascript">
 
-	
-	
-			
-<div class="main-grid">
-        <br>
-        <ol class="breadcrumb"> <li><a href="/loginpage">Home</a></li>
-             <li><a href="/loginpage/dynamicreports">Dynamic Reports</a></li>       
-        </ol>
-            
-    <br>
-    				  <h4>Dynamic Usage Reports</h4>
-    <p class="pad-top10 mar-btm20">This section allows you to view and download reports for a librarian account.
-    </p>
-
-    	<div class="agile-Updating-grids"> 
-       <div class="agile-grids pad-top10">
-          <div class="col-md-5 mb10">				
-            <div class="form-group">
-    									<label>Select Report Type:</label>
-              <select name="report" id="selectReportType" class="form-control">
-                  <option value="-1">--Select Report Type--</option>
-                  <option value="JR1 (Consolidated Journal Report 1, Consolidated COUNTER JR1 Report of all subscribed Platforms)">JR1 (Consolidated Journal Report 1, Consolidated COUNTER JR1 Report of all subscribed Platforms)</option>
-                  <option value="JR2 (Consolidated Journal Report 2, Consolidated COUNTER JR2 Report of all subscribed Platforms)">JR2 (Consolidated Journal Report 2, Consolidated COUNTER JR2 Report of all subscribed Platforms)</option>
-                  <option value="JR3 (Consolidated Journal Report 3, Consolidated COUNTER JR3 Report of all subscribed Platforms)">JR3 (Consolidated Journal Report 3, Consolidated COUNTER JR3 Report of all subscribed Platforms)</option>
-                  <option value="JR1a (Consolidated Journal Report 1a, Consolidated COUNTER JR1a Report of all subscribed Platforms)">JR1a (Consolidated Journal Report 1a, Consolidated COUNTER JR1a Report of all subscribed Platforms)</option>
-                  <option value="BR1 (Consolidated Book Report 1, Consolidated COUNTER BR1 Report of all subscribed Platforms)">BR1 (Consolidated Book Report 1, Consolidated COUNTER BR1 Report of all subscribed Platforms)</option>
-                  <option value="BR2 (Consolidated Book Report 2, Consolidated COUNTER BR2 Report of all subscribed Platforms)">BR2 (Consolidated Book Report 2, Consolidated COUNTER BR2 Report of all subscribed Platforms)</option>
-                  <option value="DB1 (Consolidated Database Report 1, Consolidated COUNTER DB1 Report of all subscribed Platforms)">DB1 (Consolidated Database Report 1, Consolidated COUNTER DB1 Report of all subscribed Platforms)</option>
-                  <option value="DB2 (Consolidated Database Report 2, Consolidated COUNTER DB2 Report of all subscribed Platforms)">DB2 (Consolidated Database Report 2, Consolidated COUNTER DB2 Report of all subscribed Platforms)</option>
-                  <option value="PR1 (Consolidated Platform Report 1, Consolidated COUNTER PR1 Report of all subscribed Platforms)">PR1 (Consolidated Platform Report 1, Consolidated COUNTER PR1 Report of all subscribed Platforms)</option>
-               </select>
-    				</div>
-    			</div>
+function test(){
+  var e=document.getElementById('selectReportType');
+  var strUser = e.options[e.selectedIndex].text;
+  alert("Report = "+strUser);
+}
+  </script>
+ 
+  
+  <body class="dashboard-page" ng-app="myApp">
+    <%= render :partial => '/layouts/side_bar_navigation'%>
+    <%= render :partial => '/layouts/header'%>
+    <div class="main-grid"><br>
+      <h4>Dynamic Usage Reports</h4>
+      <p class="pad-top10 mar-btm20">This section allows you to view and download reports for a librarian account.</p>
+        
+      <div class="agile-Updating-grids"> 
+        <div class="agile-grids pad-top10">
+          <div class="col-md-5 mb10">
+          
+          <%= form_tag(loginpage_dynamicreports_path, method: :get) do %>
+          <div class="form-group">
+            <label>Select Report Type:</label>
+            <select  id="selectReportType" class="form-control" name="Report">
+             <!--  params = strUser -->
+              <option value="-1">--Select Report Type--</option>
+              <option value="JR1">JR1 (Consolidated Journal Report 1, Consolidated COUNTER JR1 Report of all subscribed Platforms)</option>
+              <option value="JR2">JR2 (Consolidated Journal Report 2, Consolidated COUNTER JR2 Report of all subscribed Platforms)</option>
+              <option value="JR3">JR3 (Consolidated Journal Report 3, Consolidated COUNTER JR3 Report of all subscribed Platforms)</option>
+              <option value="JR1a">JR1a (Consolidated Journal Report 1a, Consolidated COUNTER JR1a Report of all subscribed Platforms)</option>
+              <option value="BR1">BR1 (Consolidated Book Report 1, Consolidated COUNTER BR1 Report of all subscribed Platforms)</option>
+              <option value="BR2">BR2 (Consolidated Book Report 2, Consolidated COUNTER BR2 Report of all subscribed Platforms)</option>
+              <option value="DB1">DB1 (Consolidated Database Report 1, Consolidated COUNTER DB1 Report of all subscribed Platforms)</option>
+              <option value="DB2">DB2 (Consolidated Database Report 2, Consolidated COUNTER DB2 Report of all subscribed Platforms)</option>
+              <option value="PR1">PR1 (Consolidated Platform Report 1, Consolidated COUNTER PR1 Report of all subscribed Platforms)</option>
+            </select>
+                </div>
+                  </div>
            
           <div class="col-sm-12 pad-top20 mb-10">
             <div class="col-sm-2" style="padding:0px;">
@@ -110,16 +119,22 @@
           </div>
                     <div class=" col-sm-2 mt-10">
      <div class="button raised">
-       <a href="#" class="hoverable"> <div class="anim"></div><span>Preview Report </span></a>
+       <a href="#" class="hoverable"> 
+        <div class="anim"></div>
+        <%= submit_tag "Preview Report", :id => 'Preview' %>
+        <span>Preview Report </span></a>
         </div>
 
     								</div>
 					   
 				<!-- //updating-data -->
 				</div>
+      </form>
 				<div class="clearfix"> </div>
 			</div>
 	</div>		
+</div>
+<% end %>
 			
 
     
@@ -142,7 +157,22 @@
 
 <%= javascript_include_tag "date-angular.min.js" %>
 
+<<<<<<< HEAD
 </section>
+=======
+<%= javascript_include_tag "date.js" %>
+<script type="text/javascript">
+   
+    $("#selectReportType").change(function(){
+
+      
+      var value2 = $('select#selectReportType option:selected').val();
+      alert(value2);
+    });
+
+  </script>
+
+>>>>>>> d569a9a961d97a46c0ffadd5cc842d8a35e2f53d
 
   
 </body>
