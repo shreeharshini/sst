@@ -51,13 +51,6 @@ ActiveRecord::Schema.define(version: 20161215095014) do
     t.integer  "account_id"
   end
 
-  create_table "account_platform_details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "account_id"
-    t.integer  "platform_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "account_platforms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "account_id"
     t.integer  "platform_id"
@@ -77,6 +70,7 @@ ActiveRecord::Schema.define(version: 20161215095014) do
     t.string   "activation_status"
     t.string   "account_code"
     t.integer  "user_id"
+<<<<<<< HEAD
   end
 
   create_table "additional_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -87,6 +81,8 @@ ActiveRecord::Schema.define(version: 20161215095014) do
     t.string   "email"
     t.string   "password"
     t.string   "role"
+=======
+>>>>>>> 6cc062535cf3efa72ce91e060f2f8a61f596c439
   end
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -241,38 +237,6 @@ ActiveRecord::Schema.define(version: 20161215095014) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "counter_and_customs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name"
-    t.integer  "year"
-    t.string   "description"
-    t.string   "report_type"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "create_additional_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "role"
-  end
-
-  create_table "create_addtional_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_create_addtional_users_on_email", unique: true, using: :btree
-    t.index ["reset_password_token"], name: "index_create_addtional_users_on_reset_password_token", unique: true, using: :btree
-  end
-
   create_table "db1s", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "Database_name"
     t.string   "Platform"
@@ -387,11 +351,6 @@ ActiveRecord::Schema.define(version: 20161215095014) do
     t.integer  "Dec_2016"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-  end
-
-  create_table "dynamicreports", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "fyears", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -658,13 +617,6 @@ ActiveRecord::Schema.define(version: 20161215095014) do
     t.datetime "updated_at",             null: false
   end
 
-  create_table "platform_report_details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "platform_id"
-    t.integer  "report_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "platform_reports", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "platform_id"
     t.integer  "report_id"
@@ -679,15 +631,6 @@ ActiveRecord::Schema.define(version: 20161215095014) do
     t.string   "updated_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "plats", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name"
-    t.string   "created_by"
-    t.string   "updated_by"
-    t.string   "platformname"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
   end
 
   create_table "pr1s", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -778,40 +721,26 @@ ActiveRecord::Schema.define(version: 20161215095014) do
     t.string   "selectpid"
   end
 
-  create_table "user_acounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id"
-    t.integer  "account_id"
-    t.integer  "role_id"
-    t.string   "updated_by"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "user_roles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id"
-    t.integer  "role_id"
-    t.string   "updated_by"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.string   "role"
     t.string   "first_name"
     t.string   "last_name"
+<<<<<<< HEAD
     t.boolean  "is_admin",               default: false
+=======
+>>>>>>> 6cc062535cf3efa72ce91e060f2f8a61f596c439
     t.integer  "account_id"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
