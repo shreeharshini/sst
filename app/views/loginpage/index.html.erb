@@ -1,13 +1,11 @@
 
-<!DOCTYPE html>
-<head>
 
+    
+    
 
-<title>Scholarly Stats</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="shortcut icon" href="images/favicon.ico">
-
+<%= image_tag("favicon.ico")%>
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
@@ -38,11 +36,11 @@
 
 </head>
 <body class="dashboard-page">
-    
+  <section class="wrapper scrollable">   
 
     <%= render :partial => '/layouts/side_bar_navigation'%>
 
-        <%= render :partial => '/layouts/header'%>
+    <%= render :partial => '/layouts/header'%>
         
         
         
@@ -172,6 +170,6 @@
 <%= javascript_include_tag "https://code.highcharts.com/modules/exporting.js"%>
 <%= javascript_include_tag "https://code.highcharts.com/modules/drilldown.js"%>
 <%= javascript_include_tag "https://code.highcharts.com/modules/data.js"%>
-
+</section>
 </body>
 </html>

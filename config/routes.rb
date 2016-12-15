@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
  
+  resources :additional_users
   get 'export_files/csv'
 
   get 'export_files/xlsx'
@@ -30,7 +31,7 @@ Rails.application.routes.draw do
             :library_account_details, :import_data, :search_by_issn , 
             :integration_partners, :counter_and_custom_reports
 
-
+  devise_for :additional_users
   devise_for :users
   root to: 'home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
