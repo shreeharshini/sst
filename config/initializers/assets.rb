@@ -18,11 +18,12 @@ Rails.application.config.assets.precompile += %w( bootstrap.css )
 Rails.application.config.assets.precompile += %w( basictable.css )
 
 Rails.application.config.assets.precompile += %w( bootstrap-theme.css )
-Rails.application.config.assets.precompile += %w( bootstrap-theme.min.css )
 Rails.application.config.assets.precompile += %w( ladda.min.css )
+Rails.application.config.assets.precompile += %w( bootstrap-theme.min.css )
+
 
 Rails.application.config.assets.precompile += %w( lsb.css )
-Rails.application.config.assets.precompile += %w( materialize.min.css )
+# Rails.application.config.assets.precompile += %w( materialize.min.css )
 
 Rails.application.config.assets.precompile += %w( my_style.css )
 Rails.application.config.assets.precompile += %w( monthly.css )
@@ -31,6 +32,11 @@ Rails.application.config.assets.precompile += %w( my_style_responsive.css )
 Rails.application.config.assets.precompile += %w( style.css )
 Rails.application.config.assets.precompile += %w( table-style.css )
 Rails.application.config.assets.precompile += %w( typo.css )
+Rails.application.config.assets.precompile += %w( date.css )
+Rails.application.config.assets.precompile += %w( date-jquery-ui.min.js )
+Rails.application.config.assets.precompile += %w( date-angular.min.js )
+
+
 #these are added in association with stylesheet_link_tag to enable assets pipeline  
 #for javascripts
 Rails.application.config.assets.precompile += %w( highcharts.js )
@@ -48,7 +54,7 @@ Rails.application.config.assets.precompile += %w( date-angular.min.js )
 Rails.application.config.assets.precompile += %w( date.js )
 
 Rails.application.config.assets.precompile += %w( lsb.js )
-Rails.application.config.assets.precompile += %w( materialize.min.js )
+# Rails.application.config.assets.precompile += %w( materialize.min.js )
 Rails.application.config.assets.precompile += %w( modernizr.js )
 Rails.application.config.assets.precompile += %w( jquery.min.js )
 Rails.application.config.assets.precompile += %w( custom.min.js )

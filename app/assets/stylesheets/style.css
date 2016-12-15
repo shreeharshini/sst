@@ -486,8 +486,11 @@ body a:hover{
     padding: 3em;
 }
 .dashboard-page .title-bar {
-    position: relative;
+       position: relative;
     display: block;
+    background-color: #fff;
+    -webkit-box-shadow: 0 4px 10px -2px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 10px -2px rgba(0,0,0,0.05);
     padding: 15px 42px;
 }
 .logo {
@@ -3702,6 +3705,9 @@ body.signup-body {
     margin: 1.5em 2em;
     background-color: #d8d8d8;
     color: #000;
+}
+.footer-grid {
+    padding: 0 3em;
 }
 .footer-icons{
     margin: 1.5em 0;

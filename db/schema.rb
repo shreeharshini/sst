@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20161214091639) do
     t.integer  "number_of_platforms"
     t.string   "activation_status"
     t.string   "account_code"
+    t.integer  "user_id"
   end
 
   create_table "br1s", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -602,15 +603,6 @@ ActiveRecord::Schema.define(version: 20161214091639) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "plats", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name"
-    t.string   "created_by"
-    t.string   "updated_by"
-    t.string   "platformname"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
   create_table "pr1s", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "Platform"
     t.string   "Publisher"
@@ -715,6 +707,7 @@ ActiveRecord::Schema.define(version: 20161214091639) do
     t.string   "role"
     t.string   "first_name"
     t.string   "last_name"
+    t.integer  "account_id"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

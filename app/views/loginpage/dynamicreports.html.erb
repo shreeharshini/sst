@@ -1,38 +1,27 @@
 
-<!DOCTYPE html>
-<head>
-<title>Scholarly-stats</title>
-<link rel="shortcut icon" href="images/favicon.ico">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!--<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 --><!-- bootstrap-css -->
-<link rel="stylesheet" href="css/bootstrap.css">
   <%= stylesheet_link_tag "bootstrap.css" %> 
 
 <!-- //bootstrap-css -->
 <!-- Custom CSS -->
-<link href="css/style.css" rel='stylesheet' type='text/css' />
-  <%= stylesheet_link_tag "bootstrap.css" %> 
+  <%= stylesheet_link_tag "style.css" %> 
 
 <!-- font CSS -->
-  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-    <%= stylesheet_link_tag "bootstrap.css" %> 
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Raleway" %> 
 
 <!-- font-awesome icons -->
-<link rel="stylesheet" href="css/font.css" type="text/css"/>
-  <%= stylesheet_link_tag "bootstrap.css" %> 
+  <%= stylesheet_link_tag "font.css" %> 
 
-<link href="css/font-awesome.css" rel="stylesheet"> 
-  <%= stylesheet_link_tag "bootstrap.css" %> 
+  <%= stylesheet_link_tag "font-awesome.css" %> 
 
 <!-- //font-awesome icons -->
-<script src="js/jquery2.0.3.min.js"></script>
-<%= javascript_include_tag "bootstrap.js" %>
+<%= javascript_include_tag "jquery2.0.3.min.js" %>
 
-<script src="js/modernizr.js"></script>
-<%= javascript_include_tag "bootstrap.js" %>
+<%= javascript_include_tag "modernizr.js" %>
 
 
 	
@@ -42,7 +31,7 @@
 
 </head>
 <body class="dashboard-page" ng-app="myApp">
-	
+	<section class="wrapper scrollable">
 	<%= render :partial => '/layouts/side_bar_navigation'%>
 
   <%= render :partial => '/layouts/header'%>
@@ -144,19 +133,16 @@
 	<script src="js/bootstrap.js"></script>
     
        
-	       <link href='css/date.css' rel='stylesheet prefetch' type="text/css">
-           <%= stylesheet_link_tag "bootstrap.css" %> 
+           <%= stylesheet_link_tag "date.css" %> 
 
 
 	   
-<script src="js/date-jquery-ui.min.js"></script>
-<%= javascript_include_tag "bootstrap.js" %>
+<%= javascript_include_tag "date-jquery-ui.min.js" %>
 
 
 <%= javascript_include_tag "date-angular.min.js" %>
 
-<%= javascript_include_tag "date.js" %>
-
+</section>
 
   
 </body>
