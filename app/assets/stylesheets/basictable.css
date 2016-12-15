@@ -1,21 +1,29 @@
+<<<<<<< HEAD
+.ownTblContent table td {
+=======
  table td {
     padding: 10px 30px;
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> c0117e9b45d33d671cebe462cf21a74171958301
+>>>>>>> dbccafa01de5af459dbd286e91e3ef8b017262d9
     padding: 13px 50px;
     text-align: left;
 	
     font-size: .95em;
 }
 
-table th {
+.ownTblContent table th {
     background: #01579B;
-    color: #ffffff;
+    color: #ffffff !important;
     font-size: 14px;
 	padding: 10px 70px;
 	padding: 10px 70px;
     text-align: left;
 }
 
-.table > thead > tr > th {
+.ownTblContent .table > thead > tr > th {
    
 	padding: 16px 12px;
 }
