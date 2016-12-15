@@ -27,22 +27,22 @@
             </div>
             <div class="col-md-3">
               <%= f.label :enter_issn %>
-              <%= f.text_field :Enter_issn, id: "auto_complete" %>
+              
               <!-- <input class="typeahead" type="text" placeholder="Oscar winners for Best Picture"> -->
               <div id="the-basics">
-                <input type="text" class="tw-typeahead" />
+                <input class="typeahead" type="text" placeholder="States of USA">
               </div>
-            <div class="actions">
-
             </div>
             <%= button_to "search", :class => "button" %>
 <% end %>
-<script type="text/javascript" src="http://code.jquery.com/jquery-3.0.0.min.js"></script>
-<script type="text/javascript" src="//netsh.pp.ua/upwork-demo/1/js/typeahead.js"></script>
+
 <script type="text/javascript">
-  $('the-basics.typeahead').typeahead({
-    local: ['apple', 'fdgfgdfg', 'fdgfghfgh','suggestionN']
-  });
+   $('#the-basics').typeahead({
+          ajax: '/search_by_issn/load_suggestions',
+          displayField: 'serial_number',
+          valueField: 'id',
+          onSelect: load_suggestions
+      });
 </script>
 
 

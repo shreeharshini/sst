@@ -27,7 +27,8 @@ Rails.application.routes.draw do
             :source_reports_mappings, :year_trends, :year_usages,
             :year_top_journals, :account_infos, :export_files, 
             :platform_reports, :requestfordemos, :contact_us, 
-            :library_account_details, :import_data, :search_by_issn , :integration_partners
+            :library_account_details, :import_data, :search_by_issn , 
+            :integration_partners, :counter_and_custom_reports
 
 
   devise_for :users
