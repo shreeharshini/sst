@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 .ownTblContent table td {
+=======
+ table td {
+<<<<<<< HEAD
+    padding: 10px 30px;
+=======
+>>>>>>> c0117e9b45d33d671cebe462cf21a74171958301
     padding: 13px 50px;
+>>>>>>> 6cc062535cf3efa72ce91e060f2f8a61f596c439
     text-align: left;
 	
     font-size: .95em;
@@ -9,7 +17,11 @@
     background: #01579B;
     color: #ffffff !important;
     font-size: 14px;
+<<<<<<< HEAD
+	padding: 10px 80px;
+=======
 	padding: 10px 90px;
+>>>>>>> 6cc062535cf3efa72ce91e060f2f8a61f596c439
     text-align: left;
 }
 
