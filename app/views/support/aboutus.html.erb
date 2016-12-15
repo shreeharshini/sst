@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>About Us</title>
-	<%= render :partial => '/layouts/side_bar_navigation'%>
 
-    <%= render :partial => '/layouts/header'%>
+	<title>About Us</title>
+	
 </head>
-<body>
+<body class="dashboard-page">
+ <section class="wrapper scrollable">
+  
+  <%= render :partial => '/layouts/side_bar_navigation'%>
+
+  <%= render :partial => '/layouts/header'%>
 
 <br>
 <br>
@@ -38,5 +39,6 @@
 </div>
 <%= render :partial => '/layouts/footer'%>
 
+</section>
 </body>
 </html>

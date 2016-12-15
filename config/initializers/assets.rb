@@ -15,7 +15,7 @@ Rails.application.config.assets.precompile += %w( font-awesome.css )
 Rails.application.config.assets.precompile += %w( custom.min.css )
 Rails.application.config.assets.precompile += %w( morris.css )
 Rails.application.config.assets.precompile += %w( bootstrap.css )
-Rails.application.config.assets.precompile += %w( basictable.css )
+ 
 
 Rails.application.config.assets.precompile += %w( bootstrap-theme.css )
 Rails.application.config.assets.precompile += %w( ladda.min.css )
