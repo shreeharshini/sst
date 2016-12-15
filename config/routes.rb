@@ -19,14 +19,15 @@ Rails.application.routes.draw do
   get "loginpage/accessdetails"
   get "loginpage/selectedplatforms"
 	get "home/index"
-
+  get "integration_partners/manage_sushi_account"
   get "import_data/xlsx"
+  post "search_by_issn/search"
   
   resources :loginpage, :accounts, :reports, :platforms, 
             :source_reports_mappings, :year_trends, :year_usages,
             :year_top_journals, :account_infos, :export_files, 
             :platform_reports, :requestfordemos, :contact_us, 
-            :library_account_details, :import_data
+            :library_account_details, :import_data, :search_by_issn , :integration_partners
 
 
   devise_for :users
