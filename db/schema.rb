@@ -76,7 +76,6 @@ ActiveRecord::Schema.define(version: 20161214130833) do
     t.integer  "number_of_platforms"
     t.string   "activation_status"
     t.string   "account_code"
-    t.integer  "user_id"
   end
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -801,8 +800,11 @@ ActiveRecord::Schema.define(version: 20161214130833) do
     t.string   "role"
     t.string   "first_name"
     t.string   "last_name"
+<<<<<<< HEAD
     t.boolean  "is_admin",               default: false
     t.integer  "account_id"
+=======
+>>>>>>> 45acb868a31729e53a3d2d9ea76fc4d639687afa
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
