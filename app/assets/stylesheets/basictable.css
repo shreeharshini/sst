@@ -1,19 +1,8 @@
 .ownTblContent table td {
-<<<<<<< HEAD
- 
+
     padding: 10px 30px;
-=======
-=======
- table td {
-    padding: 10px 30px;
-<<<<<<< HEAD
-=======
-=======
->>>>>>> c0117e9b45d33d671cebe462cf21a74171958301
->>>>>>> dbccafa01de5af459dbd286e91e3ef8b017262d9
-    padding: 13px 50px;
->>>>>>> 81b681ddf7f054947db20b3a9e4cf27cd5890325
-    text-align: left;
+
+   text-align: left;
 	
     font-size: .95em;
 }
@@ -22,12 +11,9 @@
     background: #01579B;
     color: #ffffff !important;
     font-size: 14px;
-<<<<<<< HEAD
+
 	padding: 5px 5px;
-=======
-	padding: 10px 70px;
-	padding: 10px 70px;
->>>>>>> 81b681ddf7f054947db20b3a9e4cf27cd5890325
+
     text-align: left;
 }
 
