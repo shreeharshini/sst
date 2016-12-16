@@ -26,160 +26,14 @@
   
 
 </head>
-<body class="dashboard-page" ng-app="myApp">
-  
-  <nav class="main-menu">
-    <ul>
-      <li>
-        <a href="index.html">
-          <i class="fa fa-home nav_icon"></i>
-          <span class="nav-text">
-Home          </span>
-        </a>
-      </li>
-      
-      <li class="has-subnav">
-        <a href="javascript:;">
-        <i class="fa fa-bar-chart nav_icon"></i>
-        <span class="nav-text">
-        Reports
-        </span>
-        <i class="icon-angle-right"></i><i class="icon-angle-down"></i>
-        </a>
-        <ul>
-          <li>
-            <a class="subnav-text" href="#">COUNTER & Custom Reports</a>
-          </li>
-          <li>
-            <a class="subnav-text" href="#">Source Reports</a>
-          </li>
-                    <li>
-            <a class="subnav-text" href="#">Dynamic Reports</a>
-          </li>
-          <li>
-            <a class="subnav-text" href="#">Search By ISSN/ISBN</a>
-          </li>
-        </ul>
-      </li>
-      <li class="has-subnav">
-        <a href="javascript:;">
-          <i class="fa fa-file-text-o nav_icon"></i>
-            <span class="nav-text">Administrative Features</span>
-          <i class="icon-angle-right"></i><i class="icon-angle-down"></i>
-        </a>
-        <ul>
-          <li>
-            <a class="subnav-text" href="#">
-              Selected Platforms
-            </a>
-          </li>
-          <li>
-            <a class="subnav-text" href="#">
-              Access Details
-            </a>
-          </li>
-          <li>
-            <a class="subnav-text" href="#">
-Library Account Details           </a>
-          </li>
-          <li>
-            <a class="subnav-text" href="#">
-Integration Partners            </a>
-          </li>
-                      <li>
-            <a class="subnav-text" href="#">
-Create Additional User Accounts           </a>
-          </li> <li>
-            <a class="subnav-text" href="#">
-Upload Data           </a>
-          </li> <li>
-            <a class="subnav-text" href="#">
-Export Data           </a>
-          </li>
-        </ul>
-      </li>
-            
-            
-            <li class="has-subnav">
-        <a href="javascript:;">
-        <i class="fa fa-info-circle nav_icon"></i>
-        <span class="nav-text">
-        Support
-        </span>
-        <i class="icon-angle-right"></i><i class="icon-angle-down"></i>
-        </a>
-        <ul>
-          <li>
-            <a class="subnav-text" href="report.html">Contact Us
-</a>
-          </li>
-          <li>
-            <a class="subnav-text" href="report.html">FAQs
-</a>
-          </li>
-                    <li>
-            <a class="subnav-text" href="report.html">About Us</a>
-          </li>
-          
-        </ul>
-      </li>
-      
-    </ul>
-      </li>
-    </ul>
-    <ul class="logout">
-      <li>
-      <a href="#">
-      <i class="icon-off nav-icon"></i>
-      <span class="nav-text">
-      Logout
-      </span>
-      </a>
-      </li>
-    </ul>
-  </nav>
-  <section class="wrapper scrollable">
-    <nav class="user-menu">
-      <a href="javascript:;" class="main-menu-access">
-      <i class="icon-proton-logo"></i>
-      <i class="icon-reorder"></i>
-      </a>
-    </nav>
-    <section class="title-bar">
-      <div class="logo">
-        <h1><a href="index.html"><%= image_tag("macmillan-txt.png") %></a></h1>
-      </div>
-      
-      
-      <div class="header-right">
-        <div class="profile_details_left">
-          <div class="header-right-left">
-            <!--notifications of menu start -->
-            <ul class="notifications-dropdown">
-              
-              
-          <div class="profile_details">   
-            <ul>
-              <li class="dropdown profile_details_drop">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                  <div class="profile_img"> 
-                    <span class="prfil-img"><i class="fa fa-user" aria-hidden="true"></i></span> 
-                    <div class="clearfix"></div>  
-                  </div>  
-                </a>
-                <ul class="dropdown-menu drp-mnu">
-                  <li> <a href="#"><i class="fa fa-cog"></i> Settings</a> </li> 
-                  <li> <a href="#"><i class="fa fa-user"></i> Profile</a> </li> 
-                  <li> <a href="#"><i class="fa fa-sign-out"></i> Logout</a> </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-          <div class="clearfix"> </div>
-        </div>
-      </div>
-      <div class="clearfix"> </div>
-    </section>
+<body  class="dashboard-page">
+ 
+ 
+ <section class="wrapper scrollable">
+  <%= render :partial => '/layouts/header'%>
+  <%= render :partial => '/layouts/side_bar_navigation'%>
+ 
+ 
     <div class="main-grid">
         
         
@@ -220,7 +74,7 @@ Export Data           </a>
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
               <input type="button" onclick="window.location = '/create_additional_users/new'" value="Create New User">
@@ -233,7 +87,7 @@ Export Data           </a>
       <p>© 2016 . All Rights Reserved . Design by <a href="#">MPS</a></p>
     </div>
     <!-- //footer -->
-  </section>
+
   <script src="js/bootstrap.js"></script>
     
        
@@ -244,7 +98,7 @@ Export Data           </a>
 
   <script src="js/date-angular.min.js"></script>
 <script src="js/date.js"></script>
-
+</section>
   
 </body>
 </html>

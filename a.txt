@@ -1,4 +1,8 @@
                                    Prefix Verb   URI Pattern                                          Controller#Action
+         counter_and_custom_reports_index GET    /counter_and_custom_reports/index(.:format)          counter_and_custom_reports#index
+           counter_and_custom_reports_csv GET    /counter_and_custom_reports/csv(.:format)            counter_and_custom_reports#csv
+          counter_and_custom_reports_xlsx GET    /counter_and_custom_reports/xlsx(.:format)           counter_and_custom_reports#xlsx
+           counter_and_custom_reports_zip GET    /counter_and_custom_reports/zip(.:format)            counter_and_custom_reports#zip
                          export_files_csv GET    /export_files/csv(.:format)                          export_files#csv
                         export_files_xlsx GET    /export_files/xlsx(.:format)                         export_files#xlsx
                          export_files_zip GET    /export_files/zip(.:format)                          export_files#zip
@@ -150,6 +154,14 @@ integration_partners_manage_sushi_account GET    /integration_partners/manage_su
                                           PATCH  /integration_partners/:id(.:format)                  integration_partners#update
                                           PUT    /integration_partners/:id(.:format)                  integration_partners#update
                                           DELETE /integration_partners/:id(.:format)                  integration_partners#destroy
+                         additional_users GET    /additional_users(.:format)                          additional_users#index
+                                          POST   /additional_users(.:format)                          additional_users#create
+                      new_additional_user GET    /additional_users/new(.:format)                      additional_users#new
+                     edit_additional_user GET    /additional_users/:id/edit(.:format)                 additional_users#edit
+                          additional_user GET    /additional_users/:id(.:format)                      additional_users#show
+                                          PATCH  /additional_users/:id(.:format)                      additional_users#update
+                                          PUT    /additional_users/:id(.:format)                      additional_users#update
+                                          DELETE /additional_users/:id(.:format)                      additional_users#destroy
                          new_user_session GET    /users/sign_in(.:format)                             devise/sessions#new
                              user_session POST   /users/sign_in(.:format)                             devise/sessions#create
                      destroy_user_session DELETE /users/sign_out(.:format)                            devise/sessions#destroy

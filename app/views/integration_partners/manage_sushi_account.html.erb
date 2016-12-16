@@ -11,11 +11,10 @@
     </head>
 
  <body  class="dashboard-page">
- 	<%= render :partial => '/layouts/side_bar_navigation'%>
- 	<%= render :partial => '/layouts/header'%>
-  <div id="loaderDivId" class="loader" style="display:none"></div>
+ 	
  <section class="wrapper scrollable">
- 
+ <%= render :partial => '/layouts/side_bar_navigation'%>
+  <%= render :partial => '/layouts/header'%>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -26,7 +25,7 @@
 
 <!-- new header -->
 		
-		</section>
+		
 	
     <!-- Modal -->
  <div id="myModal" class="modal fade" role="dialog">
@@ -79,7 +78,6 @@
 </div> 
 
 
-<div class="pageLoadContainer" ></div>
          <div class="row-fluid" style="margin-bottom:50px; min-height:450px;">
 		    <div class="span3">
 		      <div class="sidebar-nav">
@@ -169,13 +167,13 @@
                	<tr>
                  
                  
-                   <td><img src="/images/Consortia.gif"/></td>
+                   <td><%= image_tag("Consortia.gif")%></td>
                    <td>&nbsp;</td>
                    <td>Consortia</td>
                    <td>&nbsp;</td>
                  
                  
-                   <td><img src="/images/Institution.gif"/></td>
+                   <td><%= image_tag("Institution.gif")%></td>
                    <td>&nbsp;</td>
                    <td>Institution</td>
                    <td>&nbsp;</td>
@@ -199,7 +197,7 @@
         	
           	<tr>
             <td data-th="Name">
-			<img src="/images/Institution.gif" />
+			<%= image_tag("Institution.gif")%>
                  
 									 UCR Riverside University Libraries&nbsp;-&nbsp;
 										16&nbsp;			
