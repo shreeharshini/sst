@@ -5,6 +5,10 @@ gem 'momentjs-rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
+gem 'rails4-autocomplete'
+# jQuery UI dependency.
+#gem 'jquery-ui-rails'
+#gem 'searchkick'
 gem 'jquery-rails'
 gem 'mysql2'
 gem 'pry-rails'
@@ -21,6 +25,7 @@ gem 'font-awesome-sass'
 # for d3.js graphs
 #gem "d3-rails"
 # Use Puma as the app server
+gem 'rb-inotify', '~> 0.9.7'
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
