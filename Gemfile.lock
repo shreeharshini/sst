@@ -69,8 +69,6 @@ GEM
       execjs
     coffee-script-source (1.11.1)
     concurrent-ruby (1.0.2)
-    d3-rails (4.3.0)
-      railties (>= 3.1)
     debug_inspector (0.0.2)
     devise (4.2.0)
       bcrypt (~> 3.0)
@@ -217,7 +215,6 @@ DEPENDENCIES
   carrierwave (~> 0.9)
   chartkick
   coffee-rails (~> 4.2)
-  d3-rails
   devise
   font-awesome-rails
   font-awesome-sass
