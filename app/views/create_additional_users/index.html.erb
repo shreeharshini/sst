@@ -1,31 +1,31 @@
-<!DOCTYPE html>
-<head>
-<title>Scholarly-stats</title>
+
 <link rel="shortcut icon" href="images/favicon.ico">
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!--<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 --><!-- bootstrap-css -->
-<link rel="stylesheet" href="css/bootstrap.css">
+  <%= stylesheet_link_tag "bootstrap.css" %> 
+
 <!-- //bootstrap-css -->
 <!-- Custom CSS -->
-<link href="css/style.css" rel='stylesheet' type='text/css' />
+  <%= stylesheet_link_tag "style.css" %> 
+
 <!-- font CSS -->
-  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Raleway" %> 
+
 <!-- font-awesome icons -->
-<link rel="stylesheet" href="css/font.css" type="text/css"/>
-<link href="css/font-awesome.css" rel="stylesheet"> 
+  <%= stylesheet_link_tag "font.css" %> 
+
+  <%= stylesheet_link_tag "font-awesome.css" %> 
+
 <!-- //font-awesome icons -->
-<script src="js/jquery2.0.3.min.js"></script>
-<script src="js/modernizr.js"></script>
+<%= javascript_include_tag "jquery2.0.3.min.js" %>
 
-  
+<%= javascript_include_tag "modernizr.js" %>
 
 
-  
 
-</head>
 <body  class="dashboard-page">
  
  
@@ -81,24 +81,9 @@
               <input type="button" onclick="window.location = '/create_additional_users/new'" value="Update">
 
 
+    <%= render :partial => '/layouts/footer'%>
 
-    <!-- footer -->
-    <div class="footer">
-      <p>© 2016 . All Rights Reserved . Design by <a href="#">MPS</a></p>
-    </div>
-    <!-- //footer -->
-
-  <script src="js/bootstrap.js"></script>
-    
-       
-         <link href='css/date.css' rel='stylesheet prefetch' type="text/css">
-
-     
-<script src="js/date-jquery-ui.min.js"></script>
-
-  <script src="js/date-angular.min.js"></script>
-<script src="js/date.js"></script>
-</section>
+  </section>
   
 </body>
 </html>
