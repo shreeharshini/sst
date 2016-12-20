@@ -1,4 +1,10 @@
 class CounterAndCustomReportsController < ApplicationController
+	def index
+
+	end
+	def show
+		
+	end
   def index
   end
 
@@ -13,4 +19,5 @@ class CounterAndCustomReportsController < ApplicationController
   def zip
     send_file Rails.root.join('files_for_download', 'COUNTER_Journal_Report_1_-_Article_Requests.zip'), :type=>"application/zip", :x_sendfile=>true
   end
+
 end

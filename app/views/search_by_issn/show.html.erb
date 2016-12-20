@@ -7,10 +7,11 @@
   <%= render :partial => '/layouts/side_bar_navigation'%>
 
 <!-- tables -->
-        <ol class="breadcrumb"> <li><a href="/librarian/dashboard">Home</a></li>
-         <li><a href="/libraries/searchByISSN/LcollapseSix-03">Search By ISSN & ISBN</a></li> 
-        
-        </ol>
+      <ol class="breadcrumb"> <li><a href="/librarian/dashboard">Home</a></li>
+        <li><a href="/libraries/searchByISSN/LcollapseSix-03">Search By ISSN & ISBN</a></li> 
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      </ol>
 
 <br>
 
@@ -27,12 +28,37 @@
             </div>
             <div class="col-md-3">
               <%= f.label :enter_issn %>
-              <%= f.text_field :Enter_issn, id: "auto_complete" %>
+              <%= f.text_field :Enter_issn, id: "auto_complete", :class => "tags" %>
 
-
+              <!-- <div id="the-basics">
+                <input class="typeahead" type="text" placeholder="States of USA">
+              </div> -->
             </div>
             <%= button_to "search", :class => "button" %>
 <% end %>
+
+// <script type="text/javascript">
+ // $('#the-basics').autocomplete({
+ //   source: ['apple', 'apricot', 'avocado']
+ // });
+
+
+  // $('#the-basics').typeahead({
+  //        ajax: '/search_by_issn/load_suggestions',
+  //        displayField: 'serial_number',
+  //        valueField: 'id',
+  //        onSelect: load_suggestions
+  //    });
+ </script>
+
+  <script>
+    $( ".tags" ).autocomplete({
+      type: "GET",
+      dataType: "json",
+      source: "/search_by_issn/load_suggestions"
+    });
+  </script>
+
 <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-3.0.0.min.js"></script>
 <script type="text/javascript" src="//netsh.pp.ua/upwork-demo/1/js/typeahead.js"></script>
 <script type="text/javascript">
@@ -40,6 +66,7 @@
     local: ['apple', 'fdgfgdfg', 'fdgfghfgh','suggestionN']
   });
 </script> -->
+
 
 
 

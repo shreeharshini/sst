@@ -1,0 +1,2 @@
+class SushiPartnerAccount < ApplicationRecord
+end

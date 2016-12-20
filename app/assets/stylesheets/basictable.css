@@ -1,4 +1,6 @@
 .ownTblContent table td {
+    padding: 13px 50px;
+    text-align: left;
 
     padding: 10px 30px;
 
@@ -11,13 +13,12 @@
     background: #01579B;
     color: #ffffff !important;
     font-size: 14px;
-
+	padding: 10px 70px;
 	padding: 5px 5px;
 
     text-align: left;
 }
 
 .ownTblContent .table > thead > tr > th {
-   
-	padding: 16px 12px;
+   padding: 16px 12px;
 }
