@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20161215062920) do
-=======
-ActiveRecord::Schema.define(version: 20161215095014) do
->>>>>>> c0117e9b45d33d671cebe462cf21a74171958301
+ActiveRecord::Schema.define(version: 20161219105018) do
 
   create_table "account_infos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "account_code"
@@ -73,8 +69,6 @@ ActiveRecord::Schema.define(version: 20161215095014) do
     t.integer  "number_of_platforms"
     t.string   "activation_status"
     t.string   "account_code"
-    t.integer  "user_id"
-<<<<<<< HEAD
   end
 
   create_table "additional_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -85,8 +79,6 @@ ActiveRecord::Schema.define(version: 20161215095014) do
     t.string   "email"
     t.string   "password"
     t.string   "role"
-=======
->>>>>>> 6cc062535cf3efa72ce91e060f2f8a61f596c439
   end
 
   create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -239,6 +231,23 @@ ActiveRecord::Schema.define(version: 20161215095014) do
     t.string   "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "data_libraries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "institution_code"
+    t.string   "pub_code"
+    t.string   "journal_title"
+    t.string   "print_issn"
+    t.string   "online_issn"
+    t.string   "report_type"
+    t.integer  "processing_month"
+    t.integer  "processing_year"
+    t.integer  "ytd"
+    t.string   "isbn"
+    t.string   "issn"
+    t.string   "platform_name"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "db1s", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -637,6 +646,15 @@ ActiveRecord::Schema.define(version: 20161215095014) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "plats", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.string   "created_by"
+    t.string   "updated_by"
+    t.string   "platformname"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "pr1s", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "Platform"
     t.string   "Publisher"
@@ -726,6 +744,23 @@ ActiveRecord::Schema.define(version: 20161215095014) do
     t.string   "selectpid"
   end
 
+  create_table "sushi_partner_accounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "account_id"
+    t.integer  "user_id"
+    t.string   "updated_by"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sushi_partners", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "code"
+    t.string   "name"
+    t.string   "created_by"
+    t.string   "updated_by"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -742,11 +777,7 @@ ActiveRecord::Schema.define(version: 20161215095014) do
     t.string   "role"
     t.string   "first_name"
     t.string   "last_name"
-<<<<<<< HEAD
-    t.boolean  "is_admin",               default: false
-=======
->>>>>>> 6cc062535cf3efa72ce91e060f2f8a61f596c439
-    t.integer  "account_id"
+    t.string   "user_type"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
