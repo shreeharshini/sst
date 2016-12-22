@@ -3,9 +3,21 @@ class CounterAndCustomReportsController < ApplicationController
 
 	end
 	def show
-		
+    byebug
+    @counter_reports = Report.where(report_type: "counter reports" , year: "2016")
+    @cost_reports = Report.where(report_type: "cost reports", year: "2016")
+    @custom_reports = Report.where(report_type: "custom reports" , year:"2016")
+    user_report = GeneratedReport.where(user_id:current_user.id)
+   
 	end
-  def index
+  def show_reports_by_year
+    @counter_reports = Report.where(report_type: "counter reports" , year: params[:year] ? params[:year] : "2016")
+    @cost_reports = Report.where(report_type: "cost reports", year: params[:year] ? params[:year] : "2016")
+    @custom_reports = Report.where(report_type: "custom reports" , year: params[:year] ? params[:year] : "2016")
+    @year = params[:year]
+    respond_to do |format|
+      format.js { render :counter }
+    end
   end
 
   def csv

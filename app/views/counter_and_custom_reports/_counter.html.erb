@@ -1,0 +1,128 @@
+<div class = "agile">
+<div class="agile-Updating-grids"> 
+ <div class="agile-grids">
+		<div class="col-md-12" style="padding:0px;">
+					
+				 <h4 class="mar-btm20">COUNTER Reports</h4>
+					  <div class="table-responsive"> 
+					  	<table class="table table-striped" >
+									<thead>
+									  <tr>
+										<th align="left">Report Type</th>
+										<th align="left">	Description</th>
+										<th align="left">CSV</th>
+										<th align="left">XLS</th>
+										<th align="left">ZIP</th>
+										<th align="left">Charts</th>
+									  </tr>
+									</thead>
+									<tbody>
+									<% if @counter_reports.present? %>
+									 <% @counter_reports.each do |cr| %>
+										  <tr>
+											<td data-th="Name"><span class="bt-content"><a href="#"><%= cr.name %></a></span></td>
+											<td data-th="Age"><span class="bt-content"><%= cr.description %></span></td>
+											<td data-th="Gender"><span class="bt-content"><a href="/download_files/csv"><%= image_tag("csv.png")%>
+											</a></span></td>
+											<td data-th="Height"><span class="bt-content"><a href="/download_files/xlsx"><%= image_tag("xls.png")%>
+											</a></span></td>
+											<td data-th="Province"><a href="/download_files/zip"><%= image_tag("zip-file-format.png")%>
+											</a></td>
+											<td data-th="Sport"><a href="#"> - </a></td>
+										  </tr>
+									 	<%end%>
+									<%end%>
+									    
+									</tbody>
+					  </table>
+					</div>
+					<!-- //updating-data -->
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+	</div>		
+			
+    <br>
+    <div class="agile-Updating-grids">  <div class="agile-grids">
+				
+				<div class="col-md-12" style="padding:0px;">
+					<!-- updating-data -->
+					
+					  <h4 class="mar-btm20">Cost Reports</h4>
+					   
+                    <div class="table-responsive"> <table class="table table-striped" >
+						<thead>
+						  <tr>
+							<th align="left">Report Type</th>
+							<th align="left">	Description</th>
+							<th align="left">CSV</th>
+							<th align="left">XLS</th>
+							<th align="left">ZIP</th>
+							<th align="left">Charts</th>
+						  </tr>
+						</thead>
+						<tbody>
+						  <tr>
+						  	<% @cost_reports.each do |cr| %>
+								<td data-th="Name"><span class="bt-content"><a href="#"><%= cr.name %></a></span></td>
+								<td data-th="Age"><span class="bt-content"><%= cr.description %></span></td>
+								<td data-th="Gender"><span class="bt-content"><a href="/download_files/csv"><%= image_tag("csv.png")%>
+								</a></span></td>
+								<td data-th="Height"><span class="bt-content"><a href="/download_files/xlsx"><%= image_tag("xls.png")%>
+								</a></span></td>
+								<td data-th="Province"><a href="/download_files/zip"><%= image_tag("zip-file-format.png")%>
+								</a></td>
+								<td data-th="Sport">_</td>
+							<%end%>
+						  </tr>
+						</tbody>
+					  </table>
+					</div>
+					<!-- //updating-data -->
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+	</div>
+    <br>
+    <div class="">
+    <div class="agile-Updating-grids">  <div class="agile-grids">
+				
+				<div class="col-md-12" style="padding:0px;">
+					<!-- updating-data -->
+					
+					  <h4 class="mar-btm20">Custom Reports</h4>
+                    <div class="table-responsive"> <table class="table table-striped" >
+						<thead>
+						  <tr>
+							<th align="left">Report Type</th>
+							<th align="left">	Description</th>
+							<th align="left">CSV</th>
+							<th align="left">XLS</th>
+							<th align="left">ZIP</th>
+							<th align="left">Charts</th>
+						  </tr>
+						</thead>
+						<tbody>
+						  <tr>
+						  	<% @custom_reports.each do |cr| %>
+						  		<tr>
+								<td data-th="Name"><span class="bt-content"><a href="#"><%= cr.name %></a></span></td>
+								<td data-th="Age"><span class="bt-content"><%= cr.description %></span></td>
+								<td data-th="Gender"><span class="bt-content"><a href="/download_files/csv"><%= image_tag("csv.png")%></a></span></td>
+								<td data-th="Height"><span class="bt-content"><a href="/download_files/xlsx"><%= image_tag("xls.png")%></a></span></td>
+								<td data-th="Province"><a href="/download_files/zip"><%= image_tag("zip-file-format.png")%></a></td>
+								<td data-th="Sport"><a href="#"><%= image_tag("bar-chart.png")%></a></td>
+							  </tr>
+							<%end%>
+						    
+						</tbody>
+					  </table>
+					</div>
+					<!-- //updating-data -->
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+	</div>	
+   </div>	
+	  </div>
+	 </div>

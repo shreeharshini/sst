@@ -32,10 +32,9 @@ Rails.application.routes.draw do
   get "import_data/xlsx"
   post "search_by_issn/search"
   get "search_by_issn/load_suggestions"
-
-  # resources :products do
-  #   get :autocomplete_brand_name, :on => :collection
-  # end
+  get "counter_and_custom_reports/show"
+  get "counter_and_custom_reports/show_reports_by_year"
+  get "search_by_issn/show_report"
   
   resources :loginpage, :accounts, :reports, :platforms, 
             :source_reports_mappings, :year_trends, :year_usages,

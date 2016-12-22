@@ -22,8 +22,15 @@
 <div id="messagearea" class="space"> </div>
 <%= form_for :data_library,:url => url_for(:controller => "search_by_issn", :action =>"search")   do |f| %>
             <div class="col-md-5 mb10">
-              <div id="search_type">
-                <%= f.select :select_type,"<option>Select Search Type</option><option>Journal Print ISSN</option><option>journalOnlineISSN</option><option>bookISBN</option><option>bookISSN</option>".html_safe %>
+              <div>
+              <select id="select_id">
+              <option></option>
+              <option value = "1">Journal Print ISSN</option>
+              <option value = "2">journalOnlineISSN</option>
+              <option value = "3">bookISBN</option>
+              <option value = "4">bookISSN</option>
+              </select>
+
               </div>
             </div>
             <div class="col-md-3">
@@ -36,6 +43,22 @@
             </div>
             <%= button_to "search", :class => "button" %>
 <% end %>
+
+<script>
+$("#select_id").change(function() {
+  alert("hiiii");
+  var val = $(this).val();
+    //get the selected value
+    //make the ajax call
+    $.ajax({
+        type: 'GET',
+        url: '/search_by_issn/show_report',
+        //data: { id: val }
+
+    });
+});
+
+</script>
 
 // <script type="text/javascript">
  // $('#the-basics').autocomplete({
