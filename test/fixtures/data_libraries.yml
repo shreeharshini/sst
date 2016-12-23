@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  institution_code: MyString
+  pub_code: MyString
+  journal_title: MyString
+  print_issn: MyString
+  online_issn: MyString
+  report_type: MyString
+  processing_month: 1
+  processing_year: 1
+  ytd: 1
+  isbn: MyString
+  issn: MyString
+  platform_name: MyString
+
+two:
+  institution_code: MyString
+  pub_code: MyString
+  journal_title: MyString
+  print_issn: MyString
+  online_issn: MyString
+  report_type: MyString
+  processing_month: 1
+  processing_year: 1
+  ytd: 1
+  isbn: MyString
+  issn: MyString
+  platform_name: MyString

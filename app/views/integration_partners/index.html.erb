@@ -3,71 +3,11 @@
 
 <html>
     <head>
-
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- bootstrap-css -->
-<link rel="stylesheet" href="/images/libraries/common/css/bootstrap.css">
-<!-- //bootstrap-css -->
-<!-- Custom CSS -->
-<link href="/images/libraries/common/css/style.css" rel='stylesheet' type='text/css' />
-<!-- font CSS -->
-
-<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
-
-  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-<!-- font-awesome icons -->
-<link rel="stylesheet" href="/images/libraries/common/css/font.css" type="text/css"/>
-<link href="/images/libraries/common/css/font-awesome.css" rel="stylesheet"> 
-<!-- //font-awesome icons -->
-<script src="/images/libraries/common/js/jquery2.0.3.min.js"></script>
-<script src="/images/libraries/common/js/bootstrap.js"></script>
-<script src="/images/libraries/common/js/custom.min.js"></script> 
-
-<script src="/images/libraries/common/js/modernizr.js"></script>
-<!--<script src="js/jquery.cookie.js"></script>
--->
-    
-
-<link rel="stylesheet" href="/images/libraries/common/css/morris.css">
-<!-- //charts -->
-<!--skycons-icons-->
-<!--<script src="js/skycons.js"></script>
---><!--//skycons-icons-->
-
-
-<!--test collapse-->
-<!-- FastClick -->
-<link rel="stylesheet" href="/images/libraries/common/css/custom.min.css" type="text/css"/>
-
-
-<!-- Use non-conflicting mode to avoid conflicts with any existing JQuery Library or New One -->
-<script type="text/javascript" src="/scripts/jquery-custom-1.4.2.min.js"></script> 
-<script src="/scripts/jquery.autocomplete.js"></script>
-<script type="text/javascript">
-       //create this naming for Jquery 1.4.2 version
-       var jQuery_1_4_2 = jQuery.noConflict(true);
-</script>
-<!-- ********JQuery Non-Conflicting library for autoComplete End******** -->
-
 <link rel="stylesheet" type="text/css" href="/styles/autosuggest_style.css" />
-        <!-- HTTP 1.1 -->
-<!--<meta http-equiv="Cache-Control" content="no-store"/>-->
-<!-- HTTP 1.0 -->
-<!-- <meta http-equiv="Pragma" content="no-cache"/>-->
-<!-- Prevents caching at the Proxy Server -->
-<!-- <meta http-equiv="Expires" content="0"/>-->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="AppFuse 2.0" />
 <!-- leave this for stats please -->
 <link rel="icon" href="/images/favicon.ico" />
-<script type="text/javascript">
-    try 
-    {     
-      document.execCommand("BackgroundImageCache", false, true);
-    }
-    catch(err) 
-    {}
-</script>
 
          <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
         <link rel="SHORTCUT ICON" href="/images/favicon.ico" type="image/x-icon" />
@@ -76,80 +16,6 @@
      <script type="text/javascript">
      /* alert(#session.authz); */
      
-$(document).ready(function(){
-  $(".pageLoadContainer").hide();
-});
-     
-     function ltrim(stringToTrim) 
-     {
-    return stringToTrim.replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g,"").replace(/\s+/g," ");
-  }
-  function rtrim(stringToTrim) {
-  return stringToTrim.replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g,"").replace(/\s+/g," ");
-}
-     function renderTitle(){
-      element=document.getElementById("brdcrm");
-      var titleText="";
-      if(element!=null){
-        var ihtml=element.innerHTML;
-          var startTag=0;
-          var  endTag=0;
-          var spaceCheck="";
-             for(i=0;i<ihtml.length;i++)
-          {
-
-            if(ihtml.charAt(i) == "<" || ihtml.charAt(i) == "&"){
-            startTag=1;
-            endTag=0;
-          }
-          
-          if(startTag==1){
-            spaceCheck=spaceCheck+ihtml.charAt(i);
-          }
-          
-          if(ihtml.charAt(i) == ">" || ihtml.charAt(i) == ";"){
-            endTag=1;
-            startTag=0;
-            if(spaceCheck=="&nbsp;"){
-              titleText="";
-              spaceCheck="";
-            }
-            if(ihtml.charAt(i)==">"){
-              spaceCheck="";
-            }
-          }
-      
-          if(endTag==1){
-            if(ihtml.charAt(i) != "<" && ihtml.charAt(i) != "&"){
-              if(ihtml.charAt(i) != ">" && ihtml.charAt(i) != ";"){
-                titleText=titleText+ihtml.charAt(i);
-                spaceCheck="";
-              }
-            }
-          }
-          
-        }
-      }
-    
-    //titleText=titleText.substring(titleText.indexOf(" "),titleText.length);
-    titleText=ltrim(titleText);
-    titleText=rtrim(titleText);
-    
-    if(titleText== "")
-      {
-          document.title="Online Statistics Portal "+titleText;
-      }
-    else
-    {
-      document.title="Online Statistics Portal "+"->"+titleText;
-    }
-       
-
-     }
-     
-     </script>
-     
-
     </head>
 
  <body  class="dashboard-page">
@@ -174,7 +40,7 @@ $(document).ready(function(){
       </div>
       
        <%= render :partial => '/layouts/side_bar_navigation'%>
-      <%= render :partial => '/layouts/header'%>
+        <%= render :partial => '/layouts/header'%>
   
     <!-- Modal -->
  <div id="myModal" class="modal fade" role="dialog">
@@ -226,58 +92,11 @@ $(document).ready(function(){
   </div>
 </div> 
 
-<div class="pageLoadContainer" ></div>
-         <div class="row-fluid" style="margin-bottom:50px; min-height:450px;">
-        <div class="span3">
-          <div class="sidebar-nav">
-             
-          </div>    
-      </div>
-      <div class="main-grid" >
-         <div class="clearfix"></div>
-
-
-
 
 <!-- tables -->
 <link rel="stylesheet" type="text/css" href="/images/libraries/css/table-style.css" />
 <link rel="stylesheet" type="text/css" href="/images/libraries/css/basictable.css" />
 <script type="text/javascript" src="/images/libraries/js/jquery.basictable.min.js"></script>
-<script type="text/javascript">
-    $(document).ready(function() {
-      $('#table').basictable();
-
-      $('#table-breakpoint').basictable({
-        breakpoint: 768
-      });
-
-      $('#table-swap-axis').basictable({
-        swapAxis: true
-      });
-
-      $('#table-force-off').basictable({
-        forceResponsive: false
-      });
-
-      $('#table-no-resize').basictable({
-        noResize: true
-      });
-
-      $('#table-two-axis').basictable();
-
-      $('#table-max-height').basictable({
-        tableWrapper: true
-      });
-    });
-</script>
-<script>
-$(function () {
-  $('a[rel=tooltip]').tooltip({
-      'selector': '',
-      'placement': 'left'
-    });   
-  })
-</script>
         <ol class="breadcrumb"> <li><a href="/librarian/dashboard">Home</a></li>
          <li><a href="/libraries/listSushiPartners/Lcollapsefour-04">Integration Partners</a></li> 
         
@@ -320,7 +139,7 @@ $(function () {
                     
                     <td>Serials Solutions</td>
                     <td> Generic</td>
-                    <td> <a class="icon-edit" href="/libraries/manageSushiAccount/172622"></a> </td>
+                    <td> <a class="icon-edit" href="/integration_partners/manage_sushi_account"></a> </td>
                     <td>
                       
                           -
@@ -334,7 +153,7 @@ $(function () {
                     
                     <td>ScholarlyStats</td>
                     <td> Generic</td>
-                    <td> <a class="icon-edit" href="/libraries/manageSushiAccount/172623"></a> </td>
+                    <td> <a class="icon-edit" href="/integration_partners/manage_sushi_account"></a> </td>
                     <td>
                       
                           -
@@ -348,7 +167,7 @@ $(function () {
                     
                     <td>ABCe</td>
                     <td> Generic</td>
-                    <td> <a class="icon-edit" href="/libraries/manageSushiAccount/196515"></a> </td>
+                    <td> <a class="icon-edit" href="/integration_partners/manage_sushi_account"></a> </td>
                     <td>
                       
                           -
@@ -362,7 +181,7 @@ $(function () {
                     
                     <td>SUSHI Service 1</td>
                     <td> Generic</td>
-                    <td> <a class="icon-edit" href="/libraries/manageSushiAccount/604203"></a> </td>
+                    <td> <a class="icon-edit" href="/integration_partners/manage_sushi_account"></a> </td>
                     <td>
                       
                           -
@@ -376,7 +195,7 @@ $(function () {
                     
                     <td>SUSHI Service 2</td>
                     <td> Generic</td>
-                    <td> <a class="icon-edit" href="/libraries/manageSushiAccount/604204"></a> </td>
+                    <td> <a class="icon-edit" href="/integration_partners/manage_sushi_account"></a> </td>
                     <td>
                       
                           -
@@ -390,7 +209,7 @@ $(function () {
                     
                     <td>Innovative Interfaces</td>
                     <td> Generic</td>
-                    <td> <a class="icon-edit" href="/libraries/manageSushiAccount/604207"></a> </td>
+                    <td> <a class="icon-edit" href="/integration_partners/manage_sushi_account"></a> </td>
                     <td>
                       
                           -
@@ -418,7 +237,7 @@ $(function () {
                     
                     <td>Ex Libris</td>
                     <td> Generic</td>
-                    <td> <a class="icon-edit" href="/libraries/manageSushiAccount/604236"></a> </td>
+                    <td> <a class="icon-edit" href="/integration_partners/manage_sushi_account"></a> </td>
                     <td>
                       
                           -
@@ -432,13 +251,12 @@ $(function () {
                     
                     <td>JUSP</td>
                     <td> Generic</td>
-                    <td> <a class="icon-edit" href="/libraries/manageSushiAccount/604590"></a> </td>
+                    <td> <a class="icon-edit" href="/integration_partners/manage_sushi_account"></a> </td>
                     <td>
                       
                           -
               </td>
                   </tr>
-          
                 <tr>
                     
                     
@@ -446,7 +264,7 @@ $(function () {
                     
                     <td>Millennium ERM AutoStat</td>
                     <td> Generic</td>
-                    <td> <a class="icon-edit" href="/libraries/manageSushiAccount/611293"></a> </td>
+                    <td> <a class="icon-edit" href="/integration_partners/manage_sushi_account"></a> </td>
                     <td>
                       
                           -
@@ -463,8 +281,6 @@ $(function () {
              
       </div>
       </div>
-
-
 
 <!--  <div class="navbar navbar-inverse navbar-fixed-bottom version"> -->
     <%= render :partial => '/layouts/footer'%>

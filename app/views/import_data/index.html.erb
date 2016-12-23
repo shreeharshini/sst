@@ -71,86 +71,7 @@
         <link rel="SHORTCUT ICON" href="/images/favicon.ico" type="image/x-icon" />
         <title>Welcome to Online Statistics Portal</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">   
-     <script type="text/javascript">
-     /* alert(#session.authz); */
      
-$(document).ready(function(){
-	$(".pageLoadContainer").hide();
-});
-     
-     function ltrim(stringToTrim) 
-     {
-		return stringToTrim.replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g,"").replace(/\s+/g," ");
-	}
-	function rtrim(stringToTrim) {
-	return stringToTrim.replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g,"").replace(/\s+/g," ");
-}
-     function renderTitle(){
-     	element=document.getElementById("brdcrm");
-     	var titleText="";
-     	if(element!=null){
-			  var ihtml=element.innerHTML;
-		  	  var startTag=0;
-		  	  var  endTag=0;
-		  	  var spaceCheck="";
-    	       for(i=0;i<ihtml.length;i++)
-  				{
-
-		    		if(ihtml.charAt(i) == "<" || ihtml.charAt(i) == "&"){
-						startTag=1;
-						endTag=0;
-					}
-					
-					if(startTag==1){
-						spaceCheck=spaceCheck+ihtml.charAt(i);
-					}
-					
-					if(ihtml.charAt(i) == ">" || ihtml.charAt(i) == ";"){
-						endTag=1;
-						startTag=0;
-						if(spaceCheck=="&nbsp;"){
-							titleText="";
-							spaceCheck="";
-						}
-						if(ihtml.charAt(i)==">"){
-							spaceCheck="";
-						}
-					}
-			
-					if(endTag==1){
-						if(ihtml.charAt(i) != "<" && ihtml.charAt(i) != "&"){
-							if(ihtml.charAt(i) != ">" && ihtml.charAt(i) != ";"){
-								titleText=titleText+ihtml.charAt(i);
-								spaceCheck="";
-							}
-						}
-					}
-					
-					
-			
-					
-   			}
-  		}
-		
-		//titleText=titleText.substring(titleText.indexOf(" "),titleText.length);
-		titleText=ltrim(titleText);
-		titleText=rtrim(titleText);
-		
-		if(titleText== "")
-			{
-	        document.title="Online Statistics Portal "+titleText;
-			}
-		else
-		{
-			document.title="Online Statistics Portal "+"->"+titleText;
-		}
-	     
-
-     }
-     
-     </script>
-     
-
 </style>
 <script type="text/javascript">
 function toggle(node) {
@@ -356,7 +277,7 @@ function useraction(url)
 	                <td class="align_center">
 	                	 
 
-	                	<%= f.submit class: "btn button raised hoverable" %>
+	                	<%= f.submit  %>
 	                	  
     				 
 	                </td>
@@ -434,7 +355,7 @@ function useraction(url)
 						<td>Choose file to upload Manually collected data. </td>
 		        	    <td class="align_center"> <%= f.file_field :attachment%> </td>
 		                <td class="align_center">
-		                		<%= f.submit class: "btn button raised hoverable"%>
+		                		<%= f.submit%>
 		                </td>
 		             <% end %>
 								</tr>
