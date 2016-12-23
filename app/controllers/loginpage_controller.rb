@@ -10,8 +10,18 @@ class LoginpageController < ApplicationController
   end
 
   def dynamicreports
-    
   end
+
+  def test2
+    some_parameter = DynamicReport.find_by_platform_id(params[:some_parameter])
+    binding.pry
+      respond_to do |format|
+      format.html
+      format.json {render json: some_parameter.to_json}
+
+    end
+  end
+
 
   def sourcereports 	
     @source_reports = SourceReportsMapping.all
