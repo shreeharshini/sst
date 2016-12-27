@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <head>
-</head>
 <body>
-<%= render :partial => '/layouts/side_bar_navigation'%>
-<%= render :partial => '/layouts/header'%>
 
 <div class="container">
+<%= render :partial => '/layouts/side_bar_navigation'%>
+<%= render :partial => '/layouts/header'%>
 
 <p>
 <br>
@@ -63,4 +62,24 @@
 
   
 </body>
+</head>
+</html>
+
+
+<!--   <tbody>
+    <% @additional_users.each do |additional_user| %>
+      <tr>
+        <td><%= link_to 'Show', additional_user %></td>
+        <td><%= link_to 'Edit', edit_additional_user_path(additional_user) %></td>
+        <td><%= link_to 'Destroy', additional_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Additional User', new_additional_user_path %>
+ -->
+
 </html>

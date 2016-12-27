@@ -37,7 +37,7 @@ Rails.application.routes.draw do
   get "search_by_issn/show_report"
   get "integration_partners/edit_permission"
   
-  resources :loginpage, :accounts, :reports, :platforms, 
+  resources :accounts, :reports, :platforms, 
             :source_reports_mappings, :year_trends, :year_usages,
             :year_top_journals, :account_infos, :export_files, 
             :platform_reports, :requestfordemos, :contact_us, 
@@ -50,4 +50,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :loginpage do
+  collection do
+    get 'test2'
+  end
+end
 end
