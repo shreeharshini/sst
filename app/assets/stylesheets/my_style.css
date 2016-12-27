@@ -139,13 +139,13 @@ border: #eb221a 1px solid; -webkit-border-radius: 5px; -moz-border-radius: 5px; 
 
 
 #contact_section{padding:70px 0; margin:100px 0 0 0; position:relative; background-color:#333;
-background-size:cover; background-position:center center; background-image:url(../images/contact_bg.jpg); background-repeat: no-repeat;
+background-size:cover; background-position:center center; background-image:url(contact_bg.jpg); background-repeat: no-repeat;
 }
 #contact_section .common_tittle{ color:#fff;}
 #contact_section .common_tittle span{ color:#eb221a;}
 #contact_section .common_tittle_info{ color:#fff;}
 #contact_section .common_form .submit_btn{background-color:#eb221a; border:#eb221a 1px solid;}
-#contact_section .contact_detail_box{ background:#eb221a url(../images/address_box_bg.jpg) bottom center no-repeat; float:left; width:100%; padding:30px 25px;}
+#contact_section .contact_detail_box{ background:#eb221a url(address_box_bg.jpg) bottom center no-repeat; float:left; width:100%; padding:30px 25px;}
 #contact_section .contact_detail_box .address_section{ margin:0 0 25px 0; padding:0; width:100%; float:left;}
 #contact_section .contact_detail_box .address_section .icon{ margin:0 10px 0 0 ; padding:0; float:left;}
 #contact_section .contact_detail_box .address_section .address_detail{ margin:0 0 0 0 ; padding:0; float:left; color:#fff;}
