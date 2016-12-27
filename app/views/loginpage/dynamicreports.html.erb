@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
   <head>
     <title>Scholarly-stats</title>
@@ -8,10 +7,8 @@
     <!--<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     --><!-- bootstrap-css -->
       <%= stylesheet_link_tag "bootstrap.css" %> 
-=======
 
 <link rel="shortcut icon" href="images/favicon.ico">
->>>>>>> 27c6f4f463b2f6590dd93de5cdfc9a4cdf603104
 
     <!-- //bootstrap-css -->
     <!-- Custom CSS -->
@@ -32,45 +29,13 @@
 
   </head>
 
-<<<<<<< HEAD
   <body class="dashboard-page" ng-app="myApp">
   	<section class="wrapper scrollable">
   	
     <script type="text/javascript">
 
-  function test(){
-    var e=document.getElementById('selectReportType');
-    var strUser = e.options[e.selectedIndex].text;
-    alert("Report = "+strUser);
-  }
     </script>
-   
-    
-    <body class="dashboard-page" ng-app="myApp">
-      <%= render :partial => '/layouts/side_bar_navigation'%>
-      <%= render :partial => '/layouts/header'%>
-      <div class="main-grid"><br>
-        <h4>Dynamic Usage Reports</h4>
-        <p class="pad-top10 mar-btm20">This section allows you to view and download reports for a librarian account.</p>
-=======
-<%= javascript_include_tag "modernizr.js" %>
-
-	
-  <script type="text/javascript">
-
-function test(){
-  var e=document.getElementById('selectReportType');
-  var strUser = e.options[e.selectedIndex].text;
-  alert("Report = "+strUser);
-}
-  </script>
- 
-  
- <body  class="dashboard-page">
-
- <section class="wrapper scrollable">
- 
-    
+       
   <%= render :partial => '/layouts/side_bar_navigation'%>
 
     <%= render :partial => '/layouts/header'%>
@@ -81,17 +46,11 @@ function test(){
       <div class="agile-Updating-grids"> 
         <div class="agile-grids pad-top10">
           <div class="col-md-5 mb10">
->>>>>>> 27c6f4f463b2f6590dd93de5cdfc9a4cdf603104
-          
-        <div class="agile-Updating-grids"> 
-          <div class="agile-grids pad-top10">
-            <div class="col-md-5 mb10">
             
             <%= form_tag(loginpage_dynamicreports_path, method: :get) do %>
             <div class="form-group">
               <label>Select Report Type:</label>
               <select  id="selectReportType" class="form-control" name="Report">
-               params = strUser
                 <option value="-1">--Select Report Type--</option>
                 <option value="Jr1">JR1 (Consolidated Journal Report 1, Consolidated COUNTER JR1 Report of all subscribed Platforms)</option>
                 <option value="Jr2">JR2 (Consolidated Journal Report 2, Consolidated COUNTER JR2 Report of all subscribed Platforms)</option>
@@ -121,24 +80,15 @@ function test(){
                         <label for="datePicker" class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></label>
                       </div>
                   </div>
-<<<<<<< HEAD
                 </div>
               </div>
-              <div class="col-sm-1">      
-              </div>
-              <div class="col-sm-2" style="padding:0px;">
-                <div >
-                  <div class=" wrapper">
-                    <label for="datePicker">To :</label>
-=======
-
+              </div>                  
            
           <div class="col-sm-12 pad-top20 mb-10">
             <div class="col-sm-2" style="padding:0px;">
               <div >
                 <div class=" wrapper">
-                  <label for="datePicker">From :</label>
->>>>>>> 27c6f4f463b2f6590dd93de5cdfc9a4cdf603104
+                  <label for="datePicker">To :</label>
                     <div class="input-group">
                       <input id="datePicker2"
                              class="input-sm form-control"
@@ -157,9 +107,10 @@ function test(){
        <div class="button raised">
          <a href="#" class="hoverable"> <div class="anim"></div><span>Preview Report </span></a>
           </div>
+        </div>
+        <div id="report_id">
 
-<<<<<<< HEAD
-      								</div>
+        </div>
   					   
   				<!-- //updating-data -->
   				</div>
@@ -176,17 +127,6 @@ function test(){
   <%= javascript_include_tag "date-angular.min.js" %>
   </section>
   <%= javascript_include_tag "bootstrap.js" %>
-=======
-    								</div>
-					   
-				<!-- //updating-data -->
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-	</div>		
-	<%end%>		
->>>>>>> 27c6f4f463b2f6590dd93de5cdfc9a4cdf603104
-
     
   <script>
      $("#selectReportType").change(function(){
@@ -197,19 +137,11 @@ function test(){
             type:"GET",
             url:"/loginpage/test2",
             dataType:"json",
-            data: {some_parameter: value1 },
-            success:function(result){
-             alert("scccess");
-              // var $secondChoice = $("#selectpid");
-              //   $secondChoice.empty();
-              //   $.each(result, function(index, value) {
-              //     $secondChoice.append("<option>" + value + "</option>");
-              //   });
-            }
+            data: {some_parameter: value1 }
+
         })
       });
   </script>
-  
   <%= javascript_include_tag "date.js" %>
   </body>
 </html>
