@@ -14,24 +14,28 @@ class SearchByIssnController < ApplicationController
 	def create
   	end
 
-  	def search
-  		byebug
-  	end
+	def search_type
+		byebug
+		if params[:select_type] == "JournalPrintISSN"
+			@suggestion = DataLibrary.find(1)
+		elsif params[:select_type] == "journalOnlineISSN"
+			@suggestion = DataLibrary.find(1)
+		elsif params[:select_type] == "bookISBN"
+			@suggestion = DataLibrary.find(1)
+		else params[:select_type] == "bookISSN"
+			@suggestion = DataLibrary.find(1)
+		end
+	end
 
-  	def load_suggestions
-  		byebug
-  		if params[:data_library][:select_type] == "Journal Print ISSN"
-  			@suggestion = DataLibrary.find(1)
-  		elsif params[:data_library][:select_type] == "journal Online ISSN"
-  			@suggestion = DataLibrary.find(1)
-  		elsif params[:data_library][:select_type] == "bookISBN"
-  			@suggestion = DataLibrary.find(1)
-  		else params[:data_library][:select_type] == "bookISSN"
-  			@suggestion = DataLibrary.find(1)
-  		end
-  		@suggestion = DataLibrary.find(1)
-  		#@suggestions = DataLibrary.select(:issn).where()#Select the data you want to load on the typeahead.
-  		#MyModel.find(:all, conditions: [...]) #Select the data you want to load on the typeahead.
-  		#render json: @suggestion
-  	end
+
+  def show_report
+
+  end
+
+	def load_suggestions
+		byebug
+		#@suggestions = DataLibrary.select(:issn).where()#Select the data you want to load on the typeahead.
+		#MyModel.find(:all, conditions: [...]) #Select the data you want to load on the typeahead.
+		#render json: @suggestion
+	end
 end

@@ -19,6 +19,20 @@ integration_partners_manage_sushi_account GET    /integration_partners/manage_su
                          import_data_xlsx GET    /import_data/xlsx(.:format)                          import_data#xlsx
                     search_by_issn_search POST   /search_by_issn/search(.:format)                     search_by_issn#search
           search_by_issn_load_suggestions GET    /search_by_issn/load_suggestions(.:format)           search_by_issn#load_suggestions
+<<<<<<< HEAD
+=======
+          counter_and_custom_reports_show GET    /counter_and_custom_reports/show(.:format)           counter_and_custom_reports#show
+   counter_and_custom_reports_show_report GET    /counter_and_custom_reports/show_report(.:format)    counter_and_custom_reports#show_report
+               search_by_issn_show_report GET    /search_by_issn/show_report(.:format)                search_by_issn#show_report
+                          loginpage_index GET    /loginpage(.:format)                                 loginpage#index
+                                          POST   /loginpage(.:format)                                 loginpage#create
+                            new_loginpage GET    /loginpage/new(.:format)                             loginpage#new
+                           edit_loginpage GET    /loginpage/:id/edit(.:format)                        loginpage#edit
+                                loginpage GET    /loginpage/:id(.:format)                             loginpage#show
+                                          PATCH  /loginpage/:id(.:format)                             loginpage#update
+                                          PUT    /loginpage/:id(.:format)                             loginpage#update
+                                          DELETE /loginpage/:id(.:format)                             loginpage#destroy
+>>>>>>> 32600170fe6a80460893bb1ba413f093d0ddf28d
                                  accounts GET    /accounts(.:format)                                  accounts#index
                                           POST   /accounts(.:format)                                  accounts#create
                               new_account GET    /accounts/new(.:format)                              accounts#new
