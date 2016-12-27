@@ -6,12 +6,11 @@ class LoginpageController < ApplicationController
   end
 
   def getreports
-    # sourcereports1 = SourceReportsMapping.find_by_year(params[:sourcereports1])
-    @sourcereports1 = SourceReportsMapping.all
+    sourcereports1 = SourceReportsMapping.where(:year => params[:sourcereports1]).pluck(:report_id)
+      binding.pry
       respond_to do |format|
           format.html
-          # format.json {render json: sourcereports1.to_json}
-          format.xlsx
+          format.json {render json: sourcereports1.to_json}
         end
   end
 
@@ -22,7 +21,10 @@ class LoginpageController < ApplicationController
     format.js {}
     end
   end
- 
+  
+
+
+
   def show
   end
 
