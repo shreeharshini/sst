@@ -1,0 +1,4 @@
+<% @sourcereports1.each do |f| %>
+<%= f.report.description %><br>
+<%= link_to 'download as xlsx', reports_path(format: :xlsx)%>
+<%end%>

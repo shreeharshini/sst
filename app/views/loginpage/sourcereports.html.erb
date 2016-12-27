@@ -61,41 +61,33 @@
 
 
 
-
-
-
-
 <div class="agile-Updating-grids"> 
 	<div class="agile-grids pad-top10">
-      <div class="col-md-5 mb10">
+      <div class="col-md-3 mb10">
 				<div class="form-group">
-    						<select name="category" id="category" class="form-control">
-                    <option selected value="Please Select">Please Select</option>     
-                          
-                    <option value="pid1">American Association for the Advancement of Science</option>
-                    <option value="pid2">American Chemical Society</option>
-               </select>
-        </div>
-			</div>
-           
-      <div class="col-md-3">
-					<div class="form-group">
-          			<div id="category2">
-                  <select name="category2" class="pid2 second">
-                          <option value="white">2015</option>
-                          <option value="black">2016</option>            
-                  </select>
+        <label>Platform</label>
+    						<select class="form-control" id="dropdown1" >
 
-                  <select name="category2" class="pid1 second">
-                          <option>2013</option>
-                          <option value="red">2014</option>
-                          <option value="green">2015</option>
-                          <option value="blue">2016</option>           
-                  </select>
-                </div>
+                          <option>--Select Platform--</option>
+                       <%= @source_reports.each do |f|%>
+                  
+                            <option><%= f.platform_id %></option>
+                      <% end %>  
+            </select>
+
+        </div>
+      </div>
+      <div class="col-md-3">
+          <div class="form-group">
+            <label >Reporting period:</label>
+                <select class="form-control" id="dropdown2">
+                              <option>--Select Year--</option>
+                </select>
           </div>
 			</div>
-              
+     
+
+                   
       <div class="col-sm-12 pad-top20">
                 
                		 Please click on Get Reports to find the desired platform reports.
@@ -107,18 +99,19 @@
 	  						 	
 	  						 </div>
 	  						 <span>Get Reports</span>
-  						 </a>
+                 <button>ikojm</button>
+ 						 </a>
    				</div>
 			</div>  
-				<!-- //updating-data
-			</div>
-				<div class="clearfix"> </div>
-	</div>
-</div>		 -->
+		
 			    
     <br>
-    	
+  </div>  	
 </div>
+<br>
+
+    <div id = "div1"></div>
+
 		<!-- footer -->
 
 		<!-- //footer -->
@@ -126,23 +119,42 @@
 	<%= javascript_include_tag "bootstrap.js" %>
 
     
-  <script type="text/javascript">
-  	 $("#category").change(function () {
-  var str = "";
-str =  $("select#category option:selected").text();
-    if(str == "American Chemical Society"){
-        $("#category2").not(".pid2").hide();
-        $("#category2 .pid2").show();
-        $("#category2").fadeIn(1000);
-    }
-    else if(str == "American Association for the Advancement of Science"){
-        $("#category2").not(".pid1").hide();
-        $("#category2 .pid1").show();
-        $("#category2").fadeIn(1000);
-    }
+  <script>
+  	 $("#dropdown1").change(function(){
 
-})
+     var value1 = $('select#dropdown1 option:selected').val();
+        $.ajax({
+            type:"GET",
+            url:"/loginpage/getyear",
+            dataType:"json",
+            data: {sourcereportsyear: value1 },
+            success:function(result){
+               $secondChoice = $("#dropdown2");
+                $secondChoice.empty();
+                $.each(result, function(index, value) {
+                  $secondChoice.append("<option>" + value + "</option>");
+                alert(value);
+                });
+            }
+        })
+      });
   </script>
-  
+
+
+
+ <script>
+ $(function () {
+  $("button").click(function(){
+    $.ajax({url:"getreports.html",
+      success:function(result){
+      $("#div1").html(result);
+    }});
+  });
+});
+</script>
+
+
+
 </body>
 </html>
+

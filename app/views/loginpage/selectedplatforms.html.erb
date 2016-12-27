@@ -158,6 +158,9 @@
 					         Selected no.of platforms:<%= @accounts.number_of_platforms %>
 					         <div class="square-block-selected"></div>Selected reports<div class="square-block-not-available"></div>Report not available<br>
 					        
+
+
+
 											<table>
 											  <thead>
 											    <tr>
@@ -181,7 +184,8 @@
 											  </thead>
 											  
 											  <tbody>
-												<% @platforms.each do |plat| %>
+
+											  <% @platforms.each do |plat| %>
 										      <tr>
 											      <td><div class="square-block-selected"><br><br></div></td>
 											        <td><%= plat.platform.name %></td>
@@ -190,25 +194,25 @@
 											        </td>
 											        <td><%= plat.platform.created_at.strftime("%d-%m-%y") %></td>
 											       
-											      <% sample = plat.reports.split(',').collect{|n| n.to_i} %>
+											        	<% sample = plat.reports.split(',').collect{|n| n.to_i} %>
 											      <% array = @repo.to_a %>
 
 											     <% array.each do |a| %>
 											     	<% sample.each do |b| %>
-													     <td>
-														     	<% if a == b %>
-														     		<div class="square-block-selected"><br><br></div>
-														     		<%else%>
-														     		<div class="square-block-not-available"><br><br></div>
-														     	<%end%>
-													     </td>
+											    	 <td>
+											     	<% if a == b %>
+											     		<div class="square-block-selected"><br><br></div>
+											     		<%else%>
+											     		<div class="square-block-not-available"><br><br></div>
 											     	<%end%>
-											    <%end%>
+											     	</td>
+											     	<%end%>
+											     <%end%>
 
+											        
 											      </tr>
 											      
 											    <% end %>
-
 											  </tbody>
 												<br>
 					            </table>

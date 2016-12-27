@@ -36,6 +36,14 @@ Rails.application.routes.draw do
   # resources :products do
   #   get :autocomplete_brand_name, :on => :collection
   # end
+
+  resources :loginpage do
+  collection do
+    get 'getyear'
+    get 'getreports'
+    get 'test2'
+   end
+end
   
   resources :accounts, :reports, :platforms, 
             :source_reports_mappings, :year_trends, :year_usages,
@@ -49,10 +57,6 @@ Rails.application.routes.draw do
   devise_for :additional_users
   devise_for :users
   root to: 'home#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :loginpage do
-  collection do
-    get 'test2'
-  end
+ 
 end
-end
+

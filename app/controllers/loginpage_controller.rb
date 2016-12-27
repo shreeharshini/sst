@@ -1,48 +1,60 @@
 class LoginpageController < ApplicationController
   before_action :authenticate_user!
+
   def index
    @yearusages = YearUsage.all
   end
 
- 
-
-  def show
+  def getreports
+    # sourcereports1 = SourceReportsMapping.find_by_year(params[:sourcereports1])
+    @sourcereports1 = SourceReportsMapping.all
+      respond_to do |format|
+          format.html
+          # format.json {render json: sourcereports1.to_json}
+          format.xlsx
+        end
   end
 
   def test2
     @dynamic_reports = params[:some_parameter].constantize.all
     binding.pry
-    # some_parameter = Dynamicreport.find_by_platform_id(params[:some_parameter])
     respond_to do |format|
     format.js {}
     end
   end
-  
+ 
+  def show
+  end
 
+ 
 
-  def sourcereports 	
-    @source_reports = SourceReportsMapping.all
+  def getyear
+       sourcereportsyear = SourceReportsMapping.where(:platform_id => params[:sourcereportsyear]).pluck(:year)
+        respond_to do |format|
+          format.html
+          format.json {render json: sourcereportsyear.to_json}
+        end
+    end
+
+  def sourcereports   
+    @source_reports = SourceReportsMapping.find_by_sql("SELECT platform_id,GROUP_CONCAT(year) AS years FROM source_reports_mappings GROUP BY platform_id")
     @reports = Report.all
     @platforms = Platform.all
   end
 
   def accessdetails
-    @platforms = Platform.all
-
+     @platforms = Platform.all
   end
 
   def report
   end
 
   def selectedplatforms
-     user_id = current_user.id
-    @accounts = Account.where(:id => user_id ).first
     
-    # @platid = PlatformReport.select("MIN(id) as id").group(:platform_id).collect(&:id)
+    user_id = current_user.id
+    @accounts = Account.where(:id => user_id ).first
     @platforms = PlatformReport.find_by_sql("SELECT platform_id,GROUP_CONCAT(report_id) AS reports FROM platform_reports GROUP BY platform_id")
-   
-    @repo = [1,2,3,4,5,6,7,8,9,10]
+    @repo = [ 1,2,3,4,5,6,7,8,9,10]
 
-    # @previous = PlatformReport.all
   end
 end
