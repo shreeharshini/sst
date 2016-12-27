@@ -25,10 +25,10 @@
               <div>
               <select id="select_id">
               <option></option>
-              <option value = "1">Journal Print ISSN</option>
-              <option value = "2">journalOnlineISSN</option>
-              <option value = "3">bookISBN</option>
-              <option value = "4">bookISSN</option>
+              <option value = "JournalPrintISSN">Journal Print ISSN</option>
+              <option value = "journalOnlineISSN">journalOnlineISSN</option>
+              <option value = "bookISBN">bookISBN</option>
+              <option value = "bookISSN">bookISSN</option>
               </select>
 
               </div>
@@ -45,59 +45,31 @@
 <% end %>
 
 <script>
-$("#select_id").change(function() {
-  alert("hiiii");
-  var val = $(this).val();
-    //get the selected value
-    //make the ajax call
+  $("#select_id").change(function() {
+    var val = $(this).val();
     $.ajax({
-        type: 'GET',
-        url: '/search_by_issn/show_report',
-        //data: { id: val }
-
+      type: 'GET',
+      url: '/search_by_issn/load_suggestions',
+      data: 'select_type='+val,
+      success: function(data){
+      }
     });
-});
-
+  });
 </script>
 
-// <script type="text/javascript">
- // $('#the-basics').autocomplete({
- //   source: ['apple', 'apricot', 'avocado']
- // });
-
-
-  // $('#the-basics').typeahead({
-  //        ajax: '/search_by_issn/load_suggestions',
-  //        displayField: 'serial_number',
-  //        valueField: 'id',
-  //        onSelect: load_suggestions
-  //    });
- </script>
-
-  <script>
-    $( ".tags" ).autocomplete({
-      type: "GET",
-      dataType: "json",
-      source: "/search_by_issn/load_suggestions"
-    });
-  </script>
-
-<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-3.0.0.min.js"></script>
-<script type="text/javascript" src="//netsh.pp.ua/upwork-demo/1/js/typeahead.js"></script>
-<script type="text/javascript">
-  $('the-basics.typeahead').typeahead({
-    local: ['apple', 'fdgfgdfg', 'fdgfghfgh','suggestionN']
+<script>
+  $( ".tags" ).autocomplete({
+    type: "GET",
+    dataType: "json",
+    source: "/search_by_issn/load_suggestions"
   });
-</script> -->
-
-
+</script>
 
 
   </div>
       <div class="clearfix"></div>
   </div>
   <br>
-
    <!--  <div class="alert alert-info" id="noDataFoundId"> No Data Found. Please enter accurate ISSN/ISBN.</div> -->
 
 

@@ -23,7 +23,7 @@ gem 'highcharts-rails'
 gem 'font-awesome-rails'
 gem 'font-awesome-sass'
 # for d3.js graphs
-gem "d3-rails"
+#gem "d3-rails"
 # Use Puma as the app server
 gem 'rb-inotify', '~> 0.9.7'
 gem 'puma', '~> 3.0'
@@ -35,7 +35,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-# gem for graphs
+# gem for graphs using chartkick
 gem 'chartkick'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

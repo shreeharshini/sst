@@ -22,13 +22,28 @@
 										  <tr>
 											<td data-th="Name"><span class="bt-content"><a href="#"><%= cr.name %></a></span></td>
 											<td data-th="Age"><span class="bt-content"><%= cr.description %></span></td>
-											<td data-th="Gender"><span class="bt-content"><a href="/download_files/csv"><%= image_tag("csv.png")%>
-											</a></span></td>
-											<td data-th="Height"><span class="bt-content"><a href="/download_files/xlsx"><%= image_tag("xls.png")%>
-											</a></span></td>
-											<td data-th="Province"><a href="/download_files/zip"><%= image_tag("zip-file-format.png")%>
-											</a></td>
-											<td data-th="Sport"><a href="#"> - </a></td>
+											<td data-th="Gender"><span class="bt-content">
+											<% if cr.generated_report.user_id == @user_id && cr.generated_report.is_generated == 1  %>
+												<a href="/download_files/csv"><%= image_tag("csv.png")%>
+												</a></span></td>
+											<%else%>
+												-
+											<%end%>
+											<td data-th="Height"><span class="bt-content">
+											<% if cr.generated_report.user_id == @user_id && cr.generated_report.is_generated == 1  %>
+												<a href="/download_files/xlsx"><%= image_tag("xls.png")%>
+												</a></span></td>
+											<%else%>
+												-
+											<%end%>
+												<td data-th="Province"><span class="bt-content">
+											<% if cr.generated_report.user_id == @user_id && cr.generated_report.is_generated == 1  %>
+												<a href="/download_files/zip"><%= image_tag("zip-file-format.png")%>
+												</a></span></td>
+											<%else%>
+												-
+											<%end%>
+											<td data-th="Sport"><span class="bt-content"><a href="#"> - </a></span></td>
 										  </tr>
 									 	<%end%>
 									<%end%>
@@ -36,7 +51,7 @@
 									</tbody>
 					  </table>
 					</div>
-					<!-- //updating-data -->
+					<!-- //updating-data -->t
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -64,17 +79,34 @@
 						<tbody>
 						  <tr>
 						  	<% @cost_reports.each do |cr| %>
+								<tr>
 								<td data-th="Name"><span class="bt-content"><a href="#"><%= cr.name %></a></span></td>
 								<td data-th="Age"><span class="bt-content"><%= cr.description %></span></td>
-								<td data-th="Gender"><span class="bt-content"><a href="/download_files/csv"><%= image_tag("csv.png")%>
-								</a></span></td>
-								<td data-th="Height"><span class="bt-content"><a href="/download_files/xlsx"><%= image_tag("xls.png")%>
-								</a></span></td>
-								<td data-th="Province"><a href="/download_files/zip"><%= image_tag("zip-file-format.png")%>
-								</a></td>
-								<td data-th="Sport">_</td>
+								<td data-th="Gender"><span class="bt-content">
+								<% if cr.generated_report.user_id == @user_id && cr.generated_report.is_generated == 1  %>
+									<a href="/download_files/csv"><%= image_tag("csv.png")%>
+									</a></span></td>
+								<%else%>
+									-
+								<%end%>
+								<td data-th="Height"><span class="bt-content">
+								<% if cr.generated_report.user_id == @user_id &&cr.generated_report.is_generated == 1  %>
+									<a href="/download_files/xlsx"><%= image_tag("xls.png")%>
+									</a></span></td>
+								<%else%>
+									-
+								<%end%>
+								<td data-th="Province"><span class="bt-content">
+								<% if cr.generated_report.user_id == @user_id &&cr.generated_report.is_generated == 1  %>
+									<a href="/download_files/zip">
+									<%= image_tag("zip-file-format.png")%>
+									</a></span></td>
+								<%else%>
+									-
+								<%end%>
+									<td data-th="Sport"><span class="bt-content"><a href="#"> - </a></span></td>
+							  </tr>
 							<%end%>
-						  </tr>
 						</tbody>
 					  </table>
 					</div>
@@ -105,16 +137,35 @@
 						<tbody>
 						  <tr>
 						  	<% @custom_reports.each do |cr| %>
-						  		<tr>
+							  <tr>
 								<td data-th="Name"><span class="bt-content"><a href="#"><%= cr.name %></a></span></td>
 								<td data-th="Age"><span class="bt-content"><%= cr.description %></span></td>
-								<td data-th="Gender"><span class="bt-content"><a href="/download_files/csv"><%= image_tag("csv.png")%></a></span></td>
-								<td data-th="Height"><span class="bt-content"><a href="/download_files/xlsx"><%= image_tag("xls.png")%></a></span></td>
-								<td data-th="Province"><a href="/download_files/zip"><%= image_tag("zip-file-format.png")%></a></td>
-								<td data-th="Sport"><a href="#"><%= image_tag("bar-chart.png")%></a></td>
+								<td data-th="Gender"><span class="bt-content">
+								<% if cr.generated_report.user_id == @user_id && cr.generated_report.is_generated == 1  %>
+									<a href="/download_files/csv"><%= image_tag("csv.png")%>
+									</a></span></td>
+								<%else%>
+									-
+								<%end%>
+								<td data-th="Height"><span class="bt-content">
+								<% if cr.generated_report.user_id == @user_id &&cr.generated_report.is_generated == 1  %>
+									<a href="/download_files/xlsx"><%= image_tag("xls.png")%>
+									</a></span></td>
+								<%else%>
+									-
+								<%end%>
+								<td data-th="Province"><span class="bt-content">
+								<% if cr.generated_report.user_id == @user_id &&cr.generated_report.is_generated == 1  %>
+									<a href="/download_files/zip">
+									<%= image_tag("zip-file-format.png")%>
+									</a></span></td>
+								<%else%>
+									-
+								<%end%>
+								<td data-th="Sport"><span class="bt-content"><a href="#"> - </a></span></td>
 							  </tr>
 							<%end%>
-						    
+			    
 						</tbody>
 					  </table>
 					</div>

@@ -181,8 +181,7 @@
 											  </thead>
 											  
 											  <tbody>
-
-											  <% @platforms.each do |plat| %>
+												<% @platforms.each do |plat| %>
 										      <tr>
 											      <td><div class="square-block-selected"><br><br></div></td>
 											        <td><%= plat.platform.name %></td>
@@ -190,16 +189,24 @@
 											        <td>
 											        </td>
 											        <td><%= plat.platform.created_at.strftime("%d-%m-%y") %></td>
-											       <% @repo.each do |asd| %>
-															<td width="50">
- 																<% if  plat.report.name == asd %>
-														         <div class="square-block-selected"><br><br></div>
-														         <% else%>
-														         <div class="square-block-not-available"><br><br></div>
-												        <%end%>
-												      </td>
-												     <%  end %>
+											       
+											      <% sample = plat.reports.split(',').collect{|n| n.to_i} %>
+											      <% array = @repo.to_a %>
+
+											     <% array.each do |a| %>
+											     	<% sample.each do |b| %>
+													     <td>
+														     	<% if a == b %>
+														     		<div class="square-block-selected"><br><br></div>
+														     		<%else%>
+														     		<div class="square-block-not-available"><br><br></div>
+														     	<%end%>
+													     </td>
+											     	<%end%>
+											    <%end%>
+
 											      </tr>
+											      
 											    <% end %>
 
 											  </tbody>

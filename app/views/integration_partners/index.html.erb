@@ -3,30 +3,6 @@
 
 <html>
     <head>
-<link rel="stylesheet" type="text/css" href="/styles/autosuggest_style.css" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="AppFuse 2.0" />
-<!-- leave this for stats please -->
-<link rel="icon" href="/images/favicon.ico" />
-
-         <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
-        <link rel="SHORTCUT ICON" href="/images/favicon.ico" type="image/x-icon" />
-        <title>Welcome to Online Statistics Portal</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">   
-     <script type="text/javascript">
-     /* alert(#session.authz); */
-     
-    </head>
-
- <body  class="dashboard-page">
-  <div id="loaderDivId" class="loader" style="display:none"></div>
- <section class="wrapper scrollable">
- 
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 
     <nav class="user-menu">
       <a href="javascript:;" class="main-menu-access navbar-toggle collapsed" data-toggle="collapse" data-target="#mainMenu" aria-expanded="true">
@@ -133,143 +109,20 @@
           </tr>
             </thead>
             <tbody>
-              
-                <tr>
+                <% @sushi_partner_deatils.each do |sushi_detail| %>
+                  <tr>
                       <td><a rel="tooltip" class="tooltip_txt" title="Permissions Not Granted"><div class=" redflag"> &nbsp;</div></a></td>
                     
-                    <td>Serials Solutions</td>
-                    <td> Generic</td>
-                    <td> <a class="icon-edit" href="/integration_partners/manage_sushi_account"></a> </td>
+                    <td><%= sushi_detail.name %></td>
+                    <td> <%= sushi_detail.code %></td>
+                    <!-- <td> <a class="icon-edit" href="/integration_partners/manage_sushi_account"></a> </td> -->
+                    <td><%=link_to image_tag(border: 0), {action: 'edit_permission', controller: 'integration_partners'}, {class: 'icon-edit'} %></td>
                     <td>
                       
-                          -
-              </td>
+                                         -
+                    </td>
                   </tr>
-          
-                <tr>
-                    
-                    
-                      <td><a rel="tooltip" class="tooltip_txt" title="Permissions Not Granted"><div class=" redflag"> &nbsp;</div></a></td>
-                    
-                    <td>ScholarlyStats</td>
-                    <td> Generic</td>
-                    <td> <a class="icon-edit" href="/integration_partners/manage_sushi_account"></a> </td>
-                    <td>
-                      
-                          -
-              </td>
-                  </tr>
-          
-                <tr>
-                    
-                    
-                      <td><a rel="tooltip" class="tooltip_txt" title="Permissions Not Granted"><div class=" redflag"> &nbsp;</div></a></td>
-                    
-                    <td>ABCe</td>
-                    <td> Generic</td>
-                    <td> <a class="icon-edit" href="/integration_partners/manage_sushi_account"></a> </td>
-                    <td>
-                      
-                          -
-              </td>
-                  </tr>
-          
-                <tr>
-                    
-                    
-                      <td><a rel="tooltip" class="tooltip_txt" title="Permissions Not Granted"><div class=" redflag"> &nbsp;</div></a></td>
-                    
-                    <td>SUSHI Service 1</td>
-                    <td> Generic</td>
-                    <td> <a class="icon-edit" href="/integration_partners/manage_sushi_account"></a> </td>
-                    <td>
-                      
-                          -
-              </td>
-                  </tr>
-          
-                <tr>
-                    
-                    
-                      <td><a rel="tooltip" class="tooltip_txt" title="Permissions Not Granted"><div class=" redflag"> &nbsp;</div></a></td>
-                    
-                    <td>SUSHI Service 2</td>
-                    <td> Generic</td>
-                    <td> <a class="icon-edit" href="/integration_partners/manage_sushi_account"></a> </td>
-                    <td>
-                      
-                          -
-              </td>
-                  </tr>
-          
-                <tr>
-                    
-                    
-                      <td><a rel="tooltip" class="tooltip_txt" title="Permissions Not Granted"><div class=" redflag"> &nbsp;</div></a></td>
-                    
-                    <td>Innovative Interfaces</td>
-                    <td> Generic</td>
-                    <td> <a class="icon-edit" href="/integration_partners/manage_sushi_account"></a> </td>
-                    <td>
-                      
-                          -
-              </td>
-                  </tr>
-          
-                <tr>
-                    
-                    
-                      <td><a rel="tooltip" class="tooltip_txt" title="Permissions Not Granted"><div class=" redflag"> &nbsp;</div></a></td>
-                    
-                    <td>Lehmanns Fachbuchhandlung</td>
-                    <td> Generic</td>
-                    <td> <a class="icon-edit" href="/integration_partners/manage_sushi_account"></a> </td>
-                    <td>
-                      
-                          -
-              </td>
-                  </tr>
-          
-                <tr>
-                    
-                    
-                      <td><a rel="tooltip" class="tooltip_txt" title="Permissions Not Granted"><div class=" redflag"> &nbsp;</div></a></td>
-                    
-                    <td>Ex Libris</td>
-                    <td> Generic</td>
-                    <td> <a class="icon-edit" href="/integration_partners/manage_sushi_account"></a> </td>
-                    <td>
-                      
-                          -
-              </td>
-                  </tr>
-          
-                <tr>
-                    
-                    
-                      <td><a rel="tooltip" class="tooltip_txt" title="Permissions Not Granted"><div class=" redflag"> &nbsp;</div></a></td>
-                    
-                    <td>JUSP</td>
-                    <td> Generic</td>
-                    <td> <a class="icon-edit" href="/integration_partners/manage_sushi_account"></a> </td>
-                    <td>
-                      
-                          -
-              </td>
-                  </tr>
-                <tr>
-                    
-                    
-                      <td><a rel="tooltip" class="tooltip_txt" title="Permissions Not Granted"><div class=" redflag"> &nbsp;</div></a></td>
-                    
-                    <td>Millennium ERM AutoStat</td>
-                    <td> Generic</td>
-                    <td> <a class="icon-edit" href="/integration_partners/manage_sushi_account"></a> </td>
-                    <td>
-                      
-                          -
-              </td>
-                  </tr>
+                <%end%>
                    
             </tbody>
           </table>
