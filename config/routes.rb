@@ -29,8 +29,9 @@ Rails.application.routes.draw do
   get "loginpage/selectedplatforms"
 	get "home/index"
   get "integration_partners/manage_sushi_account"
+  get "integration_partners/update_permission"
   get "import_data/xlsx"
-  post "search_by_issn/search"
+  get "search_by_issn/search"
   get "search_by_issn/load_suggestions"
 
   # resources :products do
@@ -47,7 +48,6 @@ end
   get "counter_and_custom_reports/show"
   get "counter_and_custom_reports/show_reports_by_year"
   get "search_by_issn/show_report"
-  get "integration_partners/edit_permission"
   
   resources :accounts, :reports, :platforms, 
             :source_reports_mappings, :year_trends, :year_usages,

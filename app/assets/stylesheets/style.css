@@ -5010,5 +5010,11 @@ span {
     margin-bottom: 20px;
 }
 
+.redflag {
+    width: 20px;
+    background-position: -138px 0 !important;
+    background-position-x: -138px;
+    background-position-y: 0px;
+}
 
 

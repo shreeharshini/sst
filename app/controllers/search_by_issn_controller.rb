@@ -15,7 +15,6 @@ class SearchByIssnController < ApplicationController
   	end
 
 	def search_type
-		byebug
 		if params[:select_type] == "JournalPrintISSN"
 			@suggestion = DataLibrary.find(1)
 		elsif params[:select_type] == "journalOnlineISSN"
@@ -33,7 +32,6 @@ class SearchByIssnController < ApplicationController
   end
 
 	def load_suggestions
-		byebug
 		#@suggestions = DataLibrary.select(:issn).where()#Select the data you want to load on the typeahead.
 		#MyModel.find(:all, conditions: [...]) #Select the data you want to load on the typeahead.
 		#render json: @suggestion
