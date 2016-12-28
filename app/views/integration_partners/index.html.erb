@@ -1,82 +1,17 @@
+<body  class="dashboard-page">
 
-<!DOCTYPE html>
+ <section class="wrapper scrollable">
+ 
+    
+  <%= render :partial => '/layouts/side_bar_navigation'%>
 
-<html>
-    <head>
+  <%= render :partial => '/layouts/header'%>
+        
 
-    <nav class="user-menu">
-      <a href="javascript:;" class="main-menu-access navbar-toggle collapsed" data-toggle="collapse" data-target="#mainMenu" aria-expanded="true">
-      <i class="icon-proton-logo"></i>
-      <i class="icon-reorder"></i>
-      </a>
-    </nav>
-    <section class="title-bar">
-      <div class="logo">
-        <h1><a href="/"><img src="/images/libraries/images/macmillan-txt1.png" alt="" /></a></h1>
-      </div>
-      
-       <%= render :partial => '/layouts/side_bar_navigation'%>
-        <%= render :partial => '/layouts/header'%>
-  
-    <!-- Modal -->
- <div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Logout Confirmation</h4>
-      </div>
-      <div class="modal-body">
-        <p>Are you sure you want to logout ?</p>
-      </div>
-      <div class="modal-footer">
-           <div class="row">
-               <div class=" col-sm-3 mt-10">
-          <div class="button raised">
-              <a href="javascript:;" id="buttonId" name="button2" data-dismiss="modal" class="hoverable" onclick="window.open('/libraries/signout','_self')"> <div class="anim"></div><span>Yes</span></a>
-            </div>
-        </div>
-                <div class=" col-sm-3 mt-10">
-          <div class="button raised">
-              <a href="#" data-dismiss="modal" aria-hidden="true" id="button" name="button"  class="hoverable" > <div class="anim"></div><span>No</span></a>
-            </div>
-        </div>
-
-      </div>
-
-</div>
-    </div>
-
-  </div>
-</div> 
-
-<!-- model for profile -->
-<div id="myModalProfile" class="modal fade" role="dialog">
-  <div class="modal-dialog modal-lg">
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Update Your Account</h4>
-      </div>
-      <div class="modal-body" id="profileModel">
-      </div>
-    </div>
-
-  </div>
-</div> 
-
-
-<!-- tables -->
-<link rel="stylesheet" type="text/css" href="/images/libraries/css/table-style.css" />
-<link rel="stylesheet" type="text/css" href="/images/libraries/css/basictable.css" />
-<script type="text/javascript" src="/images/libraries/js/jquery.basictable.min.js"></script>
-        <ol class="breadcrumb"> <li><a href="/librarian/dashboard">Home</a></li>
+<ol class="breadcrumb"> <li><a href="/librarian/dashboard">Home</a></li>
          <li><a href="/libraries/listSushiPartners/Lcollapsefour-04">Integration Partners</a></li> 
         
-        </ol>
+</ol>
 <br>
 <h4>Integration Partners</h4>
 <div class="clearfix"></div>
@@ -89,9 +24,11 @@
     <div class="agile-grids pad-top10">
       
        <span class="pull-right white_text"><div class=" greenflag pull-left"> &nbsp;
-       </div><div class="padding-left4px pull-left"><small>Permissions Granted</small>
+       </div><div class="padding-left4px pull-left">                        <%= image_tag('per_granted.gif')%>
+<small>Permissions Granted</small>
         </div>  <div class="redflag  pull-left margin_left14px">&nbsp;</div> 
-        <div class="padding-left4px pull-left"><small>Permissions Not Granted</small> </div>                
+        <div class="padding-left4px pull-left">                        <%= image_tag('red_flag.gif')%>
+<small>Permissions Not Granted</small> </div>                
        
         <span class="padding_left15px"> &nbsp;</span>
         </span>
@@ -111,12 +48,14 @@
             <tbody>
                 <% @sushi_partner_deatils.each do |sushi_detail| %>
                   <tr>
-                      <td><a rel="tooltip" class="tooltip_txt" title="Permissions Not Granted"><div class=" redflag"> &nbsp;</div></a></td>
+                      <td><a rel="tooltip" class="tooltip_txt" title="Permissions Not Granted"><div class=" redflag"> 
+                        <%= image_tag('red_flag.gif')%>
+                        &nbsp;</div></a></td>
                     
                     <td><%= sushi_detail.name %></td>
                     <td> <%= sushi_detail.code %></td>
                     <!-- <td> <a class="icon-edit" href="/integration_partners/manage_sushi_account"></a> </td> -->
-                    <td><%=link_to image_tag(border: 0), {action: 'edit_permission', controller: 'integration_partners'}, {class: 'icon-edit'} %></td>
+                    <td><%=link_to image_tag(''), {action: 'manage_sushi_account', controller: 'integration_partners', :@sushi_partner_id =>sushi_detail.id }, {class: 'icon-edit'} %></td>
                     <td>
                       
                                          -
