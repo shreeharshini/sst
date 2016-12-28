@@ -5,68 +5,6 @@
       
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- bootstrap-css -->
-<link rel="stylesheet" href="/images/libraries/common/css/bootstrap.css">
-<!-- //bootstrap-css -->
-<!-- Custom CSS -->
-<link href="/images/libraries/common/css/style.css" rel='stylesheet' type='text/css' />
-<!-- font CSS -->
-
-<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
-
-  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-<!-- font-awesome icons -->
-<link rel="stylesheet" href="/images/libraries/common/css/font.css" type="text/css"/>
-<link href="/images/libraries/common/css/font-awesome.css" rel="stylesheet"> 
-<!-- //font-awesome icons -->
-<script src="/images/libraries/common/js/jquery2.0.3.min.js"></script>
-<script src="/images/libraries/common/js/bootstrap.js"></script>
-<script src="/images/libraries/common/js/custom.min.js"></script> 
-
-<script src="/images/libraries/common/js/modernizr.js"></script>
-<!--<script src="js/jquery.cookie.js"></script>
--->
-    
-
-<link rel="stylesheet" href="/images/libraries/common/css/morris.css">
-<!-- //charts -->
-<!--skycons-icons-->
-<!--<script src="js/skycons.js"></script>
---><!--//skycons-icons-->
-
-
-<!--test collapse-->
-<!-- FastClick -->
-<link rel="stylesheet" href="/images/libraries/common/css/custom.min.css" type="text/css"/>
-
-
-<!-- Use non-conflicting mode to avoid conflicts with any existing JQuery Library or New One -->
-<script type="text/javascript" src="/scripts/jquery-custom-1.4.2.min.js"></script> 
-<script src="/scripts/jquery.autocomplete.js"></script>
-<script type="text/javascript">
-       //create this naming for Jquery 1.4.2 version
-       var jQuery_1_4_2 = jQuery.noConflict(true);
-</script>
-<!-- ********JQuery Non-Conflicting library for autoComplete End******** -->
-
-<link rel="stylesheet" type="text/css" href="/styles/autosuggest_style.css" />
-        <!-- HTTP 1.1 -->
-<!--<meta http-equiv="Cache-Control" content="no-store"/>-->
-<!-- HTTP 1.0 -->
-<!-- <meta http-equiv="Pragma" content="no-cache"/>-->
-<!-- Prevents caching at the Proxy Server -->
-<!-- <meta http-equiv="Expires" content="0"/>-->
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="AppFuse 2.0" />
-<!-- leave this for stats please -->
-<link rel="icon" href="/images/favicon.ico" />
-<script type="text/javascript">
-    try 
-    {     
-      document.execCommand("BackgroundImageCache", false, true);
-    }
-    catch(err) 
-    {}
-</script>
 
          <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
         <link rel="SHORTCUT ICON" href="/images/favicon.ico" type="image/x-icon" />
@@ -369,7 +307,7 @@ function submitFormSushi(){
 <p class="pad-top10 mar-btm20">This section allows you to grant SUSHI permissions for all accounts you have access to, or selected accounts.  Click on an account name to drill down and set more granular permissions</p>
 
 <!-- <form name="permissionForm"  id="permissionForm"> -->
-<%= form_tag(integration_partners_update_permission_path,:id=>"permissionForm", :name=>"permissionForm", method: :get) do %>
+<%= form_tag(integration_partners_update_permission_path, :id=>"permissionForm", :name=>"permissionForm", method: :get) do %>
 <div class="agile-Updating-grids">  
   <div class="agile-grids">
     <div class="col-md-12" style="padding:0px;">
@@ -470,8 +408,7 @@ function submitFormSushi(){
              <td data-th="Age">   
                       <%#= check_box_tag 'is_permitted'%>
                       <input id="is_permitted" name="selectedAcountId" type="checkbox"
-                      value="17" 
-                      onclick="setStatusChanged()"/>
+                      value="17" />
                     
                 </td>
           </tr>
@@ -480,6 +417,7 @@ function submitFormSushi(){
       </table>
       </div>
       <div class="row">
+        <input type="hidden" name="id" value=<%= @edit_sushi_partner.id %> id="partners_id"/>
         <input type="hidden" name="spid" value="172622" id="spid"/> 
         <input type="hidden" name="publisher" value="libraries" id="publisher"/>
     <input type="hidden" name="onscrIds" value="17" id="onscrIds"/> 
@@ -488,8 +426,9 @@ function submitFormSushi(){
          <div class="col-md-12">
                    <div class=" col-sm-2 mt-10 pad-left0">
             <div class="button raised">
-                <%=link_to 'update', {action: 'update_permission', controller: 'integration_partners', sushi_partner_id:@edit_sushi_partner} %>
-                
+                <button type="submit" class="positive">
+                Save
+              </button>
               </div>
           </div>
                     <div class=" col-sm-2 mt-10 pad-left0">
@@ -519,18 +458,6 @@ function submitFormSushi(){
 </div>
 </div>
     </section>
-
- <script>
- $(function () {
-  $("button").click(function(){
-    $.ajax({url:"/integration_partners/update_permission",
-      success:function(result){
-      $("#div1").html(result);
-    }});
-  });
-});
-</script>
-
  </body>      
       
 </html>
