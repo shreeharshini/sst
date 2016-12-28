@@ -16,7 +16,7 @@ class LoginpageController < ApplicationController
   end
 
   def test2
-    @dynamic_reports = params[:some_parameter].constantize.all
+    @dynamic_reports = params[:some_parameter].constantize
     binding.pry
     respond_to do |format|
     format.js {}
@@ -53,6 +53,7 @@ class LoginpageController < ApplicationController
     
     user_id = current_user.id
     @accounts = Account.where(:id => user_id ).first
+    binding.pry
     @platforms = PlatformReport.find_by_sql("SELECT platform_id,GROUP_CONCAT(report_id) AS reports FROM platform_reports GROUP BY platform_id")
     @repo = [ 1,2,3,4,5,6,7,8,9,10]
 

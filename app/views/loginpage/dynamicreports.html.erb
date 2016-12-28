@@ -46,6 +46,24 @@
       <div class="agile-Updating-grids"> 
         <div class="agile-grids pad-top10">
           <div class="col-md-5 mb10">
+
+            <%= form_for loginpage_dynamicreports_path do |f| %>
+                <%= f.select :selectReportType, [['-1','--Select Report Type--'],
+                ['JR1','JR1 (Consolidated Journal Report 1, Consolidated COUNTER JR1 Report of all subscribed Platforms)'],
+                ['JR2','JR2 (Consolidated Journal Report 2, Consolidated COUNTER JR2 Report of all subscribed Platforms)'],
+                ['Jr3','JR3 (Consolidated Journal Report 3, Consolidated COUNTER JR3 Report of all subscribed Platforms)'],
+                ['Jr1a','JR1a (Consolidated Journal Report 1a, Consolidated COUNTER JR1a Report of all subscribed Platforms)'],
+                ['Br1','BR1 (Consolidated Book Report 1, Consolidated COUNTER BR1 Report of all subscribed Platforms)'],
+                ['Br2','Br2">BR2 (Consolidated Book Report 2, Consolidated COUNTER BR2 Report of all subscribed Platforms)'],
+                ['Db1','DB1 (Consolidated Database Report 1, Consolidated COUNTER DB1 Report of all subscribed Platforms)'],
+                ['Db2','DB2 (Consolidated Database Report 2, Consolidated COUNTER DB2 Report of all subscribed Platforms)'],
+                ['Pr1','PR1 (Consolidated Platform Report 1, Consolidated COUNTER PR1 Report of all subscribed Platforms)']] %>
+                <%= f.text_field :date, :class => 'datepicker' %>
+                <%= f.text_field :date, :class => 'datepicker' %>
+
+
+                <%= f.submit %>
+              <% end %>
             
             <%= form_tag(loginpage_dynamicreports_path, method: :get) do %>
             <div class="form-group">
@@ -53,7 +71,7 @@
               <select  id="selectReportType" class="form-control" name="Report">
                 <option value="-1">--Select Report Type--</option>
                 <option value="Jr1">JR1 (Consolidated Journal Report 1, Consolidated COUNTER JR1 Report of all subscribed Platforms)</option>
-                <option value="Jr2">JR2 (Consolidated Journal Report 2, Consolidated COUNTER JR2 Report of all subscribed Platforms)</option>
+                <option value="Jr2">JR1 (Consolidated Journal Report 1, Consolidated COUNTER JR1 Report of all subscribed Platforms)</option>
                 <option value="Jr3">JR3 (Consolidated Journal Report 3, Consolidated COUNTER JR3 Report of all subscribed Platforms)</option>
                 <option value="Jr1a">JR1a (Consolidated Journal Report 1a, Consolidated COUNTER JR1a Report of all subscribed Platforms)</option>
                 <option value="Br1">BR1 (Consolidated Book Report 1, Consolidated COUNTER BR1 Report of all subscribed Platforms)</option>
@@ -65,8 +83,8 @@
             </div>
             </div>
              
-            <div class="col-sm-12 pad-top20 mb-10">
-              <div class="col-sm-2" style="padding:0px;">
+            <div class="col-md-2 mb5">
+              <div style="padding:0px;">
                 <div >
                   <div class=" wrapper">
                     <label for="datePicker">From :</label>
@@ -84,8 +102,8 @@
               </div>
               </div>                  
            
-          <div class="col-sm-12 pad-top20 mb-10">
-            <div class="col-sm-2" style="padding:0px;">
+          <div class="col-md-2 mb5">
+            <div style="padding:0px;">
               <div >
                 <div class=" wrapper">
                   <label for="datePicker">To :</label>
@@ -95,7 +113,7 @@
                              type="text" 
                              ng-model="ngModel2"
                              placeholder="Select a date"
-                             format="mm/yyyy"
+                             dateformat="mm/yyyy"
                              datepicker />
                       <label for="datePicker2" class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></label>
                     </div>
@@ -108,9 +126,7 @@
          <a href="#" class="hoverable"> <div class="anim"></div><span>Preview Report </span></a>
           </div>
         </div>
-        <div id="report_id">
-
-        </div>
+        
   					   
   				<!-- //updating-data -->
   				</div>

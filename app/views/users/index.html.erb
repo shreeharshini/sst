@@ -5,19 +5,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!--<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 --><!-- bootstrap-css -->
-  <%= stylesheet_link_tag "bootstrap.css" %> 
+<%= stylesheet_link_tag "bootstrap.css" %> 
 
 <!-- //bootstrap-css -->
 <!-- Custom CSS -->
-  <%= stylesheet_link_tag "style.css" %> 
+<%= stylesheet_link_tag "style.css" %> 
 
 <!-- font CSS -->
-    <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Raleway" %> 
+<%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Raleway" %> 
 
 <!-- font-awesome icons -->
-  <%= stylesheet_link_tag "font.css" %> 
+<%= stylesheet_link_tag "font.css" %> 
 
-  <%= stylesheet_link_tag "font-awesome.css" %> 
+<%= stylesheet_link_tag "font-awesome.css" %> 
 
 <!-- //font-awesome icons -->
 <%= javascript_include_tag "jquery2.0.3.min.js" %>
@@ -35,13 +35,7 @@
  
  
     <div class="main-grid">
-        
-        
-        <ol class="breadcrumb"> <li><a href="index.html">Home</a></li>
-         <li><a href="#">Source Reports</a></li> 
-        
-        </ol>
-  
+
 
 <p id="notice"><%= notice %></p>
 
@@ -59,16 +53,16 @@
   </thead>
 
   <tbody>
-    <% @users.each do |users| %>
+    <% @users.each do |user| %>
       <tr>
-        <td><%= users.email %></td>
-        <td><%= users.first_name %></td>
-        <td><%= users.email %></td>
-        <td><%= users.role %></td>
+        <td><%= user.email %></td>
+        <td><%= user.first_name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.role %></td>
         <td><%= check_box_tag 'accept' %> </td>
        
      
-  <td><%= link_to 'Edit', edit_user_path(users) %></td>
+  <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -77,8 +71,8 @@
 </div>
 <br>
 
-              <input type="button" onclick="window.location = '/create_additional_users/new'" value="Create New User">
-              <input type="button" onclick="window.location = '/create_additional_users/new'" value="Update">
+              <input type="button" onclick="window.location = '/users/new'" value="Create New User">
+              <input type="button" onclick="window.location = '/users/new'" value="Update">
 
 
     <%= render :partial => '/layouts/footer'%>
