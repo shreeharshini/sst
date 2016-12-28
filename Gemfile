@@ -19,6 +19,9 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
 gem 'bootstrap-cdn-rails'
 gem 'highcharts-rails'
+# for jqgrid 
+gem 'jqgrid-jquery-rails', '~> 4.6.001'
+gem "jquery-ui-rails"
 # for font-awesome
 gem 'font-awesome-rails'
 gem 'font-awesome-sass'
