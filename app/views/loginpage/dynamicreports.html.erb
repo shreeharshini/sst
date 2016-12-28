@@ -8,7 +8,7 @@
     --><!-- bootstrap-css -->
       <%= stylesheet_link_tag "bootstrap.css" %> 
 
-<link rel="shortcut icon" href="images/favicon.ico">
+      <link rel="shortcut icon" href="images/favicon.ico">
 
     <!-- //bootstrap-css -->
     <!-- Custom CSS -->
@@ -48,23 +48,20 @@
           <div class="col-md-5 mb10">
 
             <%= form_for loginpage_dynamicreports_path do |f| %>
-                <%= f.select :selectReportType, [['-1','--Select Report Type--'],
-                ['JR1','JR1 (Consolidated Journal Report 1, Consolidated COUNTER JR1 Report of all subscribed Platforms)'],
-                ['JR2','JR2 (Consolidated Journal Report 2, Consolidated COUNTER JR2 Report of all subscribed Platforms)'],
-                ['Jr3','JR3 (Consolidated Journal Report 3, Consolidated COUNTER JR3 Report of all subscribed Platforms)'],
-                ['Jr1a','JR1a (Consolidated Journal Report 1a, Consolidated COUNTER JR1a Report of all subscribed Platforms)'],
-                ['Br1','BR1 (Consolidated Book Report 1, Consolidated COUNTER BR1 Report of all subscribed Platforms)'],
-                ['Br2','Br2">BR2 (Consolidated Book Report 2, Consolidated COUNTER BR2 Report of all subscribed Platforms)'],
-                ['Db1','DB1 (Consolidated Database Report 1, Consolidated COUNTER DB1 Report of all subscribed Platforms)'],
-                ['Db2','DB2 (Consolidated Database Report 2, Consolidated COUNTER DB2 Report of all subscribed Platforms)'],
-                ['Pr1','PR1 (Consolidated Platform Report 1, Consolidated COUNTER PR1 Report of all subscribed Platforms)']] %>
-                <%= f.text_field :date, :class => 'datepicker' %>
-                <%= f.text_field :date, :class => 'datepicker' %>
-
-
+                <%= f.select :selectReportType, [
+                ['--Select Report Type--','-1'],
+                ['JR1 (Consolidated Journal Report 1, Consolidated COUNTER JR1 Report of all subscribed Platforms)','JR1'],
+                ['JR2 (Consolidated Journal Report 2, Consolidated COUNTER JR2 Report of all subscribed Platforms)','JR2'],
+                ['JR3 (Consolidated Journal Report 3, Consolidated COUNTER JR3 Report of all subscribed Platforms)','Jr3'],
+                ['JR1a (Consolidated Journal Report 1a, Consolidated COUNTER JR1a Report of all subscribed Platforms)','Jr1a'],
+                ['BR1 (Consolidated Book Report 1, Consolidated COUNTER BR1 Report of all subscribed Platforms)','Br1'],
+                ['BR2 (Consolidated Book Report 2, Consolidated COUNTER BR2 Report of all subscribed Platforms)','Br2'],
+                ['DB1 (Consolidated Database Report 1, Consolidated COUNTER DB1 Report of all subscribed Platforms)','Db1'],
+                ['DB2 (Consolidated Database Report 2, Consolidated COUNTER DB2 Report of all subscribed Platforms)','Db2'],
+                ['PR1 (Consolidated Platform Report 1, Consolidated COUNTER PR1 Report of all subscribed Platforms)','Pr1']] %>
                 <%= f.submit %>
               <% end %>
-            
+
             <%= form_tag(loginpage_dynamicreports_path, method: :get) do %>
             <div class="form-group">
               <label>Select Report Type:</label>
@@ -82,7 +79,9 @@
               </select>
             </div>
             </div>
-             
+            <br>
+
+
             <div class="col-md-2 mb5">
               <div style="padding:0px;">
                 <div >
