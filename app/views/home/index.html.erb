@@ -45,29 +45,36 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Log <span>In</span></h4>
       </div>
-      <div class="modal-body">
-         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="field">
-          <%= f.label :email %><br />
+      <div class="modal-body ">
+        <div class="common_form">
+             
+         <%= form_for(resource, as: resource_name, url: session_path(resource_name), class:"form-signin") do |f| %>
+         <ul>
+        <li>
+          
           <%= f.email_field :email, autofocus: true %>
-        </div>
+        </li>
 
-        <div class="field">
-          <%= f.label :password %><br />
+        <li>
+           
           <%= f.password_field :password, autocomplete: "off" %>
-        </div>
+        </li>
 
         <% if devise_mapping.rememberable? -%>
-          <div class="field">
+          <li class="checkbox">
+            <label>
             <%= f.check_box :remember_me %>
-            <%= f.label :remember_me %>
-          </div>
+            Remember me
+          </label>
+          </li>
         <% end -%>
 
-          <div class="actions">
-            <%= f.submit "Log in" %>
-          </div>
+          <li class="actions">
+            <%= f.submit "Log in", :class => 'submit_btn' %>
+          </li>
+        </ul>
             <% end %>
+          </div>
         </div>
       </div>
     </div>
@@ -137,7 +144,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><%= image_tag ("logo.png") %></a>
+          <a class="navbar-brand" href="#"><%= image_tag ("macmillan-txt.png") %></a>
         </div>
         
         <div class="navbar-collapse collapse">
@@ -165,7 +172,7 @@
             <%= image_tag ("main_banner.jpg") %>
             <%= image_tag ("mob_banner.jpg") %>
             <div class="carousel-caption">
-              <h2>Bettter Information</h2>
+              <h2>Better Information</h2>
                 <h3>for Better Decisions</h3>
             </div>
           </div>
@@ -196,19 +203,8 @@
                           <div class="col-xs-4 col-md-4"><%= image_tag ("icon/publishers_icon.png") %></div>
                           <div class="col-xs-8 col-md-8 total_counts">
                             <div class="row">
-                                <h1>2008</h1>
+                                <h1>160+</h1>
                                 <p>Publishers</p>
-                            </div>
-                          </div>
-                        </div>
-                    </li>
-                    <li class="col-xs-12 col-sm-4 col-md-4">
-                      <div class="row">
-                          <div class="col-xs-4 col-md-4"><%= image_tag ("icon/books_icon.png") %></div>
-                          <div class="col-xs-8 col-md-8 total_counts">
-                            <div class="row">
-                                <h1>10000</h1>
-                                <p>Books</p>
                             </div>
                           </div>
                         </div>
@@ -218,8 +214,19 @@
                           <div class="col-xs-4 col-md-4"><%= image_tag ("icon/journals_icon.png") %></div>
                           <div class="col-xs-8 col-md-8 total_counts">
                             <div class="row">
-                                <h1>1.23 Laks</h1>
+                                <h1>80000+</h1>
                                 <p>Journals</p>
+                            </div>
+                          </div>
+                        </div>
+                    </li>
+                    <li class="col-xs-12 col-sm-4 col-md-4">
+                      <div class="row">
+                          <div class="col-xs-4 col-md-4"><%= image_tag ("icon/books_icon.png") %></div>
+                          <div class="col-xs-8 col-md-8 total_counts">
+                            <div class="row">
+                                <h1>50000+</h1>
+                                <p>Books</p>
                             </div>
                           </div>
                         </div>
@@ -236,10 +243,13 @@
 <div class="reports_section" id="reports">
   <div class="container">
       <div class="report_tittle">
-          Counter Usage <span>Reports</span>
+          Clear Stats, Actionable Insight
         </div>
         <div class="report_tittle_info">
-              <span>With our award winning reports and analytical platform,</span> you get what you want, we provide <span>all reports in all possible formats,</span> you can request for <b>customization, pull data from any given dates,</b> create your own title and package based cost per use reports, see through our advance charts and visuals what is being used and what's not in <b>your electronic resource collection, and that without wasting any minute,</b> ScholarlyStats based on decade <span>old experience in electronic resource analytics came up with value added reports</span> which simply understands what librarians want from library data.
+          <!--  <span>With our award winning reports and analytical platform,</span> you get what you want, we provide <span>all reports in all possible formats,</span> you can request for <b>customization, pull data from any given dates,</b> create your own title and package based cost per use reports, see through our advance charts and visuals what is being used and what's not in <b>your electronic resource collection, and that without wasting any minute,</b> MPSScholarlyStats based on decade <span>old experience in electronic resource analytics came up with value added reports</span> which simply understands what librarians want from library data. -->
+            <span>
+              With our new upgraded analytical platform, you get what you want. We provide all Consolidated COUNTER reports in all possible formats. You can request a customized dashboard, pull stats for any given dates, create your own title and package-based cost per use reports, see through our advance charts and visuals what is being used and what's not in your electronic resource collection, and without wasting any time. MPSScholarlyStats based on decade old experience in electronic resource analytics came up with value-added reports which simply understands what librarians want from library data. 
+            </span>
         </div>
         
         <div class="row">
@@ -301,19 +311,18 @@
   <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-md-5">
-      <%= image_tag ("system_img.jpg") %>
+      <%= image_tag ("system_img.jpg"), :class => 'img-responsive' %>
     </div>
     <div class="col-xs-12 col-sm-8 col-md-7">
-      <div class="benefits_tittle">Benefits of Scholarly<span>Stats</span></div>
+      <div class="benefits_tittle">Features of MPS<span>ScholarlyStats</span></div>
         <div class="benefits_tittle_info">
-          Helps libraries to validate existing content subscriptions, analyze content inventory, and choose and acquire new content.
+          MPSScholarlyStats is a proven analytical usage tool, providing librarians the power to make data-driven decisions.
         </div>
         
         <ul class="list_style">
           <li>Helps libraries in streamlining the process of title selection.</li>
             <li>Option to choose from COUNTER and a variety of custom reports.</li>
-            <li>Helps libraries to validate existing content subscriptions, analyze content inventory,
-and choose and acquire new content.</li>
+            <li>Helps libraries to validate existing content subscriptions, analyze content inventory,and choose and acquire new content.</li>
             <li>Cloud-based reporting with 24 x 7 support.</li>
             <li>Easy comparison of performance of various e-packages.</li>
             <li>Automated data harvesting through SUSHI.</li>
@@ -345,7 +354,7 @@ and choose and acquire new content.</li>
 <div class="clients_speak_section">
   <div class="container">
       <div class="common_tittle text-center">
-          What Our Clients <span>Say</span>
+          What Our Clients Say
         </div>
         <div class="row">
           <!-- Carousel -->
@@ -468,11 +477,10 @@ and choose and acquire new content.</li>
 <div id="contact_section">
   <div class="container">
       <div class="common_tittle text-center">
-          Contact Us <span>Here</span>
+          Contact Us Here
         </div>
         <div class="common_tittle_info text-center">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's <br>
-tandard dummy text ever since the 1500s,
+          Please enter your query below and it will be sent to the helpdesk.
         </div>
         
         <div class="row">
@@ -480,28 +488,24 @@ tandard dummy text ever since the 1500s,
               <div class="common_form">
                     <%= form_for :contact_u, url: contact_us_path do |f| %>
                  
-                    <div class="field">
-                      <%= f.label :name %>
-                      <%= f.text_field :name, class: "form-control" %>
-                    </div>
+                    <li>
+                      <%= f.text_field :name, class: "form-control", placeholder: "Name"%>
+                    </li>
 
-                    <div class="field">
-                      <%= f.label :email %>
-                      <%= f.text_field :email, class: "form-control"%>
-                    </div>
+                    <li>
+                      <%= f.text_field :email, class: "form-control", placeholder: "EmailID"%>
+                    </li>
 
-                    <div class="field">
-                      <%= f.label :subject %>
-                      <%= f.text_field :subject, class: "form-control"%>
-                    </div>
+                    <li>
+                      <%= f.text_field :subject, class: "form-control", placeholder: "Subject"%>
+                    </li>
 
-                    <div class="field">
-                      <%= f.label :message %>
-                      <%= f.text_area :message, class: "form-control"%>
-                    </div>
+                    <li>
+                      <%= f.text_area :message, class: "form-control", placeholder: "Your Message"%>
+                    </li>
 
                     <div class = "field">
-                    <%= f.submit "send message", class: "btn btn-primary" %>
+                    <%= f.submit "Send Message", class: "submit_btn" %>
                     </div>
                   <% end %>
                 </div>
@@ -535,14 +539,14 @@ tandard dummy text ever since the 1500s,
                     <div class="icon"><%= image_tag ("icon/phone.png") %></div>
                     <div class="address_detail">
                       <h5>Phone</h5>
-                        <p>1(800) 220 084</p>
+                        <p>+91 (0)120 4599 793</p>
                     </div>
                     </div>
                     <div class="address_section">
                     <div class="icon"><%= image_tag ("icon/web.png") %></div>
                     <div class="address_detail">
                       <h5>Website</h5>
-                        <p><a href="www.mpsscholarlystats.com" target="_blank">www.mpsscholarlystats.com</a></p>
+                        <p><a href="http://www.adi-mps.com/" target="_blank">www.adi-mps.com</a></p>
                     </div>
                     </div>
                     
@@ -557,8 +561,15 @@ tandard dummy text ever since the 1500s,
 <footer class="footer text-center">
   <div class="container">
       <div class="row">
-        <div class="col-xs-12 col-md-12"><a href="#">Terms of Use</a>  <span>|</span>  <a href="#">Privacy and Policy</a>  <span>|</span>  <a href="#">License</a>  <span>|</span>  <a href="#">Support</a></div>
-        <div class="col-xs-12 col-md-12 footer_text">© 2016 Afairs Exhibitions &amp; Media Pvt. Ltd. All rights reserved.</div>
+        <div class="col-xs-12 col-md-12"><a href="#">Terms of Use</a>  <span>|</span>  <a href="#">Privacy and Policy</a>
+        </div>
+        <div class="col-xs-12 col-md-12 footer_text">
+          Powered by
+          <a href="http://wwww.adi-mps.com/" target="blank" style="text-decoration:none">
+          <span style="color:#c9302c">MPS </span>
+        </a>
+        Ltd. - All Rights Reserved.
+      </div>
           <div class="col-xs-12 social_icon">
               <a href="#" target="_blank" class="icon-button facebook"><i class="fa fa-facebook"></i><span></span></a>
               <a href="#" target="_blank" class="icon-button twitter"><i class="fa fa-twitter"></i><span></span></a>

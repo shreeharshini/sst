@@ -5,19 +5,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!--<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 --><!-- bootstrap-css -->
-<%= stylesheet_link_tag "bootstrap.css" %> 
+  <%= stylesheet_link_tag "bootstrap.css" %> 
 
 <!-- //bootstrap-css -->
 <!-- Custom CSS -->
-<%= stylesheet_link_tag "style.css" %> 
+  <%= stylesheet_link_tag "style.css" %> 
 
 <!-- font CSS -->
-<%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Raleway" %> 
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Raleway" %> 
 
 <!-- font-awesome icons -->
-<%= stylesheet_link_tag "font.css" %> 
+  <%= stylesheet_link_tag "font.css" %> 
 
-<%= stylesheet_link_tag "font-awesome.css" %> 
+  <%= stylesheet_link_tag "font-awesome.css" %> 
 
 <!-- //font-awesome icons -->
 <%= javascript_include_tag "jquery2.0.3.min.js" %>
@@ -34,8 +34,7 @@
   <%= render :partial => '/layouts/side_bar_navigation'%>
  
  
-    <div class="main-grid">
-
+    <div class="main-grid">  
 
 <p id="notice"><%= notice %></p>
 
@@ -53,17 +52,17 @@
   </thead>
 
   <tbody>
-    <% @users.each do |user| %>
+    <% @users.each do |users| %>
       <tr>
-        <td><%= user.email %></td>
-        <td><%= user.first_name %></td>
-        <td><%= user.email %></td>
-        <td><%= user.role %></td>
+        <td><%= users.email %></td>
+        <td><%= users.first_name %></td>
+        <td><%= users.email %></td>
+        <td><%= users.role %></td>
         <td><%= check_box_tag 'accept' %> </td>
        
      
-  <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <td><%= link_to 'Edit', edit_user_password_path(users) %></td>
+        <td><%= link_to 'Delete', users_new_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -28,6 +28,8 @@ Rails.application.routes.draw do
   get "loginpage/accessdetails"
   get "loginpage/selectedplatforms"
 	get "home/index"
+  get "users/index"
+  get "users/new"
   get "integration_partners/manage_sushi_account"
   get "integration_partners/update_permission"
   get "import_data/xlsx"
@@ -49,7 +51,7 @@ end
   get "counter_and_custom_reports/show_reports_by_year"
   get "search_by_issn/show_report"
   
-  resources :accounts, :reports, :platforms, 
+  resources :accounts, :reports, :platforms,
             :source_reports_mappings, :year_trends, :year_usages,
             :year_top_journals, :account_infos, :export_files, 
             :platform_reports, :requestfordemos, :contact_us, 
