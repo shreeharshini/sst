@@ -28,7 +28,6 @@ class LoginpageController < ApplicationController
   def show
   end
 
- 
 
   def getyear
        sourcereportsyear = SourceReportsMapping.where(:platform_id => params[:sourcereportsyear]).pluck(:year)
@@ -52,12 +51,9 @@ class LoginpageController < ApplicationController
   end
 
   def selectedplatforms
-    
     user_id = current_user.id
     @accounts = Account.where(:id => user_id ).first
-    binding.pry
     @platforms = PlatformReport.find_by_sql("SELECT platform_id,GROUP_CONCAT(report_id) AS reports FROM platform_reports GROUP BY platform_id")
     @repo = [ 1,2,3,4,5,6,7,8,9,10]
-
   end
 end
