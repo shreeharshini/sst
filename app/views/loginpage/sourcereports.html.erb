@@ -112,7 +112,6 @@
 </div>
 <br>
 
-    <div id = "div1"></div>
 
     <!-- footer -->
 
@@ -149,23 +148,23 @@
   $("button").click(function(){
            var value2 = $('select#dropdown2 option:selected').val();
 
-                    $.ajax({
-                          type: "GET", 
-                          dataType: "json",
-                          url:"/loginpage/getreports",
-                          data: {sourcereports1: value2 }, 
-                            success:function(result1){
-                              console.log(result1);
-                              result1.forEach(function(){
-                                $sourcerepo_html = $("<div class= 'result1'>" + result1 + "</div>");
-                               $('#test1').append($sourcerepo_html);
-                                alert(result1);
-                              // alert(abc);
-
-                              })
-                             
-                            }
-                    })
+           $.ajax({
+               type: "GET", 
+               dataType: "json",
+               url:"/loginpage/getreports",
+               data: {sourcereports1: value2 }, 
+               success:function(result1){
+                     console.log(result1);
+                     result1.forEach(function(){
+                     $sourcerepo_html = $("<div class= 'result1'>" + result1 + "</div>");
+                     $('#test1').append($sourcerepo_html);
+                       // alert(result1);
+                       // document.getElementById('test1').innerHTML = result1;
+                       // $("#test1").html(result1);
+                    $("#test1").html(result1);
+                      })
+                }
+          })
   });
 });
 </script>
