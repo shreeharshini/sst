@@ -5,7 +5,6 @@
  <section class="wrapper scrollable">
  
     
-  <%= render :partial => '/layouts/side_bar_navigation'%>
 <html>
     <head>
  <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -13,9 +12,6 @@
 <script src="https://code.highcharts.com/modules/data.js"></script>
 <script src="https://code.highcharts.com/modules/drilldown.js"></script>
 <script src="https://code.highcharts.com/modules/no-data-to-display.js"></script>
-  <%= render :partial => '/layouts/header'%>
-        
-
 
 	<%= render :partial => '/layouts/header'%>
   	<%= render :partial => '/layouts/side_bar_navigation'%>
@@ -54,30 +50,30 @@
 			  <tr><th>Library Details</th></tr>
 			  </thead>
               <tbody>
-              	<if @acct_details.present? %>
-	                <tr>
-	                  <td valign="top">Library Name:</td>
-	                  	<td valign="top"><strong><%= @acct_details.name %></strong></td>
-	                </tr>
-	                <tr>
-	                
-	                  <td valign="top">Current Contract Signed on:</td>
-	                
-	                  	<td valign="top"><%= @acct_details.contract_sign_on %></td>
-	                </tr>
-	                <tr>
-	                  <td valign="top">Max. no. of Platforms:</td>
-	                  <td valign="top"><%= @acct_details.number_of_platforms %></td>
-	                </tr>
-	                <tr>
-	                  <td valign="top">Library Code:</td>
-	                  <td valign="top"><%= @acct_details.account_code %></td>
-	                </tr>
-	                <tr>
-	                  <td valign="top">Activation Type:</td>
-	                  <td valign="top"><p class="green"><%= @acct_details.activation_status %></p></td>
-	                </tr>
-	            <%end%>
+
+                <tr>
+                  <td valign="top">Library Name:</td>
+                  	<td valign="top"><strong><%= @acct_details.name %></strong></td>
+                </tr>
+                <tr>
+                
+                  <td valign="top">Current Contract Signed on:</td>
+                
+                  	<td valign="top"><%= @acct_details.contract_sign_on %></td>
+                </tr>
+                <tr>
+                  <td valign="top">Max. no. of Platforms:</td>
+                  <td valign="top"><%= @acct_details.number_of_platforms %></td>
+                </tr>
+                <tr>
+                  <td valign="top">Library Code:</td>
+                  <td valign="top"><%= @acct_details.account_code %></td>
+                </tr>
+                <tr>
+                  <td valign="top">Activation Type:</td>
+                  <td valign="top"><p class="green"><%= @acct_details.activation_status %></p></td>
+                </tr>
+
               </tbody>
             </table>
           </div>
@@ -93,36 +89,35 @@
 			  <tr><th>Administrator Details</th></tr>
 			  </thead>
 	           <tbody>
-	           	<% if @acct_info.present? %>
-	                <tr>
-	                  <td valign="top"><p>First Name:</p></td>
-	                   
-	                  	<td valign="top"><%= @acct_info.admin_first_name %></td>
-	                  
-	                                    
-	                </tr>
-	                <tr>
-	                  <td valign="top"><p>Last Name:</p></td>
-	                   
-	                  	<td valign="top"><%= @acct_info.admin_last_name %></td>
-	                  
-	                   
-	                </tr>
-	                <tr>
-	                  <td valign="top"><p>Email:</p></td>
-	                   
-	                  	<td valign="top"><%= @acct_info.admin_email %></td>
-	                  
-	                  
-	                </tr>
-	                <tr>
-	                  <td valign="top"><p>Phone:</p></td>
-	                  
-	                  
-						<td valign="top"><strong> <%= @acct_info.admin_phone %> </strong></td>
-	                  
-	                </tr>
-	            <%end%>
+	           	
+                <tr>
+                  <td valign="top"><p>First Name:</p></td>
+                   
+                  	<td valign="top"><%= @acct_info.admin_first_name %></td>
+                  
+                                    
+                </tr>
+                <tr>
+                  <td valign="top"><p>Last Name:</p></td>
+                   
+                  	<td valign="top"><%= @acct_info.admin_last_name %></td>
+                  
+                   
+                </tr>
+                <tr>
+                  <td valign="top"><p>Email:</p></td>
+                   
+                  	<td valign="top"><%= @acct_info.admin_email %></td>
+                  
+                  
+                </tr>
+                <tr>
+                  <td valign="top"><p>Phone:</p></td>
+                  
+                  
+					<td valign="top"><strong> <%= @acct_info.admin_phone %> </strong></td>
+                  
+                </tr>
               </tbody>
             </table>
           </div>
@@ -137,36 +132,35 @@
 			  <tr><th>Secondary Contact Details</th></tr>
 			  </thead>
 	           <tbody>
-	           	<% if @acct_info.present? %>
-	                <tr>
-	                  <td valign="top"><p>First Name:</p></td>
-	                   
-	                  	<td valign="top"><%= @acct_info.admin_first_name2 %></td>
-	                  
-	                                    
-	                </tr>
-	                <tr>
-	                  <td valign="top"><p>Last Name:</p></td>
-	                   
-	                  	<td valign="top"><%= @acct_info.admin_last_name2 %></td>
-	                  
-	                   
-	                </tr>
-	                <tr>
-	                  <td valign="top"><p>Email:</p></td>
-	                   
-	                  	<td valign="top"><%= @acct_info.admin_email2 %></td>
-	                  
-	                  
-	                </tr>
-	                <tr>
-	                  <td valign="top"><p>Phone:</p></td>
-	                  
-	                  
-						<td valign="top"><strong> :<%= @acct_info.admin_phone2 %> </strong></td>
-	                  
-	                </tr>
-	            <%end%>
+                <tr>
+                  <td valign="top"><p>First Name:</p></td>
+                   
+                  	<td valign="top"><%= @acct_info.admin_first_name2 %></td>
+                  
+                                    
+                </tr>
+                <tr>
+                  <td valign="top"><p>Last Name:</p></td>
+                   
+                  	<td valign="top"><%= @acct_info.admin_last_name2 %></td>
+                  
+                   
+                </tr>
+                <tr>
+                  <td valign="top"><p>Email:</p></td>
+                   
+                  	<td valign="top"><%= @acct_info.admin_email2 %></td>
+                  
+                  
+                </tr>
+                <tr>
+                  <td valign="top"><p>Phone:</p></td>
+                  
+                  
+					<td valign="top"><strong> :<%= @acct_info.admin_phone2 %> </strong></td>
+                  
+                </tr>
+
               </tbody>
             </table>
           </div>
@@ -182,50 +176,48 @@
 			  <tr><th>Contact Address Details</th></tr>
 			  </thead>
              <tbody>
-             	<% if @acct_info.present? %>
-	                <tr>
-	                  <td valign="top"><p>Address Line1:</p></td>
-	                   
-	                  	<td valign="top"><%= @acct_info.address_line_1 %></td>
-	                  
-	                  
-	                </tr>
-	                <tr>
-	                  <td valign="top"><p>Address Line2:</p></td>
-	                   
-	                  	<td valign="top"><%= @acct_info.address_line2 %></td>
-	                  
-	                  
-	                </tr>
-	                <tr>
-	                  <td valign="top"><p>City:</p></td>
-	                   
-	                  	<td valign="top"> <%= @acct_info.city %></td>
-	                  
-	                  
-	                </tr>
-	                <tr>
-	                  <td valign="top"><p>State:</p></td>
-	                   
-	                  	<td valign="top"><%= @acct_info.state %></td>
-	                  
-	                  
-	                </tr>
-	                <tr>
-	                  <td valign="top"><p>Country:</p></td>
-	                   
-	                  	<td valign="top"><%= @acct_info.country %></td>
-	                  
-	                  
-	                </tr>
-	                <tr>
-	                  <td valign="top"><p>Postal/Zip Code:</p></td>
-	                   
-	                  	<td valign="top"><%= @acct_info.pincode %></td>
-	                  
-	                  
-	                </tr>
-	            <%end%>
+                <tr>
+                  <td valign="top"><p>Address Line1:</p></td>
+                   
+                  	<td valign="top"><%= @acct_info.address_line_1 %></td>
+                  
+                  
+                </tr>
+                <tr>
+                  <td valign="top"><p>Address Line2:</p></td>
+                   
+                  	<td valign="top"><%= @acct_info.address_line2 %></td>
+                  
+                  
+                </tr>
+                <tr>
+                  <td valign="top"><p>City:</p></td>
+                   
+                  	<td valign="top"> <%= @acct_info.city %></td>
+                  
+                  
+                </tr>
+                <tr>
+                  <td valign="top"><p>State:</p></td>
+                   
+                  	<td valign="top"><%= @acct_info.state %></td>
+                  
+                  
+                </tr>
+                <tr>
+                  <td valign="top"><p>Country:</p></td>
+                   
+                  	<td valign="top"><%= @acct_info.country %></td>
+                  
+                  
+                </tr>
+                <tr>
+                  <td valign="top"><p>Postal/Zip Code:</p></td>
+                   
+                  	<td valign="top"><%= @acct_info.pincode %></td>
+                  
+                  
+                </tr>
               </tbody>
             </table>
           </div>
@@ -242,50 +234,48 @@
 			  </thead>
               <tbody>
                   
-            		<% if @acct_info.present? %>
-																	<tr>
-	                  		<td valign="top"><p>Address Line1:</p></td>
-							 
-	                  			<td valign="top"><%= @acct_info.bill_address_1 %></td>
-	                  		
-	                  		
-	                	</tr>
-	                	<tr>
-	                  		<td valign="top"><p>Address Line2:</p></td>
-	                  		 
-	                  			<td valign="top"><%= @acct_info.bill_address_2 %></td>
-	                  		
-	                  		
-	                	</tr>
-	                	<tr>
-	                  		<td valign="top"><p>City:</p></td>
-	                  		 
-	                  			<td valign="top"><%= @acct_info.bill_city %></td>
-	                  		
-	                  		
-	                	</tr>
-	                	<tr>
-	                  		<td valign="top"><p>State:</p></td>
-	                  		 
-	                  			<td valign="top"><%= @acct_info.bill_state %></td>
-	                  		
-	                  		
-	                	</tr>
-	                	<tr>
-	                  		<td valign="top"><p>Country:</p></td>
-	                  		 
-	                  			<td valign="top"><%= @acct_info.bill_country %></td>
-	                  		
-	                  		
-	                	</tr>
-	                	<tr>
-	                  		<td valign="top"><p>Postal/Zip Code:</p></td>
-	                  		
-	                  		
-								<td valign="top"><strong> <%= @acct_info.bill_pin_code %> </strong></td>
-	                  		
-	                	</tr>
-	                <%end%>
+					<tr>
+                  		<td valign="top"><p>Address Line1:</p></td>
+						 
+                  			<td valign="top"><%= @acct_info.bill_address_1 %></td>
+                  		
+                  		
+                	</tr>
+                	<tr>
+                  		<td valign="top"><p>Address Line2:</p></td>
+                  		 
+                  			<td valign="top"><%= @acct_info.bill_address_2 %></td>
+                  		
+                  		
+                	</tr>
+                	<tr>
+                  		<td valign="top"><p>City:</p></td>
+                  		 
+                  			<td valign="top"><%= @acct_info.bill_city %></td>
+                  		
+                  		
+                	</tr>
+                	<tr>
+                  		<td valign="top"><p>State:</p></td>
+                  		 
+                  			<td valign="top"><%= @acct_info.bill_state %></td>
+                  		
+                  		
+                	</tr>
+                	<tr>
+                  		<td valign="top"><p>Country:</p></td>
+                  		 
+                  			<td valign="top"><%= @acct_info.bill_country %></td>
+                  		
+                  		
+                	</tr>
+                	<tr>
+                  		<td valign="top"><p>Postal/Zip Code:</p></td>
+                  		
+                  		
+							<td valign="top"><strong> <%= @acct_info.bill_pin_code %> </strong></td>
+                  		
+                	</tr>
               </tbody>
             </table>
           </div>

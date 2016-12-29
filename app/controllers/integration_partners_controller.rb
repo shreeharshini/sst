@@ -15,8 +15,13 @@ class IntegrationPartnersController < ApplicationController
 		       
 			end
 		else
-			@sushi_partner_deatils = SushiPartner.all
-			render 'index'
+			@edit_sushi_partner = SushiPartner.find(params[:id])
+			@edit_sushi_partner.is_permitted = 0
+			if @edit_sushi_partner.save!
+		  		@sushi_partner_deatils = SushiPartner.all
+				render 'index'
+		       
+			end
 		end
 	end
 end
