@@ -48,10 +48,15 @@
             <tbody>
                 <% @sushi_partner_deatils.each do |sushi_detail| %>
                   <tr>
+                    <% if sushi_detail.is_permitted == 0 %>
                       <td><a rel="tooltip" class="tooltip_txt" title="Permissions Not Granted"><div class=" redflag"> 
                         <%= image_tag('red_flag.gif')%>
                         &nbsp;</div></a></td>
-                    
+                    <%else%>
+                      <td><a rel="tooltip" class="tooltip_txt" title="Permissions  Granted"><div class=" redflag"> 
+                        <%= image_tag('per_granted.gif')%>
+                        &nbsp;</div></a></td>
+                    <%end%>
                     <td><%= sushi_detail.name %></td>
                     <td> <%= sushi_detail.code %></td>
                     <!-- <td> <a class="icon-edit" href="/integration_partners/manage_sushi_account"></a> </td> -->

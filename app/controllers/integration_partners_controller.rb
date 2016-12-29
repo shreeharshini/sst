@@ -6,11 +6,22 @@ class IntegrationPartnersController < ApplicationController
 		@edit_sushi_partner = SushiPartner.find(params[:@sushi_partner_id]) 
 	end
 	def update_permission
-		byebug
-		
-		# @edisushi_partner.is_permitted = params[:is_permitted]
-  #   	if @edit_sushi_partner.save!
-  #     		redirect_to integration_partners_path, notice: "Permission updated."
-		# end
+		if params[:selectedAcountId].present?
+			@edit_sushi_partner = SushiPartner.find(params[:id])
+			@edit_sushi_partner.is_permitted = 1
+	     	if @edit_sushi_partner.save!
+		  		@sushi_partner_deatils = SushiPartner.all
+				render 'index'
+		       
+			end
+		else
+			@edit_sushi_partner = SushiPartner.find(params[:id])
+			@edit_sushi_partner.is_permitted = 0
+			if @edit_sushi_partner.save!
+		  		@sushi_partner_deatils = SushiPartner.all
+				render 'index'
+		       
+			end
+		end
 	end
 end
