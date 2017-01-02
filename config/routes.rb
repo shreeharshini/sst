@@ -27,6 +27,8 @@ Rails.application.routes.draw do
   end
 
 	get "home/index"
+
+  
   get "import_data/xlsx"
  
 
@@ -61,11 +63,13 @@ Rails.application.routes.draw do
  
  get 'year_trends/highpiecharts'
   
-  resources :accounts, :reports, :platforms, :source_reports_mappings, 
-            :year_trends, :year_usages, :year_top_journals, :account_infos, 
-            :export_files, :platform_reports, :requestfordemos, :contact_us, 
-            :library_account_details, :import_data,  
-            :additional_users
+
+  resources :accounts, :reports, :platforms,
+            :source_reports_mappings, :year_trends, :year_usages,
+            :year_top_journals, :account_infos, :export_files, 
+            :platform_reports, :requestfordemos, :contact_us, 
+            :library_account_details, :import_data, :search_by_issn , 
+            :integration_partners, :counter_and_custom_reports, :additional_users
 
   
 
