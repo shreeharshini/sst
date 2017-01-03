@@ -15,14 +15,13 @@
 
 <br>
 
-<%= content_tag :div, "", id: "journal2", data: { yeartrends: @yeartrends }%>
+<%= content_tag :div, "", id: "journal2", data: { topjournals: @topjournals }%>
 
 <%= content_tag :div, "", id: "pie2", data: { yearusages: @yearusages }%>
 
 
-<%= @yearusages.each do |yearusages|%>
-  <%= yearusages.Report_Type %>
-  <%= yearusages.abc %>
+<%= res.each do |a|%>
+    <%= a %>
 <%end%>
         
 </body>
@@ -101,7 +100,7 @@ $(function () {
                     xAxis:{
                         categories:[
 
-                            '<%= @yeartrends.name  %>'
+                            '<%= @topjournals.name  %>'
 
                         ]
                     }, 
@@ -133,16 +132,16 @@ $(function () {
                     plotOptions:{
                         column:{
                             pointPadding:0.4,
-                            borderWidth:0
+                            borderWidth:10
                         }
                     },
 
 
                     series:[
-                        <% @yeartrends.each do |examp| %>
+                        <% @topjournals.each do |examp| %>
                         {
                             name:'<%= examp.institution_code %>',
-                            data:[<%= examp.Jan_Stats %>]
+                            data:[<%= examp.YTD %>]
                         },
                         <% end %>
                                         ]
@@ -151,3 +150,5 @@ $(function () {
 
         });
 </script>
+
+

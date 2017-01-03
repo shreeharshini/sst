@@ -1,0 +1,3 @@
+class LibraryCodeMapping < ApplicationRecord
+	
+end
