@@ -1,0 +1,2 @@
+class PublisherReport < ApplicationRecord
+end

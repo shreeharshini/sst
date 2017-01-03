@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  report_id: 1
+  category: MyString
+  sort_order: 1
+  start_date: 2016-12-29
+  end_date: 2016-12-29
+  updated_by: MyString
+  account_type: MyString
+
+two:
+  report_id: 1
+  category: MyString
+  sort_order: 1
+  start_date: 2016-12-29
+  end_date: 2016-12-29
+  updated_by: MyString
+  account_type: MyString
