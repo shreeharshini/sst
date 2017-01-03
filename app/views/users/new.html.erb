@@ -1,20 +1,48 @@
-<h2>Sign up</h2>
+<body  class="dashboard-page">
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+ <section class="wrapper scrollable">
+ 
+    
+  <%= render :partial => '/layouts/side_bar_navigation'%>
 
-  <div class="form-inputs">
-  	<%= f.input :first_name, required: true, autofocus: true %>
-  	<%= f.input :last_name, required: true, autofocus: true %>
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
-    <%= f.collection_radio_buttons :role, [[User Role, 'User'], [Admin, 'Admin']], :first, :last %>
+    <%= render :partial => '/layouts/header'%>
+
+<div class="main-grid" >
+         <div class="clearfix"></div>
+
+
+<%= provide(:title, 'Sign up') %>
+<h1>Sign up</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    
+    <%= form_for :user, url: users_path do |f| %>
+
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+      
+      <%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]}) %>
+
+      
+
+      <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+    <% end %>
   </div>
+</div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>
+</section>
+</body>
