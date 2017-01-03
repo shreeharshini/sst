@@ -2,39 +2,22 @@ class LoginpageController < ApplicationController
   before_action :authenticate_user!
 
   def index
-   @yearusages = YearUsage.all
+       @acc = Account.where(:library_code => 16).first
 
-    @this_usage = YearUsage.find_by_sql("SELECT Report_Type, SUM(YTD) as abcd FROM year_usages GROUP BY Report_Type")
-   
-   # @abc = YearUsage.find_by_sql("SELECT Report_Type, SUM(YTD) as qwer FROM year_usages GROUP BY Report_Type").last
-  #for year 2016    
-      @highsplinechart1 = YearTrend.find_by_sql("SELECT SUM(Jan_Stats) as abcd FROM year_trends where processing_year = 2016")
-      @highsplinechart2 = YearTrend.find_by_sql("SELECT SUM(Feb_Stats) as abcd FROM year_trends where processing_year = 2016 ")
-      @highsplinechart3 = YearTrend.find_by_sql("SELECT SUM(Mar_Stats) as abcd FROM year_trends where processing_year = 2016 ")
-      @highsplinechart4 = YearTrend.find_by_sql("SELECT SUM(Apr_Stats) as abcd FROM year_trends where processing_year = 2016 ")
-      @highsplinechart5 = YearTrend.find_by_sql("SELECT SUM(May_Stats) as abcd FROM year_trends where processing_year = 2016 ")
-      @highsplinechart6 = YearTrend.find_by_sql("SELECT SUM(Jun_Stats) as abcd FROM year_trends where processing_year = 2016 ")
-      @highsplinechart7 = YearTrend.find_by_sql("SELECT SUM(Jul_Stats) as abcd FROM year_trends where processing_year = 2016 ")
-      @highsplinechart8 = YearTrend.find_by_sql("SELECT SUM(Aug_Stats) as abcd FROM year_trends where processing_year = 2016 ")
-      @highsplinechart9 = YearTrend.find_by_sql("SELECT SUM(Sept_Stats) as abcd FROM year_trends where processing_year = 2016 ")
-      @highsplinechart10 = YearTrend.find_by_sql("SELECT SUM(Oct_Stats) as abcd FROM year_trends where processing_year = 2016 ")
-      @highsplinechart11 = YearTrend.find_by_sql("SELECT SUM(Nov_Stats) as abcd FROM year_trends where processing_year = 2016 ")
-      @highsplinechart12 = YearTrend.find_by_sql("SELECT SUM(Dec_Stats) as abcd FROM year_trends where processing_year = 2016 ")
+      @libcode = @acc.library_code
+
+     @libres = LibraryCodeMapping.where(:New_Code => @libcode).first
+
+    @code =  @libres.Old_Code
 
 
-  #for year 2015
-      @highspline1 = YearTrend.find_by_sql("SELECT SUM(Jan_Stats) as abcd FROM year_trends where processing_year = 2015 ")
-      @highspline2 = YearTrend.find_by_sql("SELECT SUM(Feb_Stats) as abcd FROM year_trends where processing_year = 2015 ")
-      @highspline3 = YearTrend.find_by_sql("SELECT SUM(Mar_Stats) as abcd FROM year_trends where processing_year = 2015 ")
-      @highspline4 = YearTrend.find_by_sql("SELECT SUM(Apr_Stats) as abcd FROM year_trends where processing_year = 2015 ")
-      @highspline5 = YearTrend.find_by_sql("SELECT SUM(May_Stats) as abcd FROM year_trends where processing_year = 2015 ")
-      @highspline6 = YearTrend.find_by_sql("SELECT SUM(Jun_Stats) as abcd FROM year_trends where processing_year = 2015 ")
-      @highspline7 = YearTrend.find_by_sql("SELECT SUM(Jul_Stats) as abcd FROM year_trends where processing_year = 2015 ")
-      @highspline8 = YearTrend.find_by_sql("SELECT SUM(Aug_Stats) as abcd FROM year_trends where processing_year = 2015 ")
-      @highspline9 = YearTrend.find_by_sql("SELECT SUM(Sept_Stats) as abcd FROM year_trends where processing_year = 2015 ")
-      @highspline10 = YearTrend.find_by_sql("SELECT SUM(Oct_Stats) as abcd FROM year_trends where processing_year = 2015 ")
-      @highspline11 = YearTrend.find_by_sql("SELECT SUM(Nov_Stats) as abcd FROM year_trends where processing_year = 2015 ")
-      @highspline12 = YearTrend.find_by_sql("SELECT SUM(Dec_Stats) as abcd FROM year_trends where processing_year = 2015 ")
+    @barres = YearTopJournal.where(:institution_code => @code)
+
+    @splineres2015 = YearTrend.where(:institution_code => @code,:processing_year => 2015)
+
+    @splineres2016 = YearTrend.where(:institution_code => @code,:processing_year => 2016)
+
+    @pieres = YearUsage.where(:institution_code => @code)
 
   end
 
