@@ -9,6 +9,8 @@ gem 'rails4-autocomplete'
 # jQuery UI dependency.
 #gem 'jquery-ui-rails'
 #gem 'searchkick'
+gem "bullet", :group => "development"
+
 gem 'jquery-rails'
 gem 'mysql2'
 gem 'pry-rails'
