@@ -3,13 +3,14 @@
 one:
   institution_code: MyString
   pub_code: MyString
+  mps_collection_platform: MyString
   journal_title: MyString
   print_issn: MyString
   online_issn: MyString
   report_type: MyString
-  processing_month: 1
-  processing_year: 1
-  ytd: 1
+  processing_month: MyString
+  processing_year: MyString
+  ytd_integer: MyString
   isbn: MyString
   issn: MyString
   platform_name: MyString
@@ -17,13 +18,14 @@ one:
 two:
   institution_code: MyString
   pub_code: MyString
+  mps_collection_platform: MyString
   journal_title: MyString
   print_issn: MyString
   online_issn: MyString
   report_type: MyString
-  processing_month: 1
-  processing_year: 1
-  ytd: 1
+  processing_month: MyString
+  processing_year: MyString
+  ytd_integer: MyString
   isbn: MyString
   issn: MyString
   platform_name: MyString

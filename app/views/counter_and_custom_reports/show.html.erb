@@ -5,7 +5,7 @@
 
 </head>
 <body class="dashboard-page">
-	
+ <section class="wrapper scrollable">
 	<%= render :partial => '/layouts/side_bar_navigation'%>
 
 	<%= render :partial => '/layouts/header'%>
@@ -24,9 +24,9 @@
   <div class="col-sm-6 "><div class="acnt-heading"><strong>Account Name</strong> : UCR Riverside Libraries</div></div>
   <div class="col-sm-4 text-right" style="padding: 0px;margin-top: 0px;">
   
- <label style="padding-top:5px;" class="col-sm-6"> Reporting period: </label><div class="col-sm-6"> <%= select_tag "year", options_for_select([["2016","2016"],["2015","2015"],["2014","2014"],["2013","2013"]]) %></div>
+ <label style="padding-top:5px;" class="col-sm-6"> Reporting period: </label><div class="col-sm-6"> <%= select_tag(:year, options_for_select(@grp_year, prompt = nil)) %></div>
 </div>
-   
+  
  </div>
   
   </div>
@@ -48,7 +48,7 @@
 	</section>
 	<script src="js/bootstrap.js"></script>
 	
-  
+ </section> 
 </body>
 </html>
 <script type="text/javascript">

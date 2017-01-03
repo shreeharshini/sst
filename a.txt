@@ -25,6 +25,14 @@
                                                 PUT    /search_by_issn/:id(.:format)                              search_by_issn#update
                                                 DELETE /search_by_issn/:id(.:format)                              search_by_issn#destroy
                                      home_index GET    /home/index(.:format)                                      home#index
+                                    users_index GET    /users/index(.:format)                                     users#index
+                                      users_new GET    /users/new(.:format)                                       users#new
+                                  users_sign_up GET    /users/sign_up(.:format)                                   users#sign_up
+      integration_partners_manage_sushi_account GET    /integration_partners/manage_sushi_account(.:format)       integration_partners#manage_sushi_account
+         integration_partners_update_permission GET    /integration_partners/update_permission(.:format)          integration_partners#update_permission
+                               import_data_xlsx GET    /import_data/xlsx(.:format)                                import_data#xlsx
+                          search_by_issn_search GET    /search_by_issn/search(.:format)                           search_by_issn#search
+                search_by_issn_load_suggestions GET    /search_by_issn/load_suggestions(.:format)                 search_by_issn#load_suggestions
                                import_data_xlsx GET    /import_data/xlsx(.:format)                                import_data#xlsx
       manage_sushi_account_integration_partners GET    /integration_partners/manage_sushi_account(.:format)       integration_partners#manage_sushi_account
          update_permission_integration_partners GET    /integration_partners/update_permission(.:format)          integration_partners#update_permission
@@ -72,6 +80,14 @@ show_reports_by_year_counter_and_custom_reports GET    /counter_and_custom_repor
                                                 PATCH  /accounts/:id(.:format)                                    accounts#update
                                                 PUT    /accounts/:id(.:format)                                    accounts#update
                                                 DELETE /accounts/:id(.:format)                                    accounts#destroy
+                                          users GET    /users(.:format)                                           users#index
+                                                POST   /users(.:format)                                           users#create
+                                       new_user GET    /users/new(.:format)                                       users#new
+                                      edit_user GET    /users/:id/edit(.:format)                                  users#edit
+                                           user GET    /users/:id(.:format)                                       users#show
+                                                PATCH  /users/:id(.:format)                                       users#update
+                                                PUT    /users/:id(.:format)                                       users#update
+                                                DELETE /users/:id(.:format)                                       users#destroy
                                         reports GET    /reports(.:format)                                         reports#index
                                                 POST   /reports(.:format)                                         reports#create
                                      new_report GET    /reports/new(.:format)                                     reports#new

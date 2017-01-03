@@ -47,7 +47,7 @@
       </div>
       <div class="modal-body ">
         <div class="common_form">
-             
+
          <%= form_for(resource, as: resource_name, url: session_path(resource_name), class:"form-signin") do |f| %>
          <ul>
         <li>
@@ -87,40 +87,35 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Request for <span>demo</span></h4>
+        <h4 class="modal-title" id="myModalLabel">Request for demo</h4>
       </div>
       <div class="modal-body">
         <div class="common_form">
           <%= form_for(:requestfordemo , url: requestfordemos_path) do |f| %>
 
-                <div class="field">
-                  <%= f.label :username %>
-                  <%= f.text_field :username %>
-                </div>
+                <li>
+                  <%= f.text_field :username, class: "form-control", :required => true, placeholder: "Username" %>
+                </li>
 
-                <div class="field">
-                  <%= f.label :email %>
-                  <%= f.text_field :email %>
-                </div>
+                <li>
+                  <%= f.email_field :email, class: "form-control", :required => true, placeholder: "Example@domain.com" %>
+                </li>
 
-                <div class="field">
-                  <%= f.label :library %>
-                  <%= f.text_field :library %>
-                </div>
+                <li>
+                  <%= f.text_field :library, class: "form-control", :required => true, placeholder: "Library" %>
+                </li>
 
-                <div class="field">
-                  <%= f.label :number %>
-                  <%= f.number_field :number %>
-                </div>
+                <li>
+                  <%= f.text_field :number, class: "form-control", :required => true, placeholder: "Number" %>
+                </li>
 
-                <div class="field">
-                  <%= f.label :message %>
-                  <%= f.text_area :message %>
-                </div>
+                <li>
+                  <%= f.text_area :message, class: "form-control", :required => true, placeholder: "Your Message" %>
+                </li>
 
-                <div class="actions">
-                  <%= f.submit %>
-                </div>
+                <li>
+                  <%= f.submit "Send", class: "submit_btn", data: { confirm: 'Your confirm message' } %>
+                </li>
           <% end %>
 
         </div>
@@ -314,7 +309,10 @@
       <%= image_tag ("system_img.jpg"), :class => 'img-responsive' %>
     </div>
     <div class="col-xs-12 col-sm-8 col-md-7">
-      <div class="benefits_tittle">Features of MPS<span>ScholarlyStats</span></div>
+      <div class="benefits_tittle">
+        Features of MPS
+        <span>ScholarlyStats</span>
+      </div>
         <div class="benefits_tittle_info">
           MPSScholarlyStats is a proven analytical usage tool, providing librarians the power to make data-driven decisions.
         </div>
@@ -489,19 +487,19 @@
                     <%= form_for :contact_u, url: contact_us_path do |f| %>
                  
                     <li>
-                      <%= f.text_field :name, class: "form-control", placeholder: "Name"%>
+                      <%= f.text_field :name, class: "form-control", :required => true, placeholder: "Name"%>
                     </li>
 
                     <li>
-                      <%= f.text_field :email, class: "form-control", placeholder: "EmailID"%>
+                      <%= f.email_field :email, class: "form-control", :required => true, placeholder: "EmailID"%>
                     </li>
 
                     <li>
-                      <%= f.text_field :subject, class: "form-control", placeholder: "Subject"%>
+                      <%= f.text_field :subject, class: "form-control", :required => true, placeholder: "Subject"%>
                     </li>
 
                     <li>
-                      <%= f.text_area :message, class: "form-control", placeholder: "Your Message"%>
+                      <%= f.text_area :message, class: "form-control", :required => true, placeholder: "Your Message"%>
                     </li>
 
                     <div class = "field">
@@ -565,7 +563,7 @@
         </div>
         <div class="col-xs-12 col-md-12 footer_text">
           Powered by
-          <a href="http://wwww.adi-mps.com/" target="blank" style="text-decoration:none">
+          <a href="http://www.adi-mps.com/" target="blank" style="text-decoration:none">
           <span style="color:#c9302c">MPS </span>
         </a>
         Ltd. - All Rights Reserved.

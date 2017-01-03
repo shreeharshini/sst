@@ -3,55 +3,55 @@
  <div class="agile-grids">
 		<div class="col-md-12" style="padding:0px;">
 					
-				 <h4 class="mar-btm20">COUNTER Reports</h4>
-					  <div class="table-responsive"> 
-					  	<table class="table table-striped" >
-									<thead>
-									  <tr>
-										<th align="left">Report Type</th>
-										<th align="left">	Description</th>
-										<th align="left">CSV</th>
-										<th align="left">XLS</th>
-										<th align="left">ZIP</th>
-										<th align="left">Charts</th>
-									  </tr>
-									</thead>
-									<tbody>
-									<% if @counter_reports.present? %>
-									 <% @counter_reports.each do |cr| %>
-										  <tr>
-											<td data-th="Name"><span class="bt-content"><a href="/counter_and_custom_reports/csv"><%= cr.name %></a></span></td>
-											<td data-th="Age"><span class="bt-content"><%= cr.description %></span></td>
-											<td data-th="Gender"><span class="bt-content">
-											<% if cr.generated_report.user_id == @user_id && cr.generated_report.is_generated == 1  %>
-												<a href="/counter_and_custom_reports/csv"><%= image_tag("csv.png")%>
-												</a></span></td>
-											<%else%>
-												-
-											<%end%>
-											<td data-th="Height"><span class="bt-content">
-											<% if cr.generated_report.user_id == @user_id && cr.generated_report.is_generated == 1  %>
-												<a href="/counter_and_custom_reports/xlsx"><%= image_tag("xls.png")%>
-												</a></span></td>
-											<%else%>
-												-
-											<%end%>
-												<td data-th="Province"><span class="bt-content">
-											<% if cr.generated_report.user_id == @user_id && cr.generated_report.is_generated == 1  %>
-												<a href="/counter_and_custom_reports/zip"><%= image_tag("zip-file-format.png")%>
-												</a></span></td>
-											<%else%>
-												-
-											<%end%>
-											<td data-th="Sport"><span class="bt-content"><a href="#"> - </a></span></td>
-										  </tr>
-									 	<%end%>
+		 <h4 class="mar-btm20">COUNTER Reports</h4>
+			  <div class="table-responsive"> 
+			  	<table class="table table-striped" >
+							<thead>
+							  <tr>
+								<th align="left">Report Type</th>
+								<th align="left">	Description</th>
+								<th align="left">CSV</th>
+								<th align="left">XLS</th>
+								<th align="left">ZIP</th>
+								<th align="left">Charts</th>
+							  </tr>
+							</thead>
+							<tbody>
+							<% if @counter_reports.present? %>
+							 <% @counter_reports.each do |cr| %>
+								  <tr>
+									<td data-th="Name"><span class="bt-content"><a href="/counter_and_custom_reports/csv"><%= cr.name %></a></span></td>
+									<td data-th="Age"><span class="bt-content"><%= cr.description %></span></td>
+									<td data-th="Gender"><span class="bt-content">
+									<% if cr.generated_report.account_id == @account_id && cr.generated_report.is_generated == 1  %>
+										<a href="/counter_and_custom_reports/csv"><%= image_tag("csv.png")%>
+										</a></span></td>
+									<%else%>
+										-
 									<%end%>
-									    
-									</tbody>
+									<td data-th="Height"><span class="bt-content">
+									<% if cr.generated_report.account_id == @account_id && cr.generated_report.is_generated == 1  %>
+										<a href="/counter_and_custom_reports/xlsx"><%= image_tag("xls.png")%>
+										</a></span></td>
+									<%else%>
+										-
+									<%end%>
+										<td data-th="Province"><span class="bt-content">
+									<% if cr.generated_report.account_id == @account_id && cr.generated_report.is_generated == 1  %>
+										<a href="/counter_and_custom_reports/zip"><%= image_tag("zip-file-format.png")%>
+										</a></span></td>
+									<%else%>
+										-
+									<%end%>
+									<td data-th="Sport"><span class="bt-content"><a href="#"> - </a></span></td>
+								  </tr>
+							 	<%end%>
+							<%end%>
+							    
+							</tbody>
 					  </table>
 					</div>
-					<!-- //updating-data -->t
+					<!-- //updating-data -->
 				</div>
 				<div class="clearfix"> </div>
 			</div>
@@ -83,28 +83,33 @@
 								<td data-th="Name"><span class="bt-content"><a href="/counter_and_custom_reports/csv"><%= cr.name %></a></span></td>
 								<td data-th="Age"><span class="bt-content"><%= cr.description %></span></td>
 								<td data-th="Gender"><span class="bt-content">
-								<% if cr.generated_report.user_id == @user_id && cr.generated_report.is_generated == 1  %>
+								<% if cr.generated_report.account_id == @account_id && cr.generated_report.is_generated == 1  %>
 									<a href="/counter_and_custom_reports/csv"><%= image_tag("csv.png")%>
 									</a></span></td>
 								<%else%>
 									-
 								<%end%>
 								<td data-th="Height"><span class="bt-content">
-								<% if cr.generated_report.user_id == @user_id &&cr.generated_report.is_generated == 1  %>
+								<% if cr.generated_report.account_id == @account_id &&cr.generated_report.is_generated == 1  %>
 									<a href="/counter_and_custom_reports/xlsx"><%= image_tag("xls.png")%>
 									</a></span></td>
 								<%else%>
 									-
 								<%end%>
 								<td data-th="Province"><span class="bt-content">
-								<% if cr.generated_report.user_id == @user_id &&cr.generated_report.is_generated == 1  %>
+								<% if cr.generated_report.account_id == @account_id &&cr.generated_report.is_generated == 1  %>
 									<a href="/counter_and_custom_reports/zip">
 									<%= image_tag("zip-file-format.png")%>
 									</a></span></td>
 								<%else%>
 									-
 								<%end%>
-									<td data-th="Sport"><span class="bt-content"><a href="#"> - </a></span></td>
+								<td data-th="Sport">
+									<a href="#" data-toggle="modal" data-target="#myModalGraphB4" >
+        							<%= image_tag("bar-chart.png")%></a>	
+								</td>
+
+								
 							  </tr>
 							<%end%>
 						</tbody>
@@ -141,21 +146,21 @@
 								<td data-th="Name"><span class="bt-content"><a href="/counter_and_custom_reports/csv"><%= cr.name %></a></span></td>
 								<td data-th="Age"><span class="bt-content"><%= cr.description %></span></td>
 								<td data-th="Gender"><span class="bt-content">
-								<% if cr.generated_report.user_id == @user_id && cr.generated_report.is_generated == 1  %>
+								<% if cr.generated_report.account_id == @account_id && cr.generated_report.is_generated == 1  %>
 									<a href="/counter_and_custom_reports/csv"><%= image_tag("csv.png")%>
 									</a></span></td>
 								<%else%>
 									-
 								<%end%>
 								<td data-th="Height"><span class="bt-content">
-								<% if cr.generated_report.user_id == @user_id &&cr.generated_report.is_generated == 1  %>
+								<% if cr.generated_report.account_id == @account_id &&cr.generated_report.is_generated == 1  %>
 									<a href="/counter_and_custom_reports/xlsx"><%= image_tag("xls.png")%>
 									</a></span></td>
 								<%else%>
 									-
 								<%end%>
 								<td data-th="Province"><span class="bt-content">
-								<% if cr.generated_report.user_id == @user_id &&cr.generated_report.is_generated == 1  %>
+								<% if cr.generated_report.account_id == @account_id &&cr.generated_report.is_generated == 1  %>
 									<a href="/counter_and_custom_reports/zip">
 									<%= image_tag("zip-file-format.png")%>
 									</a></span></td>
