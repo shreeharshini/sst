@@ -1,28 +1,68 @@
                                          Prefix Verb   URI Pattern                                                Controller#Action
-               counter_and_custom_reports_index GET    /counter_and_custom_reports/index(.:format)                counter_and_custom_reports#index
-                 counter_and_custom_reports_csv GET    /counter_and_custom_reports/csv(.:format)                  counter_and_custom_reports#csv
-                counter_and_custom_reports_xlsx GET    /counter_and_custom_reports/xlsx(.:format)                 counter_and_custom_reports#xlsx
-                 counter_and_custom_reports_zip GET    /counter_and_custom_reports/zip(.:format)                  counter_and_custom_reports#zip
                                export_files_csv GET    /export_files/csv(.:format)                                export_files#csv
                               export_files_xlsx GET    /export_files/xlsx(.:format)                               export_files#xlsx
                                export_files_zip GET    /export_files/zip(.:format)                                export_files#zip
-                              support_contactus GET    /support/contactus(.:format)                               support#contactus
-                                    support_faq GET    /support/faq(.:format)                                     support#faq
-                                support_aboutus GET    /support/aboutus(.:format)                                 support#aboutus
-                       loginpage_dynamicreports GET    /loginpage/dynamicreports(.:format)                        loginpage#dynamicreports
-                        loginpage_sourcereports GET    /loginpage/sourcereports(.:format)                         loginpage#sourcereports
-                               loginpage_report GET    /loginpage/report(.:format)                                loginpage#report
-                        loginpage_accessdetails GET    /loginpage/accessdetails(.:format)                         loginpage#accessdetails
-                    loginpage_selectedplatforms GET    /loginpage/selectedplatforms(.:format)                     loginpage#selectedplatforms
+                        contactus_support_index GET    /support/contactus(.:format)                               support#contactus
+                              faq_support_index GET    /support/faq(.:format)                                     support#faq
+                          aboutus_support_index GET    /support/aboutus(.:format)                                 support#aboutus
+                                  support_index GET    /support(.:format)                                         support#index
+                                                POST   /support(.:format)                                         support#create
+                                    new_support GET    /support/new(.:format)                                     support#new
+                                   edit_support GET    /support/:id/edit(.:format)                                support#edit
+                                        support GET    /support/:id(.:format)                                     support#show
+                                                PATCH  /support/:id(.:format)                                     support#update
+                                                PUT    /support/:id(.:format)                                     support#update
+                                                DELETE /support/:id(.:format)                                     support#destroy
+                    search_search_by_issn_index GET    /search_by_issn/search(.:format)                           search_by_issn#search
+          load_suggestions_search_by_issn_index GET    /search_by_issn/load_suggestions(.:format)                 search_by_issn#load_suggestions
+               show_report_search_by_issn_index GET    /search_by_issn/show_report(.:format)                      search_by_issn#show_report
+                           search_by_issn_index GET    /search_by_issn(.:format)                                  search_by_issn#index
+                                                POST   /search_by_issn(.:format)                                  search_by_issn#create
+                             new_search_by_issn GET    /search_by_issn/new(.:format)                              search_by_issn#new
+                            edit_search_by_issn GET    /search_by_issn/:id/edit(.:format)                         search_by_issn#edit
+                                 search_by_issn GET    /search_by_issn/:id(.:format)                              search_by_issn#show
+                                                PATCH  /search_by_issn/:id(.:format)                              search_by_issn#update
+                                                PUT    /search_by_issn/:id(.:format)                              search_by_issn#update
+                                                DELETE /search_by_issn/:id(.:format)                              search_by_issn#destroy
                                      home_index GET    /home/index(.:format)                                      home#index
+                                    users_index GET    /users/index(.:format)                                     users#index
+                                      users_new GET    /users/new(.:format)                                       users#new
+                                  users_sign_up GET    /users/sign_up(.:format)                                   users#sign_up
       integration_partners_manage_sushi_account GET    /integration_partners/manage_sushi_account(.:format)       integration_partners#manage_sushi_account
          integration_partners_update_permission GET    /integration_partners/update_permission(.:format)          integration_partners#update_permission
                                import_data_xlsx GET    /import_data/xlsx(.:format)                                import_data#xlsx
-                          search_by_issn_search POST   /search_by_issn/search(.:format)                           search_by_issn#search
+                          search_by_issn_search GET    /search_by_issn/search(.:format)                           search_by_issn#search
                 search_by_issn_load_suggestions GET    /search_by_issn/load_suggestions(.:format)                 search_by_issn#load_suggestions
+                               import_data_xlsx GET    /import_data/xlsx(.:format)                                import_data#xlsx
+      manage_sushi_account_integration_partners GET    /integration_partners/manage_sushi_account(.:format)       integration_partners#manage_sushi_account
+         update_permission_integration_partners GET    /integration_partners/update_permission(.:format)          integration_partners#update_permission
+                           integration_partners GET    /integration_partners(.:format)                            integration_partners#index
+                                                POST   /integration_partners(.:format)                            integration_partners#create
+                        new_integration_partner GET    /integration_partners/new(.:format)                        integration_partners#new
+                       edit_integration_partner GET    /integration_partners/:id/edit(.:format)                   integration_partners#edit
+                            integration_partner GET    /integration_partners/:id(.:format)                        integration_partners#show
+                                                PATCH  /integration_partners/:id(.:format)                        integration_partners#update
+                                                PUT    /integration_partners/:id(.:format)                        integration_partners#update
+                                                DELETE /integration_partners/:id(.:format)                        integration_partners#destroy
+show_reports_by_year_counter_and_custom_reports GET    /counter_and_custom_reports/show_reports_by_year(.:format) counter_and_custom_reports#show_reports_by_year
+                 csv_counter_and_custom_reports GET    /counter_and_custom_reports/csv(.:format)                  counter_and_custom_reports#csv
+                xlsx_counter_and_custom_reports GET    /counter_and_custom_reports/xlsx(.:format)                 counter_and_custom_reports#xlsx
+                 zip_counter_and_custom_reports GET    /counter_and_custom_reports/zip(.:format)                  counter_and_custom_reports#zip
+                     counter_and_custom_reports GET    /counter_and_custom_reports(.:format)                      counter_and_custom_reports#index
+                                                POST   /counter_and_custom_reports(.:format)                      counter_and_custom_reports#create
+                  new_counter_and_custom_report GET    /counter_and_custom_reports/new(.:format)                  counter_and_custom_reports#new
+                 edit_counter_and_custom_report GET    /counter_and_custom_reports/:id/edit(.:format)             counter_and_custom_reports#edit
+                      counter_and_custom_report GET    /counter_and_custom_reports/:id(.:format)                  counter_and_custom_reports#show
+                                                PATCH  /counter_and_custom_reports/:id(.:format)                  counter_and_custom_reports#update
+                                                PUT    /counter_and_custom_reports/:id(.:format)                  counter_and_custom_reports#update
+                                                DELETE /counter_and_custom_reports/:id(.:format)                  counter_and_custom_reports#destroy
                         getyear_loginpage_index GET    /loginpage/getyear(.:format)                               loginpage#getyear
                      getreports_loginpage_index GET    /loginpage/getreports(.:format)                            loginpage#getreports
                           test2_loginpage_index GET    /loginpage/test2(.:format)                                 loginpage#test2
+                 dynamicreports_loginpage_index GET    /loginpage/dynamicreports(.:format)                        loginpage#dynamicreports
+                  sourcereports_loginpage_index GET    /loginpage/sourcereports(.:format)                         loginpage#sourcereports
+                  accessdetails_loginpage_index GET    /loginpage/accessdetails(.:format)                         loginpage#accessdetails
+              selectedplatforms_loginpage_index GET    /loginpage/selectedplatforms(.:format)                     loginpage#selectedplatforms
                                 loginpage_index GET    /loginpage(.:format)                                       loginpage#index
                                                 POST   /loginpage(.:format)                                       loginpage#create
                                   new_loginpage GET    /loginpage/new(.:format)                                   loginpage#new
@@ -31,9 +71,7 @@
                                                 PATCH  /loginpage/:id(.:format)                                   loginpage#update
                                                 PUT    /loginpage/:id(.:format)                                   loginpage#update
                                                 DELETE /loginpage/:id(.:format)                                   loginpage#destroy
-                counter_and_custom_reports_show GET    /counter_and_custom_reports/show(.:format)                 counter_and_custom_reports#show
-counter_and_custom_reports_show_reports_by_year GET    /counter_and_custom_reports/show_reports_by_year(.:format) counter_and_custom_reports#show_reports_by_year
-                     search_by_issn_show_report GET    /search_by_issn/show_report(.:format)                      search_by_issn#show_report
+                      year_trends_highpiecharts GET    /year_trends/highpiecharts(.:format)                       year_trends#highpiecharts
                                        accounts GET    /accounts(.:format)                                        accounts#index
                                                 POST   /accounts(.:format)                                        accounts#create
                                     new_account GET    /accounts/new(.:format)                                    accounts#new
@@ -42,6 +80,14 @@ counter_and_custom_reports_show_reports_by_year GET    /counter_and_custom_repor
                                                 PATCH  /accounts/:id(.:format)                                    accounts#update
                                                 PUT    /accounts/:id(.:format)                                    accounts#update
                                                 DELETE /accounts/:id(.:format)                                    accounts#destroy
+                                          users GET    /users(.:format)                                           users#index
+                                                POST   /users(.:format)                                           users#create
+                                       new_user GET    /users/new(.:format)                                       users#new
+                                      edit_user GET    /users/:id/edit(.:format)                                  users#edit
+                                           user GET    /users/:id(.:format)                                       users#show
+                                                PATCH  /users/:id(.:format)                                       users#update
+                                                PUT    /users/:id(.:format)                                       users#update
+                                                DELETE /users/:id(.:format)                                       users#destroy
                                         reports GET    /reports(.:format)                                         reports#index
                                                 POST   /reports(.:format)                                         reports#create
                                      new_report GET    /reports/new(.:format)                                     reports#new
@@ -146,30 +192,6 @@ counter_and_custom_reports_show_reports_by_year GET    /counter_and_custom_repor
                                                 PATCH  /import_data/:id(.:format)                                 import_data#update
                                                 PUT    /import_data/:id(.:format)                                 import_data#update
                                                 DELETE /import_data/:id(.:format)                                 import_data#destroy
-                           search_by_issn_index GET    /search_by_issn(.:format)                                  search_by_issn#index
-                                                POST   /search_by_issn(.:format)                                  search_by_issn#create
-                             new_search_by_issn GET    /search_by_issn/new(.:format)                              search_by_issn#new
-                            edit_search_by_issn GET    /search_by_issn/:id/edit(.:format)                         search_by_issn#edit
-                                 search_by_issn GET    /search_by_issn/:id(.:format)                              search_by_issn#show
-                                                PATCH  /search_by_issn/:id(.:format)                              search_by_issn#update
-                                                PUT    /search_by_issn/:id(.:format)                              search_by_issn#update
-                                                DELETE /search_by_issn/:id(.:format)                              search_by_issn#destroy
-                           integration_partners GET    /integration_partners(.:format)                            integration_partners#index
-                                                POST   /integration_partners(.:format)                            integration_partners#create
-                        new_integration_partner GET    /integration_partners/new(.:format)                        integration_partners#new
-                       edit_integration_partner GET    /integration_partners/:id/edit(.:format)                   integration_partners#edit
-                            integration_partner GET    /integration_partners/:id(.:format)                        integration_partners#show
-                                                PATCH  /integration_partners/:id(.:format)                        integration_partners#update
-                                                PUT    /integration_partners/:id(.:format)                        integration_partners#update
-                                                DELETE /integration_partners/:id(.:format)                        integration_partners#destroy
-                     counter_and_custom_reports GET    /counter_and_custom_reports(.:format)                      counter_and_custom_reports#index
-                                                POST   /counter_and_custom_reports(.:format)                      counter_and_custom_reports#create
-                  new_counter_and_custom_report GET    /counter_and_custom_reports/new(.:format)                  counter_and_custom_reports#new
-                 edit_counter_and_custom_report GET    /counter_and_custom_reports/:id/edit(.:format)             counter_and_custom_reports#edit
-                      counter_and_custom_report GET    /counter_and_custom_reports/:id(.:format)                  counter_and_custom_reports#show
-                                                PATCH  /counter_and_custom_reports/:id(.:format)                  counter_and_custom_reports#update
-                                                PUT    /counter_and_custom_reports/:id(.:format)                  counter_and_custom_reports#update
-                                                DELETE /counter_and_custom_reports/:id(.:format)                  counter_and_custom_reports#destroy
                                additional_users GET    /additional_users(.:format)                                additional_users#index
                                                 POST   /additional_users(.:format)                                additional_users#create
                             new_additional_user GET    /additional_users/new(.:format)                            additional_users#new

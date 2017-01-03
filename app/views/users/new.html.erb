@@ -1,0 +1,48 @@
+<body  class="dashboard-page">
+
+ <section class="wrapper scrollable">
+ 
+    
+  <%= render :partial => '/layouts/side_bar_navigation'%>
+
+    <%= render :partial => '/layouts/header'%>
+
+<div class="main-grid" >
+         <div class="clearfix"></div>
+
+
+<%= provide(:title, 'Sign up') %>
+<h1>Sign up</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    
+    <%= form_for :user, url: users_path do |f| %>
+
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+      
+      <%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]}) %>
+
+      
+
+      <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+</div>
+</section>
+</body>

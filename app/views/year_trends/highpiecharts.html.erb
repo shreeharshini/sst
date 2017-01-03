@@ -1,0 +1,206 @@
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src= "https://code.highcharts.com/modules/drilldown.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> 
+<script src="/javascripts/js/highcharts.js" type="text/javascript"></script> <!--where you put the high charts library -->
+<script src="/highcharts.js" type="text/javascript"></script> <!-- your script -->
+
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+
+<%= content_tag :div, "", id: "container", data: { this_usage: @this_usage}%>
+
+<%= content_tag :div, "", id: "container1", data: { this_usage: @this_usage}%>
+
+
+<script>
+
+
+
+
+
+// $(function () {
+//    new  Highcharts.chart('container', {
+//         chart: {
+//             plotBackgroundColor: null,
+//             plotBorderWidth: null,
+//             plotShadow: false,
+//             type: 'pie'
+//         },
+//         title: {
+//             text: 'Browser market shares January, 2015 to May, 2015'
+//         },
+//         tooltip: {
+//             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+//         },
+//         plotOptions: {
+//             pie: {
+//                 allowPointSelect: true,
+//                 cursor: 'pointer',
+//                 dataLabels: {
+//                     enabled: true,
+//                     format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+//                     style: {
+//                         color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+//                     }
+//                 }
+//             }
+//         },
+//         series: [{
+//             name: 'Brands',
+//             colorByPoint: true,
+//             data: [
+//               {
+//                 <% @this_usage.each do |f| %>
+//                 name: '<%= f.Report_Type %>',
+//                 y: <%= f.abcd %>
+//                 <%end%>
+//               },
+             
+
+//             ]
+//         }]
+//     });
+// });
+
+
+$(function () {
+   new  Highcharts.chart('container1', {
+        chart: {
+            type: 'spline'
+        },
+        title: {
+            text: 'Year Trend',
+            x: -20 //center
+        },
+        subtitle: {
+            text: '',
+            x: -20
+        },
+        xAxis: {
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        },
+        yAxis: {
+            title: {
+                text: 'Successful full-text requests'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: ''
+        },
+        plotOptions: {
+            spline: {
+                marker: {
+                    radius: 4,
+                    lineColor: '#666666',
+                    lineWidth: 1
+                }
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: '2016',
+            marker: {
+                symbol: 'square'
+            },
+            data: [
+            <% @highsplinechart1.each do |f| %>
+                <%= f.abcd %>
+            <%end%>,
+            <% @highsplinechart2.each do |f| %>
+                <%= f.abcd %>
+            <%end%>
+             ,
+             <% @highsplinechart3.each do |f| %>
+                <%= f.abcd %>
+            <%end%> , 
+            <% @highsplinechart4.each do |f| %>
+                <%= f.abcd %>
+            <%end%>, 
+            <% @highsplinechart5.each do |f| %>
+                <%= f.abcd %>
+            <%end%>, 
+            <% @highsplinechart6.each do |f| %>
+                <%= f.abcd %>
+            <%end%>, 
+            <% @highsplinechart7.each do |f| %>
+                <%= f.abcd %>
+            <%end%>,
+            <% @highsplinechart8.each do |f| %>
+                <%= f.abcd %>
+            <%end%> ,
+            <% @highsplinechart9.each do |f| %>
+                <%= f.abcd %>
+            <%end%>, 
+            <% @highsplinechart10.each do |f| %>
+                <%= f.abcd %>
+            <%end%>, 
+            <% @highsplinechart11.each do |f| %>
+                <%= f.abcd %>
+            <%end%>,
+            <% @highsplinechart12.each do |f| %>
+                <%= f.abcd %>
+            <%end%>]
+        },  {
+            name: '2015',
+            marker: {
+                symbol: 'diamond'
+            },
+            data: [
+            <% @highspline1.each do |f| %>
+                <%= f.abcd %>
+            <%end%>,
+            <% @highspline2.each do |f| %>
+                <%= f.abcd %>
+            <%end%>
+             ,
+             <% @highspline3.each do |f| %>
+                <%= f.abcd %>
+            <%end%> , 
+            <% @highspline4.each do |f| %>
+                <%= f.abcd %>
+            <%end%>, 
+            <% @highspline5.each do |f| %>
+                <%= f.abcd %>
+            <%end%>, 
+            <% @highspline6.each do |f| %>
+                <%= f.abcd %>
+            <%end%>, 
+            <% @highspline7.each do |f| %>
+                <%= f.abcd %>
+            <%end%>,
+            <% @highspline8.each do |f| %>
+                <%= f.abcd %>
+            <%end%> ,
+            <% @highspline9.each do |f| %>
+                <%= f.abcd %>
+            <%end%>, 
+            <% @highspline10.each do |f| %>
+                <%= f.abcd %>
+            <%end%>, 
+            <% @highspline11.each do |f| %>
+                <%= f.abcd %>
+            <%end%>,
+            <% @highspline12.each do |f| %>
+                <%= f.abcd %>
+            <%end%>]
+        }]
+    });
+});
+
+</script>
+

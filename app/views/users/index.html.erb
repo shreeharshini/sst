@@ -5,19 +5,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <!--<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 --><!-- bootstrap-css -->
-<%= stylesheet_link_tag "bootstrap.css" %> 
+  <%= stylesheet_link_tag "bootstrap.css" %> 
 
 <!-- //bootstrap-css -->
 <!-- Custom CSS -->
-<%= stylesheet_link_tag "style.css" %> 
+  <%= stylesheet_link_tag "style.css" %> 
 
 <!-- font CSS -->
-<%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Raleway" %> 
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Raleway" %> 
 
 <!-- font-awesome icons -->
-<%= stylesheet_link_tag "font.css" %> 
+  <%= stylesheet_link_tag "font.css" %> 
 
-<%= stylesheet_link_tag "font-awesome.css" %> 
+  <%= stylesheet_link_tag "font-awesome.css" %> 
 
 <!-- //font-awesome icons -->
 <%= javascript_include_tag "jquery2.0.3.min.js" %>
@@ -34,50 +34,205 @@
   <%= render :partial => '/layouts/side_bar_navigation'%>
  
  
-    <div class="main-grid">
-
+    <div class="main-grid">  
 
 <p id="notice"><%= notice %></p>
 
-<h1>Account Information</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>User ID</th>
-      <th>Name</th>
-      <th>Email ID</th>
-      <th>Role</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @users.each do |user| %>
+<h4>Account Information
+</h4>
+<br>
+  <div class="clearfix"></div>
+
+
+     <div class="row">
+      <div class="col-sm-6 ">
+        <div class="acnt-heading">
+          <strong>Account Name </strong>: UCR Riverside University Libraries
+        </div>
+      </div>
+    </div>
+    <br>
+  
+ 
+  
+  <div class="agile-Updating-grids">
+    <div class="agile-grids">
+      <div class="col-md-12" style="padding:0px;">
+            
+<form id="form1" name="searchAllManageUser" onsubmit="javascript:generateUrlForForm('libraries','','','','','');; return true;" action="/searchAllManageUser.html" method="post" class="simple">
+        
+        
+<div class="col-md-12">
+  <div class="table-responsive"> 
+    <table class="table table-striped">
+        <thead>
+        <tr>
+          <th align="left">User ID</th>
+          <th align="left">Name</th>
+          <th align="left">Email ID</th>
+          <th align="left">Report <br />User</th>
+          <th align="left">Admin</th>
+        </tr>
+      </thead>       
+      <tbody>
+      <% @users.each do |users| %>
       <tr>
-        <td><%= user.email %></td>
-        <td><%= user.first_name %></td>
-        <td><%= user.email %></td>
-        <td><%= user.role %></td>
+        <td><%= users.email %></td>
+        <td><%= users.first_name %></td>
+        <td><%= users.email %></td>
+        <td><%= users.role %></td>
         <td><%= check_box_tag 'accept' %> </td>
        
      
-  <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+ 
       </tr>
     <% end %>
   </tbody>
 </table>
 </div>
+<br>  
+      
+  </div>
+  
+      <tr>
+      
+        <td height="35" align="right">
+        
+          <div class="col-md-3">
+          <div class="button raised">
+              <a href="javascript:;" id="buttonId" onclick="window.location = '/users/new'"> <div class="anim"></div><i class="icon-user"></i> Create New User</a>
+            </div>
+            </div>
+
 <br>
 
-              <input type="button" onclick="window.location = '/users/new'" value="Create New User">
-              <input type="button" onclick="window.location = '/users/new'" value="Update">
+        
+        <div class="col-md-3 pull-right">
+          <div class="button raised">
+          <a href="javascript:;" class="hoverable" onclick='javascript:generateUrlForForm('%{#session.publisher}','%{#parameters.accountCode}','%{#parameters.screen}','%{#parameters.id}','%{#parameters.searchTerm}','%{#parameters.searchType}');'> <div class="anim"></div><span>Update</span></a>
+        </div>
+        </div>
+        
+         
+          </td>
+          
+      </tr>
+      
+    </form>
 
 
+
+
+    </div>
+    </div>
+    <div class="clearfix"> </div>
+    </div>
+    
+
+<div id="createUser" class="modal fade" role="dialog" >
+  <div class="modal-dialog modal-lg">
+    <!-- Modal content-->
+    <div class="modal fade my_login_box" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+           <h4 class="modal-title" id="myModalLabel">Create New Users</h4>
+        </div>
+        <div class="modal-body" id="createGraphModel">
+          <div class="main-grid" >
+            <div class="clearfix"></div>
+
+
+<%= provide(:title, 'Sign up') %>
+<h1>Sign up</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    
+    <%= form_for :user, url: users_path do |f| %>
+
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+      
+      <%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]}) %>
+
+      
+
+      <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
+</div>
+      </div>
+    </div>
+
+  </div>
+</div> 
+</div>
+</div>
     <%= render :partial => '/layouts/footer'%>
 
   </section>
   
 </body>
 </html>
+
+<!-- Modal -->
+<div class="modal fade my_login_box" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Welcome to MPS<span>ScholarlyStats</span></h4>
+      </div>
+      <div class="modal-body ">
+        <div class="common_form">
+
+         <%= form_for(resource, as: resource_name, url: session_path(resource_name), class:"form-signin") do |f| %>
+         <ul>
+        <li>
+          
+          <%= f.email_field :email, autofocus: true %>
+        </li>
+
+        <li>
+           
+          <%= f.password_field :password, autocomplete: "off" %>
+        </li>
+
+        <% if devise_mapping.rememberable? -%>
+          <li class="checkbox">
+            <label>
+            <%= f.check_box :remember_me %>
+            Remember me
+          </label>
+          </li>
+        <% end -%>
+
+          <li class="actions">
+            <%= f.submit "Login", :class => 'submit_btn' %>
+          </li>
+        </ul>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
