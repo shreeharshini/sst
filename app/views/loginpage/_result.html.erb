@@ -1,0 +1,10 @@
+<%byebug%>
+<%if @sourcereports.present?%>
+	<div class="sample">
+		<% @sourcereports.each do |f| %>
+			<%= f.id %>
+		<%end%>
+	</div>
+	
+<%else%>
+<%end%>
