@@ -1,5 +1,29 @@
 Rails.application.routes.draw do
 
+<<<<<<< HEAD
+ 
+  get 'counter_and_custom_reports/index'
+  get 'counter_and_custom_reports/csv'
+  get 'counter_and_custom_reports/xlsx'
+  get 'counter_and_custom_reports/zip'
+  get "counter_and_custom_reports/show"
+  get "counter_and_custom_reports/show_reports_by_year"
+
+  get 'export_files/csv'
+  get 'export_files/xlsx'
+  get 'export_files/zip'
+
+  get 'support/contactus'
+  get 'support/faq'
+  get 'support/aboutus'
+
+	get "loginpage/dynamicreports"
+	get "loginpage/sourcereports"
+	get "loginpage/report"
+  get "loginpage/accessdetails"
+  get "loginpage/selectedplatforms"
+=======
+>>>>>>> c971681d568de97c4e1a51503952c219a546707f
 
 	get "home/index"
   get "users/index"
@@ -7,7 +31,22 @@ Rails.application.routes.draw do
 
 
   post "users/create"
+<<<<<<< HEAD
+  get  "users/new"
+  # resources :products do
+  #   get :autocomplete_brand_name, :on => :collection
+  # end
+
+  resources :loginpage do
+  collection do
+    get 'getyear'
+    get 'getreports'
+    get 'test2'
+   end
+end 
+=======
   
+>>>>>>> c971681d568de97c4e1a51503952c219a546707f
 
   resources :support do 
     collection do
@@ -23,13 +62,7 @@ Rails.application.routes.draw do
       get 'load_suggestions'
       get 'show_report'
     end
-  end
-
-	get "home/index"
-
-  
-  get "import_data/xlsx"
- 
+  end 
 
   resources :integration_partners do 
     collection do

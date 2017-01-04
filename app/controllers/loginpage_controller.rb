@@ -22,15 +22,24 @@ class LoginpageController < ApplicationController
   end
 
   def getreports
+<<<<<<< HEAD
+    sourcereports1 = SourceReportsMapping.where(:year => params[:sourcereports1]).pluck(:report_id)
+
+      respond_to do |format|
+          format.html
+          format.json {render json: sourcereports1.to_json}
+        end
+=======
   byebug
     # sourcereports1 = SourceReportsMapping.where(:year => params[:sourcereports1]).pluck(:report_id)
       @sourcereports = SourceReportsMapping.where(:year => params[:sourcereports])
      
+>>>>>>> c971681d568de97c4e1a51503952c219a546707f
   end
 
   def test2
     @dynamic_reports = params[:some_parameter].constantize
-    binding.pry
+    byebug
     respond_to do |format|
     format.js {}
     end
