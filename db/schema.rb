@@ -393,24 +393,7 @@ ActiveRecord::Schema.define(version: 20161230100417) do
     t.datetime "updated_at",   null: false
   end
 
-  create_table "library_code_mappings", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "New_Code"
-    t.string  "Library_Name", limit: 100
-    t.string  "Old_Code",     limit: 50
-  end
-
-
-<<<<<<< HEAD
-=======
-  create_table "library_code_mappings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "New_Code"
-    t.string   "Library_Name"
-    t.string   "Old_Code"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-
-
->>>>>>> c971681d568de97c4e1a51503952c219a546707f
+ 
   create_table "platform_reports", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "platform_id"
     t.integer  "report_id"

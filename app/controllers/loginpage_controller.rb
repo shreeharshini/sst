@@ -2,39 +2,45 @@ class LoginpageController < ApplicationController
   before_action :authenticate_user!
 
   def index
-       @acc = Account.where(:library_code => 16).first
-
-      @libcode = @acc.library_code
-
-     @libres = LibraryCodeMapping.where(:New_Code => @libcode).first
-
+    @acc = Account.where(:library_code => 16).first
+    @libcode = @acc.library_code
+    @libres = LibraryCodeMapping.where(:New_Code => @libcode).first
     @code =  @libres.Old_Code
-
-
+#for graphs
     @barres = YearTopJournal.where(:institution_code => @code)
-
     @splineres2015 = YearTrend.where(:institution_code => @code,:processing_year => 2015)
-
     @splineres2016 = YearTrend.where(:institution_code => @code,:processing_year => 2016)
-
     @pieres = YearUsage.where(:institution_code => @code)
 
   end
 
-  def getreports
-<<<<<<< HEAD
-    sourcereports1 = SourceReportsMapping.where(:year => params[:sourcereports1]).pluck(:report_id)
+  def sourcereports   
+    @source_reports = SourceReportsMapping.find_by_sql("SELECT platform_id,GROUP_CONCAT(year) AS years FROM source_reports_mappings GROUP BY platform_id")
+    @reports = Report.all
+    @platforms = Platform.all
+  end
 
-      respond_to do |format|
+  def getreports
+      byebug
+      # sourcereports1 = SourceReportsMapping.where(:year => params[:sourcereports1]).pluck(:report_id)
+        @sourcereports = SourceReportsMapping.where(:year => params[:sourcereports])
+        respond_to do |format|
           format.html
-          format.json {render json: sourcereports1.to_json}
+          format.json {render json: @sourcereports.to_json}
         end
-=======
-  byebug
-    # sourcereports1 = SourceReportsMapping.where(:year => params[:sourcereports1]).pluck(:report_id)
-      @sourcereports = SourceReportsMapping.where(:year => params[:sourcereports])
-     
->>>>>>> c971681d568de97c4e1a51503952c219a546707f
+  end
+
+  def getyear
+       sourcereportsyear = SourceReportsMapping.where(:platform_id => params[:sourcereportsyear]).pluck(:year)
+        respond_to do |format|
+          format.html
+          format.json {render json: sourcereportsyear.to_json}
+        end
+    end
+    
+  def getreports2
+    byebug
+    
   end
 
   def test2
@@ -52,19 +58,7 @@ class LoginpageController < ApplicationController
   end
 
 
-  def getyear
-       sourcereportsyear = SourceReportsMapping.where(:platform_id => params[:sourcereportsyear]).pluck(:year)
-        respond_to do |format|
-          format.html
-          format.json {render json: sourcereportsyear.to_json}
-        end
-    end
 
-  def sourcereports   
-    @source_reports = SourceReportsMapping.find_by_sql("SELECT platform_id,GROUP_CONCAT(year) AS years FROM source_reports_mappings GROUP BY platform_id")
-    @reports = Report.all
-    @platforms = Platform.all
-  end
 
   def accessdetails
      @platforms = Platform.all

@@ -101,19 +101,20 @@
                   
                  </div>
                  <span>Get Reports</span>
-                 <button>ikojm</button>
+                 <button data-remote="true" >ikojm</button>
              </a>
           </div>
       </div>  
-    <div id="test1"></div>
           
     <br>
   </div>    
 </div>
 <br>
 
+    <div id="test1"></div>
+        <div id="test2"></div>
 
-<%= render :partial => 'getreports' %>
+
 
     <!-- footer -->
 
@@ -146,39 +147,41 @@
 
 
  <script>
-  // $("button").click(function(){
-  //          var value2 = $('select#dropdown2 option:selected').val();
-  //               alert("xdfdf");
-  //          $.ajax({
-  //              type: "GET", 
-  //              // dataType: "json",
-  //              url:"/loginpage/getreports",
-  //              data: {sourcereports1: value2 }, 
-  //              success:function(result1){
-  //                   //  console.log(result1);
+  $("button").click(function(){
+           var value2 = $('select#dropdown2 option:selected').val();
+                alert("xdfdf");
+           $.ajax({
+               type: "GET", 
+               dataType: "json",
+               url:"/loginpage/getreports",
+               data: {sourcereports: value2 }, 
+               success:function(result1){
+                     console.log(result1);
+                     var result2 = result1;
 
-  //                   //  result1.forEach(function(){
-  //                   //  $sourcerepo_html = $("<div class= 'result1'>" + result1 + "</div>");
-  //                   //  $('#test1').append($sourcerepo_html);
-  //                   //    // alert(result1);
-  //                   //    // document.getElementById('test1').innerHTML = result1;
-  //                   //    // $("#test1").html(result1);
-  //                   // $("#test1").html(result1);
-  //                   // // $("#test1").load("/loginpage/getreports");
-  //                   //   })
-  //               }
-  //         })
-  // });
-  $('button').click(function(){
-    var value2 = $('select#dropdown2 option:selected').val();
-    $.ajax({
-    type: "GET",
-    url: "/loginpage/getreports",
-    dataType:"json",
-    data:{sourcereports:value2}
-    
-    });
+                     result1.forEach(function(){
+                     $sourcerepo_html = $("<div class= 'result1'>" + result1 + "</div>");
+                     $('#test1').append($sourcerepo_html);
+                     $("#test1").html(result1);
+                     
+                     $("#test2").append($sourcerepo_html);
+                    $("#test2").load("/loginpage/getreports");
+                    alert("loading page");
+                      })
+                    // $.ajax({
+                    //   console.log("second ajax");
+                    //    type: "GET", 
+                    //    dataType: "json",
+                    //    url:"/loginpage/getreports2",
+                    //    data: {sourcereports2: result2 },
+                    //    success:function(abc){
+                    //     alert("successfully loaded");
+                    //    }
+                    // })
+                }
+          })
   });
+ 
 
 </script>
 
