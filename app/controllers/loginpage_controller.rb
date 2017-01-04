@@ -2,16 +2,39 @@ class LoginpageController < ApplicationController
   before_action :authenticate_user!
 
   def index
-   @yearusages = YearUsage.all
+       @acc = Account.where(:library_code => 16).first
+
+      @libcode = @acc.library_code
+
+     @libres = LibraryCodeMapping.where(:New_Code => @libcode).first
+
+    @code =  @libres.Old_Code
+
+
+    @barres = YearTopJournal.where(:institution_code => @code)
+
+    @splineres2015 = YearTrend.where(:institution_code => @code,:processing_year => 2015)
+
+    @splineres2016 = YearTrend.where(:institution_code => @code,:processing_year => 2016)
+
+    @pieres = YearUsage.where(:institution_code => @code)
+
   end
 
   def getreports
+<<<<<<< HEAD
     sourcereports1 = SourceReportsMapping.where(:year => params[:sourcereports1]).pluck(:report_id)
 
       respond_to do |format|
           format.html
           format.json {render json: sourcereports1.to_json}
         end
+=======
+  byebug
+    # sourcereports1 = SourceReportsMapping.where(:year => params[:sourcereports1]).pluck(:report_id)
+      @sourcereports = SourceReportsMapping.where(:year => params[:sourcereports])
+     
+>>>>>>> c971681d568de97c4e1a51503952c219a546707f
   end
 
   def test2

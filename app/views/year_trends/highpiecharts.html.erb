@@ -1,3 +1,4 @@
+
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src= "https://code.highcharts.com/modules/drilldown.js"></script>
@@ -11,60 +12,143 @@
 
 <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 
-<%= content_tag :div, "", id: "container", data: { this_usage: @this_usage}%>
+<%= content_tag :div, "", id: "container"%>
 
-<%= content_tag :div, "", id: "container1", data: { this_usage: @this_usage}%>
+<% @testing.each do |f| %>
+    <%= f.journal_title%>
+    <%= f.Jan_Stats %>
+    <%= f.Feb_Stats %>
+<%end%>
+
+<%= content_tag :div, "", id: "container1"%>
+
+<%= content_tag :div, "", id: "container2"%>
 
 
 <script>
 
+$(function () {
+    // Create the chart
+    Highcharts.chart('container', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Browser market shares. January, 2015 to May, 2015'
+        },
+        subtitle: {
+            text: 'Click the columns to view versions. Source: <a href="http://netmarketshare.com">netmarketshare.com</a>.'
+        },
+        xAxis: {
+            type: 'category'
+        },
+        yAxis: {
+            title: {
+                text: 'Total percent market share'
+            }
+
+        },
+        legend: {
+            enabled: false
+        },
+        plotOptions: {
+            series: {
+                borderWidth: 0,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.y:.0f}'
+                }
+            }
+        },
+
+        tooltip: {
+            headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+            pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+        },
+
+        series: [{
+            name: 'Brands',
+            colorByPoint: true,
+            data: [
+            <% @testing.each do |f| %>
+
+            {
+                name: '<%= f.journal_title %>',
+                y: <%= f.YTD %>,
+                drilldown: '<%= f.journal_title %>'
+            },
+            <%end%>
+            ]
+        }],
+        drilldown: {
+            series: [
+                        <% @testing.each do |f| %>
+
+            {
+                name: '<%= f.journal_title %>',
+                id: '<%= f.journal_title %>',
+                data: [
+                    [
+                        'Jan',
+                       <%= f.Jan_Stats %>
+                    ],
+                    [
+                        'Feb',
+                        <%= f.Feb_Stats %>
+                    ],
+                    [
+                        'March',
+                        <%= f.Mar_Stats %>
+                    ],
+                    [
+                        'April',
+                        <%= f.Apr_Stats %>
+                    ],
+                    [
+                        'May',
+                        <%= f.May_Stats %>
+                    ],
+                    [
+                        'June',
+                        <%= f.Jun_Stats %>
+                    ],
+                    [
+                        'July',
+                        <%= f.Jul_Stats %>
+                    ],
+                    [
+                        'August',
+                        <%= f.Aug_Stats %>
+                    ],
+                    [
+                        'September',
+                        <%= f.Sept_Stats %>
+                    ],
+                    [
+                        'October',
+                        <%= f.Oct_Stats %>
+                    ],
+                    [
+                        'November',
+                        <%= f.Nov_Stats %>
+                    ],
+                    [
+                        'December',
+                        <%= f.Dec_Stats %>
+                    ]
+                ]
+                     
+            },
+                        <%end%>
+
+            ]
+        }
+    });
+});
 
 
 
 
-// $(function () {
-//    new  Highcharts.chart('container', {
-//         chart: {
-//             plotBackgroundColor: null,
-//             plotBorderWidth: null,
-//             plotShadow: false,
-//             type: 'pie'
-//         },
-//         title: {
-//             text: 'Browser market shares January, 2015 to May, 2015'
-//         },
-//         tooltip: {
-//             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-//         },
-//         plotOptions: {
-//             pie: {
-//                 allowPointSelect: true,
-//                 cursor: 'pointer',
-//                 dataLabels: {
-//                     enabled: true,
-//                     format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-//                     style: {
-//                         color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-//                     }
-//                 }
-//             }
-//         },
-//         series: [{
-//             name: 'Brands',
-//             colorByPoint: true,
-//             data: [
-//               {
-//                 <% @this_usage.each do |f| %>
-//                 name: '<%= f.Report_Type %>',
-//                 y: <%= f.abcd %>
-//                 <%end%>
-//               },
-             
-
-//             ]
-//         }]
-//     });
-// });
 
 
 $(function () {
@@ -112,95 +196,128 @@ $(function () {
             verticalAlign: 'middle',
             borderWidth: 0
         },
-        series: [{
-            name: '2016',
+        series: [
+                <% @testing1.each do |f| %>
+
+        {
+            name: '2015',
             marker: {
                 symbol: 'square'
             },
             data: [
-            <% @highsplinechart1.each do |f| %>
-                <%= f.abcd %>
-            <%end%>,
-            <% @highsplinechart2.each do |f| %>
-                <%= f.abcd %>
-            <%end%>
-             ,
-             <% @highsplinechart3.each do |f| %>
-                <%= f.abcd %>
-            <%end%> , 
-            <% @highsplinechart4.each do |f| %>
-                <%= f.abcd %>
-            <%end%>, 
-            <% @highsplinechart5.each do |f| %>
-                <%= f.abcd %>
-            <%end%>, 
-            <% @highsplinechart6.each do |f| %>
-                <%= f.abcd %>
-            <%end%>, 
-            <% @highsplinechart7.each do |f| %>
-                <%= f.abcd %>
-            <%end%>,
-            <% @highsplinechart8.each do |f| %>
-                <%= f.abcd %>
-            <%end%> ,
-            <% @highsplinechart9.each do |f| %>
-                <%= f.abcd %>
-            <%end%>, 
-            <% @highsplinechart10.each do |f| %>
-                <%= f.abcd %>
-            <%end%>, 
-            <% @highsplinechart11.each do |f| %>
-                <%= f.abcd %>
-            <%end%>,
-            <% @highsplinechart12.each do |f| %>
-                <%= f.abcd %>
-            <%end%>]
-        },  {
-            name: '2015',
+                    <%= f.Jan_Stats %>,
+                   
+                    <%= f.Feb_Stats %>,
+                   
+                    <%= f.Mar_Stats %>,
+                    
+                    
+                    <%= f.May_Stats %>,
+                  
+                    <%= f.Jun_Stats %>,
+                   
+                    <%= f.Jul_Stats %>,
+                    
+                    <%= f.Aug_Stats %>,
+                    
+                    <%= f.Sept_Stats %>,
+                   
+                    <%= f.Oct_Stats %>,
+                    
+                    <%= f.Nov_Stats %>,
+                    
+                    <%= f.Dec_Stats %>
+            ]
+        
+        },
+                        <%end%>
+        <% @testing2.each do |f| %>
+        {
+            name: '2016',
             marker: {
                 symbol: 'diamond'
             },
             data: [
-            <% @highspline1.each do |f| %>
-                <%= f.abcd %>
-            <%end%>,
-            <% @highspline2.each do |f| %>
-                <%= f.abcd %>
-            <%end%>
-             ,
-             <% @highspline3.each do |f| %>
-                <%= f.abcd %>
-            <%end%> , 
-            <% @highspline4.each do |f| %>
-                <%= f.abcd %>
-            <%end%>, 
-            <% @highspline5.each do |f| %>
-                <%= f.abcd %>
-            <%end%>, 
-            <% @highspline6.each do |f| %>
-                <%= f.abcd %>
-            <%end%>, 
-            <% @highspline7.each do |f| %>
-                <%= f.abcd %>
-            <%end%>,
-            <% @highspline8.each do |f| %>
-                <%= f.abcd %>
-            <%end%> ,
-            <% @highspline9.each do |f| %>
-                <%= f.abcd %>
-            <%end%>, 
-            <% @highspline10.each do |f| %>
-                <%= f.abcd %>
-            <%end%>, 
-            <% @highspline11.each do |f| %>
-                <%= f.abcd %>
-            <%end%>,
-            <% @highspline12.each do |f| %>
-                <%= f.abcd %>
-            <%end%>]
+                    <%= f.Jan_Stats %>,
+                   
+                    <%= f.Feb_Stats %>,
+                   
+                    <%= f.Mar_Stats %>,
+                    
+                    
+                    <%= f.May_Stats %>,
+                  
+                    <%= f.Jun_Stats %>,
+                   
+                    <%= f.Jul_Stats %>,
+                    
+                    <%= f.Aug_Stats %>,
+                    
+                    <%= f.Sept_Stats %>,
+                   
+                    <%= f.Oct_Stats %>,
+                    
+                    <%= f.Nov_Stats %>,
+                    
+                    <%= f.Dec_Stats %>
+            ]
+        
+        },
+        <%end%>
+
+        ]
+    });
+});
+
+$(function () {
+   new  Highcharts.chart('container2', {
+
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: 'Browser market shares January, 2015 to May, 2015'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        },
+        series: [{
+            name: 'Brands',
+            colorByPoint: true,
+            data: [
+            <% @test1.each do |f| %>
+              {
+
+                name: '<%= f.Report_Type %>',
+                y: <%= f.abcd %>
+              },
+                <%end%>
+             
+
+            ]
         }]
     });
 });
+
+
+
+
 
 </script>
 

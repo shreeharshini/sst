@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+<<<<<<< HEAD
  
   get 'counter_and_custom_reports/index'
   get 'counter_and_custom_reports/csv'
@@ -21,21 +22,16 @@ Rails.application.routes.draw do
 	get "loginpage/report"
   get "loginpage/accessdetails"
   get "loginpage/selectedplatforms"
+=======
+>>>>>>> c971681d568de97c4e1a51503952c219a546707f
 
 	get "home/index"
   get "users/index"
   get "users/sign_out"
 
-  get "integration_partners/manage_sushi_account"
-  get "integration_partners/update_permission"
-
-  get "import_data/xlsx"
-
-  get "search_by_issn/search"
-  get "search_by_issn/load_suggestions"
-  get "search_by_issn/show_report"
 
   post "users/create"
+<<<<<<< HEAD
   get  "users/new"
   # resources :products do
   #   get :autocomplete_brand_name, :on => :collection
@@ -48,6 +44,9 @@ Rails.application.routes.draw do
     get 'test2'
    end
 end 
+=======
+  
+>>>>>>> c971681d568de97c4e1a51503952c219a546707f
 
   resources :support do 
     collection do
@@ -73,6 +72,13 @@ end
 
   end
 
+  resources :export_files do
+    collection do
+      get 'csv'
+      get 'xlsx'
+      get 'zip'
+    end
+  end
   resources :counter_and_custom_reports do 
     collection do
       get 'show_reports_by_year'
@@ -101,8 +107,7 @@ end
             :source_reports_mappings, :year_trends, :year_usages,
             :year_top_journals, :account_infos, :export_files, 
             :platform_reports, :requestfordemos, :contact_us, 
-            :library_account_details, :import_data, :search_by_issn , 
-            :integration_partners, :counter_and_custom_reports 
+            :library_account_details, :import_data 
 
   
   devise_for :users

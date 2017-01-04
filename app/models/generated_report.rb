@@ -1,3 +1,3 @@
 class GeneratedReport < ApplicationRecord
-	belongs_to :report
+	belongs_to :report_section
 end
