@@ -113,7 +113,7 @@
 <br>
 
 
-<%= render :partial => 'result' %>
+<%= render :partial => 'getreports' %>
 
     <!-- footer -->
 
@@ -174,10 +174,9 @@
     $.ajax({
     type: "GET",
     url: "/loginpage/getreports",
-    data:'sourcereports='+value2,
-    success: function(data){
-      alert(data);
-    }
+    dataType:"json",
+    data:{sourcereports:value2}
+    
     });
   });
 
@@ -188,3 +187,4 @@
 </body>
 </html>
 
+ 
