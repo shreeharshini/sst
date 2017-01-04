@@ -670,14 +670,6 @@ ActiveRecord::Schema.define(version: 20170102044533) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "library_code_mappings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "New_Code"
-    t.string   "Library_Name"
-    t.string   "Old_Code"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
   create_table "platform_reports", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "platform_id"
     t.integer  "report_id"
@@ -870,21 +862,23 @@ ActiveRecord::Schema.define(version: 20170102044533) do
   end
 
   create_table "year_trends", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string  "institution_code", limit: 20
-    t.integer "processing_month",            default: 0, null: false
-    t.integer "processing_year",             default: 0, null: false
-    t.integer "Jan_Stats"
-    t.integer "Feb_Stats"
-    t.integer "Mar_Stats"
-    t.integer "Apr_Stats"
-    t.integer "May_Stats"
-    t.integer "Jun_Stats"
-    t.integer "Jul_Stats"
-    t.integer "Aug_Stats"
-    t.integer "Sept_Stats"
-    t.integer "Oct_Stats"
-    t.integer "Nov_Stats"
-    t.integer "Dec_Stats"
+    t.string   "institution_code"
+    t.string   "processing_month"
+    t.integer  "processing_year"
+    t.integer  "Jan_Stats"
+    t.integer  "Feb_Stats"
+    t.integer  "Mar_Stats"
+    t.integer  "Apr_Stats"
+    t.integer  "May_Stats"
+    t.integer  "Jun_Stats"
+    t.integer  "Jul_Stats"
+    t.integer  "Aug_Stats"
+    t.integer  "Sept_Stats"
+    t.integer  "Oct_Stats"
+    t.integer  "Nov_Stats"
+    t.integer  "Dec_Stats"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "year_usages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

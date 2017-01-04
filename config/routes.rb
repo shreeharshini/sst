@@ -1,21 +1,17 @@
 Rails.application.routes.draw do
 
  
-<<<<<<< HEAD
   get 'counter_and_custom_reports/index'
   get 'counter_and_custom_reports/csv'
   get 'counter_and_custom_reports/xlsx'
   get 'counter_and_custom_reports/zip'
   get "counter_and_custom_reports/show"
   get "counter_and_custom_reports/show_reports_by_year"
-=======
->>>>>>> 370ffcd60f8b8c88629b5db4fa50d04ef229783f
 
   get 'export_files/csv'
   get 'export_files/xlsx'
   get 'export_files/zip'
 
-<<<<<<< HEAD
   get 'support/contactus'
   get 'support/faq'
   get 'support/aboutus'
@@ -40,6 +36,7 @@ Rails.application.routes.draw do
   get "search_by_issn/show_report"
 
   post "users/create"
+  get  "users/new"
   # resources :products do
   #   get :autocomplete_brand_name, :on => :collection
   # end
@@ -50,12 +47,7 @@ Rails.application.routes.draw do
     get 'getreports'
     get 'test2'
    end
-end
-  
-  
-  resources :accounts, :users, :reports, :platforms,
-=======
- 
+end 
 
   resources :support do 
     collection do
@@ -71,13 +63,7 @@ end
       get 'load_suggestions'
       get 'show_report'
     end
-  end
-
-	get "home/index"
-
-  
-  get "import_data/xlsx"
- 
+  end 
 
   resources :integration_partners do 
     collection do
@@ -112,7 +98,6 @@ end
   
 
   resources :accounts, :reports, :platforms,
->>>>>>> 370ffcd60f8b8c88629b5db4fa50d04ef229783f
             :source_reports_mappings, :year_trends, :year_usages,
             :year_top_journals, :account_infos, :export_files, 
             :platform_reports, :requestfordemos, :contact_us, 
