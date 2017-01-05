@@ -5,11 +5,15 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
+    if @users
+      render :json => @users.all
+    end
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    byebug
   end
 
   # GET /users/new
@@ -24,9 +28,10 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+    byebug
     @user = User.new(user_params)
     byebug
-    if @user
+    if @user.save!
       redirect_to users_path
     else
       render 'new'

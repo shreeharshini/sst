@@ -94,6 +94,7 @@ end
       get 'csv'
       get 'xlsx'
       get 'zip'
+      get 'graph'
     end
   end
 
