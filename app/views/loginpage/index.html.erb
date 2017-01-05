@@ -61,7 +61,7 @@
 
     <div class="col-md-4">
         <div class="x_panel " >
-            <%= content_tag :div, "", id: "container", data: { this_usage: @this_usage}%>
+            <%= content_tag :div, "", id: "piechart", data: { this_usage: @this_usage}%>
 
         </div>
     </div>
@@ -69,13 +69,13 @@
             
 <div class="col-md-8">
    <div class="x_panel">
-            <%= content_tag :div, "", id: "container1", data: { this_usage: @this_usage}%>  
+            <%= content_tag :div, "", id: "splinechart", data: { this_usage: @this_usage}%>  
   </div>
 </div>
 
 <div class="col-md-12">
     <div class="x_panel">
-            <div id="journal2" style="min-width: 310px; height: 400px; margin: 0 auto">
+            <div id="barchart" style="min-width: 310px; height: 400px; margin: 0 auto">
             
             </div>
     </div>
@@ -179,55 +179,130 @@
 <script>
 
 $(function () {
-   new  Highcharts.chart('container', {
+    // Create the chart
+    Highcharts.chart('barchart', {
         chart: {
-            plotBackgroundColor: null,
-            plotBorderWidth: null,
-            plotShadow: false,
-            type: 'pie'
+            type: 'column'
         },
         title: {
-            text: 'Browser market shares January, 2015 to May, 2015'
+            text: 'Top 10 Journal Titles'
         },
-        tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+            type: 'category'
+        },
+        yAxis: {
+            title: {
+                text: 'Successful Full-Text Requests'
+            }
+
+        },
+        legend: {
+            enabled: false
         },
         plotOptions: {
-            pie: {
-                allowPointSelect: true,
-                cursor: 'pointer',
+            series: {
+                borderWidth: 0,
                 dataLabels: {
                     enabled: true,
-                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-                    style: {
-                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-                    }
+                    format: '{point.y:.0f}'
                 }
             }
         },
+
+        tooltip: {
+            headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+            pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+        },
+
         series: [{
             name: 'Brands',
             colorByPoint: true,
             data: [
-            <% @this_usage.each do |f| %>
-              {
-                
-                name: '<%= f.Report_Type %>',
-                y: <%= f.abcd %>
-              },
-                              <%end%>
+            <% @barres.each do |f| %>
 
+            {
+                name: '<%= f.journal_title %>',
+                y: <%= f.YTD %>,
+                drilldown: '<%= f.journal_title %>'
+            },
+            <%end%>
+            ]
+        }],
+        drilldown: {
+            series: [
+                        <% @barres.each do |f| %>
 
-              
+            {
+                name: '<%= f.journal_title %>',
+                id: '<%= f.journal_title %>',
+                data: [
+                    [
+                        'Jan',
+                       <%= f.Jan_Stats %>
+                    ],
+                    [
+                        'Feb',
+                        <%= f.Feb_Stats %>
+                    ],
+                    [
+                        'March',
+                        <%= f.Mar_Stats %>
+                    ],
+                    [
+                        'April',
+                        <%= f.Apr_Stats %>
+                    ],
+                    [
+                        'May',
+                        <%= f.May_Stats %>
+                    ],
+                    [
+                        'June',
+                        <%= f.Jun_Stats %>
+                    ],
+                    [
+                        'July',
+                        <%= f.Jul_Stats %>
+                    ],
+                    [
+                        'August',
+                        <%= f.Aug_Stats %>
+                    ],
+                    [
+                        'September',
+                        <%= f.Sept_Stats %>
+                    ],
+                    [
+                        'October',
+                        <%= f.Oct_Stats %>
+                    ],
+                    [
+                        'November',
+                        <%= f.Nov_Stats %>
+                    ],
+                    [
+                        'December',
+                        <%= f.Dec_Stats %>
+                    ]
+                ]
+                     
+            },
+                        <%end%>
 
             ]
-        }]
+        }
     });
 });
 
 
+
+
+
 $(function () {
-   new  Highcharts.chart('container1', {
+   new  Highcharts.chart('splinechart', {
         chart: {
             type: 'spline'
         },
@@ -271,97 +346,130 @@ $(function () {
             verticalAlign: 'middle',
             borderWidth: 0
         },
-        series: [{
-            name: '2016',
+        series: [
+                <% @splineres2015.each do |f| %>
+
+        {
+            name: '2015',
             marker: {
                 symbol: 'square'
             },
             data: [
-            <% @highsplinechart1.each do |f| %>
-                <%= f.abcd %>
-            <%end%>,
-            <% @highsplinechart2.each do |f| %>
-                <%= f.abcd %>
-            <%end%>
-             ,
-             <% @highsplinechart3.each do |f| %>
-                <%= f.abcd %>
-            <%end%> , 
-            <% @highsplinechart4.each do |f| %>
-                <%= f.abcd %>
-            <%end%>, 
-            <% @highsplinechart5.each do |f| %>
-                <%= f.abcd %>
-            <%end%>, 
-            <% @highsplinechart6.each do |f| %>
-                <%= f.abcd %>
-            <%end%>, 
-            <% @highsplinechart7.each do |f| %>
-                <%= f.abcd %>
-            <%end%>,
-            <% @highsplinechart8.each do |f| %>
-                <%= f.abcd %>
-            <%end%> ,
-            <% @highsplinechart9.each do |f| %>
-                <%= f.abcd %>
-            <%end%>, 
-            <% @highsplinechart10.each do |f| %>
-                <%= f.abcd %>
-            <%end%>, 
-            <% @highsplinechart11.each do |f| %>
-                <%= f.abcd %>
-            <%end%>,
-            <% @highsplinechart12.each do |f| %>
-                <%= f.abcd %>
-            <%end%>]
-        },  {
-            name: '2015',
+                    <%= f.Jan_Stats %>,
+                   
+                    <%= f.Feb_Stats %>,
+                   
+                    <%= f.Mar_Stats %>,
+                    
+                    
+                    <%= f.May_Stats %>,
+                  
+                    <%= f.Jun_Stats %>,
+                   
+                    <%= f.Jul_Stats %>,
+                    
+                    <%= f.Aug_Stats %>,
+                    
+                    <%= f.Sept_Stats %>,
+                   
+                    <%= f.Oct_Stats %>,
+                    
+                    <%= f.Nov_Stats %>,
+                    
+                    <%= f.Dec_Stats %>
+            ]
+        
+        },
+                        <%end%>
+        <% @splineres2016.each do |f| %>
+        {
+            name: '2016',
             marker: {
                 symbol: 'diamond'
             },
             data: [
-            <% @highspline1.each do |f| %>
-                <%= f.abcd %>
-            <%end%>,
-            <% @highspline2.each do |f| %>
-                <%= f.abcd %>
-            <%end%>
-             ,
-             <% @highspline3.each do |f| %>
-                <%= f.abcd %>
-            <%end%> , 
-            <% @highspline4.each do |f| %>
-                <%= f.abcd %>
-            <%end%>, 
-            <% @highspline5.each do |f| %>
-                <%= f.abcd %>
-            <%end%>, 
-            <% @highspline6.each do |f| %>
-                <%= f.abcd %>
-            <%end%>, 
-            <% @highspline7.each do |f| %>
-                <%= f.abcd %>
-            <%end%>,
-            <% @highspline8.each do |f| %>
-                <%= f.abcd %>
-            <%end%> ,
-            <% @highspline9.each do |f| %>
-                <%= f.abcd %>
-            <%end%>, 
-            <% @highspline10.each do |f| %>
-                <%= f.abcd %>
-            <%end%>, 
-            <% @highspline11.each do |f| %>
-                <%= f.abcd %>
-            <%end%>,
-            <% @highspline12.each do |f| %>
-                <%= f.abcd %>
-            <%end%>]
+                    <%= f.Jan_Stats %>,
+                   
+                    <%= f.Feb_Stats %>,
+                   
+                    <%= f.Mar_Stats %>,
+                    
+                    
+                    <%= f.May_Stats %>,
+                  
+                    <%= f.Jun_Stats %>,
+                   
+                    <%= f.Jul_Stats %>,
+                    
+                    <%= f.Aug_Stats %>,
+                    
+                    <%= f.Sept_Stats %>,
+                   
+                    <%= f.Oct_Stats %>,
+                    
+                    <%= f.Nov_Stats %>,
+                    
+                    <%= f.Dec_Stats %>
+            ]
+        
+        },
+        <%end%>
+
+        ]
+    });
+});
+
+$(function () {
+   new  Highcharts.chart('piechart', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: 'Usage Division'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        },
+        series: [{
+            name: 'Brands',
+            colorByPoint: true,
+            data: [
+            <% @pieres.each do |f| %>
+              {
+                
+                name: '<%= f.Report_Type %>',
+                y: <%= f.YTD %>
+              },
+                              <%end%>
+
+
+              
+
+            ]
         }]
     });
 });
 
+
 </script>
+
+
 
 
 </html>

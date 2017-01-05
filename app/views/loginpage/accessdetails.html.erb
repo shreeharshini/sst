@@ -1,21 +1,21 @@
 	
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- bootstrap-css -->
-			  <%= stylesheet_link_tag "bootstrap.css" %> 
+<%= stylesheet_link_tag "bootstrap.css" %> 
 
 <!-- Custom CSS -->
-			  <%= stylesheet_link_tag "style.css" %> 
+ <%= stylesheet_link_tag "style.css" %> 
 
 <!-- font CSS -->
 
-			  <%= stylesheet_link_tag "//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin" %> 
+<%= stylesheet_link_tag "//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin" %> 
 
-  			  <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Raleway" %> 
+<%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Raleway" %> 
 
 <!-- font-awesome icons -->
-			  <%= stylesheet_link_tag "font.css" %> 
+<%= stylesheet_link_tag "font.css" %> 
 
-			  <%= stylesheet_link_tag "font-awesome.css" %> 
+<%= stylesheet_link_tag "font-awesome.css" %> 
 
 <!-- //font-awesome icons -->
 <%= javascript_include_tag "jquery2.0.3.min.js" %>
@@ -65,7 +65,7 @@
 
      
 
-    </head>
+</head>
 
  <body  class="dashboard-page">
 
@@ -80,10 +80,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-
-
-
-
 
 
 
@@ -138,6 +134,7 @@
 				.green{color:green;font-weight: bold}
 			    </style>
 
+ 
 
 			<div class="clearfix">
 					<div class="agile-grids">
@@ -162,7 +159,40 @@
 											        <td><%= platform.abbrev %></td>
 											        <td><%= platform.name %></td>
 											        <td>
-											        <%= link_to image_tag("edit.gif", :alt => "Image Description", :class => "css", :size => "20x20"), edit_platform_path(platform) %>			
+											       
+<%= link_to image_tag("edit.gif", :alt => "Image Description", :class => "css", :size => "20x20"),  '#', 'data-target' => "#myModal_#{platform.id}", 'data-toggle' => 'modal'  %>
+        <div class="modal fade" id='<%= "myModal_#{platform.id}" %>' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+
+                <%= simple_form_for(platform) do |f| %>
+									  
+
+									  <div class="form-inputs">
+									    <%= f.input :abbrev %>
+									    <%= f.input :name %>
+									    <%= f.input :created_by %>
+									    <%= f.input :updated_by %>
+									  </div>
+
+									  <div class="form-actions">
+									    <%= f.button :submit %>
+									  </div>
+									<% end %>
+
+                </div>
+
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
+
+
+
 															</td>
 											      </tr>
 											    <% end %>
