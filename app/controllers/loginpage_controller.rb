@@ -21,7 +21,6 @@ class LoginpageController < ApplicationController
   end
 
   def getreports
-      byebug
         @sourcereports = SourceReportsMapping.where(:year => params[:sourcereports]).pluck(:report_id)
         respond_to do |format|
           format.html
