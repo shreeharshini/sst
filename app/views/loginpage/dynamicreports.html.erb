@@ -47,10 +47,35 @@
         <div class="agile-grids pad-top10">
           <div class="col-md-5 mb10">
 
-            <%= form_tag(loginpage_dynamicreports_path, method: :get) do %>
-            <div class="form-group">
+            
+            <%= form_tag("/loginpage/test2", :method => "get", remote: "true") do %>
+
+            <label>Select Report Type<span class="required">*</span></label>
+            <%= select_tag(:dynamic_drop, options_for_select([
+              ['--Select Report Type--','-1'],
+              ['JR1 (Consolidated Journal Report 1, Consolidated COUNTER JR1 Report of all subscribed Platforms)', Jr1], 
+              ['JR2 (Consolidated Journal Report 2, Consolidated COUNTER JR2 Report of all subscribed Platforms)', Jr2], 
+              ['JR3 (Consolidated Journal Report 3, Consolidated COUNTER JR3 Report of all subscribed Platforms)', Jr3], 
+              ['JR1a (Consolidated Journal Report 1a, Consolidated COUNTER JR1a Report of all subscribed Platforms)', Jr1a], 
+              ['BR1 (Consolidated Book Report 1, Consolidated COUNTER BR1 Report of all subscribed Platforms)', Br1], 
+              ['BR2 (Consolidated Book Report 2, Consolidated COUNTER BR2 Report of all subscribed Platforms)', Br2], 
+              ['DB1 (Consolidated Database Report 1, Consolidated COUNTER DB1 Report of all subscribed Platforms)', Db1], 
+              ['DB2 (Consolidated Database Report 2, Consolidated COUNTER DB2 Report of all subscribed Platforms)', Db2], 
+              ['PR1 (Consolidated Platform Report 1, Consolidated COUNTER PR1 Report of all subscribed Platforms)', Pr1]])) %>
+
+              <label>From:<span class="required">*</span></label>
+              <%= text_field :date_of_tour, "data-provide" => 'datePicker' %>
+              
+              <label>To:<span class="required">*</span></label>
+              <%= text_field :date_of_tour, "data-provide" => 'datePicker' %>
+
+            <%= submit_tag ("Preview") %>
+            <% end %>
+
+            <!-- <%= form_tag(dynamicreports_loginpage_index_path, method: :get, remote: :true) do %>
+             <div class="form-group">
               <label>Select Report Type:</label>
-              <select  id="selectReportType" class="form-control" name="Report">
+              <select  id="selectReportType" class="form-control" name="ReportType">
                 <option value="-1">--Select Report Type--</option>
                 <option value="Jr1">JR1 (Consolidated Journal Report 1, Consolidated COUNTER JR1 Report of all subscribed Platforms)</option>
                 <option value="Jr2">JR2 (Consolidated Journal Report 2, Consolidated COUNTER JR2 Report of all subscribed Platforms)</option>
@@ -96,7 +121,7 @@
                              type="text" 
                              ng-model="ngModel2"
                              placeholder="Select a date"
-                             dateformat="mm/yyyy"
+                             dateformat="yy-mm"
                              datepicker />
                       <label for="datePicker2" class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></label>
                     </div>
@@ -104,9 +129,13 @@
                 </div>
               </div>
             </div>
+
         <div class=" col-sm-2 mt-10">
-       <div class="button raised">
-         <a href="#" class="hoverable"> <div class="anim"></div><span>Preview Report </span></a>
+       <div id="preview" class="button raised" name="preview">
+         <a href="#" class="hoverable">
+          <div class="anim"></div>
+          <span>Preview Report </span>
+        </a>
           </div>
         </div>
         
@@ -117,9 +146,10 @@
   			</div>
   	</div>		
   			<% end %><br>
-  	  </div>
-      <%= render :partial => 'test2'%>
-      <%= render :partial => '/layouts/footer'%>
+  	  </div> 
+            
+    <%= render :partial => 'test2'%>
+    <%= render :partial => '/layouts/footer'%>
   	</section>
   <script src="js/bootstrap.js"></script>
   <%= stylesheet_link_tag "date.css" %> 
@@ -128,21 +158,34 @@
   </section>
   <%= javascript_include_tag "bootstrap.js" %>
     
-  <script>
-     $("#selectReportType").change(function(){
-      alert("success");
-     var value1 = $('#selectReportType option:selected').val();
-      console.log("Gotcha");
+  // <script>
+  //    $("#selectReportType").change(function(){
+  //     alert("success");
+  //    var value1 = $('#selectReportType option:selected').val();
+  //     console.log("Gotcha");
 
-        $.ajax({
-            type:"GET",
-            url:"/loginpage/test2",
-            dataType:"json",
-            data: {some_parameter: value1 }
-
-        })
-      });
-  </script>
+  //       $.ajax({
+  //           type:"GET",
+  //           url:"/loginpage/test2",
+  //           dataType:"json",
+  //           data: {some_parameter: value1 }
+            
+  //       })
+  //     });
+  // // $('button').click(function(){
+  // //   alert("success");
+  // //   var value1 = $('selectReportType option:selected').val();
+  // //   $.ajax({
+  // //   type: "GET",
+  // //   url: "/loginpage/test2",
+  // //      dataType:"json"
+  // //   data: {some_parameter: value1 },
+  // //   success: function(data){
+  // //     alert(data);
+  // //   }
+  // //   });
+  // // });
+  // </script>
   <%= javascript_include_tag "date.js" %>
   </body>
 </html>

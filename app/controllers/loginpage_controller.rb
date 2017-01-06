@@ -1,12 +1,13 @@
 class LoginpageController < ApplicationController
+  respond_to :html, :js
   before_action :authenticate_user!
 
   def index
-       @acc = Account.where(:library_code => 16).first
+    @acc = Account.where(:library_code => 16).first
 
-      @libcode = @acc.library_code
+    @libcode = @acc.library_code
 
-     @libres = LibraryCodeMapping.where(:New_Code => @libcode).first
+    @libres = LibraryCodeMapping.where(:New_Code => @libcode).first
 
     @code =  @libres.Old_Code
 
@@ -22,28 +23,32 @@ class LoginpageController < ApplicationController
   end
 
   def getreports
-<<<<<<< HEAD
-    sourcereports1 = SourceReportsMapping.where(:year => params[:sourcereports1]).pluck(:report_id)
-
-      respond_to do |format|
-          format.html
-          format.json {render json: sourcereports1.to_json}
-        end
-=======
-  byebug
+    byebug
     # sourcereports1 = SourceReportsMapping.where(:year => params[:sourcereports1]).pluck(:report_id)
       @sourcereports = SourceReportsMapping.where(:year => params[:sourcereports])
      
->>>>>>> c971681d568de97c4e1a51503952c219a546707f
+  end
+
+  def dynamicreports
+    byebug
   end
 
   def test2
-    @dynamic_reports = params[:some_parameter].constantize
+    @dynamic_reports = params[:dynamic_drop].constantize
     byebug
     respond_to do |format|
     format.js {}
     end
   end
+
+  # def test2
+  #   byebug
+  #   @dynamic_reports = params[:some_parameter].constantize
+  #   byebug
+  #   respond_to do |format|
+  #   format.js {}
+  #   end
+  # end
   
 
 

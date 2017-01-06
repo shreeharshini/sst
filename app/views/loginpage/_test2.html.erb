@@ -1,23 +1,15 @@
-<%binding.pry%>
-<!-- <p1>
-	alert("Succesfull");
-</p1> -->
 <div id="report_id">
-
-<!-- 
-<select class="form-control">
-<option>
-	<%= @dynamic_reports %>
-	</option>
-</select>
-</div> -->
-
-<h3 class="sub-header">Dynamic Reports</h3>
-<table border='1' class="table table-striped" width="200">
-    <tr class="success">
-    	<% byebug %>
-	   
-      </tr>
-
-
-</table>
+	<h3 class="sub-header">Dynamic Reports</h3>
+	<table border='1' class="table table-striped" width="200">
+	  <tr class="success">
+	  	<% byebug %>
+			<%if @dynamic_reports.present?%> 
+				<div class="sample">
+					<% byebug %>
+					<%= redirect_to(@dynamic_reports) %>
+				</div>
+			<%else%>
+			<%end%>
+	  </tr>
+	</table>
+</div>

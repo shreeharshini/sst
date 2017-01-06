@@ -13,6 +13,7 @@ myApp.directive("datepicker", function () {
       var options = {
         changeMonth: true,
         changeYear: true,
+        dateFormat: "yy-mm",
         yearRange: '-115:+0',
         onSelect: function (dateText) {
           updateModel(dateText);
@@ -36,6 +37,7 @@ myApp.directive("datepicker2", function () {
       var options = {
         changeMonth: true,
         changeYear: true,
+        dateFormat: "yy-mm",
         yearRange: '-115:+0',
         onSelect: function (dateText) {
           updateModel(dateText);

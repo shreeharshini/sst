@@ -1,49 +1,48 @@
 <body  class="dashboard-page">
 
- <section class="wrapper scrollable">
- 
-    
-  <%= render :partial => '/layouts/side_bar_navigation'%>
-
+  <section class="wrapper scrollable">
+       
+    <%= render :partial => '/layouts/side_bar_navigation'%>
     <%= render :partial => '/layouts/header'%>
 
-<div class="main-grid" >
-         <div class="clearfix"></div>
+    <div class="main-grid" >
+      <div class="clearfix"></div>
 
+      <%= provide(:title, 'Sign up') %>
+      <h1>Sign up</h1>
 
-<%= provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
+      <div class="row">
+        <div class="span6 offset3">
 
-<div class="row">
-  <div class="span6 offset3">
-    
-    <%= form_for :user, url: users_new_path do |f| %>
+          <%= form_for :users, url: users_new_path do |f| %>
 
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name %>
+            <%= f.label :first_name %>
+            <%= f.text_field :first_name %>
 
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name %>
+            <%= f.label :last_name %>
+            <%= f.text_field :last_name %>
 
-      <%= f.label :email %>
-      <%= f.text_field :email %>
+            <%= f.label :email %>
+            <%= f.text_field :email %>
 
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+            <%= f.label :password %>
+            <%= f.password_field :password %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
-      
-      <%= f.label :role %>
-      <%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]}) %>
-      <br>
-      <br>      
+            <%= f.label :password_confirmation, "Confirmation" %>
+            <%= f.password_field :password_confirmation %>
 
-      <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
-    <% end %>
-  </div>
-</div>
+            <%= f.label :role %>
+            <%= radio_button_tag(:role, "User") %>
+            <%= label_tag("User") %>
 
-</div>
-</section>
+            <%= radio_button_tag(:role, "Admin") %>
+            <%= label_tag("Admin") %>
+
+            <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+        <%= render :partial => '/layouts/footer'%>
+  </section>
 </body>
