@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170103065301) do
+=======
+ActiveRecord::Schema.define(version: 20170105073243) do
+>>>>>>> 4c7b041c037f347dc03dcb33e0731b6d20d93793
 
   create_table "account_infos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "account_code"
@@ -76,7 +80,10 @@ ActiveRecord::Schema.define(version: 20170103065301) do
     t.integer  "number_of_platforms"
     t.string   "activation_status"
     t.string   "account_code"
+<<<<<<< HEAD
     t.integer  "user_id"
+=======
+>>>>>>> 4c7b041c037f347dc03dcb33e0731b6d20d93793
     t.string   "library_code"
   end
 
@@ -90,6 +97,7 @@ ActiveRecord::Schema.define(version: 20170103065301) do
     t.string   "role"
   end
 
+<<<<<<< HEAD
   create_table "br1s", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "Book_Title"
     t.string   "Publisher_Name"
@@ -221,6 +229,9 @@ ActiveRecord::Schema.define(version: 20170103065301) do
     t.string   "email"
     t.string   "subject"
     t.string   "message"
+=======
+  create_table "archive_uploaders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+>>>>>>> 4c7b041c037f347dc03dcb33e0731b6d20d93793
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -275,6 +286,7 @@ ActiveRecord::Schema.define(version: 20170103065301) do
     t.datetime "updated_at",              null: false
   end
 
+<<<<<<< HEAD
   create_table "db1s", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "Database_name"
     t.string   "Platform"
@@ -396,6 +408,8 @@ ActiveRecord::Schema.define(version: 20170103065301) do
     t.datetime "updated_at", null: false
   end
 
+=======
+>>>>>>> 4c7b041c037f347dc03dcb33e0731b6d20d93793
   create_table "generated_reports", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "account_id"
     t.integer  "report_section_id"
@@ -404,6 +418,7 @@ ActiveRecord::Schema.define(version: 20170103065301) do
     t.integer  "is_generated"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+    t.string   "format"
   end
 
   create_table "import_data", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -413,6 +428,7 @@ ActiveRecord::Schema.define(version: 20170103065301) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
   create_table "jr1as", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "Journal_Title"
     t.string   "Publisher_Name"
@@ -665,6 +681,8 @@ ActiveRecord::Schema.define(version: 20170103065301) do
     t.datetime "updated_at",             null: false
   end
 
+=======
+>>>>>>> 4c7b041c037f347dc03dcb33e0731b6d20d93793
   create_table "library_code_mappings", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "New_Code"
     t.string  "Library_Name", limit: 100
@@ -703,6 +721,7 @@ ActiveRecord::Schema.define(version: 20170103065301) do
     t.datetime "updated_at",   null: false
   end
 
+<<<<<<< HEAD
   create_table "pr1s", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "Platform"
     t.string   "Publisher"
@@ -762,6 +781,9 @@ ActiveRecord::Schema.define(version: 20170103065301) do
 
   create_table "publisher_reports", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "report_id"
+=======
+  create_table "publisher_reports", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "report_id"
     t.string   "category"
     t.integer  "sort_order"
     t.date     "start_date"
@@ -783,6 +805,20 @@ ActiveRecord::Schema.define(version: 20170103065301) do
   end
 
   create_table "report_sections", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+>>>>>>> 4c7b041c037f347dc03dcb33e0731b6d20d93793
+    t.string   "category"
+    t.string   "section"
+    t.string   "name"
+    t.string   "description"
+    t.integer  "order"
+    t.string   "updated_by"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "year"
+  end
+
+<<<<<<< HEAD
+  create_table "report_sections", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "category"
     t.string   "section"
     t.string   "name"
@@ -793,6 +829,8 @@ ActiveRecord::Schema.define(version: 20170103065301) do
     t.datetime "updated_at",  null: false
   end
 
+=======
+>>>>>>> 4c7b041c037f347dc03dcb33e0731b6d20d93793
   create_table "reports", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "description"
@@ -804,6 +842,7 @@ ActiveRecord::Schema.define(version: 20170103065301) do
     t.string   "report_type"
   end
 
+<<<<<<< HEAD
   create_table "requestfordemos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "username"
     t.string   "email"
@@ -812,6 +851,20 @@ ActiveRecord::Schema.define(version: 20170103065301) do
     t.string   "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+=======
+  create_table "reports_masters", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "category"
+    t.string   "name"
+    t.string   "abbrev"
+    t.string   "file_name"
+    t.string   "description"
+    t.string   "frequency"
+    t.string   "format"
+    t.string   "created_by"
+    t.string   "updated_by"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+>>>>>>> 4c7b041c037f347dc03dcb33e0731b6d20d93793
   end
 
   create_table "source_reports_mappings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -852,6 +905,7 @@ ActiveRecord::Schema.define(version: 20170103065301) do
     t.datetime "updated_at", null: false
   end
 
+<<<<<<< HEAD
   create_table "user_roles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
     t.integer  "role_id"
@@ -860,6 +914,8 @@ ActiveRecord::Schema.define(version: 20170103065301) do
     t.datetime "updated_at", null: false
   end
 
+=======
+>>>>>>> 4c7b041c037f347dc03dcb33e0731b6d20d93793
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false

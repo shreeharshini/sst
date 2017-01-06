@@ -43,7 +43,13 @@
 									<%else%>
 										-
 									<%end%>
-									<td data-th="Sport"><span class="bt-content"><a href="#"> - </a></span></td>
+									<td data-th="Sport">
+									<% if cr.generated_report.account_id == @account_id && cr.generated_report.format == "gcsv"  %>
+										<%= link_to image_tag("bar-chart.png"), "#LoginModal", :data => { :toggle =>"modal" } %>
+									<%else%>
+										-
+									<%end%>
+									</td>
 								  </tr>
 							 	<%end%>
 							<%end%>
@@ -105,11 +111,13 @@
 									-
 								<%end%>
 								<td data-th="Sport">
-									<a href="#" data-toggle="modal" data-target="#myModalGraphB4" >
-        							<%= image_tag("bar-chart.png")%></a>	
-								</td>
+									<% if cr.generated_report.account_id == @account_id && cr.generated_report.format == "gcsv"  %>
+										<%= link_to image_tag("bar-chart.png"), "#LoginModal2", :data => { :toggle =>"modal" } %>
+									<%else%>
+										-
+									<%end%>
 
-								
+								</td>
 							  </tr>
 							<%end%>
 						</tbody>
@@ -167,18 +175,164 @@
 								<%else%>
 									-
 								<%end%>
-								<td data-th="Sport"><span class="bt-content"><a href="#"> - </a></span></td>
+								<td data-th="Sport">
+									<% if cr.generated_report.account_id == @account_id && cr.generated_report.format == "gcsv"  %>
+										<%= link_to image_tag("bar-chart.png"), "#LoginModal", :data => { :toggle =>"modal" } %>
+									<%else%>
+										-
+									<%end%>
+
+								</td>
 							  </tr>
 							<%end%>
 			    
 						</tbody>
 					  </table>
 					</div>
+
 					<!-- //updating-data -->
 				</div>
 				<div class="clearfix"> </div>
+
 			</div>
 	</div>	
    </div>	
 	  </div>
 	 </div>
+<div class="modal fade my_login_box" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        
+      </div>
+      <div class="modal-body ">
+        <%render file: "counter_and_custom_reports/graph"%>
+        <%= content_tag :div, "", id: "container"%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade my_login_box" id="LoginModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        
+      </div>
+      <div class="modal-body ">
+        <%render file: "counter_and_custom_reports/graph"%>
+
+                <%= content_tag :div, "", id: "container2"%>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+<script>
+
+$(function () {
+    // Create the chart
+    Highcharts.chart('container', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Top Platforms : Average Full-Text Views'
+        },
+        subtitle: {
+            text: ''
+        },
+        xAxis: {
+            type: 'category'
+        },
+        yAxis: {
+            title: {
+                text: 'Top Platforms'
+            }
+
+        },
+        legend: {
+            enabled: false
+        },
+        plotOptions: {
+            series: {
+                borderWidth: 0,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.y:.0f}'
+                }
+            }
+        },
+
+        tooltip: {
+            headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+            pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+        },
+
+        series: [{
+            name: 'Brands',
+            colorByPoint: true,
+            data: [
+            <% @graph1.each do |f| %>
+            {
+                name: '<%= f.id %>',
+                y: <%= f.report_section_id  %>,
+            },
+            <%end%>
+            ]
+        }],
+        
+    });
+});
+
+
+$(function () {
+    Highcharts.chart('container2', {
+        chart: {
+            type: 'pie',
+            options3d: {
+                enabled: true,
+                alpha: 45,
+                beta: 0
+            }
+        },
+        title: {
+            text: 'Top 10 Platforms with highest zero usage stats'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                depth: 35,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}'
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Platforms',
+            data: [
+              <% @pie_chart.each do |f| %>
+            {
+                name: '<%= f.abbrev %>',
+                y: <%= f.id  %>,
+            },
+            <%end%>
+            ]
+        }]
+
+    });
+});
+
+</script>
+

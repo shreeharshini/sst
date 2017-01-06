@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category: MyString
+  name: MyString
+  abbrev: MyString
+  file_name: MyString
+  description: MyString
+  frequency: MyString
+  format: MyString
+  created_by: MyString
+  updated_by: MyString
+
+two:
+  category: MyString
+  name: MyString
+  abbrev: MyString
+  file_name: MyString
+  description: MyString
+  frequency: MyString
+  format: MyString
+  created_by: MyString
+  updated_by: MyString

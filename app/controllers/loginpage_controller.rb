@@ -4,25 +4,33 @@ class LoginpageController < ApplicationController
 
   def index
     @acc = Account.where(:library_code => 16).first
+<<<<<<< HEAD
 
     @libcode = @acc.library_code
 
     @libres = LibraryCodeMapping.where(:New_Code => @libcode).first
 
+=======
+    @libcode = @acc.library_code
+    @libres = LibraryCodeMapping.where(:New_Code => @libcode).first
+>>>>>>> 4c7b041c037f347dc03dcb33e0731b6d20d93793
     @code =  @libres.Old_Code
-
-
+#for graphs
     @barres = YearTopJournal.where(:institution_code => @code)
-
     @splineres2015 = YearTrend.where(:institution_code => @code,:processing_year => 2015)
-
     @splineres2016 = YearTrend.where(:institution_code => @code,:processing_year => 2016)
-
     @pieres = YearUsage.where(:institution_code => @code)
 
   end
 
+  def sourcereports   
+    @source_reports = SourceReportsMapping.find_by_sql("SELECT platform_id,GROUP_CONCAT(year) AS years FROM source_reports_mappings GROUP BY platform_id")
+    @reports = Report.all
+    @platforms = Platform.all
+  end
+
   def getreports
+<<<<<<< HEAD
     byebug
     # sourcereports1 = SourceReportsMapping.where(:year => params[:sourcereports1]).pluck(:report_id)
       @sourcereports = SourceReportsMapping.where(:year => params[:sourcereports])
@@ -31,7 +39,31 @@ class LoginpageController < ApplicationController
 
   def dynamicreports
     byebug
+=======
+        @sourcereports = SourceReportsMapping.where(:year => params[:sourcereports]).pluck(:report_id)
+        respond_to do |format|
+          format.html
+          format.json {render json: @sourcereports.to_json}
+        end
   end
+
+  def getyear
+       sourcereportsyear = SourceReportsMapping.where(:platform_id => params[:sourcereportsyear]).pluck(:year)
+        respond_to do |format|
+          format.html
+          format.json {render json: sourcereportsyear.to_json}
+        end
+    end
+    
+  def getreports2
+   
+    sourcereports2 = Report.where(:id => params[:sourcereports2]).pluck(:name)
+      respond_to do |format|
+        format.html
+        format.json { render json: sourcereports2.to_json }
+>>>>>>> 4c7b041c037f347dc03dcb33e0731b6d20d93793
+  end
+end
 
   def test2
     @dynamic_reports = params[:dynamic_drop].constantize
@@ -57,19 +89,7 @@ class LoginpageController < ApplicationController
   end
 
 
-  def getyear
-       sourcereportsyear = SourceReportsMapping.where(:platform_id => params[:sourcereportsyear]).pluck(:year)
-        respond_to do |format|
-          format.html
-          format.json {render json: sourcereportsyear.to_json}
-        end
-    end
 
-  def sourcereports   
-    @source_reports = SourceReportsMapping.find_by_sql("SELECT platform_id,GROUP_CONCAT(year) AS years FROM source_reports_mappings GROUP BY platform_id")
-    @reports = Report.all
-    @platforms = Platform.all
-  end
 
   def accessdetails
      @platforms = Platform.all

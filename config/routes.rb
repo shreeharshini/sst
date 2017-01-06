@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+<<<<<<< HEAD
  
   get 'counter_and_custom_reports/index'
   get 'counter_and_custom_reports/csv'
@@ -22,17 +23,22 @@ Rails.application.routes.draw do
   get "loginpage/accessdetails"
   get "loginpage/selectedplatforms"
 
+=======
+>>>>>>> 4c7b041c037f347dc03dcb33e0731b6d20d93793
 	get "home/index"
   get "users/index"
   get "users/sign_out"
 
 
   post "users/create"
-  get  "users/new"
-  # resources :products do
-  #   get :autocomplete_brand_name, :on => :collection
-  # end
+<<<<<<< HEAD
+=======
 
+>>>>>>> 4c7b041c037f347dc03dcb33e0731b6d20d93793
+  get  "users/new"
+ 
+
+<<<<<<< HEAD
   resources :loginpage do
   collection do
     get 'getyear'
@@ -41,6 +47,8 @@ Rails.application.routes.draw do
    end
 end 
   
+=======
+>>>>>>> 4c7b041c037f347dc03dcb33e0731b6d20d93793
 
   resources :support do 
     collection do
@@ -79,6 +87,7 @@ end
       get 'csv'
       get 'xlsx'
       get 'zip'
+      get 'graph'
     end
   end
 
@@ -91,6 +100,7 @@ end
       get 'sourcereports'
       get 'accessdetails'
       get 'selectedplatforms'
+      get 'getreports2'
      end
   end
  

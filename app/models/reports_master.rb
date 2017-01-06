@@ -1,0 +1,2 @@
+class ReportsMaster < ApplicationRecord
+end

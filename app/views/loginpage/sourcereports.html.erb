@@ -64,11 +64,13 @@
   <div class="agile-grids pad-top10">
       <div class="col-md-3 mb10">
         <div class="form-group">
-        <label>Platform</label>
+        <label>Platform</label>  
 
-        
 <br>
-                <select class="form-control" id="dropdown1" >
+
+
+
+            <select class="form-control" id="dropdown1" >
 
                           <option>--Select Platform--</option>
                        <%= @source_reports.each do |f|%>
@@ -85,6 +87,8 @@
                 <select class="form-control" id="dropdown2">
                               <option>--Select Year--</option>
                 </select>
+
+
           </div>
       </div>
      
@@ -101,11 +105,10 @@
                   
                  </div>
                  <span>Get Reports</span>
-                 <button>ikojm</button>
+                 <button data-remote="true" >ikojm</button>
              </a>
           </div>
       </div>  
-    <div id="test1"></div>
           
     <br>
   </div>    
@@ -113,7 +116,8 @@
 <br>
 
 
-<%= render :partial => 'result' %>
+
+<div id="test3"></div>
 
     <!-- footer -->
 
@@ -151,15 +155,22 @@
                 alert("xdfdf");
            $.ajax({
                type: "GET", 
+<<<<<<< HEAD
                // dataType: "json",
                url:"/loginpage/getreports",
                data: {sourcereports1: value2 }, 
+=======
+               dataType: "json",
+               url:"/loginpage/getreports",
+               data: {sourcereports: value2 }, 
+>>>>>>> 4c7b041c037f347dc03dcb33e0731b6d20d93793
                success:function(result1){
                      console.log(result1);
 
                      result1.forEach(function(){
                      $sourcerepo_html = $("<div class= 'result1'>" + result1 + "</div>");
                      $('#test1').append($sourcerepo_html);
+<<<<<<< HEAD
                        // alert(result1);
                        // document.getElementById('test1').innerHTML = result1;
                        // $("#test1").html(result1);
@@ -180,6 +191,41 @@
   //   }
   //   });
   // });
+=======
+                     $("#test1").html(result1);
+
+                     $("#test2").append($sourcerepo_html);
+                    $("#test2").load("/loginpage/getreports");
+                    alert("loading page");
+                      })
+           alert(result1);
+                    $.ajax({
+                       type: "GET", 
+                       dataType: "json",
+                       url:"/loginpage/getreports2",
+                       data: {sourcereports2: result1 },
+                       success:function(abc){
+                        alert("successfully loaded");
+                        alert(abc);
+
+                        console.log(abc);
+
+                        abc.forEach(function(){
+                     $sourcerepo1_html = $("<div class= 'abc'>" + abc + "</div>");
+                     $('#test3').append($sourcerepo1_html);
+                     $("#test3").html(abc);
+
+                     
+                      })
+
+                       }
+                    })
+
+                }
+          })
+  });
+ 
+>>>>>>> 4c7b041c037f347dc03dcb33e0731b6d20d93793
 
 </script>
  -->
@@ -188,3 +234,4 @@
 </body>
 </html>
 
+ 
