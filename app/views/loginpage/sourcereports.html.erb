@@ -64,21 +64,16 @@
   <div class="agile-grids pad-top10">
       <div class="col-md-3 mb10">
         <div class="form-group">
-        <label>Platform</label>  
+          <label>Platform</label>  
 
-<br>
+              <select class="form-control" id="dropdown1" >
 
-
-
-            <select class="form-control" id="dropdown1" >
-
-                          <option>--Select Platform--</option>
-                       <%= @source_reports.each do |f|%>
-                  
-                            <option><%= f.platform_id %></option>
-                      <% end %>  
-            </select>
-
+                            <option>--Select Platform--</option>
+                         <%= @source_reports.each do |f|%>
+                    
+                              <option><%= f.platform_id %></option>
+                        <% end %>  
+              </select>
         </div>
       </div>
       <div class="col-md-3">
@@ -87,8 +82,6 @@
                 <select class="form-control" id="dropdown2">
                               <option>--Select Year--</option>
                 </select>
-
-
           </div>
       </div>
      
@@ -111,18 +104,20 @@
       </div>  
           
     <br>
+
+
   </div>    
 </div>
 <br>
 
 
 
-<div id="test3"></div>
 
     <!-- footer -->
 
     <!-- //footer -->
   </section>
+<div id="test3"></div>
   <%= javascript_include_tag "bootstrap.js" %>
 
     
@@ -141,6 +136,7 @@
                       $secondChoice.append("<option>" + value + "</option>");
                     // alert(value);
                 });
+
                       
             }
         })
@@ -148,22 +144,44 @@
   </script>
 
 
-
+<!-- 
  <script>
   $("button").click(function(){
            var value2 = $('select#dropdown2 option:selected').val();
                 alert("xdfdf");
            $.ajax({
                type: "GET", 
-               dataType: "json",
+               // dataType: "json",
                url:"/loginpage/getreports",
-               data: {sourcereports: value2 }, 
+               data: {sourcereports1: value2 }, 
+
                success:function(result1){
                      console.log(result1);
+
 
                      result1.forEach(function(){
                      $sourcerepo_html = $("<div class= 'result1'>" + result1 + "</div>");
                      $('#test1').append($sourcerepo_html);
+                       // alert(result1);
+                       // document.getElementById('test1').innerHTML = result1;
+                       // $("#test1").html(result1);
+                    $("#test1").html(result1);
+                    // $("#test1").load("/loginpage/getreports");
+                      })
+                }
+          })
+  });
+  // $('button').click(function(){
+  //   var value2 = $('select#dropdown2 option:selected').val();
+  //   $.ajax({
+  //   type: "GET",
+  //   url: "/loginpage/getreports",
+  //   data:'sourcereports='+value2,
+  //   success: function(data){
+  //     alert(data);
+  //   }
+  //   });
+  // });
                      $("#test1").html(result1);
 
                      $("#test2").append($sourcerepo_html);
@@ -177,29 +195,61 @@
                        url:"/loginpage/getreports2",
                        data: {sourcereports2: result1 },
                        success:function(abc){
-                        alert("successfully loaded");
-                        alert(abc);
-
                         console.log(abc);
+                         abc.forEach(function(){
+                           $sourcerepo1_html = $("<div class= 'abc'>" + abc + "</div>");
+                           $('#test3').append($sourcerepo1_html);
+                           $("#test3").html(abc);
 
-                        abc.forEach(function(){
-                     $sourcerepo1_html = $("<div class= 'abc'>" + abc + "</div>");
-                     $('#test3').append($sourcerepo1_html);
-                     $("#test3").html(abc);
-
-                     
-                      })
-
+                           $("#test").load()
+                          })
                        }
                     })
-
                 }
           })
+            }
+        })
+    });
+  </script>
+
+
+
+ <script>
+  $("button").click(function(){
+           var value2 = $('select#dropdown2 option:selected').val();
+
+           $.ajax({
+               type: "GET", 
+               dataType: "json",
+               url:"/loginpage/getreports",
+               data: {sourcereports: value2 }, 
+               success:function(result1){
+                     console.log(result1);
+                    // $.ajax({
+                    //    type: "GET", 
+                    //    dataType: "json",
+                    //    url:"/loginpage/getreports2",
+                    //    data: {sourcereports2: result1 },
+                    //    success:function(abc){
+                    //     console.log(abc);
+                    //      abc.forEach(function(){
+                    //        $sourcerepo1_html = $("<div class= 'abc'>" + abc + "</div>");
+                    //        $('#test3').append($sourcerepo1_html);
+                    //        $("#test3").html(abc);
+
+                    //        $("#test").load()
+                    //       })
+                    //    }
+                    // })
+                }
+          })
+
+             window.location.href='/loginpage/testing';
   });
  
 
 </script>
-
+ -->
 
 
 </body>
