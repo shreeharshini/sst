@@ -6,6 +6,8 @@ gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 gem 'rails4-autocomplete'
+
+gem 'axlsx_rails'
 # jQuery UI dependency.
 #gem 'jquery-ui-rails'
 #gem 'searchkick'

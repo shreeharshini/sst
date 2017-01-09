@@ -1,66 +1,9 @@
                                          Prefix Verb   URI Pattern                                                Controller#Action
-<<<<<<< HEAD
-                              support_contactus GET    /support/contactus(.:format)                               support#contactus
-                                    support_faq GET    /support/faq(.:format)                                     support#faq
-                                support_aboutus GET    /support/aboutus(.:format)                                 support#aboutus
-                       loginpage_dynamicreports GET    /loginpage/dynamicreports(.:format)                        loginpage#dynamicreports
-                        loginpage_sourcereports GET    /loginpage/sourcereports(.:format)                         loginpage#sourcereports
-                               loginpage_report GET    /loginpage/report(.:format)                                loginpage#report
-                        loginpage_accessdetails GET    /loginpage/accessdetails(.:format)                         loginpage#accessdetails
-                    loginpage_selectedplatforms GET    /loginpage/selectedplatforms(.:format)                     loginpage#selectedplatforms
-=======
->>>>>>> d574297bb932c34d07003c52ac4fb590195a5eb2
                                      home_index GET    /home/index(.:format)                                      home#index
                                     users_index GET    /users/index(.:format)                                     users#index
                                  users_sign_out GET    /users/sign_out(.:format)                                  users#sign_out
                                    users_create POST   /users/create(.:format)                                    users#create
-<<<<<<< HEAD
-                        getyear_loginpage_index GET    /loginpage/getyear(.:format)                               loginpage#getyear
-                     getreports_loginpage_index GET    /loginpage/getreports(.:format)                            loginpage#getreports
-                          test2_loginpage_index GET    /loginpage/test2(.:format)                                 loginpage#test2
-                                loginpage_index GET    /loginpage(.:format)                                       loginpage#index
-                                                POST   /loginpage(.:format)                                       loginpage#create
-                                  new_loginpage GET    /loginpage/new(.:format)                                   loginpage#new
-                                 edit_loginpage GET    /loginpage/:id/edit(.:format)                              loginpage#edit
-                                      loginpage GET    /loginpage/:id(.:format)                                   loginpage#show
-                                                PATCH  /loginpage/:id(.:format)                                   loginpage#update
-                                                PUT    /loginpage/:id(.:format)                                   loginpage#update
-                                                DELETE /loginpage/:id(.:format)                                   loginpage#destroy
-                                       accounts GET    /accounts(.:format)                                        accounts#index
-                                                POST   /accounts(.:format)                                        accounts#create
-                                    new_account GET    /accounts/new(.:format)                                    accounts#new
-                                   edit_account GET    /accounts/:id/edit(.:format)                               accounts#edit
-                                        account GET    /accounts/:id(.:format)                                    accounts#show
-                                                PATCH  /accounts/:id(.:format)                                    accounts#update
-                                                PUT    /accounts/:id(.:format)                                    accounts#update
-                                                DELETE /accounts/:id(.:format)                                    accounts#destroy
-                                          users GET    /users(.:format)                                           users#index
-                                                POST   /users(.:format)                                           users#create
-                                       new_user GET    /users/new(.:format)                                       users#new
-                                      edit_user GET    /users/:id/edit(.:format)                                  users#edit
-                                           user GET    /users/:id(.:format)                                       users#show
-                                                PATCH  /users/:id(.:format)                                       users#update
-                                                PUT    /users/:id(.:format)                                       users#update
-                                                DELETE /users/:id(.:format)                                       users#destroy
-                                        reports GET    /reports(.:format)                                         reports#index
-                                                POST   /reports(.:format)                                         reports#create
-                                     new_report GET    /reports/new(.:format)                                     reports#new
-                                    edit_report GET    /reports/:id/edit(.:format)                                reports#edit
-                                         report GET    /reports/:id(.:format)                                     reports#show
-                                                PATCH  /reports/:id(.:format)                                     reports#update
-                                                PUT    /reports/:id(.:format)                                     reports#update
-                                                DELETE /reports/:id(.:format)                                     reports#destroy
-                                      platforms GET    /platforms(.:format)                                       platforms#index
-                                                POST   /platforms(.:format)                                       platforms#create
-                                   new_platform GET    /platforms/new(.:format)                                   platforms#new
-                                  edit_platform GET    /platforms/:id/edit(.:format)                              platforms#edit
-                                       platform GET    /platforms/:id(.:format)                                   platforms#show
-                                                PATCH  /platforms/:id(.:format)                                   platforms#update
-                                                PUT    /platforms/:id(.:format)                                   platforms#update
-                                                DELETE /platforms/:id(.:format)                                   platforms#destroy
-=======
                                       users_new GET    /users/new(.:format)                                       users#new
->>>>>>> d574297bb932c34d07003c52ac4fb590195a5eb2
                         contactus_support_index GET    /support/contactus(.:format)                               support#contactus
                               faq_support_index GET    /support/faq(.:format)                                     support#faq
                           aboutus_support_index GET    /support/aboutus(.:format)                                 support#aboutus
@@ -83,11 +26,6 @@
                                                 PATCH  /search_by_issn/:id(.:format)                              search_by_issn#update
                                                 PUT    /search_by_issn/:id(.:format)                              search_by_issn#update
                                                 DELETE /search_by_issn/:id(.:format)                              search_by_issn#destroy
-<<<<<<< HEAD
-                                                GET    /home/index(.:format)                                      home#index
-                               import_data_xlsx GET    /import_data/xlsx(.:format)                                import_data#xlsx
-=======
->>>>>>> d574297bb932c34d07003c52ac4fb590195a5eb2
       manage_sushi_account_integration_partners GET    /integration_partners/manage_sushi_account(.:format)       integration_partners#manage_sushi_account
          update_permission_integration_partners GET    /integration_partners/update_permission(.:format)          integration_partners#update_permission
                            integration_partners GET    /integration_partners(.:format)                            integration_partners#index
@@ -122,52 +60,47 @@ show_reports_by_year_counter_and_custom_reports GET    /counter_and_custom_repor
                                                 PATCH  /counter_and_custom_reports/:id(.:format)                  counter_and_custom_reports#update
                                                 PUT    /counter_and_custom_reports/:id(.:format)                  counter_and_custom_reports#update
                                                 DELETE /counter_and_custom_reports/:id(.:format)                  counter_and_custom_reports#destroy
-                                                GET    /loginpage/getyear(.:format)                               loginpage#getyear
-                                                GET    /loginpage/getreports(.:format)                            loginpage#getreports
-                                                GET    /loginpage/test2(.:format)                                 loginpage#test2
+                        getyear_loginpage_index GET    /loginpage/getyear(.:format)                               loginpage#getyear
+                     getreports_loginpage_index GET    /loginpage/getreports(.:format)                            loginpage#getreports
+                          test2_loginpage_index GET    /loginpage/test2(.:format)                                 loginpage#test2
                  dynamicreports_loginpage_index GET    /loginpage/dynamicreports(.:format)                        loginpage#dynamicreports
                   sourcereports_loginpage_index GET    /loginpage/sourcereports(.:format)                         loginpage#sourcereports
                   accessdetails_loginpage_index GET    /loginpage/accessdetails(.:format)                         loginpage#accessdetails
               selectedplatforms_loginpage_index GET    /loginpage/selectedplatforms(.:format)                     loginpage#selectedplatforms
-<<<<<<< HEAD
-                                                GET    /loginpage(.:format)                                       loginpage#index
-=======
                     getreports2_loginpage_index GET    /loginpage/getreports2(.:format)                           loginpage#getreports2
+                     sourcerepo_loginpage_index GET    /loginpage/sourcerepo(.:format)                            loginpage#sourcerepo
+                        testing_loginpage_index GET    /loginpage/testing(.:format)                               loginpage#testing
+                         result_loginpage_index GET    /loginpage/result(.:format)                                loginpage#result
                                 loginpage_index GET    /loginpage(.:format)                                       loginpage#index
->>>>>>> d574297bb932c34d07003c52ac4fb590195a5eb2
                                                 POST   /loginpage(.:format)                                       loginpage#create
-                                                GET    /loginpage/new(.:format)                                   loginpage#new
-                                                GET    /loginpage/:id/edit(.:format)                              loginpage#edit
-                                                GET    /loginpage/:id(.:format)                                   loginpage#show
+                                  new_loginpage GET    /loginpage/new(.:format)                                   loginpage#new
+                                 edit_loginpage GET    /loginpage/:id/edit(.:format)                              loginpage#edit
+                                      loginpage GET    /loginpage/:id(.:format)                                   loginpage#show
                                                 PATCH  /loginpage/:id(.:format)                                   loginpage#update
                                                 PUT    /loginpage/:id(.:format)                                   loginpage#update
                                                 DELETE /loginpage/:id(.:format)                                   loginpage#destroy
                       year_trends_highpiecharts GET    /year_trends/highpiecharts(.:format)                       year_trends#highpiecharts
-                                                GET    /accounts(.:format)                                        accounts#index
+                                       accounts GET    /accounts(.:format)                                        accounts#index
                                                 POST   /accounts(.:format)                                        accounts#create
-                                                GET    /accounts/new(.:format)                                    accounts#new
-                                                GET    /accounts/:id/edit(.:format)                               accounts#edit
-                                                GET    /accounts/:id(.:format)                                    accounts#show
+                                    new_account GET    /accounts/new(.:format)                                    accounts#new
+                                   edit_account GET    /accounts/:id/edit(.:format)                               accounts#edit
+                                        account GET    /accounts/:id(.:format)                                    accounts#show
                                                 PATCH  /accounts/:id(.:format)                                    accounts#update
                                                 PUT    /accounts/:id(.:format)                                    accounts#update
                                                 DELETE /accounts/:id(.:format)                                    accounts#destroy
-<<<<<<< HEAD
-                                                GET    /reports(.:format)                                         reports#index
-=======
                                         reports GET    /reports(.:format)                                         reports#index
->>>>>>> d574297bb932c34d07003c52ac4fb590195a5eb2
                                                 POST   /reports(.:format)                                         reports#create
-                                                GET    /reports/new(.:format)                                     reports#new
-                                                GET    /reports/:id/edit(.:format)                                reports#edit
-                                                GET    /reports/:id(.:format)                                     reports#show
+                                     new_report GET    /reports/new(.:format)                                     reports#new
+                                    edit_report GET    /reports/:id/edit(.:format)                                reports#edit
+                                         report GET    /reports/:id(.:format)                                     reports#show
                                                 PATCH  /reports/:id(.:format)                                     reports#update
                                                 PUT    /reports/:id(.:format)                                     reports#update
                                                 DELETE /reports/:id(.:format)                                     reports#destroy
-                                                GET    /platforms(.:format)                                       platforms#index
+                                      platforms GET    /platforms(.:format)                                       platforms#index
                                                 POST   /platforms(.:format)                                       platforms#create
-                                                GET    /platforms/new(.:format)                                   platforms#new
-                                                GET    /platforms/:id/edit(.:format)                              platforms#edit
-                                                GET    /platforms/:id(.:format)                                   platforms#show
+                                   new_platform GET    /platforms/new(.:format)                                   platforms#new
+                                  edit_platform GET    /platforms/:id/edit(.:format)                              platforms#edit
+                                       platform GET    /platforms/:id(.:format)                                   platforms#show
                                                 PATCH  /platforms/:id(.:format)                                   platforms#update
                                                 PUT    /platforms/:id(.:format)                                   platforms#update
                                                 DELETE /platforms/:id(.:format)                                   platforms#destroy
@@ -259,33 +192,6 @@ show_reports_by_year_counter_and_custom_reports GET    /counter_and_custom_repor
                                                 PATCH  /import_data/:id(.:format)                                 import_data#update
                                                 PUT    /import_data/:id(.:format)                                 import_data#update
                                                 DELETE /import_data/:id(.:format)                                 import_data#destroy
-<<<<<<< HEAD
-                                                GET    /search_by_issn(.:format)                                  search_by_issn#index
-                                                POST   /search_by_issn(.:format)                                  search_by_issn#create
-                                                GET    /search_by_issn/new(.:format)                              search_by_issn#new
-                                                GET    /search_by_issn/:id/edit(.:format)                         search_by_issn#edit
-                                                GET    /search_by_issn/:id(.:format)                              search_by_issn#show
-                                                PATCH  /search_by_issn/:id(.:format)                              search_by_issn#update
-                                                PUT    /search_by_issn/:id(.:format)                              search_by_issn#update
-                                                DELETE /search_by_issn/:id(.:format)                              search_by_issn#destroy
-                                                GET    /integration_partners(.:format)                            integration_partners#index
-                                                POST   /integration_partners(.:format)                            integration_partners#create
-                                                GET    /integration_partners/new(.:format)                        integration_partners#new
-                                                GET    /integration_partners/:id/edit(.:format)                   integration_partners#edit
-                                                GET    /integration_partners/:id(.:format)                        integration_partners#show
-                                                PATCH  /integration_partners/:id(.:format)                        integration_partners#update
-                                                PUT    /integration_partners/:id(.:format)                        integration_partners#update
-                                                DELETE /integration_partners/:id(.:format)                        integration_partners#destroy
-                                                GET    /counter_and_custom_reports(.:format)                      counter_and_custom_reports#index
-                                                POST   /counter_and_custom_reports(.:format)                      counter_and_custom_reports#create
-                                                GET    /counter_and_custom_reports/new(.:format)                  counter_and_custom_reports#new
-                                                GET    /counter_and_custom_reports/:id/edit(.:format)             counter_and_custom_reports#edit
-                                                GET    /counter_and_custom_reports/:id(.:format)                  counter_and_custom_reports#show
-                                                PATCH  /counter_and_custom_reports/:id(.:format)                  counter_and_custom_reports#update
-                                                PUT    /counter_and_custom_reports/:id(.:format)                  counter_and_custom_reports#update
-                                                DELETE /counter_and_custom_reports/:id(.:format)                  counter_and_custom_reports#destroy
-=======
->>>>>>> d574297bb932c34d07003c52ac4fb590195a5eb2
                                new_user_session GET    /users/sign_in(.:format)                                   devise/sessions#new
                                    user_session POST   /users/sign_in(.:format)                                   devise/sessions#create
                            destroy_user_session DELETE /users/sign_out(.:format)                                  devise/sessions#destroy

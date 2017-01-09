@@ -62,6 +62,9 @@ Rails.application.routes.draw do
       get 'accessdetails'
       get 'selectedplatforms'
       get 'getreports2'
+      get 'sourcerepo'
+      get 'testing'
+      get 'result'
      end
   end
  

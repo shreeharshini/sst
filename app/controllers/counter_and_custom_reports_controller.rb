@@ -8,7 +8,7 @@ class CounterAndCustomReportsController < ApplicationController
     @cost_reports = ReportSection.where(section: "cost")
     @custom_reports = ReportSection.where(section: "custom")
     @account_id = current_user.account_id
-    @grp_year = ReportInventory.distinct.where(account_id: 2).pluck(:year)
+    @grp_year = ReportInventory.distinct.where(account_id: @account_id).pluck(:year)
     @@year = 2016
 
 	end
