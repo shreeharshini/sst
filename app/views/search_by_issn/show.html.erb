@@ -1,7 +1,5 @@
 
-  <body  class="dashboard-page">
- 
- 
+ <body  class="dashboard-page">
  <section class="wrapper scrollable">
   <%= render :partial => '/layouts/header'%>
   <%= render :partial => '/layouts/side_bar_navigation'%>
@@ -20,7 +18,7 @@
 </p>
 <div class="agile-Updating-grids">  <div class="agile-grids pad-top10">
 <div id="messagearea" class="space"> </div>
-<%= form_for :data_library,:url => url_for(:controller => "search_by_issn", :action =>"search")   do |f| %>
+<%= form_for :data_library, :url=> url_for(:controller => "search_by_issn", :action =>"search")   do |f| %>
             <div class="col-md-5 mb10">
               <div>
               <select id="select_id">
@@ -35,57 +33,76 @@
             </div>
             <div class="col-md-3">
               <%= f.label :enter_issn %>
-              <%= f.text_field :Enter_issn, id: "auto_complete", :class => "tags" %>
+              <input class="typeahead" type="text" placeholder="Start typing name of your school....">
+         
 
               <!-- <div id="the-basics">
                 <input class="typeahead" type="text" placeholder="States of USA">
               </div> -->
             </div>
-            <%= button_to "search", :class => "button" %>
-<% end %>
 
-<script>
-  $("#select_id").change(function() {
-    var val = $(this).val();
+     <div class=" col-sm-2 mt-10">
+        <div class="button raised">
+          <a href="#" class="hoverable" id="button"> <div class="anim"></div><span>Search</span></a>
+        </div>
+      </div>
+
+<% end %>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="//netsh.pp.ua/upwork-demo/1/js/typeahead.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    var newData;
+    $("#select_id").change(function() {
+      var val = $(this).val();
+      alert(val);
+      $.ajax({
+        async: false,
+        type: 'GET',
+        url: '/search_by_issn/load_suggestions',
+        data: 'select_type='+val,
+        success: function(suggestion){
+          suggestion = suggestion;
+          console.log(suggestion);
+          //alert(xml); // WORKS
+        }
+      });
+    });
+
+    $('input.typeahead').typeahead({
+      name: 'accounts',
+      local: ['Audi', 'BMW', 'Bugatti', 'Ferrari', 'Ford', 'Lamborghini', 'Mercedes Benz', 'Porsche', 'Rolls-Royce', 'Volkswagen']
+
+    });
+  })
+  $("#button").click(function(){
+    var type = $('select#select_id option:selected').val();
+    //var issn = $('')
+    //console.log(suggestion)
+    alert(type);
     $.ajax({
       type: 'GET',
-      url: '/search_by_issn/load_suggestions',
-      data: 'select_type='+val,
-      success: function(data){
-      }
+      url: '/search_by_issn/search',
+      data: 'select_type='+type
     });
   });
+
 </script>
 
-<script>
-  $( ".tags" ).autocomplete({
-    type: "GET",
-    dataType: "json",
-    source: "/search_by_issn/load_suggestions"
-  });
-</script>
+
 
 
   </div>
-      <div class="clearfix"></div>
+    <div class="clearfix"></div>
   </div>
   <br>
    <!--  <div class="alert alert-info" id="noDataFoundId"> No Data Found. Please enter accurate ISSN/ISBN.</div> -->
 
 
-<div class="clearfix"></div>
-  <br><br>
 
-  
-    <div id="data"></div>
-  
-      </div>
-      </div>
-          
+  <%= render :partial => '/layouts/footer'%>
 
-    <%= render :partial => '/layouts/footer'%>
-
-    </section>
+  </section>
           </body>     
 </html>
  
