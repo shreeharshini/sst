@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
 	get "home/index"
   get "users/index"
   get "users/sign_out"
@@ -73,7 +74,7 @@ Rails.application.routes.draw do
 
   resources :accounts, :reports, :platforms,
             :source_reports_mappings, :year_trends, :year_usages,
-            :year_top_journals, :account_infos, :export_files, 
+            :year_top_journals, :account_infos,  
             :platform_reports, :requestfordemos, :contact_us, 
             :library_account_details, :import_data 
 

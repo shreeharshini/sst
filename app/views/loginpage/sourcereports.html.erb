@@ -136,15 +136,59 @@
                       $secondChoice.append("<option>" + value + "</option>");
                     // alert(value);
                 });
-                        var value2 = $('select#dropdown2 option:selected').val();
 
+                      
+            }
+        })
+    });
+  </script>
+
+
+<!-- 
+ <script>
+  $("button").click(function(){
+           var value2 = $('select#dropdown2 option:selected').val();
+                alert("xdfdf");
            $.ajax({
                type: "GET", 
-               dataType: "json",
+               // dataType: "json",
                url:"/loginpage/getreports",
-               data: {sourcereports: value2 }, 
+               data: {sourcereports1: value2 }, 
+
                success:function(result1){
                      console.log(result1);
+
+
+                     result1.forEach(function(){
+                     $sourcerepo_html = $("<div class= 'result1'>" + result1 + "</div>");
+                     $('#test1').append($sourcerepo_html);
+                       // alert(result1);
+                       // document.getElementById('test1').innerHTML = result1;
+                       // $("#test1").html(result1);
+                    $("#test1").html(result1);
+                    // $("#test1").load("/loginpage/getreports");
+                      })
+                }
+          })
+  });
+  // $('button').click(function(){
+  //   var value2 = $('select#dropdown2 option:selected').val();
+  //   $.ajax({
+  //   type: "GET",
+  //   url: "/loginpage/getreports",
+  //   data:'sourcereports='+value2,
+  //   success: function(data){
+  //     alert(data);
+  //   }
+  //   });
+  // });
+                     $("#test1").html(result1);
+
+                     $("#test2").append($sourcerepo_html);
+                    $("#test2").load("/loginpage/getreports");
+                    alert("loading page");
+                      })
+           alert(result1);
                     $.ajax({
                        type: "GET", 
                        dataType: "json",
@@ -205,7 +249,7 @@
  
 
 </script>
-
+ -->
 
 
 </body>

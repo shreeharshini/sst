@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
                                          Prefix Verb   URI Pattern                                                Controller#Action
                                      home_index GET    /home/index(.:format)                                      home#index
                                     users_index GET    /users/index(.:format)                                     users#index
@@ -208,3 +210,4 @@ show_reports_by_year_counter_and_custom_reports GET    /counter_and_custom_repor
                                                 PUT    /users(.:format)                                           devise/registrations#update
                                                 DELETE /users(.:format)                                           devise/registrations#destroy
                                            root GET    /                                                          home#index
+>>>>>>> 4c7b041c037f347dc03dcb33e0731b6d20d93793
