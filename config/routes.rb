@@ -18,7 +18,7 @@ Rails.application.routes.draw do
       get 'aboutus'
     end
   end
-
+  
   resources :search_by_issn do 
     collection do 
       get 'search'
