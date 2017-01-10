@@ -18,7 +18,7 @@ class LoginpageController < ApplicationController
 
   def sourcereports   
     @source_reports = SourceReportsMapping.find_by_sql("SELECT platform_id,GROUP_CONCAT(year) AS years FROM source_reports_mappings GROUP BY platform_id")
- @reports = Report.all
+    @reports = Report.all
           @platforms = Platform.all
      respond_to do |format|
           format.html
@@ -32,8 +32,12 @@ class LoginpageController < ApplicationController
   def getreports
 
     byebug
-    # sourcereports1 = SourceReportsMapping.where(:year => params[:sourcereports1]).pluck(:report_id)
-      @sourcereports = SourceReportsMapping.where(:year => params[:sourcereports])
+      sourcereportsres = SourceReportsMapping.where(:year => params[:sourcereports]).pluck(:report_id)
+     res = Report.where(:id => sourcereportsres).pluck(:name)
+      respond_to do |format|
+          format.html
+          format.json {render json: res.to_json}
+        end
      
   end
 
@@ -54,15 +58,7 @@ class LoginpageController < ApplicationController
         end
     end
     
-  def getreports2
-   
-    sourcereports2 = Report.where(:id => params[:sourcereports2]).pluck(:name)
-      respond_to do |format|
-        format.html
-        format.json { render json: sourcereports2.to_json }
-      end
-
-  end
+ 
 
   def test2
     @dynamic_reports = params[:dynamic_drop].constantize
@@ -72,23 +68,14 @@ class LoginpageController < ApplicationController
     end
   end
 
-  # def test2
-  #   byebug
-  #   @dynamic_reports = params[:some_parameter].constantize
-  #   byebug
-  #   respond_to do |format|
-  #   format.js {}
-  #   end
-  # end
   
   def sourcerepo
-    binding.pry
+
   end
 
   def testing
     binding.pry
            @sourcereportsyear = SourceReportsMapping.where(:platform_id => params[:get][:plat])
-
   end
 
 

@@ -112,31 +112,30 @@
 
 
 
+<div id="test1"></div>
 
     <!-- footer -->
 
     <!-- //footer -->
   </section>
-<div id="test3"></div>
   <%= javascript_include_tag "bootstrap.js" %>
 
     
-  <script>
-    $("#dropdown1").change(function(){
-       var value1 = $('select#dropdown1 option:selected').val();
+ <script>
+    $("#platforms").change(function(){
+       var value1 = $('select#platforms option:selected').val();
         $.ajax({
             type:"GET",
             url:"/loginpage/getyear",
             dataType:"json",
             data: {sourcereportsyear: value1 },
             success:function(result){
-               $secondChoice = $("#dropdown2");
+               $secondChoice = $("#reports");
                 $secondChoice.empty();
                 $.each(result, function(index, value) {
                       $secondChoice.append("<option>" + value + "</option>");
                     // alert(value);
                 });
-
                       
             }
         })
@@ -144,112 +143,35 @@
   </script>
 
 
-<!-- 
+
  <script>
   $("button").click(function(){
-           var value2 = $('select#dropdown2 option:selected').val();
+           var value2 = $('select#years option:selected').val();
                 alert("xdfdf");
-           $.ajax({
-               type: "GET", 
-               // dataType: "json",
-               url:"/loginpage/getreports",
-               data: {sourcereports1: value2 }, 
-
-               success:function(result1){
-                     console.log(result1);
-
-
-                     result1.forEach(function(){
-                     $sourcerepo_html = $("<div class= 'result1'>" + result1 + "</div>");
-                     $('#test1').append($sourcerepo_html);
-                       // alert(result1);
-                       // document.getElementById('test1').innerHTML = result1;
-                       // $("#test1").html(result1);
-                    $("#test1").html(result1);
-                    // $("#test1").load("/loginpage/getreports");
-                      })
-                }
-          })
-  });
-  // $('button').click(function(){
-  //   var value2 = $('select#dropdown2 option:selected').val();
-  //   $.ajax({
-  //   type: "GET",
-  //   url: "/loginpage/getreports",
-  //   data:'sourcereports='+value2,
-  //   success: function(data){
-  //     alert(data);
-  //   }
-  //   });
-  // });
-                     $("#test1").html(result1);
-
-                     $("#test2").append($sourcerepo_html);
-                    $("#test2").load("/loginpage/getreports");
-                    alert("loading page");
-                      })
-           alert(result1);
-                    $.ajax({
-                       type: "GET", 
-                       dataType: "json",
-                       url:"/loginpage/getreports2",
-                       data: {sourcereports2: result1 },
-                       success:function(abc){
-                        console.log(abc);
-                         abc.forEach(function(){
-                           $sourcerepo1_html = $("<div class= 'abc'>" + abc + "</div>");
-                           $('#test3').append($sourcerepo1_html);
-                           $("#test3").html(abc);
-
-                           $("#test").load()
-                          })
-                       }
-                    })
-                }
-          })
-            }
-        })
-    });
-  </script>
-
-
-
- <script>
-  $("button").click(function(){
-           var value2 = $('select#dropdown2 option:selected').val();
-
            $.ajax({
                type: "GET", 
                dataType: "json",
                url:"/loginpage/getreports",
                data: {sourcereports: value2 }, 
-               success:function(result1){
-                     console.log(result1);
-                    // $.ajax({
-                    //    type: "GET", 
-                    //    dataType: "json",
-                    //    url:"/loginpage/getreports2",
-                    //    data: {sourcereports2: result1 },
-                    //    success:function(abc){
-                    //     console.log(abc);
-                    //      abc.forEach(function(){
-                    //        $sourcerepo1_html = $("<div class= 'abc'>" + abc + "</div>");
-                    //        $('#test3').append($sourcerepo1_html);
-                    //        $("#test3").html(abc);
+               success:function(reports){
+                alert(reports);
+                     console.log(reports);
 
-                    //        $("#test").load()
-                    //       })
-                    //    }
-                    // })
+                     reports.forEach(function(){
+                     $sourcerepo_html = $("<div class= 'reports'>" + reports + "</div>");
+                     $('#test').append($sourcerepo_html);
+                     $("#test").html(reports);
+
+                    
+                      })
+         
+
                 }
           })
-
-             window.location.href='/loginpage/testing';
   });
  
 
 </script>
- -->
 
 
 </body>

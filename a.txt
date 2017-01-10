@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-=======
                                          Prefix Verb   URI Pattern                                                Controller#Action
                                      home_index GET    /home/index(.:format)                                      home#index
                                     users_index GET    /users/index(.:format)                                     users#index
-                                 users_sign_out GET    /users/sign_out(.:format)                                  users#sign_out
                                    users_create POST   /users/create(.:format)                                    users#create
                                       users_new GET    /users/new(.:format)                                       users#new
                         contactus_support_index GET    /support/contactus(.:format)                               support#contactus
@@ -146,14 +143,6 @@ show_reports_by_year_counter_and_custom_reports GET    /counter_and_custom_repor
                                                 PATCH  /account_infos/:id(.:format)                               account_infos#update
                                                 PUT    /account_infos/:id(.:format)                               account_infos#update
                                                 DELETE /account_infos/:id(.:format)                               account_infos#destroy
-                                                GET    /export_files(.:format)                                    export_files#index
-                                                POST   /export_files(.:format)                                    export_files#create
-                                                GET    /export_files/new(.:format)                                export_files#new
-                                                GET    /export_files/:id/edit(.:format)                           export_files#edit
-                                                GET    /export_files/:id(.:format)                                export_files#show
-                                                PATCH  /export_files/:id(.:format)                                export_files#update
-                                                PUT    /export_files/:id(.:format)                                export_files#update
-                                                DELETE /export_files/:id(.:format)                                export_files#destroy
                                platform_reports GET    /platform_reports(.:format)                                platform_reports#index
                                                 POST   /platform_reports(.:format)                                platform_reports#create
                             new_platform_report GET    /platform_reports/new(.:format)                            platform_reports#new
@@ -194,6 +183,14 @@ show_reports_by_year_counter_and_custom_reports GET    /counter_and_custom_repor
                                                 PATCH  /import_data/:id(.:format)                                 import_data#update
                                                 PUT    /import_data/:id(.:format)                                 import_data#update
                                                 DELETE /import_data/:id(.:format)                                 import_data#destroy
+                                          users GET    /users(.:format)                                           users#index
+                                                POST   /users(.:format)                                           users#create
+                                       new_user GET    /users/new(.:format)                                       users#new
+                                      edit_user GET    /users/:id/edit(.:format)                                  users#edit
+                                           user GET    /users/:id(.:format)                                       users#show
+                                                PATCH  /users/:id(.:format)                                       users#update
+                                                PUT    /users/:id(.:format)                                       users#update
+                                                DELETE /users/:id(.:format)                                       users#destroy
                                new_user_session GET    /users/sign_in(.:format)                                   devise/sessions#new
                                    user_session POST   /users/sign_in(.:format)                                   devise/sessions#create
                            destroy_user_session DELETE /users/sign_out(.:format)                                  devise/sessions#destroy
@@ -210,4 +207,3 @@ show_reports_by_year_counter_and_custom_reports GET    /counter_and_custom_repor
                                                 PUT    /users(.:format)                                           devise/registrations#update
                                                 DELETE /users(.:format)                                           devise/registrations#destroy
                                            root GET    /                                                          home#index
->>>>>>> 4c7b041c037f347dc03dcb33e0731b6d20d93793

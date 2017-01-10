@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 
 	get "home/index"
   get "users/index"
-  get "users/sign_out"
 
 
   post "users/create"
@@ -76,7 +75,7 @@ Rails.application.routes.draw do
             :source_reports_mappings, :year_trends, :year_usages,
             :year_top_journals, :account_infos,  
             :platform_reports, :requestfordemos, :contact_us, 
-            :library_account_details, :import_data 
+            :library_account_details, :import_data, :users
 
   
   devise_for :users

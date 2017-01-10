@@ -7,22 +7,27 @@
 
 
  <p>
-   <%= submit_tag 'Submit' %>
+   <%= submit_tag 'Submit' , :id => "submit" %>
  </p>
 
 
 <% end %>
 
-<!-- <script>
- $('#mySubmitButton').click(function(e) {
-    e.preventDefault();
-    e.stopPropagation();
-    $(this).attr('disabled','disabled');
-    $('#loadingImage').show(function() {
-	$('#myForm').submit();
-    });
+<div id="test"></div>
 
-});
+ <script>
+  $("submit").click(function(){
+           var value2 = $('select#plat option:selected').val();
+                alert("xdfdf");
+                        $("#test").load("/loginpage/testing");
+   
+  });
+ 
 
 </script>
- -->
+
+$("#submit").click(function(){
+    $.get('/loginpage/testing', function(data){
+      $("tes").append(data);
+    }, 'html');
+  });
