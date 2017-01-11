@@ -30,7 +30,7 @@ class User < ApplicationRecord
 	# You can access the session for this scope:
 	# user_session
 
-	has_one :account
+	
 
 	belongs_to :account
 	has_one :account_info ,:through =>:account

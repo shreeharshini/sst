@@ -26,6 +26,7 @@ get 'loginpage/show'
       get 'load_suggestions'
       get 'show_report'
       get 'csv'
+      get 'get_cost_per_usage'
     end
   end 
 

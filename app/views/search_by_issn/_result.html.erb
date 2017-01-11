@@ -1,6 +1,4 @@
 
-<%= render :partial => 'search_form'%>
-
 <div class="agile-Updating-grids">  <div class="agile-grids">
 				
 				<div class="col-md-12" style="padding:0px;">
@@ -24,6 +22,7 @@
 							<th align="left">Collection Platform</th>
 							<th align="left">Usage</th>
 							<th align="left">Cost</th>
+							<th align="left"></th>
 							<th align="left">Cost per Usage</th>
 						  </tr>
 						</thead>
@@ -41,7 +40,7 @@
 							
 				<input class="span7 margin_right4px" onkeyup="removeStyle(this.id)" onchange="removeStyle(this.id)" onkeypress="return isNumberKey(event)" name="costId_1" id="costId_1" type="text" value=""> </td>
 				
-				<td data-th="Height"><a href="javascript:;"   onClick="calculateCPU(1);" data-toggle="tooltip" title="Calculate CPU" > <%= image_tag("calculater.png")%></a></td>
+				<td data-th="Height"><a href="javascript:;"  class="calculator"  data-toggle="tooltip" title="Calculate CPU" > <%= image_tag("calculater.png")%></a></td>
 
     		<td data-th="Height"><input type="hidden" id="ytdId_1" value="0"></td>
 			
@@ -69,31 +68,28 @@
 <script type="text/javascript">
   jQuery(document).ready(function() {
     jQuery('#addAction').click( function () {
-  
-               // Get current count of imageTables and use that value for IDs
-      var quantity = $('.table > tbody tr').length;
-               // Clone the main table
-      $(".table > tbody > tr").clone(true)
-               // Change its ID to the current ID plus the quantity variable
-      .attr( 'id', function() { return this.id + quantity; })
-               // find any text or file inputs
-      .find( ':text,:file' )
-               // change their IDs
-      .attr( 'id', function() { return this.id + quantity; })
-               // set the input values to ""
-      .val( "" )
-               // return to the cloned table
-      .end()
-               // append wherever you want it.
-               // As the comment below your question states,
-               //   this is not a valid placement
-
-      .appendTo('.table > tbody:last');
-    })
+      var $quantity = $('.table-responsive table').length;
+      var $tr = $(".table").clone().addClass('table'+$quantity);
+      $tr.appendTo('.table-responsive');    
+      $('.table'+ $quantity + '> thead > tr:last').append("<th>Remove</th>");
+      $('.table'+ $quantity + '> tbody > tr:last').append('<td data-th="remove"><a href="javascript:;" onclick="remove(' + $quantity + ');" id="remove"><img alt="Icon" src="/assets/icon.png"/></a></td>');
+      $('.table'+$quantity ).removeClass('table');
+    });
+    $(".calculator").click(function(){
+     var type = $('#costId_1').val();
+     //console.log(suggestion)
+     alert(type);
+     $.ajax({
+       type: 'GET',
+       url: '/search_by_issn/get_cost_per_usage',
+       data: 'usage='+type
+       });
+ 		});
   });
+  function remove(elem) {
+    $('.table' +elem).hide();
+  }
 </script>
 
 
-
-
-
+ 
