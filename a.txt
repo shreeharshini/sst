@@ -3,6 +3,8 @@
                                     users_index GET    /users/index(.:format)                                     users#index
                                    users_create POST   /users/create(.:format)                                    users#create
                                       users_new GET    /users/new(.:format)                                       users#new
+                                     getreports GET    /loginpage/getreports(.:format)                            loginpage#getreports
+                                 loginpage_show GET    /loginpage/show(.:format)                                  loginpage#show
                         contactus_support_index GET    /support/contactus(.:format)                               support#contactus
                               faq_support_index GET    /support/faq(.:format)                                     support#faq
                           aboutus_support_index GET    /support/aboutus(.:format)                                 support#aboutus
@@ -70,7 +72,8 @@ show_reports_by_year_counter_and_custom_reports GET    /counter_and_custom_repor
                      sourcerepo_loginpage_index GET    /loginpage/sourcerepo(.:format)                            loginpage#sourcerepo
                         testing_loginpage_index GET    /loginpage/testing(.:format)                               loginpage#testing
                          result_loginpage_index GET    /loginpage/result(.:format)                                loginpage#result
-                                loginpage_index GET    /loginpage(.:format)                                       loginpage#index
+                                loginpage_index GET    /loginpage/show(.:format)                                  loginpage#show
+                                                GET    /loginpage(.:format)                                       loginpage#index
                                                 POST   /loginpage(.:format)                                       loginpage#create
                                   new_loginpage GET    /loginpage/new(.:format)                                   loginpage#new
                                  edit_loginpage GET    /loginpage/:id/edit(.:format)                              loginpage#edit
@@ -183,14 +186,6 @@ show_reports_by_year_counter_and_custom_reports GET    /counter_and_custom_repor
                                                 PATCH  /import_data/:id(.:format)                                 import_data#update
                                                 PUT    /import_data/:id(.:format)                                 import_data#update
                                                 DELETE /import_data/:id(.:format)                                 import_data#destroy
-                                          users GET    /users(.:format)                                           users#index
-                                                POST   /users(.:format)                                           users#create
-                                       new_user GET    /users/new(.:format)                                       users#new
-                                      edit_user GET    /users/:id/edit(.:format)                                  users#edit
-                                           user GET    /users/:id(.:format)                                       users#show
-                                                PATCH  /users/:id(.:format)                                       users#update
-                                                PUT    /users/:id(.:format)                                       users#update
-                                                DELETE /users/:id(.:format)                                       users#destroy
                                new_user_session GET    /users/sign_in(.:format)                                   devise/sessions#new
                                    user_session POST   /users/sign_in(.:format)                                   devise/sessions#create
                            destroy_user_session DELETE /users/sign_out(.:format)                                  devise/sessions#destroy

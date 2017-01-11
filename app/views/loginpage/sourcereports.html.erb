@@ -61,46 +61,38 @@
 
 
 <div class="agile-Updating-grids"> 
-  <div class="agile-grids pad-top10">
-      <div class="col-md-3 mb10">
-        <div class="form-group">
-          <label>Platform</label>  
-
-              <select class="form-control" id="dropdown1" >
-
-                            <option>--Select Platform--</option>
-                         <%= @source_reports.each do |f|%>
-                    
-                              <option><%= f.platform_id %></option>
-                        <% end %>  
-              </select>
-        </div>
+  <div class="agile-grids pad-top20">
+    
+    <div class="col-md-5 mb10">   
+      <div class="form-group"> 
+        <label>Platform</label>  
+        <%= form_for(:trip, url: {action: "show"}, html: {method: "get"}) do |f| %>
+          
+          <%= f.select :platform_id, options_for_select(@plats.collect { |platform|
+            [platform.name.titleize, platform.id] }, 1),{}, { :class => 'platforms_select  form-control' } %>         
       </div>
-      <div class="col-md-3">
-          <div class="form-group">
-            <label >Reporting period:</label>
-                <select class="form-control" id="dropdown2">
-                              <option>--Select Year--</option>
-                </select>
-          </div>
+    </div>
+
+    <div class="col-md-5 mb10">   
+      <div class="form-group"> 
+        <label>Reporting Period</label>  
+          <%= f.select :year, options_for_select(@years.collect { |reports|
+            [reports.year, reports.year] }, 0), {}, { :class => 'reports_select  form-control' } %>
       </div>
-     
+    </div>
 
                    
       <div class="col-sm-12 pad-top20">
                 
-                   Please click on Get Reports to find the desired platform reports.
+        Please click on Get Reports to find the desired platform reports.
       </div>
-      <div class=" col-sm-2 mt-10">
-          <div class="button raised">
-               <a href="#" class="hoverable"> 
+      <div class=" col-sm-10 mt-10">
+        <a  class="hoverable"> 
                  <div class="anim">
-                  
                  </div>
-                 <span>Get Reports</span>
-                 <button data-remote="true" >ikojm</button>
-             </a>
-          </div>
+                 <%= f.submit "Get Reports" , class: "button raised"%>
+                  <% end %>    
+        </a>
       </div>  
           
     <br>
@@ -112,66 +104,16 @@
 
 
 
-<div id="test1"></div>
 
     <!-- footer -->
 
     <!-- //footer -->
   </section>
+<%= render :partial => '/layouts/footer'%>
   <%= javascript_include_tag "bootstrap.js" %>
 
     
- <script>
-    $("#platforms").change(function(){
-       var value1 = $('select#platforms option:selected').val();
-        $.ajax({
-            type:"GET",
-            url:"/loginpage/getyear",
-            dataType:"json",
-            data: {sourcereportsyear: value1 },
-            success:function(result){
-               $secondChoice = $("#reports");
-                $secondChoice.empty();
-                $.each(result, function(index, value) {
-                      $secondChoice.append("<option>" + value + "</option>");
-                    // alert(value);
-                });
-                      
-            }
-        })
-    });
-  </script>
-
-
-
- <script>
-  $("button").click(function(){
-           var value2 = $('select#years option:selected').val();
-                alert("xdfdf");
-           $.ajax({
-               type: "GET", 
-               dataType: "json",
-               url:"/loginpage/getreports",
-               data: {sourcereports: value2 }, 
-               success:function(reports){
-                alert(reports);
-                     console.log(reports);
-
-                     reports.forEach(function(){
-                     $sourcerepo_html = $("<div class= 'reports'>" + reports + "</div>");
-                     $('#test').append($sourcerepo_html);
-                     $("#test").html(reports);
-
-                    
-                      })
-         
-
-                }
-          })
-  });
  
-
-</script>
 
 
 </body>
