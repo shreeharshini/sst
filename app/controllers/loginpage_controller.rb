@@ -25,7 +25,8 @@ class LoginpageController < ApplicationController
 
   def show
      binding.pry
-        @repos = Report.where(:year => params[:trip][:year], :platform_id => params[:trip][:platform_id])
+        @repos = Report.where(:year => params[:sourcerepo][:year], :platform_id => params[:sourcerepo][:platform_id])
+      
       @repos.each do |f|
       @plts = Platform.where(:id => f.platform_id)
       @user_id = current_user.id
@@ -36,9 +37,12 @@ class LoginpageController < ApplicationController
   def getreports
 binding.pry
     @years = Report.where("platform_id = ?", params[:platform_id])
-    flash[:notice] = "Post successfully created"
+    if @years.blank?
+        flash[:notice] = "sdfdf"
+    else
     respond_to do |format|
       format.js
+    end
     end
      
   end
