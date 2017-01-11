@@ -33,7 +33,28 @@
             <br>
 
             <%= f.label :role %>
+<<<<<<< HEAD
             <%= f.collection_select :role, User::ROLES, :to_s, :humanize %>
+=======
+            <%= radio_button_tag(:role, "User") %>
+            <%= label_tag("User") %>
+
+            <%= radio_button_tag(:role, "Admin") %>
+            <%= label_tag("Admin") %>
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.label :role %>
+      <%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]}) %>
+      <br>
+      <br>      
+
+
+      <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>
+>>>>>>> 35fcfc73d526c616931f96f71d95a8d299d21646
 
             <br>   
             <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>

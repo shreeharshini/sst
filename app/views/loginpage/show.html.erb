@@ -1,2 +1,48 @@
-<h1>Loginpage#show</h1>
-<p>Find me in app/views/loginpage/show.html.erb</p>
+<body  class="dashboard-page">
+ 
+ 
+ <section class="wrapper scrollable">
+  
+  <%= render :partial => '/layouts/side_bar_navigation'%>
+
+        <%= render :partial => '/layouts/header'%>
+  
+    <div class="main-grid">
+        
+        
+        <ol class="breadcrumb"> <li><a href="" onclick="window.location = '/loginpage'">Home</a></li>
+         <li><a href="/loginpage/sourcereports">Source Reports</a></li> 
+        <li><a href="">Platform Source Reports</a></li>
+        </ol>
+
+
+
+<%@acc.each do |f|%>
+Account name:
+<%= f.name%><br>
+<%end%>
+
+<% @plts.each do |f| %>
+Platform name:
+<%= f.name%>
+<%end%>
+
+<div class="agile-Updating-grids"> 
+<p><% @repos.each do |f| %>
+	<%= f.name%>
+	<%= link_to 'download as xlsx', reports_path(format: :xlsx)%><br>
+	<%end%>
+</p>
+
+</div>
+
+
+<p><%= link_to 'Go Back', sourcereports_loginpage_index_path %></p>
+
+</div>
+
+<!-- footer -->
+<%= render :partial => '/layouts/footer'%>
+
+</section>
+</body>

@@ -3,10 +3,10 @@ class ReportsController < ApplicationController
     @reports = Report.all
      respond_to do |format|
           format.html
-          #used to enable download in  excel
-          format.xlsx
-
-        end
+          format.xlsx {
+        response.headers['Content-Disposition'] = 'attachment; filename="reports.xlsx"'
+      }
+      end
   end
 
   def show

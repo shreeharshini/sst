@@ -1,0 +1,39 @@
+<!-- tables -->
+      <ol class="breadcrumb"> <li><a href="/librarian/dashboard">Home</a></li>
+        <li><a href="/libraries/searchByISSN/LcollapseSix-03">Search By ISSN & ISBN</a></li> 
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      </ol>
+
+<br>
+
+  <h4 > Search By ISSN/ISBN </h4>
+  <p class="pad-top10 mar-btm20">Please choose Search Type and then enter ISSN/ISBN to view Cost per Usage details. You can calculate Cost per Usage dynamically.
+</p>
+<div class="agile-Updating-grids">  <div class="agile-grids pad-top10">
+<div id="messagearea" class="space"> </div>
+<form id="selectForm" onsubmit="return validate('libraries');; return true;">
+            <div class="col-md-5 mb10">
+              <div>
+              <select id="select_id">
+              <option>Select Search Type</option>
+              <option value = "JournalPrintISSN">Journal Print ISSN</option>
+              <option value = "journalOnlineISSN">journalOnlineISSN</option>
+              <option value = "bookISBN">bookISBN</option>
+              <option value = "bookISSN">bookISSN</option>
+              </select>
+
+              </div>
+            </div>
+            <div class="col-md-3">
+             <label >Enter ISSN/ISBN : </label> 
+              <input class="typeahead" type="text" placeholder="Start typing name of your Car....">
+            </div>
+
+     <div class=" col-sm-2 mt-10">
+        <div class="button raised">
+          <a href="#" class="hoverable" id="button"> <div class="anim"></div><span>Search</span></a>
+        </div>
+      </div>
+
+</form >

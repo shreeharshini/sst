@@ -54,10 +54,12 @@
 
 
 <div class="agile-Updating-grids"> 
-  <div class="agile-grids pad-top10">
-      <div class="col-md-3 mb10">
-        <div class="form-group">
+  <div class="agile-grids pad-top20">
+    
+    <div class="col-md-5 mb10">   
+      <div class="form-group"> 
         <label>Platform</label>  
+<<<<<<< HEAD
 
 <br>
             <select class="form-control" id="dropdown1" >
@@ -70,52 +72,56 @@
             </select>
 
         </div>
+=======
+        <%= form_for(:trip, url: {action: "show"}, html: {method: "get"}) do |f| %>
+          
+          <%= f.select :platform_id, options_for_select(@plats.collect { |platform|
+            [platform.name.titleize, platform.id] }, 1),{}, { :class => 'platforms_select  form-control' } %>         
+>>>>>>> 35fcfc73d526c616931f96f71d95a8d299d21646
       </div>
-      <div class="col-md-3">
-          <div class="form-group">
-            <label >Reporting period:</label>
-                <select class="form-control" id="dropdown2">
-                              <option>--Select Year--</option>
-                </select>
+    </div>
 
-
-          </div>
+    <div class="col-md-5 mb10">   
+      <div class="form-group"> 
+        <label>Reporting Period</label>  
+          <%= f.select :year, options_for_select(@years.collect { |reports|
+            [reports.year, reports.year] }, 0), {}, { :class => 'reports_select  form-control' } %>
       </div>
-     
+    </div>
 
                    
       <div class="col-sm-12 pad-top20">
                 
-                   Please click on Get Reports to find the desired platform reports.
+        Please click on Get Reports to find the desired platform reports.
       </div>
-      <div class=" col-sm-2 mt-10">
-          <div class="button raised">
-               <a href="#" class="hoverable"> 
+      <div class=" col-sm-10 mt-10">
+        <a  class="hoverable"> 
                  <div class="anim">
-                  
                  </div>
-                 <span>Get Reports</span>
-                 <button data-remote="true" >ikojm</button>
-             </a>
-          </div>
+                 <%= f.submit "Get Reports" , class: "button raised"%>
+                  <% end %>    
+        </a>
       </div>  
           
     <br>
+
+
   </div>    
 </div>
 <br>
 
 
 
-<div id="test3"></div>
 
     <!-- footer -->
 
     <!-- //footer -->
   </section>
+<%= render :partial => '/layouts/footer'%>
   <%= javascript_include_tag "bootstrap.js" %>
 
     
+<<<<<<< HEAD
   <script>
     $("#dropdown1").change(function(){
        var value1 = $('select#dropdown1 option:selected').val();
@@ -209,11 +215,9 @@
                 }
           })
   });
+=======
+>>>>>>> 35fcfc73d526c616931f96f71d95a8d299d21646
  
->>>>>>> 4c7b041c037f347dc03dcb33e0731b6d20d93793
-
-</script>
- -->
 
 
 </body>

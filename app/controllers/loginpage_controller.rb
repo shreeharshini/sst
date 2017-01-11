@@ -4,9 +4,14 @@ class LoginpageController < ApplicationController
 
   def index
     @acc = Account.where(:library_code => 16).first
+<<<<<<< HEAD
     @libcode = @acc.library_code
     @libres = LibraryCodeMapping.where(:New_Code => @libcode).first
     @libcode = @acc.library_code
+=======
+
+    @libcode = @acc.library_code
+>>>>>>> 35fcfc73d526c616931f96f71d95a8d299d21646
     @libres = LibraryCodeMapping.where(:New_Code => @libcode).first
     @code =  @libres.Old_Code
 #for graphs
@@ -16,16 +21,36 @@ class LoginpageController < ApplicationController
     @pieres = YearUsage.where(:institution_code => @code)
   end
 
-  def sourcereports   
-    @source_reports = SourceReportsMapping.find_by_sql("SELECT platform_id,GROUP_CONCAT(year) AS years FROM source_reports_mappings GROUP BY platform_id")
-    @reports = Report.all
-    @platforms = Platform.all
+  def sourcereports 
+  binding.pry  
+    @plats = Platform.all
+    @years = SourceReportsMapping.where("platform_id = ?", Platform.first.id)
+     
+  end
+
+  def show
+     binding.pry
+        @repos = Report.where(:year => params[:trip][:year], :platform_id => params[:trip][:platform_id])
+      @repos.each do |f|
+      @plts = Platform.where(:id => f.platform_id)
+      @user_id = current_user.id
+      @acc = Account.where(:id => @user_id)
+    end
   end
 
   def getreports
+<<<<<<< HEAD
     byebug
     # sourcereports1 = SourceReportsMapping.where(:year => params[:sourcereports1]).pluck(:report_id)
       @sourcereports = SourceReportsMapping.where(:year => params[:sourcereports])
+=======
+binding.pry
+    @years = Report.where("platform_id = ?", params[:platform_id])
+    flash[:notice] = "Post successfully created"
+    respond_to do |format|
+      format.js
+    end
+>>>>>>> 35fcfc73d526c616931f96f71d95a8d299d21646
      
   end
 
@@ -33,6 +58,7 @@ class LoginpageController < ApplicationController
     acc_id = current_user.account_id
     @lib_code = Libcodewithlibreporttype.where(:libcode => acc_id).pluck(:Report_Type)
     byebug
+<<<<<<< HEAD
   end
 
   def getyear
@@ -50,6 +76,17 @@ class LoginpageController < ApplicationController
         format.json { render json: sourcereports2.to_json}
   end
 end
+=======
+        @sourcereports = SourceReportsMapping.where(:year => params[:sourcereports]).pluck(:report_id)
+        respond_to do |format|
+          format.html
+          format.json {render json: @sourcereports.to_json}
+        end
+  end
+
+ 
+ 
+>>>>>>> 35fcfc73d526c616931f96f71d95a8d299d21646
 
   def test2
     byebug
@@ -62,6 +99,7 @@ end
     end
   end
 
+<<<<<<< HEAD
   # def test2
   #   byebug
   #   @dynamic_reports = params[:some_parameter].constantize
@@ -73,13 +111,17 @@ end
 
   def show
   end
+=======
+  
+  
+
+>>>>>>> 35fcfc73d526c616931f96f71d95a8d299d21646
 
   def accessdetails
      @platforms = Platform.all
   end
 
-  def report
-  end
+  
 
   def selectedplatforms
     user_id = current_user.id
