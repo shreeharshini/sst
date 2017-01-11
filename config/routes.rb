@@ -1,40 +1,29 @@
 Rails.application.routes.draw do
 
-<<<<<<< HEAD
 	get "home/index"
   get "users/index"
+  get "users/new"
   post "users/sign_out"
   post "users/create"
   post  "users/new"
-  get 'loginpage/test2'
  
-
   resources :loginpage do
-  collection do
-    get 'getyear'
-    get 'getreports'
-    get 'dynamicreports'
-    get 'sourcereports'
-    get 'accessdetails'
-    get 'selectedplatforms'
-    get 'getreports2'
-   end
-end 
-  
-=======
-
-	get "home/index"
-  get "users/index"
-
-
-  post "users/create"
-
-  get  "users/new"
- 
-get 'loginpage/getreports', as: 'getreports'
-get 'loginpage/show'
->>>>>>> 35fcfc73d526c616931f96f71d95a8d299d21646
-
+    collection do
+      get 'getyear'
+      get 'getreports'
+      get 'test2'
+      get 'dynamicreports'
+      get 'sourcereports'
+      get 'accessdetails'
+      get 'selectedplatforms'
+      get 'getreports2'
+      get 'sourcerepo'
+      get 'testing'
+      get 'result'
+      get 'show'
+     end
+  end
+   
   resources :support do 
     collection do
       get 'contactus'
@@ -76,26 +65,6 @@ get 'loginpage/show'
       get 'graph'
     end
   end
-<<<<<<< HEAD
-=======
-
-  resources :loginpage do
-    collection do
-      get 'getyear'
-      get 'getreports'
-      get 'test2'
-      get 'dynamicreports'
-      get 'sourcereports'
-      get 'accessdetails'
-      get 'selectedplatforms'
-      get 'getreports2'
-      get 'sourcerepo'
-      get 'testing'
-      get 'result'
-      get 'show'
-     end
-  end
->>>>>>> 35fcfc73d526c616931f96f71d95a8d299d21646
  
  get 'year_trends/highpiecharts'
   
@@ -104,10 +73,8 @@ get 'loginpage/show'
             :year_top_journals, :account_infos,  
             :platform_reports, :requestfordemos, :contact_us, 
             :library_account_details, :import_data
-
   
   devise_for :users
   root to: 'home#index'
- 
 end
 
