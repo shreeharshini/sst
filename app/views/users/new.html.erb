@@ -33,9 +33,15 @@
             <br>
 
             <%= f.label :role %>
+<<<<<<< HEAD
             <%= f.collection_select :role, User::ROLES, :to_s, :humanize %>      
             <br>
             <br>
+=======
+            <%= f.collection_select :role, User::ROLES, :to_s, :humanize %>
+
+
+>>>>>>> ef050eddc9dd66b7cffbe4f6506617813a64b86a
             <br>   
             <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
           <% end %>

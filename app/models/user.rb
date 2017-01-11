@@ -4,6 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> ef050eddc9dd66b7cffbe4f6506617813a64b86a
 	# def set_default_role
 	#   self.role ||= :user
 	# end
@@ -27,5 +31,11 @@ class User < ApplicationRecord
 
 	# You can access the session for this scope:
 	# user_session
+<<<<<<< HEAD
+=======
+
+
+	belongs_to :account
+>>>>>>> ef050eddc9dd66b7cffbe4f6506617813a64b86a
 	has_one :account_info ,:through =>:account
 end

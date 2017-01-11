@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+<<<<<<< HEAD
 	get "home/index"
   get "users/index"
   get "users/new"
@@ -24,6 +25,20 @@ Rails.application.routes.draw do
      end
   end
    
+=======
+
+	get "home/index"
+  get "users/index"
+
+
+  post "users/create"
+
+  get  "users/new"
+ 
+  get 'year_trends/highpiecharts'
+
+
+>>>>>>> ef050eddc9dd66b7cffbe4f6506617813a64b86a
   resources :support do 
     collection do
       get 'contactus'
@@ -38,6 +53,7 @@ Rails.application.routes.draw do
       get 'load_suggestions'
       get 'show_report'
       get 'csv'
+      get 'get_cost_per_usage'
     end
   end 
 
@@ -65,8 +81,25 @@ Rails.application.routes.draw do
       get 'graph'
     end
   end
+<<<<<<< HEAD
+=======
+
+
+  resources :loginpage do
+    collection do
+      get 'getyear'
+      get 'getreports', as: 'getreports'
+      get 'test2'
+      get 'dynamicreports'
+      get 'sourcereports'
+      get 'accessdetails'
+      get 'selectedplatforms'
+      get 'result'
+
+     end
+  end
+>>>>>>> ef050eddc9dd66b7cffbe4f6506617813a64b86a
  
- get 'year_trends/highpiecharts'
   
   resources :accounts, :reports, :platforms,
             :source_reports_mappings, :year_trends, :year_usages,

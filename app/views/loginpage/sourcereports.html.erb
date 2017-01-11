@@ -59,25 +59,12 @@
     <div class="col-md-5 mb10">   
       <div class="form-group"> 
         <label>Platform</label>  
-<<<<<<< HEAD
+        <%= form_for(:sourcerepo, url: {action: "result"}, html: {method: "get"}) do |f| %>
 
-<br>
-            <select class="form-control" id="dropdown1" >
-
-                          <option>--Select Platform--</option>
-                       <%= @source_reports.each do |f|%>
-                  
-                            <option><%= f.platform_id %></option>
-                      <% end %>  
-            </select>
-
-        </div>
-=======
-        <%= form_for(:trip, url: {action: "show"}, html: {method: "get"}) do |f| %>
+       
           
           <%= f.select :platform_id, options_for_select(@plats.collect { |platform|
             [platform.name.titleize, platform.id] }, 1),{}, { :class => 'platforms_select  form-control' } %>         
->>>>>>> 35fcfc73d526c616931f96f71d95a8d299d21646
       </div>
     </div>
 
@@ -121,103 +108,7 @@
   <%= javascript_include_tag "bootstrap.js" %>
 
     
-<<<<<<< HEAD
-  <script>
-    $("#dropdown1").change(function(){
-       var value1 = $('select#dropdown1 option:selected').val();
-        $.ajax({
-            type:"GET",
-            url:"/loginpage/getyear",
-            dataType:"json",
-            data: {sourcereportsyear: value1 },
-            success:function(result){
-               $secondChoice = $("#dropdown2");
-                $secondChoice.empty();
-                $.each(result, function(index, value) {
-                      $secondChoice.append("<option>" + value + "</option>");
-                    // alert(value);
-                });
-                      
-            }
-        })
-    });
-  </script>
 
-
-<!-- 
- <script>
-  $("button").click(function(){
-           var value2 = $('select#dropdown2 option:selected').val();
-                alert("xdfdf");
-           $.ajax({
-               type: "GET", 
-               // dataType: "json",
-               url:"/loginpage/getreports",
-               data: {sourcereports1: value2 }, 
-               dataType: "json",
-               url:"/loginpage/getreports",
-               data: {sourcereports: value2 }, 
-               success:function(result1){
-                     console.log(result1);
-
-                     result1.forEach(function(){
-                     $sourcerepo_html = $("<div class= 'result1'>" + result1 + "</div>");
-                     $('#test1').append($sourcerepo_html);
-                       // alert(result1);
-                       // document.getElementById('test1').innerHTML = result1;
-                       // $("#test1").html(result1);
-                    $("#test1").html(result1);
-                    // $("#test1").load("/loginpage/getreports");
-                      })
-                }
-          })
-  });
-  // $('button').click(function(){
-  //   var value2 = $('select#dropdown2 option:selected').val();
-  //   $.ajax({
-  //   type: "GET",
-  //   url: "/loginpage/getreports",
-  //   data:'sourcereports='+value2,
-  //   success: function(data){
-  //     alert(data);
-  //   }
-  //   });
-  // });
-                     $("#test1").html(result1);
-
-                     $("#test2").append($sourcerepo_html);
-                    $("#test2").load("/loginpage/getreports");
-                    alert("loading page");
-                      })
-           alert(result1);
-                    $.ajax({
-                       type: "GET", 
-                       dataType: "json",
-                       url:"/loginpage/getreports2",
-                       data: {sourcereports2: result1 },
-                       success:function(abc){
-                        alert("successfully loaded");
-                        alert(abc);
-
-                        console.log(abc);
-
-                        abc.forEach(function(){
-                     $sourcerepo1_html = $("<div class= 'abc'>" + abc + "</div>");
-                     $('#test3').append($sourcerepo1_html);
-                     $("#test3").html(abc);
-
-                     
-                      })
-
-                       }
-                    })
-
-                }
-          })
-  });
-=======
->>>>>>> 35fcfc73d526c616931f96f71d95a8d299d21646
- 
 
 
 </body>
