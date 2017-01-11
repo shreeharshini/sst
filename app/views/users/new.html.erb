@@ -14,7 +14,7 @@
       <div class="row">
         <div class="span6 offset3">
 
-          <%= form_for :users, url: users_new_path do |f| %>
+          <%= form_for :users, url: {:action=>"create", :controller=>"users"} do |f| %>
 
             <%= f.label :first_name %>
             <%= f.text_field :first_name %>
@@ -30,27 +30,13 @@
 
             <%= f.label :password_confirmation, "Confirmation" %>
             <%= f.password_field :password_confirmation %>
+            <br>
 
             <%= f.label :role %>
-            <%= radio_button_tag(:role, "User") %>
-            <%= label_tag("User") %>
-
-            <%= radio_button_tag(:role, "Admin") %>
-            <%= label_tag("Admin") %>
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
-
-      <%= f.label :role %>
-      <%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]}) %>
-      <br>
-      <br>      
+            <%= f.collection_select :role, User::ROLES, :to_s, :humanize %>
 
 
-      <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
-    <% end %>
-  </div>
-</div>
-
+            <br>   
             <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
           <% end %>
         </div>

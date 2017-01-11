@@ -9,8 +9,8 @@ Rails.application.routes.draw do
 
   get  "users/new"
  
-get 'loginpage/getreports', as: 'getreports'
-get 'loginpage/show'
+  get 'year_trends/highpiecharts'
+
 
   resources :support do 
     collection do
@@ -35,7 +35,6 @@ get 'loginpage/show'
       get 'manage_sushi_account'
       get 'update_permission'
     end
-
   end
 
   resources :export_files do
@@ -45,6 +44,7 @@ get 'loginpage/show'
       get 'zip'
     end
   end
+
   resources :counter_and_custom_reports do 
     collection do
       get 'show_reports_by_year'
@@ -55,26 +55,22 @@ get 'loginpage/show'
     end
   end
 
+
   resources :loginpage do
     collection do
       get 'getyear'
-      get 'getreports'
+      get 'getreports', as: 'getreports'
       get 'test2'
       get 'dynamicreports'
       get 'sourcereports'
       get 'accessdetails'
       get 'selectedplatforms'
-      get 'getreports2'
-      get 'sourcerepo'
-      get 'testing'
       get 'result'
-      get 'show'
+
      end
   end
  
- get 'year_trends/highpiecharts'
   
-
   resources :accounts, :reports, :platforms,
             :source_reports_mappings, :year_trends, :year_usages,
             :year_top_journals, :account_infos,  

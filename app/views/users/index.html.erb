@@ -83,8 +83,7 @@
         <td><%= users.first_name %></td>
         <td><%= users.email %></td>
         <td><%= users.role %></td>
-        <td><%= check_box_tag 'accept' %> </td>
-        
+        <td><%= check_box_tag 'accept' %> </td> 
       </tr>
     <% end %>
   </tbody>
@@ -99,64 +98,10 @@
         <td height="35" align="right">
         
           <div class="col-md-3">
-            <div class="button raised">
-              <a href="#LoginModal" data-toggle="modal" id="buttonId" onclick="window.location = '#LoginModal'"> 
-              <div class="anim"></div>
-              <i class="icon-user"></i> Create New User</a>
+          <div class="button raised">
+              <a href="javascript:;" id="buttonId" onclick="window.location = '/users/new'"> <div class="anim"></div><i class="icon-user"></i> Create New User</a>
             </div>
-          </div>
-
-<div class="modal fade my_login_box" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Create New User</h4>
-      </div>
-      <div class="modal-body ">
-        <div class="common_form">
-          <%= provide(:title, 'Create New User') %>
-
-            <div class="row">
-              <div class="span6 offset3">
-
-                <%= form_for(:user , url: users_new_path) do |f| %>
-
-                  <%= f.label :first_name %>
-                  <%= f.text_field :first_name %>
-
-                  <%= f.label :last_name %>
-                  <%= f.text_field :last_name %>
-
-                  <%= f.label :email %>
-                  <%= f.text_field :email %>
-
-                  <%= f.label :password %>
-                  <%= f.password_field :password %>
-
-                  <%= f.label :password_confirmation, "Confirmation" %>
-                  <%= f.password_field :password_confirmation %>
-
-                  <%= f.label :role %>
-                  <br>
-                  <%= f.radio_button(:role, "User") %>
-                  <%= f.label("User") %>
-                  <br>
-
-                  <%= f.radio_button(:role, "Admin") %>
-                  <%= f.label("Admin") %>
-                  <br>
-
-                  <%= f.submit "Submit", class: "button raised" %>
-                  <%= f.submit "Cancel", class: "button raised" %>
-                <% end %>
-              </div>
             </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <br>
 
@@ -183,56 +128,7 @@
     </div>
     
 
-<div id="createUser" class="modal fade" role="dialog" >
-  <div class="modal-dialog modal-lg">
-    <!-- Modal content-->
-    <div class="modal fade my_login_box" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
-           <h4 class="modal-title" id="myModalLabel">Create New Users</h4>
-        </div>
-        <div class="modal-body" id="createGraphModel">
-          <div class="main-grid" >
-            <div class="clearfix"></div>
 
-
-<%= provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
-
-<div class="row">
-  <div class="span6 offset3">
-    
-    <%= form_for :user, url: users_path do |f| %>
-
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name %>
-
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name %>
-
-      <%= f.label :email %>
-      <%= f.text_field :email %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation %>
-      
-     
-
-      
-
-      <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
-    <% end %>
-  </div>
-</div>
-
-</div>
-      </div>
-    </div>
   </div>
 </div> 
 </div>

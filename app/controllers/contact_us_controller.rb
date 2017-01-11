@@ -31,7 +31,7 @@ class ContactUsController < ApplicationController
 
         UserMailer.welcome_email(@contact_u).deliver
 
-        format.html { redirect_to support_contactus_path, notice: 'Contact u was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Contact u was successfully created.' }
         # format.json { render :show, status: :created, location: @contact_u }
       else
         format.html { render :new }
