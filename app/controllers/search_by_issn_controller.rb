@@ -16,7 +16,6 @@ class SearchByIssnController < ApplicationController
   	end
 
 	def search
-		byebug
 		@suggestion = DataLibrary.pluck(:print_issn).last(10)
 	end
 
@@ -31,11 +30,14 @@ class SearchByIssnController < ApplicationController
 			@suggestion = DataLibrary.pluck(:issn).last(10)
 		end
 		respond_to do |format|
-			#format.json {render :200 , :suggestion => @suggestion_list}
 			format.json {render json: @suggestion.to_json}
 		end
 		#@suggestions = DataLibrary.select(:issn).where()#Select the data you want to load on the typeahead.
 		#MyModel.find(:all, conditions: [...]) #Select the data you want to load on the typeahead.
 		#render json: @suggestion
 	end
+
+	def csv
+    	send_file Rails.root.join('files_for_download', "2016", 'COUNTER_Journal_Report_1_-_Article_Requests.csv'), :type=>"application/csv", :x_sendfile=>true
+  	end
 end

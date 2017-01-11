@@ -25,6 +25,7 @@ Rails.application.routes.draw do
       get 'search'
       get 'load_suggestions'
       get 'show_report'
+      get 'csv'
     end
   end 
 

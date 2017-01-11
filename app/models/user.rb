@@ -4,13 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-<<<<<<< HEAD
 	# def set_default_role
 	#   self.role ||= :user
 	# end
 
 	ROLES = %w[admin user].freeze
-=======
+
   # enum role: [:user, :admin]
 
    #after_initialize :set_default_role, :if => :new_record?
@@ -19,7 +18,6 @@ class User < ApplicationRecord
 # 	byebug
 #   self.role ||= :user
 # end
->>>>>>> 4c7b041c037f347dc03dcb33e0731b6d20d93793
   
  	# before_action :authenticate_user!
 	# To verify if a user is signed in, use the following helper:
@@ -33,6 +31,6 @@ class User < ApplicationRecord
 
 	# has_one :account
 
-	# belongs_to :account
+	belongs_to :account
 	has_one :account_info ,:through =>:account
 end
