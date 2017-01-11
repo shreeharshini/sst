@@ -3,6 +3,22 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+
+	# def set_default_role
+	#   self.role ||= :user
+	# end
+
+	ROLES = %w[admin user].freeze
+
+  # enum role: [:user, :admin]
+
+   #after_initialize :set_default_role, :if => :new_record?
+
+# def set_default_role
+# 	byebug
+#   self.role ||= :user
+# end
   
   # before_action :authenticate_user!
 	# To verify if a user is signed in, use the following helper:
@@ -14,8 +30,7 @@ class User < ApplicationRecord
 	# You can access the session for this scope:
 	# user_session
 
-	has_one :account
 
-	# belongs_to :account
+	belongs_to :account
 	has_one :account_info ,:through =>:account
 end

@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20170110113323) do
 
   create_table "account_infos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -83,132 +84,6 @@ ActiveRecord::Schema.define(version: 20170110113323) do
     t.string   "role"
   end
 
-  create_table "br1s", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "Book_Title"
-    t.string   "Publisher_Name"
-    t.string   "Platform"
-    t.string   "Collection_Platform"
-    t.string   "Book_DOI"
-    t.string   "Proprietary_Identifier"
-    t.string   "Report_Measurement"
-    t.string   "ISBN"
-    t.string   "ISSN"
-    t.string   "Report_Type"
-    t.integer  "Jan_2013"
-    t.integer  "Feb_2013"
-    t.integer  "Mar_2013"
-    t.integer  "Apr_2013"
-    t.integer  "May_2013"
-    t.integer  "Jun_2013"
-    t.integer  "Jul_2013"
-    t.integer  "Aug_2013"
-    t.integer  "Sep_2013"
-    t.integer  "Oct_2013"
-    t.integer  "Nov_2013"
-    t.integer  "Dec_2013"
-    t.integer  "Jan_2014"
-    t.integer  "Feb_2014"
-    t.integer  "Mar_2014"
-    t.integer  "Apr_2014"
-    t.integer  "May_2014"
-    t.integer  "Jun_2014"
-    t.integer  "Jul_2014"
-    t.integer  "Aug_2014"
-    t.integer  "Sep_2014"
-    t.integer  "Oct_2014"
-    t.integer  "Nov_2014"
-    t.integer  "Dec_2014"
-    t.integer  "Jan_2015"
-    t.integer  "Feb_2015"
-    t.integer  "Mar_2015"
-    t.integer  "Apr_2015"
-    t.integer  "May_2015"
-    t.integer  "Jun_2015"
-    t.integer  "Jul_2015"
-    t.integer  "Aug_2015"
-    t.integer  "Sep_2015"
-    t.integer  "Oct_2015"
-    t.integer  "Nov_2015"
-    t.integer  "Dec_2015"
-    t.integer  "Jan_2016"
-    t.integer  "Feb_2016"
-    t.integer  "Mar_2016"
-    t.integer  "Apr_2016"
-    t.integer  "May_2016"
-    t.integer  "Jun_2016"
-    t.integer  "Jul_2016"
-    t.integer  "Aug_2016"
-    t.integer  "Sep_2016"
-    t.integer  "Oct_2016"
-    t.integer  "Nov_2016"
-    t.integer  "Dec_2016"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-  end
-
-  create_table "br2s", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "Book_Title"
-    t.string   "Publisher_Name"
-    t.string   "Platform"
-    t.string   "Collection_Platform"
-    t.string   "Book_DOI"
-    t.string   "Proprietary_Identifier"
-    t.string   "Report_Measurement"
-    t.string   "ISBN"
-    t.string   "ISSN"
-    t.string   "Report_Type"
-    t.integer  "Jan_2013"
-    t.integer  "Feb_2013"
-    t.integer  "Mar_2013"
-    t.integer  "Apr_2013"
-    t.integer  "May_2013"
-    t.integer  "Jun_2013"
-    t.integer  "Jul_2013"
-    t.integer  "Aug_2013"
-    t.integer  "Sep_2013"
-    t.integer  "Oct_2013"
-    t.integer  "Nov_2013"
-    t.integer  "Dec_2013"
-    t.integer  "Jan_2014"
-    t.integer  "Feb_2014"
-    t.integer  "Mar_2014"
-    t.integer  "Apr_2014"
-    t.integer  "May_2014"
-    t.integer  "Jun_2014"
-    t.integer  "Jul_2014"
-    t.integer  "Aug_2014"
-    t.integer  "Sep_2014"
-    t.integer  "Oct_2014"
-    t.integer  "Nov_2014"
-    t.integer  "Dec_2014"
-    t.integer  "Jan_2015"
-    t.integer  "Feb_2015"
-    t.integer  "Mar_2015"
-    t.integer  "Apr_2015"
-    t.integer  "May_2015"
-    t.integer  "Jun_2015"
-    t.integer  "Jul_2015"
-    t.integer  "Aug_2015"
-    t.integer  "Sep_2015"
-    t.integer  "Oct_2015"
-    t.integer  "Nov_2015"
-    t.integer  "Dec_2015"
-    t.integer  "Jan_2016"
-    t.integer  "Feb_2016"
-    t.integer  "Mar_2016"
-    t.integer  "Apr_2016"
-    t.integer  "May_2016"
-    t.integer  "Jun_2016"
-    t.integer  "Jul_2016"
-    t.integer  "Aug_2016"
-    t.integer  "Sep_2016"
-    t.integer  "Oct_2016"
-    t.integer  "Nov_2016"
-    t.integer  "Dec_2016"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-  end
-
   create_table "contact_us", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.string   "email"
@@ -217,6 +92,17 @@ ActiveRecord::Schema.define(version: 20170110113323) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "counter_and_customs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.integer  "year"
+    t.string   "description"
+    t.string   "report_type"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  
 
   create_table "data_libraries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "institution_code"
@@ -236,120 +122,9 @@ ActiveRecord::Schema.define(version: 20170110113323) do
     t.datetime "updated_at",              null: false
   end
 
-  create_table "db1s", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "Database_name"
-    t.string   "Platform"
-    t.string   "Publisher"
-    t.string   "User_Activity"
-    t.string   "Report_Type"
-    t.integer  "Jan_2013"
-    t.integer  "Feb_2013"
-    t.integer  "Mar_2013"
-    t.integer  "Apr_2013"
-    t.integer  "May_2013"
-    t.integer  "Jun_2013"
-    t.integer  "Jul_2013"
-    t.integer  "Aug_2013"
-    t.integer  "Sep_2013"
-    t.integer  "Oct_2013"
-    t.integer  "Nov_2013"
-    t.integer  "Dec_2013"
-    t.integer  "Jan_2014"
-    t.integer  "Feb_2014"
-    t.integer  "Mar_2014"
-    t.integer  "Apr_2014"
-    t.integer  "May_2014"
-    t.integer  "Jun_2014"
-    t.integer  "Jul_2014"
-    t.integer  "Aug_2014"
-    t.integer  "Sep_2014"
-    t.integer  "Oct_2014"
-    t.integer  "Nov_2014"
-    t.integer  "Dec_2014"
-    t.integer  "Jan_2015"
-    t.integer  "Feb_2015"
-    t.integer  "Mar_2015"
-    t.integer  "Apr_2015"
-    t.integer  "May_2015"
-    t.integer  "Jun_2015"
-    t.integer  "Jul_2015"
-    t.integer  "Aug_2015"
-    t.integer  "Sep_2015"
-    t.integer  "Oct_2015"
-    t.integer  "Nov_2015"
-    t.integer  "Dec_2015"
-    t.integer  "Jan_2016"
-    t.integer  "Feb_2016"
-    t.integer  "Mar_2016"
-    t.integer  "Apr_2016"
-    t.integer  "May_2016"
-    t.integer  "Jun_2016"
-    t.integer  "Jul_2016"
-    t.integer  "Aug_2016"
-    t.integer  "Sep_2016"
-    t.integer  "Oct_2016"
-    t.integer  "Nov_2016"
-    t.integer  "Dec_2016"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
-
-  create_table "db2s", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "Database_name"
-    t.string   "Platform"
-    t.string   "Publisher"
-    t.string   "User_Activity"
-    t.string   "Report_Type"
-    t.integer  "Jan_2013"
-    t.integer  "Feb_2013"
-    t.integer  "Mar_2013"
-    t.integer  "Apr_2013"
-    t.integer  "May_2013"
-    t.integer  "Jun_2013"
-    t.integer  "Jul_2013"
-    t.integer  "Aug_2013"
-    t.integer  "Sep_2013"
-    t.integer  "Oct_2013"
-    t.integer  "Nov_2013"
-    t.integer  "Dec_2013"
-    t.integer  "Jan_2014"
-    t.integer  "Feb_2014"
-    t.integer  "Mar_2014"
-    t.integer  "Apr_2014"
-    t.integer  "May_2014"
-    t.integer  "Jun_2014"
-    t.integer  "Jul_2014"
-    t.integer  "Aug_2014"
-    t.integer  "Sep_2014"
-    t.integer  "Oct_2014"
-    t.integer  "Nov_2014"
-    t.integer  "Dec_2014"
-    t.integer  "Jan_2015"
-    t.integer  "Feb_2015"
-    t.integer  "Mar_2015"
-    t.integer  "Apr_2015"
-    t.integer  "May_2015"
-    t.integer  "Jun_2015"
-    t.integer  "Jul_2015"
-    t.integer  "Aug_2015"
-    t.integer  "Sep_2015"
-    t.integer  "Oct_2015"
-    t.integer  "Nov_2015"
-    t.integer  "Dec_2015"
-    t.integer  "Jan_2016"
-    t.integer  "Feb_2016"
-    t.integer  "Mar_2016"
-    t.integer  "Apr_2016"
-    t.integer  "May_2016"
-    t.integer  "Jun_2016"
-    t.integer  "Jul_2016"
-    t.integer  "Aug_2016"
-    t.integer  "Sep_2016"
-    t.integer  "Oct_2016"
-    t.integer  "Nov_2016"
-    t.integer  "Dec_2016"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+  create_table "dynamicreports", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "generated_reports", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -370,7 +145,247 @@ ActiveRecord::Schema.define(version: 20170110113323) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "jr1as", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "lib_10_br1s", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string  "Book_Title"
+    t.string  "Publisher"
+    t.string  "Platform"
+    t.string  "Collection_Platform"
+    t.string  "Book_DOI"
+    t.string  "Proprietary_Identifier"
+    t.string  "Report_Measurement"
+    t.string  "ISBN"
+    t.string  "ISSN"
+    t.string  "Report_Type"
+    t.integer "Jan_2013"
+    t.integer "Feb_2013"
+    t.integer "Mar_2013"
+    t.integer "Apr_2013"
+    t.integer "May_2013"
+    t.integer "Jun_2013"
+    t.integer "Jul_2013"
+    t.integer "Aug_2013"
+    t.integer "Sep_2013"
+    t.integer "Oct_2013"
+    t.integer "Nov_2013"
+    t.integer "Dec_2013"
+    t.integer "Jan_2014"
+    t.integer "Feb_2014"
+    t.integer "Mar_2014"
+    t.integer "Apr_2014"
+    t.integer "May_2014"
+    t.integer "Jun_2014"
+    t.integer "Jul_2014"
+    t.integer "Aug_2014"
+    t.integer "Sep_2014"
+    t.integer "Oct_2014"
+    t.integer "Nov_2014"
+    t.integer "Dec_2014"
+    t.integer "Jan_2015"
+    t.integer "Feb_2015"
+    t.integer "Mar_2015"
+    t.integer "Apr_2015"
+    t.integer "May_2015"
+    t.integer "Jun_2015"
+    t.integer "Jul_2015"
+    t.integer "Aug_2015"
+    t.integer "Sep_2015"
+    t.integer "Oct_2015"
+    t.integer "Nov_2015"
+    t.integer "Dec_2015"
+    t.integer "Jan_2016"
+    t.integer "Feb_2016"
+    t.integer "Mar_2016"
+    t.integer "Apr_2016"
+    t.integer "May_2016"
+    t.integer "Jun_2016"
+    t.integer "Jul_2016"
+    t.integer "Aug_2016"
+    t.integer "Sep_2016"
+    t.integer "Oct_2016"
+    t.integer "Nov_2016"
+    t.integer "Dec_2016"
+  end
+
+  create_table "lib_10_br2s", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "Book_Title"
+    t.string   "Publisher_Name"
+    t.string   "Platform"
+    t.string   "Collection_Platform"
+    t.string   "Book_DOI"
+    t.string   "Proprietary_Identifier"
+    t.string   "Report_Measurement"
+    t.string   "ISBN"
+    t.string   "ISSN"
+    t.string   "Report_Type"
+    t.integer  "Jan_2013"
+    t.integer  "Feb_2013"
+    t.integer  "Mar_2013"
+    t.integer  "Apr_2013"
+    t.integer  "May_2013"
+    t.integer  "Jun_2013"
+    t.integer  "Jul_2013"
+    t.integer  "Aug_2013"
+    t.integer  "Sep_2013"
+    t.integer  "Oct_2013"
+    t.integer  "Nov_2013"
+    t.integer  "Dec_2013"
+    t.integer  "Jan_2014"
+    t.integer  "Feb_2014"
+    t.integer  "Mar_2014"
+    t.integer  "Apr_2014"
+    t.integer  "May_2014"
+    t.integer  "Jun_2014"
+    t.integer  "Jul_2014"
+    t.integer  "Aug_2014"
+    t.integer  "Sep_2014"
+    t.integer  "Oct_2014"
+    t.integer  "Nov_2014"
+    t.integer  "Dec_2014"
+    t.integer  "Jan_2015"
+    t.integer  "Feb_2015"
+    t.integer  "Mar_2015"
+    t.integer  "Apr_2015"
+    t.integer  "May_2015"
+    t.integer  "Jun_2015"
+    t.integer  "Jul_2015"
+    t.integer  "Aug_2015"
+    t.integer  "Sep_2015"
+    t.integer  "Oct_2015"
+    t.integer  "Nov_2015"
+    t.integer  "Dec_2015"
+    t.integer  "Jan_2016"
+    t.integer  "Feb_2016"
+    t.integer  "Mar_2016"
+    t.integer  "Apr_2016"
+    t.integer  "May_2016"
+    t.integer  "Jun_2016"
+    t.integer  "Jul_2016"
+    t.integer  "Aug_2016"
+    t.integer  "Sep_2016"
+    t.integer  "Oct_2016"
+    t.integer  "Nov_2016"
+    t.integer  "Dec_2016"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "lib_10_db1s", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "Database_name"
+    t.string   "Platform"
+    t.string   "Publisher"
+    t.string   "User_Activity"
+    t.string   "Report_Type"
+    t.integer  "Jan_2013"
+    t.integer  "Feb_2013"
+    t.integer  "Mar_2013"
+    t.integer  "Apr_2013"
+    t.integer  "May_2013"
+    t.integer  "Jun_2013"
+    t.integer  "Jul_2013"
+    t.integer  "Aug_2013"
+    t.integer  "Sep_2013"
+    t.integer  "Oct_2013"
+    t.integer  "Nov_2013"
+    t.integer  "Dec_2013"
+    t.integer  "Jan_2014"
+    t.integer  "Feb_2014"
+    t.integer  "Mar_2014"
+    t.integer  "Apr_2014"
+    t.integer  "May_2014"
+    t.integer  "Jun_2014"
+    t.integer  "Jul_2014"
+    t.integer  "Aug_2014"
+    t.integer  "Sep_2014"
+    t.integer  "Oct_2014"
+    t.integer  "Nov_2014"
+    t.integer  "Dec_2014"
+    t.integer  "Jan_2015"
+    t.integer  "Feb_2015"
+    t.integer  "Mar_2015"
+    t.integer  "Apr_2015"
+    t.integer  "May_2015"
+    t.integer  "Jun_2015"
+    t.integer  "Jul_2015"
+    t.integer  "Aug_2015"
+    t.integer  "Sep_2015"
+    t.integer  "Oct_2015"
+    t.integer  "Nov_2015"
+    t.integer  "Dec_2015"
+    t.integer  "Jan_2016"
+    t.integer  "Feb_2016"
+    t.integer  "Mar_2016"
+    t.integer  "Apr_2016"
+    t.integer  "May_2016"
+    t.integer  "Jun_2016"
+    t.integer  "Jul_2016"
+    t.integer  "Aug_2016"
+    t.integer  "Sep_2016"
+    t.integer  "Oct_2016"
+    t.integer  "Nov_2016"
+    t.integer  "Dec_2016"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "lib_10_db2s", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "Database_name"
+    t.string   "Platform"
+    t.string   "Publisher"
+    t.string   "User_Activity"
+    t.string   "Report_Type"
+    t.integer  "Jan_2013"
+    t.integer  "Feb_2013"
+    t.integer  "Mar_2013"
+    t.integer  "Apr_2013"
+    t.integer  "May_2013"
+    t.integer  "Jun_2013"
+    t.integer  "Jul_2013"
+    t.integer  "Aug_2013"
+    t.integer  "Sep_2013"
+    t.integer  "Oct_2013"
+    t.integer  "Nov_2013"
+    t.integer  "Dec_2013"
+    t.integer  "Jan_2014"
+    t.integer  "Feb_2014"
+    t.integer  "Mar_2014"
+    t.integer  "Apr_2014"
+    t.integer  "May_2014"
+    t.integer  "Jun_2014"
+    t.integer  "Jul_2014"
+    t.integer  "Aug_2014"
+    t.integer  "Sep_2014"
+    t.integer  "Oct_2014"
+    t.integer  "Nov_2014"
+    t.integer  "Dec_2014"
+    t.integer  "Jan_2015"
+    t.integer  "Feb_2015"
+    t.integer  "Mar_2015"
+    t.integer  "Apr_2015"
+    t.integer  "May_2015"
+    t.integer  "Jun_2015"
+    t.integer  "Jul_2015"
+    t.integer  "Aug_2015"
+    t.integer  "Sep_2015"
+    t.integer  "Oct_2015"
+    t.integer  "Nov_2015"
+    t.integer  "Dec_2015"
+    t.integer  "Jan_2016"
+    t.integer  "Feb_2016"
+    t.integer  "Mar_2016"
+    t.integer  "Apr_2016"
+    t.integer  "May_2016"
+    t.integer  "Jun_2016"
+    t.integer  "Jul_2016"
+    t.integer  "Aug_2016"
+    t.integer  "Sep_2016"
+    t.integer  "Oct_2016"
+    t.integer  "Nov_2016"
+    t.integer  "Dec_2016"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "lib_10_jr1as", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "Journal_Title"
     t.string   "Publisher_Name"
     t.string   "Platform"
@@ -433,7 +448,7 @@ ActiveRecord::Schema.define(version: 20170110113323) do
     t.datetime "updated_at",             null: false
   end
 
-  create_table "jr1s", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "lib_10_jr1s", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "Journal_Title"
     t.string   "Publisher_Name"
     t.string   "Platform"
@@ -496,7 +511,7 @@ ActiveRecord::Schema.define(version: 20170110113323) do
     t.datetime "updated_at",             null: false
   end
 
-  create_table "jr2s", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "lib_10_jr2s", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "Journal_Title"
     t.string   "Publisher_Name"
     t.string   "Platform"
@@ -559,7 +574,7 @@ ActiveRecord::Schema.define(version: 20170110113323) do
     t.datetime "updated_at",             null: false
   end
 
-  create_table "jr3s", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "lib_10_jr3s", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "Journal_Title"
     t.string   "Publisher_Name"
     t.string   "Platform"
@@ -622,6 +637,68 @@ ActiveRecord::Schema.define(version: 20170110113323) do
     t.datetime "updated_at",             null: false
   end
 
+  create_table "lib_10_pr1s", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "Platform"
+    t.string   "Publisher"
+    t.string   "User_Activity"
+    t.string   "Report_Type"
+    t.integer  "Jan_2013"
+    t.integer  "Feb_2013"
+    t.integer  "Mar_2013"
+    t.integer  "Apr_2013"
+    t.integer  "May_2013"
+    t.integer  "Jun_2013"
+    t.integer  "Jul_2013"
+    t.integer  "Aug_2013"
+    t.integer  "Sep_2013"
+    t.integer  "Oct_2013"
+    t.integer  "Nov_2013"
+    t.integer  "Dec_2013"
+    t.integer  "Jan_2014"
+    t.integer  "Feb_2014"
+    t.integer  "Mar_2014"
+    t.integer  "Apr_2014"
+    t.integer  "May_2014"
+    t.integer  "Jun_2014"
+    t.integer  "Jul_2014"
+    t.integer  "Aug_2014"
+    t.integer  "Sep_2014"
+    t.integer  "Oct_2014"
+    t.integer  "Nov_2014"
+    t.integer  "Dec_2014"
+    t.integer  "Jan_2015"
+    t.integer  "Feb_2015"
+    t.integer  "Mar_2015"
+    t.integer  "Apr_2015"
+    t.integer  "May_2015"
+    t.integer  "Jun_2015"
+    t.integer  "Jul_2015"
+    t.integer  "Aug_2015"
+    t.integer  "Sep_2015"
+    t.integer  "Oct_2015"
+    t.integer  "Nov_2015"
+    t.integer  "Dec_2015"
+    t.integer  "Jan_2016"
+    t.integer  "Feb_2016"
+    t.integer  "Mar_2016"
+    t.integer  "Apr_2016"
+    t.integer  "May_2016"
+    t.integer  "Jun_2016"
+    t.integer  "Jul_2016"
+    t.integer  "Aug_2016"
+    t.integer  "Sep_2016"
+    t.integer  "Oct_2016"
+    t.integer  "Nov_2016"
+    t.integer  "Dec_2016"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "libcodewithlibreporttypes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string "libcode",     limit: 45
+    t.string "Report_Type", limit: 45
+  end
+
   create_table "library_code_mappings", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "New_Code"
     t.string  "Library_Name", limit: 100
@@ -643,6 +720,7 @@ ActiveRecord::Schema.define(version: 20170110113323) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
 
   create_table "pr1s", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "Platform"
@@ -800,6 +878,24 @@ ActiveRecord::Schema.define(version: 20170110113323) do
     t.datetime "updated_at",   null: false
     t.integer  "is_permitted"
   end
+
+  create_table "user_acounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.integer  "account_id"
+    t.integer  "role_id"
+    t.string   "updated_by"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_roles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.integer  "role_id"
+    t.string   "updated_by"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false

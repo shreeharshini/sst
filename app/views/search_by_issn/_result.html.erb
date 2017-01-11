@@ -1,4 +1,6 @@
-	
+
+<%= render :partial => 'search_form'%>
+
 <div class="agile-Updating-grids">  <div class="agile-grids">
 				
 				<div class="col-md-12" style="padding:0px;">
@@ -8,7 +10,7 @@
 	</div>
 	<div class="col-md-2 pull-right nopaddingright" >
 		<div class="button raised">
-   			<a href="javascript:;" id="downloadAnchor" class="hoverable" onclick="javascript:downloadCPU(1);"> <div class="anim"></div><span>Download</span></a>
+   			<a href="/search_by_issn/csv" id="downloadAnchor" class="hoverable" onclick="javascript:downloadCPU(1);"> <div class="anim"></div><span>Download</span></a>
     	</div></div>
 
 <br>
@@ -37,11 +39,12 @@
 			<td data-th="Height"><span class="bt-content">0</span></td>
 			<td data-th="Province">
 							
-					<input class="span7 margin_right4px" onkeyup="removeStyle(this.id)" onchange="removeStyle(this.id)" onkeypress="return isNumberKey(event)" name="costId_1" id="costId_1" type="text" value="">
+				<input class="span7 margin_right4px" onkeyup="removeStyle(this.id)" onchange="removeStyle(this.id)" onkeypress="return isNumberKey(event)" name="costId_1" id="costId_1" type="text" value=""> </td>
 				
-				<a href="javascript:;"   onClick="calculateCPU(1);" data-toggle="tooltip" title="Calculate CPU" > <img src="/images/libraries/images/calculater.png"></a>
-    			<input type="hidden" id="ytdId_1" value="0">
-			</td>
+				<td data-th="Height"><a href="javascript:;"   onClick="calculateCPU(1);" data-toggle="tooltip" title="Calculate CPU" > <%= image_tag("calculater.png")%></a></td>
+
+    		<td data-th="Height"><input type="hidden" id="ytdId_1" value="0"></td>
+			
 			
 			<td data-th="Sport"><input type="text" class="span5" readonly id="cpuId_1" value=""></td>
 			
@@ -49,7 +52,7 @@
 	  
 	</table>
 	</div></div>
-	<div class="col-md-12" style="padding:0px;"><strong>Click <a id="addAction" onclick="addToPreview();" href="javascript:;"><img src="/images/tree/close.gif" /></a> to add</strong></div>
+	<div class="col-md-12" style="padding:0px;"><strong>Click <a id="addAction"><%= image_tag("close.gif")%></a> to add</strong></div>
 	
 </div>
 </div>
@@ -62,11 +65,33 @@
 	<br><br>
 
 	
-		<div id="data"></div>
-	
- 	</div>
- </div>
+<div id="data"></div>
+<script type="text/javascript">
+  jQuery(document).ready(function() {
+    jQuery('#addAction').click( function () {
+  
+               // Get current count of imageTables and use that value for IDs
+      var quantity = $('.table > tbody tr').length;
+               // Clone the main table
+      $(".table > tbody > tr").clone(true)
+               // Change its ID to the current ID plus the quantity variable
+      .attr( 'id', function() { return this.id + quantity; })
+               // find any text or file inputs
+      .find( ':text,:file' )
+               // change their IDs
+      .attr( 'id', function() { return this.id + quantity; })
+               // set the input values to ""
+      .val( "" )
+               // return to the cloned table
+      .end()
+               // append wherever you want it.
+               // As the comment below your question states,
+               //   this is not a valid placement
 
+      .appendTo('.table > tbody:last');
+    })
+  });
+</script>
 
 
 

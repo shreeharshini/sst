@@ -43,34 +43,9 @@
       <h4>Dynamic Usage Reports</h4>
       <p class="pad-top10 mar-btm20">This section allows you to view and download reports for a librarian account.</p>
         
-      <div class="agile-Updating-grids"> 
-        <div class="agile-grids pad-top10">
-          <div class="col-md-5 mb10">
+      
+          <%= render :partial => 'dynamicform'%>
 
-            
-            <%= form_tag("/loginpage/test2", :method => "get", remote: "true") do %>
-
-            <label>Select Report Type<span class="required">*</span></label>
-            <%= select_tag(:dynamic_drop, options_for_select([
-              ['--Select Report Type--','-1'],
-              ['JR1 (Consolidated Journal Report 1, Consolidated COUNTER JR1 Report of all subscribed Platforms)', Jr1], 
-              ['JR2 (Consolidated Journal Report 2, Consolidated COUNTER JR2 Report of all subscribed Platforms)', Jr2], 
-              ['JR3 (Consolidated Journal Report 3, Consolidated COUNTER JR3 Report of all subscribed Platforms)', Jr3], 
-              ['JR1a (Consolidated Journal Report 1a, Consolidated COUNTER JR1a Report of all subscribed Platforms)', Jr1a], 
-              ['BR1 (Consolidated Book Report 1, Consolidated COUNTER BR1 Report of all subscribed Platforms)', Br1], 
-              ['BR2 (Consolidated Book Report 2, Consolidated COUNTER BR2 Report of all subscribed Platforms)', Br2], 
-              ['DB1 (Consolidated Database Report 1, Consolidated COUNTER DB1 Report of all subscribed Platforms)', Db1], 
-              ['DB2 (Consolidated Database Report 2, Consolidated COUNTER DB2 Report of all subscribed Platforms)', Db2], 
-              ['PR1 (Consolidated Platform Report 1, Consolidated COUNTER PR1 Report of all subscribed Platforms)', Pr1]])) %>
-
-              <label>From:<span class="required">*</span></label>
-              <%= text_field :date_of_tour, "data-provide" => 'datePicker' %>
-              
-              <label>To:<span class="required">*</span></label>
-              <%= text_field :date_of_tour, "data-provide" => 'datePicker' %>
-
-            <%= submit_tag ("Preview") %>
-            <% end %>
 
             <!-- <%= form_tag(dynamicreports_loginpage_index_path, method: :get, remote: :true) do %>
              <div class="form-group">
@@ -141,14 +116,10 @@
         
   					   
   				<!-- //updating-data -->
-  				</div>
-  				<div class="clearfix"> </div>
-  			</div>
-  	</div>		
-  			<% end %><br>
+          <% end %>
   	  </div> 
             
-    <%= render :partial => 'test2'%>
+
     <%= render :partial => '/layouts/footer'%>
   	</section>
   <script src="js/bootstrap.js"></script>

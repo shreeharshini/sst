@@ -27,17 +27,10 @@
 
 <%= javascript_include_tag "modernizr.js" %>
 
-<%= javascript_include_tag "application.js" %>
-
-
-  
-
-
-  
+<%= javascript_include_tag "application.js" %>  
 
 </head>
-<body  class="dashboard-page">
- 
+<body  class="dashboard-page"> 
  
  <section class="wrapper scrollable">
   
@@ -67,6 +60,8 @@
       <div class="form-group"> 
         <label>Platform</label>  
         <%= form_for(:sourcerepo, url: {action: "show"}, html: {method: "get"}) do |f| %>
+
+       
           
           <%= f.select :platform_id, options_for_select(@plats.collect { |platform|
             [platform.name.titleize, platform.id] }, 1),{}, { :class => 'platforms_select  form-control' } %>         
@@ -113,7 +108,7 @@
   <%= javascript_include_tag "bootstrap.js" %>
 
     
- 
+
 
 
 </body>

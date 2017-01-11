@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AdditionalUserTest < ActiveSupport::TestCase
+class LibcodewithlibreporttypeTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

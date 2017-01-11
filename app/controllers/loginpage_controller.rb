@@ -4,7 +4,6 @@ class LoginpageController < ApplicationController
 
   def index
     @acc = Account.where(:library_code => 16).first
-
     @libcode = @acc.library_code
     @libres = LibraryCodeMapping.where(:New_Code => @libcode).first
     @code =  @libres.Old_Code
@@ -13,7 +12,6 @@ class LoginpageController < ApplicationController
     @splineres2015 = YearTrend.where(:institution_code => @code,:processing_year => 2015)
     @splineres2016 = YearTrend.where(:institution_code => @code,:processing_year => 2016)
     @pieres = YearUsage.where(:institution_code => @code)
-
   end
 
   def sourcereports 
@@ -35,6 +33,7 @@ class LoginpageController < ApplicationController
   end
 
   def getreports
+
 binding.pry
     @years = Report.where("platform_id = ?", params[:platform_id])
     if @years.blank?
@@ -43,32 +42,43 @@ binding.pry
     respond_to do |format|
       format.js
     end
-    end
+    
+
      
   end
 
   def dynamicreports
+    acc_id = current_user.account_id
+    @lib_code = Libcodewithlibreporttype.where(:libcode => acc_id).pluck(:Report_Type)
     byebug
-        @sourcereports = SourceReportsMapping.where(:year => params[:sourcereports]).pluck(:report_id)
-        respond_to do |format|
-          format.html
-          format.json {render json: @sourcereports.to_json}
-        end
   end
 
+ 
+  
  
  
 
   def test2
-    @dynamic_reports = params[:dynamic_drop].constantize
     byebug
+    acc_id = current_user.account_id
+    @lib_code = Libcodewithlibreporttype.where(:libcode => acc_id).pluck(:Report_Type)
+    @dynamic_reports = params[:Report_Type].strip
+    @aa = "lib"+"_"+acc_id.to_s+"_"+@dynamic_reports
     respond_to do |format|
     format.js {}
     end
   end
 
-  
-  
+  # def test2
+  #   byebug
+  #   @dynamic_reports = params[:some_parameter].constantize
+  #   byebug
+  #   respond_to do |format|
+  #   format.js {}
+  #   end
+  # end
+
+ 
 
 
   def accessdetails
