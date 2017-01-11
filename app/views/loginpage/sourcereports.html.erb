@@ -27,17 +27,10 @@
 
 <%= javascript_include_tag "modernizr.js" %>
 
-<%= javascript_include_tag "application.js" %>
-
-
-  
-
-
-  
+<%= javascript_include_tag "application.js" %>  
 
 </head>
-<body  class="dashboard-page">
- 
+<body  class="dashboard-page"> 
  
  <section class="wrapper scrollable">
   
@@ -67,9 +60,6 @@
         <label>Platform</label>  
 
 <br>
-
-
-
             <select class="form-control" id="dropdown1" >
 
                           <option>--Select Platform--</option>
@@ -155,22 +145,18 @@
                 alert("xdfdf");
            $.ajax({
                type: "GET", 
-<<<<<<< HEAD
                // dataType: "json",
                url:"/loginpage/getreports",
                data: {sourcereports1: value2 }, 
-=======
                dataType: "json",
                url:"/loginpage/getreports",
                data: {sourcereports: value2 }, 
->>>>>>> 4c7b041c037f347dc03dcb33e0731b6d20d93793
                success:function(result1){
                      console.log(result1);
 
                      result1.forEach(function(){
                      $sourcerepo_html = $("<div class= 'result1'>" + result1 + "</div>");
                      $('#test1').append($sourcerepo_html);
-<<<<<<< HEAD
                        // alert(result1);
                        // document.getElementById('test1').innerHTML = result1;
                        // $("#test1").html(result1);
@@ -191,7 +177,6 @@
   //   }
   //   });
   // });
-=======
                      $("#test1").html(result1);
 
                      $("#test2").append($sourcerepo_html);

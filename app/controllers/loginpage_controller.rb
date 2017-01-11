@@ -4,23 +4,16 @@ class LoginpageController < ApplicationController
 
   def index
     @acc = Account.where(:library_code => 16).first
-<<<<<<< HEAD
-
-    @libcode = @acc.library_code
-
-    @libres = LibraryCodeMapping.where(:New_Code => @libcode).first
-
-=======
     @libcode = @acc.library_code
     @libres = LibraryCodeMapping.where(:New_Code => @libcode).first
->>>>>>> 4c7b041c037f347dc03dcb33e0731b6d20d93793
+    @libcode = @acc.library_code
+    @libres = LibraryCodeMapping.where(:New_Code => @libcode).first
     @code =  @libres.Old_Code
 #for graphs
     @barres = YearTopJournal.where(:institution_code => @code)
     @splineres2015 = YearTrend.where(:institution_code => @code,:processing_year => 2015)
     @splineres2016 = YearTrend.where(:institution_code => @code,:processing_year => 2016)
     @pieres = YearUsage.where(:institution_code => @code)
-
   end
 
   def sourcereports   
@@ -30,7 +23,6 @@ class LoginpageController < ApplicationController
   end
 
   def getreports
-<<<<<<< HEAD
     byebug
     # sourcereports1 = SourceReportsMapping.where(:year => params[:sourcereports1]).pluck(:report_id)
       @sourcereports = SourceReportsMapping.where(:year => params[:sourcereports])
@@ -38,13 +30,9 @@ class LoginpageController < ApplicationController
   end
 
   def dynamicreports
+    acc_id = current_user.account_id
+    @lib_code = Libcodewithlibreporttype.where(:libcode => acc_id).pluck(:Report_Type)
     byebug
-=======
-        @sourcereports = SourceReportsMapping.where(:year => params[:sourcereports]).pluck(:report_id)
-        respond_to do |format|
-          format.html
-          format.json {render json: @sourcereports.to_json}
-        end
   end
 
   def getyear
@@ -56,18 +44,19 @@ class LoginpageController < ApplicationController
     end
     
   def getreports2
-   
     sourcereports2 = Report.where(:id => params[:sourcereports2]).pluck(:name)
       respond_to do |format|
         format.html
-        format.json { render json: sourcereports2.to_json }
->>>>>>> 4c7b041c037f347dc03dcb33e0731b6d20d93793
+        format.json { render json: sourcereports2.to_json}
   end
 end
 
   def test2
-    @dynamic_reports = params[:dynamic_drop].constantize
     byebug
+    acc_id = current_user.account_id
+    @lib_code = Libcodewithlibreporttype.where(:libcode => acc_id).pluck(:Report_Type)
+    @dynamic_reports = params[:Report_Type].strip
+    @aa = "lib"+"_"+acc_id.to_s+"_"+@dynamic_reports
     respond_to do |format|
     format.js {}
     end
@@ -81,15 +70,9 @@ end
   #   format.js {}
   #   end
   # end
-  
-
-
 
   def show
   end
-
-
-
 
   def accessdetails
      @platforms = Platform.all

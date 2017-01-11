@@ -1,1 +1,0 @@
-json.partial! "additional_users/additional_user", additional_user: @additional_user

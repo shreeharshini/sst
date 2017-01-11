@@ -1,12 +1,23 @@
+<%= render :partial => 'dynamicform'%>
 <div id="report_id">
-	<h3 class="sub-header">Dynamic Reports</h3>
+	<h3 class="sub-header"></h3>
 	<table border='1' class="table table-striped" width="200">
 	  <tr class="success">
-	  	<% byebug %>
-			<%if @dynamic_reports.present?%> 
+			<%if @aa.present?%> 
 				<div class="sample">
 					<% byebug %>
-					<%= redirect_to(@dynamic_reports) %>
+					<table>
+					  <thead>
+					    <tr>
+					      <th>Name</th>
+					      <th>Email</th>
+					      <th>Subject</th>
+					      <th>Message</th>
+					      <th colspan="3"></th>
+					    </tr>
+					  </thead>
+					</table>
+					Successfully printed yes
 				</div>
 			<%else%>
 			<%end%>

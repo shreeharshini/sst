@@ -1,0 +1,2 @@
+class Libcodewithlibreporttype < ApplicationRecord
+end
