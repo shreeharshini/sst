@@ -1,11 +1,10 @@
-<<<<<<< HEAD
-=======
                                          Prefix Verb   URI Pattern                                                Controller#Action
                                      home_index GET    /home/index(.:format)                                      home#index
                                     users_index GET    /users/index(.:format)                                     users#index
-                                 users_sign_out GET    /users/sign_out(.:format)                                  users#sign_out
                                    users_create POST   /users/create(.:format)                                    users#create
                                       users_new GET    /users/new(.:format)                                       users#new
+                                     getreports GET    /loginpage/getreports(.:format)                            loginpage#getreports
+                                 loginpage_show GET    /loginpage/show(.:format)                                  loginpage#show
                         contactus_support_index GET    /support/contactus(.:format)                               support#contactus
                               faq_support_index GET    /support/faq(.:format)                                     support#faq
                           aboutus_support_index GET    /support/aboutus(.:format)                                 support#aboutus
@@ -73,7 +72,8 @@ show_reports_by_year_counter_and_custom_reports GET    /counter_and_custom_repor
                      sourcerepo_loginpage_index GET    /loginpage/sourcerepo(.:format)                            loginpage#sourcerepo
                         testing_loginpage_index GET    /loginpage/testing(.:format)                               loginpage#testing
                          result_loginpage_index GET    /loginpage/result(.:format)                                loginpage#result
-                                loginpage_index GET    /loginpage(.:format)                                       loginpage#index
+                                loginpage_index GET    /loginpage/show(.:format)                                  loginpage#show
+                                                GET    /loginpage(.:format)                                       loginpage#index
                                                 POST   /loginpage(.:format)                                       loginpage#create
                                   new_loginpage GET    /loginpage/new(.:format)                                   loginpage#new
                                  edit_loginpage GET    /loginpage/:id/edit(.:format)                              loginpage#edit
@@ -146,14 +146,6 @@ show_reports_by_year_counter_and_custom_reports GET    /counter_and_custom_repor
                                                 PATCH  /account_infos/:id(.:format)                               account_infos#update
                                                 PUT    /account_infos/:id(.:format)                               account_infos#update
                                                 DELETE /account_infos/:id(.:format)                               account_infos#destroy
-                                                GET    /export_files(.:format)                                    export_files#index
-                                                POST   /export_files(.:format)                                    export_files#create
-                                                GET    /export_files/new(.:format)                                export_files#new
-                                                GET    /export_files/:id/edit(.:format)                           export_files#edit
-                                                GET    /export_files/:id(.:format)                                export_files#show
-                                                PATCH  /export_files/:id(.:format)                                export_files#update
-                                                PUT    /export_files/:id(.:format)                                export_files#update
-                                                DELETE /export_files/:id(.:format)                                export_files#destroy
                                platform_reports GET    /platform_reports(.:format)                                platform_reports#index
                                                 POST   /platform_reports(.:format)                                platform_reports#create
                             new_platform_report GET    /platform_reports/new(.:format)                            platform_reports#new
@@ -210,4 +202,3 @@ show_reports_by_year_counter_and_custom_reports GET    /counter_and_custom_repor
                                                 PUT    /users(.:format)                                           devise/registrations#update
                                                 DELETE /users(.:format)                                           devise/registrations#destroy
                                            root GET    /                                                          home#index
->>>>>>> 4c7b041c037f347dc03dcb33e0731b6d20d93793

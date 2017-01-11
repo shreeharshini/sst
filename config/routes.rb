@@ -3,14 +3,14 @@ Rails.application.routes.draw do
 
 	get "home/index"
   get "users/index"
-  get "users/sign_out"
 
 
   post "users/create"
 
   get  "users/new"
  
-
+get 'loginpage/getreports', as: 'getreports'
+get 'loginpage/show'
 
   resources :support do 
     collection do
@@ -67,6 +67,7 @@ Rails.application.routes.draw do
       get 'sourcerepo'
       get 'testing'
       get 'result'
+      get 'show'
      end
   end
  
@@ -77,7 +78,7 @@ Rails.application.routes.draw do
             :source_reports_mappings, :year_trends, :year_usages,
             :year_top_journals, :account_infos,  
             :platform_reports, :requestfordemos, :contact_us, 
-            :library_account_details, :import_data 
+            :library_account_details, :import_data
 
   
   devise_for :users

@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+
 	# def set_default_role
 	#   self.role ||= :user
 	# end
@@ -19,7 +20,7 @@ class User < ApplicationRecord
 #   self.role ||= :user
 # end
   
- 	# before_action :authenticate_user!
+  # before_action :authenticate_user!
 	# To verify if a user is signed in, use the following helper:
 	# user_signed_in?
 
@@ -29,7 +30,7 @@ class User < ApplicationRecord
 	# You can access the session for this scope:
 	# user_session
 
-	# has_one :account
+	has_one :account
 
 	belongs_to :account
 	has_one :account_info ,:through =>:account

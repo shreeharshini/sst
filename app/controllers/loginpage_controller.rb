@@ -16,24 +16,30 @@ class LoginpageController < ApplicationController
 
   end
 
-  def sourcereports   
-    @source_reports = SourceReportsMapping.find_by_sql("SELECT platform_id,GROUP_CONCAT(year) AS years FROM source_reports_mappings GROUP BY platform_id")
- @reports = Report.all
-          @platforms = Platform.all
-     respond_to do |format|
-          format.html
-          format.xlsx {
-        response.headers['Content-Disposition'] = 'attachment; filename="reports.xlsx"'
-      }
-      end
+  def sourcereports 
+  binding.pry  
+    @plats = Platform.all
+    @years = SourceReportsMapping.where("platform_id = ?", Platform.first.id)
+     
+  end
 
+  def show
+     binding.pry
+        @repos = Report.where(:year => params[:trip][:year], :platform_id => params[:trip][:platform_id])
+      @repos.each do |f|
+      @plts = Platform.where(:id => f.platform_id)
+      @user_id = current_user.id
+      @acc = Account.where(:id => @user_id)
+    end
   end
 
   def getreports
-
-    byebug
-    # sourcereports1 = SourceReportsMapping.where(:year => params[:sourcereports1]).pluck(:report_id)
-      @sourcereports = SourceReportsMapping.where(:year => params[:sourcereports])
+binding.pry
+    @years = Report.where("platform_id = ?", params[:platform_id])
+    flash[:notice] = "Post successfully created"
+    respond_to do |format|
+      format.js
+    end
      
   end
 
@@ -46,23 +52,8 @@ class LoginpageController < ApplicationController
         end
   end
 
-  def getyear
-       sourcereportsyear = SourceReportsMapping.where(:platform_id => params[:sourcereportsyear]).pluck(:year)
-        respond_to do |format|
-          format.html
-          format.json {render json: sourcereportsyear.to_json}
-        end
-    end
-    
-  def getreports2
-   
-    sourcereports2 = Report.where(:id => params[:sourcereports2]).pluck(:name)
-      respond_to do |format|
-        format.html
-        format.json { render json: sourcereports2.to_json }
-      end
-
-  end
+ 
+ 
 
   def test2
     @dynamic_reports = params[:dynamic_drop].constantize
@@ -72,42 +63,15 @@ class LoginpageController < ApplicationController
     end
   end
 
-  # def test2
-  #   byebug
-  #   @dynamic_reports = params[:some_parameter].constantize
-  #   byebug
-  #   respond_to do |format|
-  #   format.js {}
-  #   end
-  # end
   
-  def sourcerepo
-    binding.pry
-  end
-
-  def testing
-    binding.pry
-           @sourcereportsyear = SourceReportsMapping.where(:platform_id => params[:get][:plat])
-
-  end
-
-
-  def result
-    binding.pry
-    @res = SourceReportsMapping.where(:id => params[:get][:platrepo])  
-  end
-
-  def show
-  end
-
+  
 
 
   def accessdetails
      @platforms = Platform.all
   end
 
-  def report
-  end
+  
 
   def selectedplatforms
     user_id = current_user.id

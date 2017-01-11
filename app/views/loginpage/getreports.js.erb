@@ -1,6 +1,5 @@
-<%byebug%>
+$(".reports_select").empty()
+ .append("<%= j (render 'reports/reports', locals: { years: @years }) %>")
 
-$(".sample").html("<%= j (render 'getreports', locals: { sourcereports: @sourcereports}) %>");
-
-console.log("successed");
-
+alert("in .js.erb");
+ 
