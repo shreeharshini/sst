@@ -6,16 +6,13 @@ class UserController < ApplicationController
   end
 
   def new
-    byebug
     @user = User.new
   end
 
   def create
-    byebug
     @user = User.new(user_params)
-    byebug
     if @users.save
-      redirect_to users_path
+      redirect_to users_index_path
     else
       render 'new'
     end

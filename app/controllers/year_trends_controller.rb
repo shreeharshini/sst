@@ -4,7 +4,6 @@ class YearTrendsController < ApplicationController
   	@yearusages = YearUsage.find_by_sql("SELECT Report_Type, SUM(YTD) as abc FROM year_usages GROUP BY Report_Type")
   
   	@topjournals = YearTopJournal.all
-  	byebug
   	# @yearusages = YearUsage.find_by_sql("SELECT Report_Type, SUM(YTD) as abc FROM year_usages GROUP BY Report_Type")
 	@topjournals.each do |f|
 		test1 = f.institution_code

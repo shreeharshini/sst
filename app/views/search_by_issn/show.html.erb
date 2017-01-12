@@ -4,45 +4,8 @@
   <%= render :partial => '/layouts/header'%>
   <%= render :partial => '/layouts/side_bar_navigation'%>
 
-<%= render :partial => 'search_form'%>
-<script type="text/javascript" src="http://code.jquery.com/jquery-3.0.0.min.js"></script>
-<script type="text/javascript" src="//netsh.pp.ua/upwork-demo/1/js/typeahead.js"></script>
-<script type="text/javascript">
-  $(document).ready(function(){
-    var sugges;
-    $("#select_id").change(function() {
-      var val = $(this).val();
-      alert(val);
-      $.ajax({
-        async: false,
-        type: 'GET',
-        url: '/search_by_issn/load_suggestions',
-        data: 'select_type='+val,
-        success: function(suggestion){
-          sugges = suggestion;
-          console.log(suggestion);
-          //alert(xml); // WORKS
-        }
-      });
-    });
+  <%= render :partial => 'search_form'%>
 
-    $('input.typeahead').typeahead({
-      name: 'accounts',
-      local: window.sugges
-    });
-  })
-  $("#button").click(function(){
-    var type = $('select#select_id option:selected').val();
-    //console.log(suggestion)
-    alert(type);
-    $.ajax({
-      type: 'GET',
-      url: '/search_by_issn/search',
-      data: 'select_type='+type
-    });
-  });
-
-</script>
 
 
 

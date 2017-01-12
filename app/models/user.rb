@@ -15,10 +15,9 @@ class User < ApplicationRecord
 
    #after_initialize :set_default_role, :if => :new_record?
 
-# def set_default_role
-# 	byebug
-#   self.role ||= :user
-# end
+	# def set_default_role
+	#   self.role ||= :user
+	# end
   
   # before_action :authenticate_user!
 	# To verify if a user is signed in, use the following helper:

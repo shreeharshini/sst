@@ -2,15 +2,16 @@
   <div class="agile-grids pad-top10">
     <div class="col-md-5 mb10">
 
-
+    		<div name="report =" id="selectReportType" class="Form-control">
 	    <%= form_tag({:controller => "loginpage", :action => "test2"}, {:method => "get", :remote => true}) do %>
+	</div>
 	     <label> Select Report Type: <%= select_tag(:Report_Type, options_for_select(@lib_code, prompt = nil)) %> </label>
 
 	      <label> From: <%= date_select :start_date, :startdate , :class => 'datepicker' %> </label>
 
 	      <label> To: <%= date_select :end_date, :enddate , :class => 'datepicker' %> </label>
 
-	    <%= submit_tag ("Preview") %>
+	    <%= submit_tag ("Preview Report") %>
 
 	    <% end %>
     </div>

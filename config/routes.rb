@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 	get "home/index"
   get "users/index"
 
+  post "users/sign_out"
 
   post "users/create"
 
@@ -26,6 +27,7 @@ Rails.application.routes.draw do
       get 'load_suggestions'
       get 'show_report'
       get 'csv'
+      get 'get_cost_per_usage'
     end
   end 
 
@@ -75,10 +77,8 @@ Rails.application.routes.draw do
             :year_top_journals, :account_infos,  
             :platform_reports, :requestfordemos, :contact_us, 
             :library_account_details, :import_data
-
   
   devise_for :users
   root to: 'home#index'
- 
 end
 
