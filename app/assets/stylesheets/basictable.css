@@ -1,12 +1,9 @@
 .ownTblContent table td {
-    padding: 10px 30px;
-
-    padding: 13px 50px;
-    text-align: left;
+    
 
     padding: 10px 30px;
 
-   text-align: left;
+   text-align: center;
 	
     font-size: .95em;
 }
@@ -17,8 +14,7 @@
     font-size: 14px;
 
 	padding: 10px 80px;
-	padding: 10px 70px;
-	padding: 5px 5px;
+	
 
     text-align: left;
 }

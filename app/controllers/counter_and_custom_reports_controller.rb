@@ -11,6 +11,13 @@ class CounterAndCustomReportsController < ApplicationController
     @grp_year = ReportInventory.distinct.where(account_id: @account_id).pluck(:year)
     @@year = 2016
 
+    @acc = Account.where(:library_code => 16).first
+    @libcode = @acc.library_code
+    @libres = LibraryCodeMapping.where(:New_Code => @libcode).first
+    @code =  @libres.Old_Code
+    #for graphs
+    @barres = YearTopJournal.where(:institution_code => @code)
+
 	end
   def show_reports_by_year # ajax Method
     @@year = params[:year]
@@ -27,7 +34,8 @@ class CounterAndCustomReportsController < ApplicationController
     end
   end
   def graph
-    @graph1 = GeneratedReport.all
+
+    binding.pry
     @pie_chart = Platform.all
   end
   def csv

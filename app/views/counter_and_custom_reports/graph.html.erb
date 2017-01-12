@@ -58,11 +58,11 @@ $(function () {
             name: 'Brands',
             colorByPoint: true,
             data: [
-            <% @graph1.each do |f| %>
+           <% @barres.each do |f| %>
 
             {
-                name: '<%= f.id %>',
-                y: <%= f.report_section_id  %>,
+                name: '<%= f.journal_title %>',
+                y: <%= f.YTD %>,
             },
             <%end%>
             ]

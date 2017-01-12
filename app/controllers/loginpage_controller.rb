@@ -4,8 +4,13 @@ class LoginpageController < ApplicationController
     before_action :authenticate_user!
 
   def index
-    @acc = Account.where(:library_code => 16).first
+    #find account_id of signedin user
+    @useracc_id = current_user.account_id
+    #find account record based on user's account_id
+    @acc = Account.where(:id => @useracc_id).first
+    #find library code
     @libcode = @acc.library_code
+    #find new_code based on librarycode of that account
     @libres = LibraryCodeMapping.where(:New_Code => @libcode).first
     @code =  @libres.Old_Code
     #for graphs
@@ -16,13 +21,11 @@ class LoginpageController < ApplicationController
   end
 
   def sourcereports 
-    binding.pry  
       @plats = Platform.all
       @years = SourceReportsMapping.where("platform_id = ?", Platform.first.id)
   end
 
   def result
-     binding.pry
       @repos = Report.where(:year => params[:sourcerepo][:year], :platform_id => params[:sourcerepo][:platform_id])  
         @repos.each do |f|
           @plts = Platform.where(:id => f.platform_id)
@@ -32,15 +35,12 @@ class LoginpageController < ApplicationController
   end
 
   def getreports
-    binding.pry
     @years = Report.where("platform_id = ?", params[:platform_id])
-    if @years.blank?
-        flash[:notice] = "sdfdf"
-    else
+    
     respond_to do |format|
       format.js
     end  
-  end
+
   end
 
   def dynamicreports

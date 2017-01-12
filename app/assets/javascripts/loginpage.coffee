@@ -1,6 +1,5 @@
 $ ->
   $(document).on 'change', '.platforms_select', (evt) ->
-    alert("in jquery");
     $.ajax 'getreports',
       type: 'GET'
       dataType: 'script'
@@ -10,5 +9,4 @@ $ ->
       error: (jqXHR, textStatus, errorThrown) ->
         console.log("AJAX Error: #{textStatus}")
       success: (data, textStatus, jqXHR) ->
-        alert(data);
-        console.log("Dynamic platform select OK!")
+        console.log("Dynamic platform selected")
