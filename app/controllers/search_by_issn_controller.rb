@@ -13,10 +13,12 @@ class SearchByIssnController < ApplicationController
 	end
 
 	def search
+		byebug
 		@suggestion = DataLibrary.pluck(:print_issn).last(10)
 	end
 
 	def load_suggestions
+		byebug
 		if params[:select_type] == "JournalPrintISSN"
 			@suggestion = DataLibrary.pluck(:print_issn).last(10)
 		elsif params[:select_type] == "journalOnlineISSN"

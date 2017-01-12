@@ -1,5 +1,5 @@
 
-<div class="agile-Updating-grids">  <div class="agile-grids">
+<div class="agile-grids">
 				
 				<div class="col-md-12" style="padding:0px;">
 <div class="col-md-8 nopaddingleft" >
@@ -75,6 +75,7 @@
       $('.table'+ $quantity + '> tbody > tr:last').append('<td data-th="remove"><a href="javascript:;" onclick="remove(' + $quantity + ');" id="remove"><img alt="Icon" src="/assets/icon.png"/></a></td>');
       $('.table'+$quantity ).removeClass('table');
     });
+
     $(".calculator").click(function(){
      var type = $('#costId_1').val();
      //console.log(suggestion)
@@ -83,7 +84,7 @@
        type: 'GET',
        url: '/search_by_issn/get_cost_per_usage',
        data: 'usage='+type
-      });
+     	});
  		});
   });
   function remove(elem) {

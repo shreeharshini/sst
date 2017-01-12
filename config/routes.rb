@@ -68,8 +68,15 @@ Rails.application.routes.draw do
       get 'selectedplatforms'
       get 'result'
 
-     end
+    end
   end
+
+  resources :import_data do
+    collection do
+      get 'xlsx'
+    end
+  end
+
  
   
   resources :accounts, :reports, :platforms,
