@@ -1,2 +1,1 @@
-<%=binding.pry%>
-$(".agile-Updating-grids").html("<%= escape_javascript(render partial: 'test2', locals: { items: @dynamic_reports ,lib_code: @lib_code } ) %>"); 
+$(".agile-Updating-grids").html("<%= escape_javascript(render partial: @dynamic_reports , locals: { items: @dynamic_reports ,lib_code: @lib_code } ) %>"); 

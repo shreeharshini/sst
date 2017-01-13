@@ -1,0 +1,25 @@
+<%= form_for :users, url: {:action=>"create", :controller=>"users"} do |f| %>
+
+            <%= f.label :first_name %>
+            <%= f.text_field :first_name %>
+
+            <%= f.label :last_name %>
+            <%= f.text_field :last_name %>
+
+            <%= f.label :email %>
+            <%= f.text_field :email %>
+
+            <%= f.label :password %>
+            <%= f.password_field :password %>
+
+            <%= f.label :password_confirmation, "Confirmation" %>
+            <%= f.password_field :password_confirmation %>
+            <br>
+
+            <%= f.label :role %>
+            <%= f.collection_select :role, User::ROLES, :to_s, :humanize %>      
+            <br>
+
+            <br>   
+            <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+          <% end %>

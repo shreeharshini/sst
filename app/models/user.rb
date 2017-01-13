@@ -30,6 +30,6 @@ class User < ApplicationRecord
 	# user_session
 
 
-	belongs_to :account
+	# belongs_to :account
 	has_one :account_info ,:through =>:account
 end

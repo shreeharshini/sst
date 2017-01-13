@@ -66,8 +66,9 @@
         
 <div class="col-md-12">
   <div class="table-responsive"> 
+                       <div class="table-responsive ownTblContent"> 
     <table class="table table-striped">
-        <thead>
+      <thead>
         <tr>
           <th align="left">User ID</th>
           <th align="left">Name</th>
@@ -77,21 +78,20 @@
         </tr>
       </thead>       
       <tbody>
-      <% @users.each do |users| %>
-      <tr>
-        <td><%= users.email %></td>
-        <td><%= users.first_name %></td>
-        <td><%= users.email %></td>
-        <td><%= users.role %></td>
-        <td><%= check_box_tag 'accept' %> </td> 
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-</div>
-<br>  
-      
+        <% @users.each do |users| %>
+          <tr>
+            <td><%= users.email %></td>
+            <td><%= users.first_name %></td>
+            <td><%= users.email %></td>
+            <td><%= users.role %></td>
+            <td><%= check_box_tag 'accept' %> </td> 
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
+  </div>
+</div>
   
       <tr>
       
@@ -99,12 +99,13 @@
         
           <div class="col-md-3">
           <div class="button raised">
-              <a href="javascript:;" id="buttonId" onclick="window.location = '/users/new'"> <div class="anim"></div><i class="icon-user"></i> Create New User</a>
+              <a href="javascript:;" id="buttonId" onclick="window.location = '/users/new'">
+               <div class="anim"></div>
+               <i class="icon-user"></i> 
+               Create New User
+              </a>
             </div>
             </div>
-
-<br>
-
         
         <div class="col-md-3 pull-right">
           <div class="button raised">

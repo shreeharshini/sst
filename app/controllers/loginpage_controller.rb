@@ -51,7 +51,6 @@ class LoginpageController < ApplicationController
   def dynamicreports
     acc_id = current_user.account_id
     @lib_code = Libcodewithlibreporttype.where(:libcode => acc_id).pluck(:Report_Type)
-
   end
 
   def test2
@@ -60,27 +59,8 @@ class LoginpageController < ApplicationController
     @dynamic_reports = params[:Report_Type].strip
     aa = "Lib"+"_"+acc_id.to_s+"_"+@dynamic_reports.downcase!
     @report_data = aa.constantize.all
-    if @dynamic_reports == "jr1"
-      render :partial => "jr1"
-    elsif @dynamic_reports == "jr2"
-      render :partial => "jr2"
-    elsif @dynamic_reports == "jr3"
-      render :partial => "jr3"
-    elsif @dynamic_reports == "jr1a"
-      render :partial => "jr1a"
-    elsif @dynamic_reports == "br1"
-      render :partial => "br1"
-    elsif @dynamic_reports == "br2"
-      render :partial => "br2"
-    elsif @dynamic_reports == "db1"
-      render :partial => "db1"
-    elsif @dynamic_reports == "db2"
-      render :partial => "db2"
-    elsif @dynamic_reports == "pr2"
-      render :partial => "pr2"
     respond_to do |format|
     format.js {}
-      end
     end
   end
 

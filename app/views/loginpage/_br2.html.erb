@@ -1,134 +1,143 @@
-<table>
-					  <thead>
-					    <tr>
-					      <th>id</th>
-					      <th>Book_Title</th>
-					      <th>Publisher</th>
-					      <th>Platform</th>		
-					      <th>Collection_Platform</th>
-					      <th>Book_DOI</th>
-					      <th>Proprietary_identifier</th>
-					      <th>Report_Measurement</th>
-					      <th>ISBN</th>
-					      <th>ISSN</th>
-					      <th>Report_Type</th>
-					      <th>Jan_2013</th>
-					      <th>Feb_2013</th>
-					      <th>Mar_2013</th>
-					      <th>Apr_2013</th>
-					      <th>May_2013</th>
-					      <th>Jun_2013</th>		
-					      <th>Jul_2013</th>
-					      <th>Aug_2013</th>
-					      <th>Sep_2013</th>
-					      <th>Oct_2013</th>
-					      <th>Nov_2013</th>
-					      <th>Dec_2013</th>
-					      <th>Jan_2014</th>
-					      <th>Feb_2014</th>
-					      <th>Mar_2014</th>
-					      <th>Apr_2014</th>
-					      <th>May_2014</th>
-					      <th>Jun_2014</th>		
-					      <th>Jul_2014</th>
-					      <th>Aug_2014</th>
-					      <th>Sep_2014</th>
-					      <th>Oct_2014</th>
-					      <th>Nov_2014</th>
-					      <th>Dec_2014</th>
-					      <th>Jan_2015</th>
-					      <th>Feb_2015</th>
-					      <th>Mar_2015</th>
-					      <th>Apr_2015</th>
-					      <th>May_2015</th>
-					      <th>Jun_2015</th>		
-					      <th>Jul_2015</th>
-					      <th>Aug_2015</th>
-					      <th>Sep_2015</th>
-					      <th>Oct_2015</th>
-					      <th>Nov_2015</th>
-					      <th>Dec_2015</th>
-					      <th>Jan_2016</th>
-					      <th>Feb_2016</th>
-					      <th>Mar_2016</th>
-					      <th>Apr_2016</th>
-					      <th>May_2016</th>
-					      <th>Jun_2016</th>		
-					      <th>Jul_2016</th>
-					      <th>Aug_2016</th>
-					      <th>Sep_2016</th>
-					      <th>Oct_2016</th>
-					      <th>Nov_2016</th>
-					      <th>Dec_2016</th>					      
-					      <th colspan="3"></th>
-					    </tr>
-					  </thead>
+<%= render :partial => 'dynamicform'%>
+<br>
+<div class="agile-Updating-grids"> 
+  <div class="agile-grids pad-top10">
+    <div class="col-md-5 mb10">
+			<table>
+			  <thead>
+			    <tr>
+			      <th>id</th>
+			      <th>Book_Title</th>
+			      <th>Publisher</th>
+			      <th>Platform</th>		
+			      <th>Collection_Platform</th>
+			      <th>Book_DOI</th>
+			      <th>Proprietary_identifier</th>
+			      <th>Report_Measurement</th>
+			      <th>ISBN</th>
+			      <th>ISSN</th>
+			      <th>Report_Type</th>
+			      <th>Jan_2013</th>
+			      <th>Feb_2013</th>
+			      <th>Mar_2013</th>
+			      <th>Apr_2013</th>
+			      <th>May_2013</th>
+			      <th>Jun_2013</th>		
+			      <th>Jul_2013</th>
+			      <th>Aug_2013</th>
+			      <th>Sep_2013</th>
+			      <th>Oct_2013</th>
+			      <th>Nov_2013</th>
+			      <th>Dec_2013</th>
+			      <th>Jan_2014</th>
+			      <th>Feb_2014</th>
+			      <th>Mar_2014</th>
+			      <th>Apr_2014</th>
+			      <th>May_2014</th>
+			      <th>Jun_2014</th>		
+			      <th>Jul_2014</th>
+			      <th>Aug_2014</th>
+			      <th>Sep_2014</th>
+			      <th>Oct_2014</th>
+			      <th>Nov_2014</th>
+			      <th>Dec_2014</th>
+			      <th>Jan_2015</th>
+			      <th>Feb_2015</th>
+			      <th>Mar_2015</th>
+			      <th>Apr_2015</th>
+			      <th>May_2015</th>
+			      <th>Jun_2015</th>		
+			      <th>Jul_2015</th>
+			      <th>Aug_2015</th>
+			      <th>Sep_2015</th>
+			      <th>Oct_2015</th>
+			      <th>Nov_2015</th>
+			      <th>Dec_2015</th>
+			      <th>Jan_2016</th>
+			      <th>Feb_2016</th>
+			      <th>Mar_2016</th>
+			      <th>Apr_2016</th>
+			      <th>May_2016</th>
+			      <th>Jun_2016</th>		
+			      <th>Jul_2016</th>
+			      <th>Aug_2016</th>
+			      <th>Sep_2016</th>
+			      <th>Oct_2016</th>
+			      <th>Nov_2016</th>
+			      <th>Dec_2016</th>					      
+			      <th colspan="3"></th>
+			    </tr>
+			  </thead>
 
-					  <tbody>
-					  	    <% @report_data.each do |report_data| %>
-					      <tr>
-					        <td><%= report_data.id %></td>
-					        <td><%= report_data.Book_Title %></td>
-					        <td><%= report_data.Publisher %></td>
-					        <td><%= report_data.Platform %></td>
-					        <td><%= report_data.Collection_Platform %></td>
-					        <td><%= report_data.Book_DOI %></td>
-					        <td><%= report_data.Proprietary_Identifier %></td>
-					        <td><%= report_data.Report_Measurement %></td>
-					        <td><%= report_data.ISBN %></td>
-					        <td><%= report_data.ISSN %></td>
-					        <td><%= report_data.Report_Type %></td>
-					        <td><%= report_data.Jan_2013 %></td>
-					        <td><%= report_data.Feb_2013 %></td>
-					        <td><%= report_data.Mar_2013 %></td>
-					        <td><%= report_data.Apr_2013 %></td>
-					        <td><%= report_data.May_2013 %></td>
-					        <td><%= report_data.Jun_2013 %></td>
-					        <td><%= report_data.Jul_2013 %></td>
-					        <td><%= report_data.Aug_2013 %></td>
-					        <td><%= report_data.Sep_2013 %></td>
-					        <td><%= report_data.Oct_2013 %></td>
-					        <td><%= report_data.Nov_2013 %></td>
-					        <td><%= report_data.Dec_2013 %></td>
-					        <td><%= report_data.Jan_2014 %></td>
-					        <td><%= report_data.Feb_2014 %></td>
-					        <td><%= report_data.Mar_2014 %></td>
-					        <td><%= report_data.Apr_2014 %></td>
-					        <td><%= report_data.May_2014 %></td>
-					        <td><%= report_data.Jun_2014 %></td>
-					        <td><%= report_data.Jul_2014 %></td>
-					        <td><%= report_data.Aug_2014 %></td>
-					        <td><%= report_data.Sep_2014 %></td>
-					        <td><%= report_data.Oct_2014 %></td>
-					        <td><%= report_data.Nov_2014 %></td>
-					        <td><%= report_data.Dec_2014 %></td>
-					        <td><%= report_data.Jan_2015 %></td>
-					        <td><%= report_data.Feb_2015 %></td>
-					        <td><%= report_data.Mar_2015 %></td>
-					        <td><%= report_data.Apr_2015 %></td>
-					        <td><%= report_data.May_2015 %></td>
-					        <td><%= report_data.Jun_2015 %></td>
-					        <td><%= report_data.Jul_2015 %></td>
-					        <td><%= report_data.Aug_2015 %></td>
-					        <td><%= report_data.Sep_2015 %></td>
-					        <td><%= report_data.Oct_2015 %></td>
-					        <td><%= report_data.Nov_2015 %></td>
-					        <td><%= report_data.Dec_2015 %></td>
-					        <td><%= report_data.Jan_2016 %></td>
-					        <td><%= report_data.Feb_2016 %></td>
-					        <td><%= report_data.Mar_2016 %></td>
-					        <td><%= report_data.Apr_2016 %></td>
-					        <td><%= report_data.May_2016 %></td>
-					        <td><%= report_data.Jun_2016 %></td>
-					        <td><%= report_data.Jul_2016 %></td>
-					        <td><%= report_data.Aug_2016 %></td>
-					        <td><%= report_data.Sep_2016 %></td>
-					        <td><%= report_data.Oct_2016 %></td>
-					        <td><%= report_data.Nov_2016 %></td>
-					        <td><%= report_data.Dec_2016 %></td>		       
-					        <td><%= link_to 'Show', report_data %></td>
-					        <td><%= link_to 'Destroy', report_data, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-					      </tr>
-					    <% end %>
- 						 </tbody>
-					</table>
+			  <tbody>
+			  	<% @report_data.each do |report_data| %>
+			      <tr>
+			        <td><%= report_data.id %></td>
+			        <td><%= report_data.Book_Title %></td>
+			        <td><%= report_data.Publisher %></td>
+			        <td><%= report_data.Platform %></td>
+			        <td><%= report_data.Collection_Platform %></td>
+			        <td><%= report_data.Book_DOI %></td>
+			        <td><%= report_data.Proprietary_Identifier %></td>
+			        <td><%= report_data.Report_Measurement %></td>
+			        <td><%= report_data.ISBN %></td>
+			        <td><%= report_data.ISSN %></td>
+			        <td><%= report_data.Report_Type %></td>
+			        <td><%= report_data.Jan_2013 %></td>
+			        <td><%= report_data.Feb_2013 %></td>
+			        <td><%= report_data.Mar_2013 %></td>
+			        <td><%= report_data.Apr_2013 %></td>
+			        <td><%= report_data.May_2013 %></td>
+			        <td><%= report_data.Jun_2013 %></td>
+			        <td><%= report_data.Jul_2013 %></td>
+			        <td><%= report_data.Aug_2013 %></td>
+			        <td><%= report_data.Sep_2013 %></td>
+			        <td><%= report_data.Oct_2013 %></td>
+			        <td><%= report_data.Nov_2013 %></td>
+			        <td><%= report_data.Dec_2013 %></td>
+			        <td><%= report_data.Jan_2014 %></td>
+			        <td><%= report_data.Feb_2014 %></td>
+			        <td><%= report_data.Mar_2014 %></td>
+			        <td><%= report_data.Apr_2014 %></td>
+			        <td><%= report_data.May_2014 %></td>
+			        <td><%= report_data.Jun_2014 %></td>
+			        <td><%= report_data.Jul_2014 %></td>
+			        <td><%= report_data.Aug_2014 %></td>
+			        <td><%= report_data.Sep_2014 %></td>
+			        <td><%= report_data.Oct_2014 %></td>
+			        <td><%= report_data.Nov_2014 %></td>
+			        <td><%= report_data.Dec_2014 %></td>
+			        <td><%= report_data.Jan_2015 %></td>
+			        <td><%= report_data.Feb_2015 %></td>
+			        <td><%= report_data.Mar_2015 %></td>
+			        <td><%= report_data.Apr_2015 %></td>
+			        <td><%= report_data.May_2015 %></td>
+			        <td><%= report_data.Jun_2015 %></td>
+			        <td><%= report_data.Jul_2015 %></td>
+			        <td><%= report_data.Aug_2015 %></td>
+			        <td><%= report_data.Sep_2015 %></td>
+			        <td><%= report_data.Oct_2015 %></td>
+			        <td><%= report_data.Nov_2015 %></td>
+			        <td><%= report_data.Dec_2015 %></td>
+			        <td><%= report_data.Jan_2016 %></td>
+			        <td><%= report_data.Feb_2016 %></td>
+			        <td><%= report_data.Mar_2016 %></td>
+			        <td><%= report_data.Apr_2016 %></td>
+			        <td><%= report_data.May_2016 %></td>
+			        <td><%= report_data.Jun_2016 %></td>
+			        <td><%= report_data.Jul_2016 %></td>
+			        <td><%= report_data.Aug_2016 %></td>
+			        <td><%= report_data.Sep_2016 %></td>
+			        <td><%= report_data.Oct_2016 %></td>
+			        <td><%= report_data.Nov_2016 %></td>
+			        <td><%= report_data.Dec_2016 %></td>		       
+			        <td><%= link_to 'Show', report_data %></td>
+			        <td><%= link_to 'Destroy', report_data, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			      </tr>
+			    <% end %>
+				</tbody>
+			</table>
+		</div>
+  	<div class="clearfix"> </div>
+  </div>
+</div>	
