@@ -1,15 +1,5 @@
 <!-- tables -->
-      <ol class="breadcrumb"> <li><a href="/librarian/dashboard">Home</a></li>
-        <li><a href="/libraries/searchByISSN/LcollapseSix-03">Search By ISSN & ISBN</a></li> 
-        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-      </ol>
-
-<br>
-
-  <h4 > Search By ISSN/ISBN </h4>
-  <p class="pad-top10 mar-btm20">Please choose Search Type and then enter ISSN/ISBN to view Cost per Usage details. You can calculate Cost per Usage dynamically.
-</p>
+      
 <div class="agile-Updating-grids">  <div class="agile-grids pad-top10">
 <div id="messagearea" class="space"> </div>
 <form id="selectForm" onsubmit="return validate('libraries');; return true;">
@@ -32,7 +22,7 @@
 
      <div class=" col-sm-2 mt-10">
         <div class="button raised">
-          <a href="#" class="hoverable" id="button"> <div class="anim"></div><span>Search</span></a>
+           <div class="button"></div><span>Search</span>
         </div>
       </div>
 
@@ -41,7 +31,16 @@
 <script type="text/javascript" src="//netsh.pp.ua/upwork-demo/1/js/typeahead.js"></script>
 <script type="text/javascript">
   $(document).ready(function(){
-    var sugges;
+
+     function get_data(data){
+      console.log('outside',data);
+      $('input.typeahead').typeahead({
+              // name: 'accounts',
+              local: data
+            });
+    }
+
+    // var sugges;
     $("#select_id").change(function() {
       var val = $(this).val();
       alert(val);
@@ -51,27 +50,28 @@
         url: '/search_by_issn/load_suggestions',
         data: 'select_type='+val,
         success: function(suggestion){
-          sugges = suggestion;
-          console.log(suggestion);
+          
+          console.log('inside',suggestion);
+           get_data(suggestion)
+         
           //alert(xml); // WORKS
         }
       });
     });
 
-    $('input.typeahead').typeahead({
-      name: 'accounts',
-      local: window.sugges
-    });
+  
   })
-  $("#button").click(function(){
+
+  $(".button").click(function(){
     var type = $('select#select_id option:selected').val();
+    var issn = $('.typeahead').val();
     //console.log(suggestion)
-    alert(type);
+    alert(issn);
     $.ajax({
       type: 'GET',
       url: '/search_by_issn/search',
-      data: 'select_type='+type
+      //data: 'select_type='+issn
+      data : { select_type: type, issn: issn }
     });
   });
-
 </script>

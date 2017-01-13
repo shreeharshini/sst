@@ -1,1 +1,3 @@
-$('.agile-Updating-grids').html("<%= j (render 'result', locals: { suggestion: @suggestion}) %>");
+// byebug
+$('.agile-grids').html("<%= escape_javascript render(:partial => 'result', :locals => { :results => @results }) %>")
+// $('.agile-grids').html("<%= j (render 'result', locals: { results: @results}) %>");

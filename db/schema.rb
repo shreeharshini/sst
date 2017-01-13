@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20170112093827) do
     t.integer  "number_of_platforms"
     t.string   "activation_status"
     t.string   "account_code"
+    t.integer  "user_id"
     t.string   "library_code"
   end
 

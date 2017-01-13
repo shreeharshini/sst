@@ -13,10 +13,13 @@ class SearchByIssnController < ApplicationController
 	end
 
 	def search
-		@suggestion = DataLibrary.pluck(:print_issn).last(10)
+
+		@results =DataLibrary.where("print_issn LIKE '%#{params[:issn]}%'")
+		# @results = ReportSection.where(section: "counter" , year: params[:year] ? params[:year] : "2016")
 	end
 
 	def load_suggestions
+		
 		if params[:select_type] == "JournalPrintISSN"
 			@suggestion = DataLibrary.pluck(:print_issn).last(10)
 		elsif params[:select_type] == "journalOnlineISSN"
@@ -26,8 +29,9 @@ class SearchByIssnController < ApplicationController
 		else params[:select_type] == "bookISSN"
 			@suggestion = DataLibrary.pluck(:issn).last(10)
 		end
+		# byebug
 		respond_to do |format|
-			format.json {render json: @suggestion.to_json}
+			format.json {render json: @suggestion.compact.to_json}
 		end
 	end
 
@@ -36,7 +40,10 @@ class SearchByIssnController < ApplicationController
   	end
 
   	def get_cost_per_usage
-  		cost_per_usage = params[:usage].to_i / 2
+  		@cost_per_usage = params[:usage].to_i / 2
+  		respond_to do |format|
+			format.json {render json: @cost_per_usage.to_json}
+		end
 
   	end
 end

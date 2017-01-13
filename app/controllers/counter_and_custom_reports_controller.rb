@@ -2,7 +2,7 @@ class CounterAndCustomReportsController < ApplicationController
 	def index
 	end
 	def show
-    @graph1 = GeneratedReport.all
+    @graph1 = Platform.all
     @pie_chart = Platform.all
     @counter_reports = ReportSection.where(section: "counter")
     @cost_reports = ReportSection.where(section: "cost")
@@ -11,12 +11,18 @@ class CounterAndCustomReportsController < ApplicationController
     @grp_year = ReportInventory.distinct.where(account_id: @account_id).pluck(:year)
     @@year = 2016
 
-    @acc = Account.where(:library_code => 16).first
+     #find account_id of signedin user
+    @useracc_id = current_user.account_id
+    #find account record based on user's account_id
+    @acc = Account.where(:id => @useracc_id).first
+    #find library code
     @libcode = @acc.library_code
+    #find new_code based on librarycode of that account
     @libres = LibraryCodeMapping.where(:New_Code => @libcode).first
     @code =  @libres.Old_Code
     #for graphs
     @barres = YearTopJournal.where(:institution_code => @code)
+
 
 	end
   def show_reports_by_year # ajax Method
@@ -29,13 +35,23 @@ class CounterAndCustomReportsController < ApplicationController
     @custom_reports = ReportSection.where(section: "custom" , year: params[:year] ? params[:year] : "2016")
     @grp_year = ReportInventory.distinct.where(account_id: 2).pluck(:year)
     @account_id = current_user.account_id
+      #find account_id of signedin user
+    @useracc_id = current_user.account_id
+    #find account record based on user's account_id
+    @acc = Account.where(:id => @useracc_id).first
+    #find library code
+    @libcode = @acc.library_code
+    #find new_code based on librarycode of that account
+    @libres = LibraryCodeMapping.where(:New_Code => @libcode).first
+    @code =  @libres.Old_Code
+    #for graphs
+    @barres = YearTopJournal.where(:institution_code => @code)
+
     respond_to do |format|
       format.js { render :counter }
     end
   end
   def graph
-
-    binding.pry
     @pie_chart = Platform.all
   end
   def csv
