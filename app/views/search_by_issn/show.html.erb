@@ -4,11 +4,19 @@
   <%= render :partial => '/layouts/header'%>
   <%= render :partial => '/layouts/side_bar_navigation'%>
 
-  <%= render :partial => 'search_form'%>
+  <ol class="breadcrumb"> <li><a href="/librarian/dashboard">Home</a></li>
+        <li><a href="/libraries/searchByISSN/LcollapseSix-03">Search By ISSN & ISBN</a></li> 
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      </ol>
 
+<br>
 
+  <h4 > Search By ISSN/ISBN </h4>
+  <p class="pad-top10 mar-btm20">Please choose Search Type and then enter ISSN/ISBN to view Cost per Usage details. You can calculate Cost per Usage dynamically.
+</p>
 
-
+<%= render :partial => 'search_form'%>
 
   </div>
     <div class="clearfix"></div>

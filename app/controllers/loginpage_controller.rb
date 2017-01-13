@@ -33,15 +33,20 @@ class LoginpageController < ApplicationController
 
   def result
       @repos = Report.where(:year => params[:sourcerepo][:year], :platform_id => params[:sourcerepo][:platform_id])  
+            @years = Report.where(:year => params[:sourcerepo][:year])
         @repos.each do |f|
           @plts = Platform.where(:id => f.platform_id)
           @user_id = current_user.id
           @acc = Account.where(:id => @user_id)
         end
+        
+
   end
 
   def getreports
     @years = Report.where("platform_id = ?", params[:platform_id]) 
+
+    @yrs = Report.where(:year => params[:year])
     respond_to do |format|
       format.js
     end  
@@ -77,7 +82,7 @@ class LoginpageController < ApplicationController
   end
 
   def selectedplatforms
-    user_id = current_user.id
+    user_id = current_user.account_id
     @accounts = Account.where(:id => user_id ).first
     @platforms = PlatformReport.find_by_sql("SELECT platform_id,GROUP_CONCAT(report_id) AS reports FROM platform_reports GROUP BY platform_id")
     @repo = [ 1,2,3,4,5,6,7,8,9,10]

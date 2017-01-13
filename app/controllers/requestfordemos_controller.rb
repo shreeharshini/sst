@@ -31,7 +31,7 @@ class RequestfordemosController < ApplicationController
 
        RequestfordemoMailer.welcome_email(@requestfordemo).deliver
 
-        format.html { redirect_to root_path, flash.now[:notice] = 'Requestfordemo was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Requestfordemo was successfully created.' }
         format.json { render :show, status: :created, location: @requestfordemo }
       else
         format.html { render :new }

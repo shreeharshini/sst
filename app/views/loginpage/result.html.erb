@@ -27,8 +27,17 @@ Platform name:
 <%= f.name%>
 <%end%>
 
+<%= form_for(:sourcerepo, url: {action: "result"}, html: {method: "get"}) do |f| %>
+ <div class="col-md-5 mb10">   
+      <div class="form-group"> 
+        <label>Reporting Period</label>  
+          <%= f.select :year, options_for_select(@years.collect { |reports|
+            [reports.year, reports.year] }, 0), {}, { :class => 'reports_selected  form-control' } %>
 
 
+      </div>
+    </div>
+<%end%>
 
 <div class="agile-Updating-grids"> 
           <div class="agile-grids">
@@ -48,7 +57,7 @@ Platform name:
                         <p><% @repos.each do |f| %>
                           <td><%= f.name%></td>
                           <td><%= f.description %></td>
-                          <td><%= link_to 'download as xlsx', reports_path(format: :xlsx)%><br></td>
+                          <td><%= link_to image_tag("xls.png", :alt => "Image Description", :class => "css", :size => "20x20"), reports_path(format: :xlsx)  %><br></td>
                           <%end%>
                         </p>
                         </tr>
@@ -73,4 +82,23 @@ Platform name:
 
 </section>
 </body>
+
+
+<script>
+    $("#year").change(function(){
+       var value1 = $('select#year option:selected').val();
+        $.ajax({
+            type:"GET",
+            url:"/loginpage/getreports",
+            dataType:"js",
+            data: {platform_id: value1 },
+            success:function(result){
+               
+               alert("success");
+                    
+                }
+                      
+        })
+    });
+  </script>
 

@@ -1,6 +1,7 @@
                                          Prefix Verb   URI Pattern                                                Controller#Action
                                      home_index GET    /home/index(.:format)                                      home#index
                                     users_index GET    /users/index(.:format)                                     users#index
+                                 users_sign_out POST   /users/sign_out(.:format)                                  users#sign_out
                                    users_create POST   /users/create(.:format)                                    users#create
                                       users_new GET    /users/new(.:format)                                       users#new
                       year_trends_highpiecharts GET    /year_trends/highpiecharts(.:format)                       year_trends#highpiecharts
@@ -19,6 +20,7 @@
           load_suggestions_search_by_issn_index GET    /search_by_issn/load_suggestions(.:format)                 search_by_issn#load_suggestions
                show_report_search_by_issn_index GET    /search_by_issn/show_report(.:format)                      search_by_issn#show_report
                        csv_search_by_issn_index GET    /search_by_issn/csv(.:format)                              search_by_issn#csv
+        get_cost_per_usage_search_by_issn_index GET    /search_by_issn/get_cost_per_usage(.:format)               search_by_issn#get_cost_per_usage
                            search_by_issn_index GET    /search_by_issn(.:format)                                  search_by_issn#index
                                                 POST   /search_by_issn(.:format)                                  search_by_issn#create
                              new_search_by_issn GET    /search_by_issn/new(.:format)                              search_by_issn#new
@@ -68,9 +70,6 @@ show_reports_by_year_counter_and_custom_reports GET    /counter_and_custom_repor
                   sourcereports_loginpage_index GET    /loginpage/sourcereports(.:format)                         loginpage#sourcereports
                   accessdetails_loginpage_index GET    /loginpage/accessdetails(.:format)                         loginpage#accessdetails
               selectedplatforms_loginpage_index GET    /loginpage/selectedplatforms(.:format)                     loginpage#selectedplatforms
-                    getreports2_loginpage_index GET    /loginpage/getreports2(.:format)                           loginpage#getreports2
-                     sourcerepo_loginpage_index GET    /loginpage/sourcerepo(.:format)                            loginpage#sourcerepo
-                        testing_loginpage_index GET    /loginpage/testing(.:format)                               loginpage#testing
                          result_loginpage_index GET    /loginpage/result(.:format)                                loginpage#result
                                 loginpage_index GET    /loginpage(.:format)                                       loginpage#index
                                                 POST   /loginpage(.:format)                                       loginpage#create

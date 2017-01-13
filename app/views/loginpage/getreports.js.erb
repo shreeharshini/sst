@@ -1,4 +1,5 @@
 $(".reports_select").empty()
  .append("<%= j (render 'reports/reports', locals: { years: @years }) %>")
 
- 
+$(".reports_selected")
+.append("<%= j (render 'reports/reports', locals: { yrs: @yrs })%>")
