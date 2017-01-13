@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170110113323) do
+ActiveRecord::Schema.define(version: 20170112093827) do
 
   create_table "account_infos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "account_code"
@@ -49,13 +49,6 @@ ActiveRecord::Schema.define(version: 20170110113323) do
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.integer  "account_id"
-  end
-
-  create_table "account_platform_details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "account_id"
-    t.integer  "platform_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
   end
 
   create_table "account_platforms", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -683,24 +676,15 @@ ActiveRecord::Schema.define(version: 20170110113323) do
     t.datetime "updated_at",    null: false
   end
 
-  create_table "libcodewithlibreporttypes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "libcode"
-    t.string   "Report_Type"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+  create_table "libcodewithlibreporttypes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string "libcode",     limit: 45
+    t.string "Report_Type", limit: 45
   end
 
   create_table "library_code_mappings", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "New_Code"
     t.string  "Library_Name", limit: 100
     t.string  "Old_Code",     limit: 50
-  end
-
-  create_table "platform_report_details", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "platform_id"
-    t.integer  "report_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
   end
 
   create_table "platform_reports", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -717,15 +701,6 @@ ActiveRecord::Schema.define(version: 20170110113323) do
     t.string   "updated_by"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "plats", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name"
-    t.string   "created_by"
-    t.string   "updated_by"
-    t.string   "platformname"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
   end
 
   create_table "publisher_reports", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -828,41 +803,22 @@ ActiveRecord::Schema.define(version: 20170110113323) do
     t.integer  "is_permitted"
   end
 
-  create_table "user_acounts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id"
-    t.integer  "account_id"
-    t.integer  "role_id"
-    t.string   "updated_by"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "user_roles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id"
-    t.integer  "role_id"
-    t.string   "updated_by"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.string   "role"
     t.string   "first_name"
     t.string   "last_name"
-    t.boolean  "is_admin",               default: false
     t.integer  "account_id"
     t.string   "user_type"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
@@ -870,43 +826,39 @@ ActiveRecord::Schema.define(version: 20170110113323) do
   end
 
   create_table "year_top_journals", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "institution_code"
-    t.string   "journal_title"
-    t.integer  "YTD"
-    t.integer  "Jan_Stats"
-    t.integer  "Feb_Stats"
-    t.integer  "Mar_Stats"
-    t.integer  "Apr_Stats"
-    t.integer  "May_Stats"
-    t.integer  "Jun_Stats"
-    t.integer  "Jul_Stats"
-    t.integer  "Aug_Stats"
-    t.integer  "Sept_Stats"
-    t.integer  "Oct_Stats"
-    t.integer  "Nov_Stats"
-    t.integer  "Dec_Stats"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.string  "institution_code", limit: 20
+    t.string  "journal_title",    limit: 400
+    t.integer "YTD"
+    t.integer "Jan_Stats"
+    t.integer "Feb_Stats"
+    t.integer "Mar_Stats"
+    t.integer "Apr_Stats"
+    t.integer "May_Stats"
+    t.integer "Jun_Stats"
+    t.integer "Jul_Stats"
+    t.integer "Aug_Stats"
+    t.integer "Sept_Stats"
+    t.integer "Oct_Stats"
+    t.integer "Nov_Stats"
+    t.integer "Dec_Stats"
   end
 
   create_table "year_trends", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "institution_code"
-    t.string   "processing_month"
-    t.integer  "processing_year"
-    t.integer  "Jan_Stats"
-    t.integer  "Feb_Stats"
-    t.integer  "Mar_Stats"
-    t.integer  "Apr_Stats"
-    t.integer  "May_Stats"
-    t.integer  "Jun_Stats"
-    t.integer  "Jul_Stats"
-    t.integer  "Aug_Stats"
-    t.integer  "Sept_Stats"
-    t.integer  "Oct_Stats"
-    t.integer  "Nov_Stats"
-    t.integer  "Dec_Stats"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.string  "institution_code", limit: 20
+    t.integer "processing_month",            default: 0, null: false
+    t.integer "processing_year",             default: 0, null: false
+    t.integer "Jan_Stats"
+    t.integer "Feb_Stats"
+    t.integer "Mar_Stats"
+    t.integer "Apr_Stats"
+    t.integer "May_Stats"
+    t.integer "Jun_Stats"
+    t.integer "Jul_Stats"
+    t.integer "Aug_Stats"
+    t.integer "Sept_Stats"
+    t.integer "Oct_Stats"
+    t.integer "Nov_Stats"
+    t.integer "Dec_Stats"
   end
 
   create_table "year_usages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

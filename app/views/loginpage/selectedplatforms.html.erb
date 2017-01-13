@@ -193,22 +193,16 @@
 											        <td>
 											        </td>
 											        <td><%= plat.platform.created_at.strftime("%d-%m-%y") %></td>
-											       
 											        	<% sample = plat.reports.split(',').collect{|n| n.to_i} %>
-											      <% array = @repo.to_a %>
-
-											     <% array.each do |a| %>
-											     	<% sample.each do |b| %>
-											    	 <td>
-											     	<% if a == b %>
+														 <%@repo.each do |f|%>
+														 <td>
+														  <% if sample.include? f%>
 											     		<div class="square-block-selected"><br><br></div>
-											     		<%else%>
+   													<%else  %>
 											     		<div class="square-block-not-available"><br><br></div>
-											     	<%end%>
-											     	</td>
-											     	<%end%>
-											     <%end%>
-
+													   <%end %> 
+													   </td>
+													 <%end  %>
 											        
 											      </tr>
 											      
