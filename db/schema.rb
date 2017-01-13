@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170110113323) do
+ActiveRecord::Schema.define(version: 20170112093827) do
 
   create_table "account_infos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "account_code"
@@ -677,11 +677,9 @@ ActiveRecord::Schema.define(version: 20170110113323) do
     t.datetime "updated_at",    null: false
   end
 
-  create_table "libcodewithlibreporttypes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "libcode"
-    t.string   "Report_Type"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+  create_table "libcodewithlibreporttypes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string "libcode",     limit: 45
+    t.string "Report_Type", limit: 45
   end
 
   create_table "library_code_mappings", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
