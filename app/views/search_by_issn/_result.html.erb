@@ -1,6 +1,9 @@
 
 <% if @results.present? %>
 	<%= render :partial => 'search_form'%>
+	<br>
+	<div class="alert alert-info">
+  You can download the full Cost per Use report by uploading cost data here <a href="/import_data/index"><u>Upload Data</u></a>.</div>
 
 	<div class="agile-grids">
 		
@@ -16,7 +19,7 @@
 
 	<br>
 	<div class="col-md-12 mt-10	" style="padding:0px;">
-	 <div class="table-responsive"> 
+	 <div class="table-responsive ownTblContent">
 	 	<table class="table table-striped" >
 		<thead>
 							  <tr>
@@ -39,7 +42,10 @@
 						<input type="hidden" id="journalId_1" value="Marine and Freshwater Behaviour and Physiology"></td>
 					<td data-th="Gender"><span class="bt-content"><%= cr.mps_collection_platform %></span>
 						<input type="hidden" id="pubId_1" value="IngentaConnect"></td>
-					<td data-th="Height"><span class="bt-content"><%= cr.ytd %></span></td>
+					<td data-th="Height" ><span class="bt-content"><%= cr.ytd %></span></td>
+
+
+					<input type="hidden" id="usage" value="<%= cr.ytd %>"></td>
 					<td data-th="Province">
 									
 						<input class="span7 margin_right4px" onkeyup="removeStyle(this.id)" onchange="removeStyle(this.id)" onkeypress="return isNumberKey(event)" name="costId_1" id="costId_1" type="text" value=""> </td>
@@ -75,33 +81,30 @@
 <script type="text/javascript">
   jQuery(document).ready(function() {
     jQuery('#addAction').click( function () {
-      var $quantity = $('.table-responsive table').length;
-      var $tr = $(".table").clone().addClass('table'+$quantity);
-      $tr.appendTo('.table-responsive');    
-      $('.table'+ $quantity + '> thead > tr:last').append("<th>Remove</th>");
-      $('.table'+ $quantity + '> tbody > tr:last').append('<td data-th="remove"><a href="javascript:;" onclick="remove(' + $quantity + ');" id="remove"><img alt="Icon" src="/assets/icon.png"/></a></td>');
-      $('.table'+$quantity ).removeClass('table');
+      var val = $('#cpuId_1').val();
+      if (val != '') {
+        var $quantity = $('.table-responsive table').length;
+        var $tr = $(".table").clone().addClass('table'+$quantity);
+        $tr.appendTo('.table-responsive');    
+        $('.table'+ $quantity + '> thead > tr:last').append("<th>Remove</th>");
+        $('.table'+ $quantity + '> tbody > tr:last').append('<td data-th="remove"><a href="javascript:;" onclick="remove(' + $quantity + ');" id="remove"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>');
+        $('.table'+$quantity ).removeClass('table');
+      }
     });
+
 
     $(".calculator").click(function(){
      var type = $('#costId_1').val();
-     var usage = $('#pubId_1').val();
-     //console.log(suggestion)
-     alert(usage);
-     
+     var usage = $('#usage').val();
      $.ajax({
        type: 'GET',
        url: '/search_by_issn/get_cost_per_usage',
-       data: 'usage='+type,
+       data : { type: type, usage: usage},
         success: function(cost){
-        	alert(cost);
-
           // $sourcerepo_html = $("<div class= 'cost'>" + cost + "</div>");
           // $('#test1').append($sourcerepo_html);
           // $("#test1").html(cost);
           $("#cpuId_1").val(cost);
-         
-       		//    alert(cost); // WORKS
         }
      	});
  		});
