@@ -18,7 +18,7 @@
 					</div>
 				</div>
 				<div class="spaceContnet" align="left" style="margin-left: 1%">
-					Consolidated Book Report 2, Consolidated COUNTER BR2 Report of all subscribed Platforms<br>UCR Riverside University Libraries<br> <br>Period covered by Report:<br>02-01-2014 to 08-31-2014<br>Date run:<br>01/13/2017
+					Consolidated Book Report 1, Consolidated COUNTER BR1 Report of all subscribed Platforms<br>UCR Riverside University Libraries<br> <br>Period covered by Report:<br>02-01-2014 to 08-31-2014<br>Date run:<br>01/13/2017
 				</div>
 				<div id="preview">
 		 			<div class="table-responsive">
@@ -38,70 +38,13 @@
 				<div class="span12">
 					<div class="col-md-12" >
 						<div class="well">
-					    <div id="elementId" class="table-responsive ownTblContent"> 
-								<table>
+					    <div id="elementId" class="table-responsive ownTblContent">
+								<table id="example">
 									<thead>
 										<tr>
-											<th>id</th>
-									    <th>Book_Title</th>
-									    <th>Publisher</th>
-									    <th>Platform</th>		
-									    <th>Collection_Platform</th>
-									    <th>Book_DOI</th>
-									    <th>Proprietary_identifier</th>
-									    <th>Report_Measurement</th>
-									    <th>ISBN</th>
-									    <th>ISSN</th>
-									    <th>Report_Type</th>
-									    <th>Jan_2013</th>
-									    <th>Feb_2013</th>
-									    <th>Mar_2013</th>
-									    <th>Apr_2013</th>
-									    <th>May_2013</th>
-									    <th>Jun_2013</th>		
-									    <th>Jul_2013</th>
-									    <th>Aug_2013</th>
-									    <th>Sep_2013</th>
-									    <th>Oct_2013</th>
-									    <th>Nov_2013</th>
-									    <th>Dec_2013</th>
-									    <th>Jan_2014</th>
-									    <th>Feb_2014</th>
-									    <th>Mar_2014</th>
-									    <th>Apr_2014</th>
-									    <th>May_2014</th>
-									    <th>Jun_2014</th>		
-									    <th>Jul_2014</th>
-									    <th>Aug_2014</th>
-									    <th>Sep_2014</th>
-									    <th>Oct_2014</th>
-									    <th>Nov_2014</th>
-									    <th>Dec_2014</th>
-									    <th>Jan_2015</th>
-									    <th>Feb_2015</th>
-									    <th>Mar_2015</th>
-									    <th>Apr_2015</th>
-									    <th>May_2015</th>
-									    <th>Jun_2015</th>		
-									    <th>Jul_2015</th>
-									    <th>Aug_2015</th>
-									    <th>Sep_2015</th>
-									    <th>Oct_2015</th>
-									    <th>Nov_2015</th>
-									    <th>Dec_2015</th>
-									    <th>Jan_2016</th>
-									    <th>Feb_2016</th>
-									    <th>Mar_2016</th>
-									    <th>Apr_2016</th>
-									    <th>May_2016</th>
-									    <th>Jun_2016</th>		
-									    <th>Jul_2016</th>
-									    <th>Aug_2016</th>
-									    <th>Sep_2016</th>
-									    <th>Oct_2016</th>
-									    <th>Nov_2016</th>
-									    <th>Dec_2016</th>	
-											<th colspan="3"></th>
+											<% @report_columns.each do |report_column| %>
+					      				<th><%= report_column %></th>
+								      <% end %>
 										</tr>
 									</thead>
 
@@ -179,13 +122,5 @@
 			</div>    	
 		</div>
 		<div class="clearfix"> </div>
-		<script>
-		  $(document).ready(function() {
-		    $('#example').DataTable( {
-		        "scrollY": 200,
-		        "scrollX": true
-		    } );
-			} );
-		</script>
 	</div>	
 </div>

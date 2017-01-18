@@ -1,7 +1,7 @@
-
+<%= render :partial => 'search_form'%>
+<br>
 <% if @results.present? %>
-	<%= render :partial => 'search_form'%>
-	<br>
+	
 	<div class="alert alert-info">
   You can download the full Cost per Use report by uploading cost data here <a href="/import_data/index"><u>Upload Data</u></a>.</div>
 
@@ -77,6 +77,9 @@
 
 		
 	<div id="data"></div>
+<%else%>
+	<div class="alert alert-info">
+  No Data Found. Please enter accurate ISSN/ISBN..</div>
 <%end%>
 <script type="text/javascript">
   jQuery(document).ready(function() {

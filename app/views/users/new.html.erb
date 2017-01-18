@@ -8,18 +8,18 @@
     <div class="main-grid" >
       <div class="clearfix"></div>
 
-      <%= provide(:title, 'Sign up') %>
-      <h1>Sign up</h1>
+      <%= provide(:title, 'Create New User') %>
+      <h3>Create New User</h3>
 
       <div class="row">
         <div class="span6 offset3">
 
           <%= form_for :users, url: {:action=>"create", :controller=>"users"} do |f| %>
 
-            <%= f.label :first_name %>
+            <%= f.label :first_name, "First Name" %>
             <%= f.text_field :first_name %>
 
-            <%= f.label :last_name %>
+            <%= f.label :last_name, "Last Name" %>
             <%= f.text_field :last_name %>
 
             <%= f.label :email %>
@@ -28,16 +28,19 @@
             <%= f.label :password %>
             <%= f.password_field :password %>
 
-            <%= f.label :password_confirmation, "Confirmation" %>
+            <%= f.label :password_confirmation, "Confirm Password" %>
             <%= f.password_field :password_confirmation %>
             <br>
 
-            <%= f.label :role %>
+            <%= f.label :role, "Select Role" %>
             <%= f.collection_select :role, User::ROLES, :to_s, :humanize %>      
             <br>
 
+             <%= f.label :account_id, "Account Id" %>
+            <%= f.text_field :account_id %>
+
             <br>   
-            <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
+            <%= f.submit "Submit", class: "btn btn-large btn-primary" %>
           <% end %>
         </div>
       </div>

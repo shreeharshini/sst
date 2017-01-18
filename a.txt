@@ -79,6 +79,15 @@ show_reports_by_year_counter_and_custom_reports GET    /counter_and_custom_repor
                                                 PATCH  /loginpage/:id(.:format)                                   loginpage#update
                                                 PUT    /loginpage/:id(.:format)                                   loginpage#update
                                                 DELETE /loginpage/:id(.:format)                                   loginpage#destroy
+                               xlsx_import_data GET    /import_data/xlsx(.:format)                                import_data#xlsx
+                                    import_data GET    /import_data(.:format)                                     import_data#index
+                                                POST   /import_data(.:format)                                     import_data#create
+                               new_import_datum GET    /import_data/new(.:format)                                 import_data#new
+                              edit_import_datum GET    /import_data/:id/edit(.:format)                            import_data#edit
+                                   import_datum GET    /import_data/:id(.:format)                                 import_data#show
+                                                PATCH  /import_data/:id(.:format)                                 import_data#update
+                                                PUT    /import_data/:id(.:format)                                 import_data#update
+                                                DELETE /import_data/:id(.:format)                                 import_data#destroy
                                        accounts GET    /accounts(.:format)                                        accounts#index
                                                 POST   /accounts(.:format)                                        accounts#create
                                     new_account GET    /accounts/new(.:format)                                    accounts#new
@@ -175,11 +184,11 @@ show_reports_by_year_counter_and_custom_reports GET    /counter_and_custom_repor
                                                 PATCH  /library_account_details/:id(.:format)                     library_account_details#update
                                                 PUT    /library_account_details/:id(.:format)                     library_account_details#update
                                                 DELETE /library_account_details/:id(.:format)                     library_account_details#destroy
-                                    import_data GET    /import_data(.:format)                                     import_data#index
+                                                GET    /import_data(.:format)                                     import_data#index
                                                 POST   /import_data(.:format)                                     import_data#create
-                               new_import_datum GET    /import_data/new(.:format)                                 import_data#new
-                              edit_import_datum GET    /import_data/:id/edit(.:format)                            import_data#edit
-                                   import_datum GET    /import_data/:id(.:format)                                 import_data#show
+                                                GET    /import_data/new(.:format)                                 import_data#new
+                                                GET    /import_data/:id/edit(.:format)                            import_data#edit
+                                                GET    /import_data/:id(.:format)                                 import_data#show
                                                 PATCH  /import_data/:id(.:format)                                 import_data#update
                                                 PUT    /import_data/:id(.:format)                                 import_data#update
                                                 DELETE /import_data/:id(.:format)                                 import_data#destroy

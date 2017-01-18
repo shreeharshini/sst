@@ -1,7 +1,7 @@
 <div class="agile-Updating-grids"> 
   <div class="agile-grids pad-top10">
 
-    <%= form_tag({:controller => "loginpage", :action => "test2"}, {:method => "get", :remote => true}) do %>
+    <%= form_tag({:controller => "loginpage", :action => "dynamic_show"}, {:method => "get", :remote => true}) do %>
 
 	    <div class="col-xs-12 col-md-5 mb10">
       	<label> Select Report Type: </label>
@@ -17,14 +17,7 @@
               <div class=" wrapper">
   	      			<label> From: </label>
   	      			<div class="input-group">
-  	      				<%= text_field :start_date, :startdate , :class => 'datepicker' %> 
-                 <input id="start_date"
-                               class="input-sm form-control"
-                               type="text" 
-                               ng-model="datePicker"
-                               placeholder="Select a date"
-                               datepicker />
-                  <label for="datePicker" class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></label>
+  	      				<%= text_field_tag :start_date, "MM/YYYY" %> 
                 </div>
               </div>
             </div>
@@ -35,14 +28,7 @@
               <div class=" wrapper">
   	      			<label> To: </label>
   	      			<div class="input-group">
-  	      				<%= text_field :end_date, :enddate , :class => 'datepicker' %> 
-                  <input id="end_date"
-                               class="input-sm form-control"
-                               type="text" 
-                               ng-model="datePicker"
-                               placeholder="Select a date"
-                               datepicker />
-                  <label for="datePicker" class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></label>
+  	      				<%= text_field_tag :end_date, "MM/YYYY" %> 
                 </div>
               </div>
             </div>

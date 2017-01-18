@@ -1,8 +1,8 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+	# Include default devise modules. Others available are:
+	# :confirmable, :lockable, :timeoutable and :omniauthable
+	devise :database_authenticatable, :registerable,
+		     :recoverable, :rememberable, :trackable, :validatable
 
 
 	# def set_default_role
@@ -13,7 +13,7 @@ class User < ApplicationRecord
 
   # enum role: [:user, :admin]
 
-   #after_initialize :set_default_role, :if => :new_record?
+  #after_initialize :set_default_role, :if => :new_record?
 
 	# def set_default_role
 	#   self.role ||= :user
@@ -30,6 +30,6 @@ class User < ApplicationRecord
 	# user_session
 
 
-	# belongs_to :account
+	belongs_to :account
 	has_one :account_info ,:through =>:account
 end
