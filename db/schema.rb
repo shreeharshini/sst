@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170112093827) do
+ActiveRecord::Schema.define(version: 20170116122521) do
 
   create_table "account_infos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "account_code"
@@ -69,18 +69,7 @@ ActiveRecord::Schema.define(version: 20170112093827) do
     t.integer  "number_of_platforms"
     t.string   "activation_status"
     t.string   "account_code"
-    t.integer  "user_id"
     t.string   "library_code"
-  end
-
-  create_table "additional_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "email"
-    t.string   "password"
-    t.string   "role"
   end
 
   create_table "contact_us", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -93,21 +82,19 @@ ActiveRecord::Schema.define(version: 20170112093827) do
   end
 
   create_table "data_libraries", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "institution_code"
-    t.string   "pub_code"
-    t.string   "mps_collection_platform"
-    t.string   "journal_title"
-    t.string   "print_issn"
-    t.string   "online_issn"
-    t.string   "report_type"
-    t.string   "processing_month"
-    t.string   "processing_year"
-    t.string   "ytd"
-    t.string   "isbn"
-    t.string   "issn"
-    t.string   "platform_name"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.string "institution_code"
+    t.string "pub_code"
+    t.string "mps_collection_platform"
+    t.string "journal_title"
+    t.string "print_issn"
+    t.string "online_issn"
+    t.string "report_type"
+    t.string "processing_month"
+    t.string "processing_year"
+    t.string "ytd"
+    t.string "isbn"
+    t.string "issn"
+    t.string "platform_name"
   end
 
   create_table "generated_reports", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -677,9 +664,11 @@ ActiveRecord::Schema.define(version: 20170112093827) do
     t.datetime "updated_at",    null: false
   end
 
-  create_table "libcodewithlibreporttypes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.string "libcode",     limit: 45
-    t.string "Report_Type", limit: 45
+  create_table "libcodewithlibreporttypes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "libcode"
+    t.string   "Report_Type"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "library_code_mappings", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

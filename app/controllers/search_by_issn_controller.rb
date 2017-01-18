@@ -37,7 +37,6 @@ class SearchByIssnController < ApplicationController
 		else params[:select_type] == "bookISSN"
 			@suggestion = DataLibrary.pluck(:issn).last(10)
 		end
-		# byebug
 		respond_to do |format|
 			format.json {render json: @suggestion.compact.to_json}
 		end

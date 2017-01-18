@@ -1,7 +1,7 @@
-
+<%= render :partial => 'search_form'%>
+<br>
 <% if @results.present? %>
-	<%= render :partial => 'search_form'%>
-	<br>
+	
 	<div class="alert alert-info">
   You can download the full Cost per Use report by uploading cost data here <a href="/import_data/index"><u>Upload Data</u></a>.</div>
 
@@ -33,31 +33,30 @@
 							  </tr>
 							</thead>
 	<tbody>
-		<% if @results.present? %>
-			<% @results.each do |cr| %>
-				<tr>
-					<td data-th="Name"><span class="bt-content">1023-6244</span>
-						<input type="hidden" id="issnId_1" value="1023-6244"></td>
-					<td data-th="Age"><span class="bt-content"><%= cr.journal_title %></span>
-						<input type="hidden" id="journalId_1" value="Marine and Freshwater Behaviour and Physiology"></td>
-					<td data-th="Gender"><span class="bt-content"><%= cr.mps_collection_platform %></span>
-						<input type="hidden" id="pubId_1" value="IngentaConnect"></td>
-					<td data-th="Height" ><span class="bt-content"><%= cr.ytd %></span></td>
+
+		<% @results.each do |cr| %>
+			<tr>
+				<td data-th="Name"><span class="bt-content">1023-6244</span>
+					<input type="hidden" id="issnId_1" value="1023-6244"></td>
+				<td data-th="Age"><span class="bt-content"><%= cr.journal_title %></span>
+					<input type="hidden" id="journalId_1" value="Marine and Freshwater Behaviour and Physiology"></td>
+				<td data-th="Gender"><span class="bt-content"><%= cr.mps_collection_platform %></span>
+					<input type="hidden" id="pubId_1" value="IngentaConnect"></td>
+				<td data-th="Height" ><span class="bt-content"><%= cr.ytd %></span></td>
 
 
-					<input type="hidden" id="usage" value="<%= cr.ytd %>"></td>
-					<td data-th="Province">
-									
-						<input class="span7 margin_right4px" onkeyup="removeStyle(this.id)" onchange="removeStyle(this.id)" onkeypress="return isNumberKey(event)" name="costId_1" id="costId_1" type="text" value=""> </td>
-						
-						<td data-th="Height"><a href="javascript:;"  class="calculator"  data-toggle="tooltip" title="Calculate CPU" > <%= image_tag("calculater.png")%></a></td>
-
-		    		<td data-th="Height"><input type="hidden" id="ytdId_1" value="0"></td>
+				<input type="hidden" id="usage" value="<%= cr.ytd %>"></td>
+				<td data-th="Province">
+								
+					<input class="span7 margin_right4px" onkeyup="removeStyle(this.id)" onchange="removeStyle(this.id)" onkeypress="return isNumberKey(event)" name="costId_1" id="costId_1" type="text" value=""> </td>
 					
-						<td data-th="Sport"><input type="text" class="span5" readonly id="cpuId_1" value=""></td>
-					
-				</tr>
-			<%end%>
+					<td data-th="Height"><a href="javascript:;"  class="calculator"  data-toggle="tooltip" title="Calculate CPU" > <%= image_tag("calculater.png")%></a></td>
+
+	    		<td data-th="Height"><input type="hidden" id="ytdId_1" value="0"></td>
+				
+					<td data-th="Sport"><input type="text" class="span5" readonly id="cpuId_1" value=""></td>
+				</td>
+			</tr>
 		<%end%>
 		  
 		</table>
@@ -77,6 +76,9 @@
 
 		
 	<div id="data"></div>
+<%else%>
+	<div class="alert alert-info">
+  No Data Found. Please enter accurate ISSN/ISBN..</div>
 <%end%>
 <script type="text/javascript">
   jQuery(document).ready(function() {
