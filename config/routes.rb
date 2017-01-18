@@ -61,7 +61,7 @@ Rails.application.routes.draw do
     collection do
       get 'getyear'
       get 'getreports', as: 'getreports'
-      get 'test2'
+      get 'dynamic_show'
       get 'dynamicreports'
       get 'sourcereports'
       get 'accessdetails'
@@ -76,8 +76,6 @@ Rails.application.routes.draw do
       get 'xlsx'
     end
   end
-
- 
   
   resources :accounts, :reports, :platforms,
             :source_reports_mappings, :year_trends, :year_usages,

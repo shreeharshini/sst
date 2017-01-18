@@ -26,62 +26,51 @@ class LoginpageController < ApplicationController
   end
 
   def show
-      
-  end
-
- 
+  end 
 
   def result
-      @repos = Report.where(:year => params[:sourcerepo][:year], :platform_id => params[:sourcerepo][:platform_id])  
-            @years = Report.where(:year => params[:sourcerepo][:year])
-        @repos.each do |f|
-          @plts = Platform.where(:id => f.platform_id)
-          @user_id = current_user.id
-          @acc = Account.where(:id => @user_id)
-        end
-        
-
+    @repos = Report.where(:year => params[:sourcerepo][:year], :platform_id => params[:sourcerepo][:platform_id])  
+    @years = Report.where(:year => params[:sourcerepo][:year])
+    @repos.each do |f|
+      @plts = Platform.where(:id => f.platform_id)
+      @user_id = current_user.id
+      @acc = Account.where(:id => @user_id)
+    end
   end
 
   def getreports
     @years = Report.where("platform_id = ?", params[:platform_id]) 
-
     @yrs = Report.where(:year => params[:year])
     respond_to do |format|
       format.js
     end  
   end
 
-
   def dynamicreports
     acc_id = current_user.account_id
     @lib_code = Libcodewithlibreporttype.where(:libcode => acc_id).pluck(:Report_Type)
   end
 
-  def test2
+  def dynamic_show
     acc_id = current_user.account_id
     @lib_code = Libcodewithlibreporttype.where(:libcode => acc_id).pluck(:Report_Type)
     @dynamic_reports = params[:Report_Type].strip
-    aa = "Lib"+"_"+acc_id.to_s+"_"+@dynamic_reports.downcase!
-    @report_data = aa.constantize.all
+    table_name = "Lib"+"_"+acc_id.to_s+"_"+@dynamic_reports.downcase!
+    @report_data = table_name.constantize.all
+    @report_columns = @report_data.column_names
+    @start_date = params[:start_date]
+    @end_date = params[:end_date]
     respond_to do |format|
-    format.js {}
+      format.js {}
     end
   end
-
-  # def test2
-  #   @dynamic_reports = params[:some_parameter].constantize
-  #   respond_to do |format|
-  #   format.js {}
-  #   end
-  # end
-
 
   def accessdetails
      @platforms = Platform.all
   end
 
   def selectedplatforms
+    byebug
     user_id = current_user.account_id
     @accounts = Account.where(:id => user_id ).first
     @platforms = PlatformReport.find_by_sql("SELECT platform_id,GROUP_CONCAT(report_id) AS reports FROM platform_reports GROUP BY platform_id")
